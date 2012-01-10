@@ -1,0 +1,17 @@
+<?php
+
+/**
+ *  XXXX
+ *
+ *  
+ *
+ *  @param  
+ *  @return 
+ */
+public function XXXX() {
+    $retVal = "";
+    
+    return $retVal;
+}/*END XXXX*/
+    
+?>

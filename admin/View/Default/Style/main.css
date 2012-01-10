@@ -1,0 +1,16 @@
+/* CSS Document */
+
+html,body { background: url(../images/bg_body.gif) repeat-x top left; margin:0 auto; padding:0; color:#585858; font: normal 12px/16px Arial, Helvetica, sans-serif; height:100%;}
+
+#main-container {width:998px; margin:0 auto; padding:0; height:auto; color:#333333; background:#FFFFFF url(../images/bg_body.gif) repeat-x left top;}
+
+h1,h2,h3,h4,h5,span,p{margin:0; padding:0; clear:both;}
+
+.clear{ clear:both;}
+
+#contents-container{width:972px; margin:0 auto; padding:0; height:278px; color:#333333; background-color:#FFFFFF;}
+
+#body-container{width:972px; margin:0 auto; padding:0; height:100%; color:#333333; background-color:#FFFFFF;}
+
+#footer-container{ width:100%; margin:10px 0 0 0; padding:0; height:99px; color:#333333; clear:both; background:#FFF2FB;}
+ 

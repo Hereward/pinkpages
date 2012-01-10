@@ -1,0 +1,48 @@
+div.left {
+  width:          350px;
+  margin:         0 0 0 10px;
+}
+
+div.right {
+  width:          350px;
+}
+
+div.floater {
+  float:          left;
+}
+
+select#keyword, select#classification {
+   width:         150px;
+}
+
+div.synonyms h3{
+  text-align:     center;
+  font-weight:    bold;
+}
+
+div.synonyms ul{
+  font-size:       12px;
+  list-style-type: none;
+  margin:          0;
+  padding:         0 0 0 10px;
+}
+
+div.synonyms ul li a {
+  text-decoration: none;
+  
+}
+
+div.synonyms ul li a:hover {
+  margin:          10px 0 10px 0;
+  font-size:       16px;
+  text-decoration: underline;
+}
+
+div.synonyms div.buttons {
+  text-align:      left;
+}
+
+div.keywordoutput, div.classificationoutput {
+  border-width:   2px;
+  border-style:   ridge;
+}

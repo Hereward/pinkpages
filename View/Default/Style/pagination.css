@@ -1,0 +1,16 @@
+/* Pagination CSS */
+.Paginator { font-family: Arial, Helvetica, sans-serif;font-size: 12px; color:#243964; padding-top: 10px; padding-bottom: 10px; margin-left: 0px; margin-right: auto;}
+.Paginator a, .pageList .this-page { padding: 2px 6px; border: solid 1px #acbfe5; color:#243964; background: #fff; text-decoration: none; }
+.Paginator a:visited { padding: 2px 6px; border: solid 1px #acbfe5; background: #e6ecf8; color:#243964; text-decoration: none; }
+.Paginator .this-page {padding: 2px 6px; border-color: #acbfe5; font-weight: bold; font-size: 13px; vertical-align: top; background: #c3d3f4; color: #243964; }
+.Paginator a:hover {color: #243964; background: #EEE5DE; border-color: #243964; text-decoration: none;}
+/* Pagination CSS */
+
+#trulylocal {
+	position:absolute;
+	left:930px;
+	top:260px;
+	width:94px;
+	height:103px;
+	z-index:1;
+}

@@ -1,0 +1,18 @@
+<?php
+
+/**
+ *  XXXX
+ *
+ *  
+ *
+ *  @param  
+ *  @return 
+ */
+protected function _XXXX() {
+    $retVal = "";
+    
+    return $retVal;
+}/*END XXXX*/
+
+NOTE: Protected function name must start with a single underscore sign (_)
+?>

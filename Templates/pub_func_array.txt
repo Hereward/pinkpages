@@ -1,0 +1,20 @@
+<?php
+    
+/**
+ *  XXXX
+ *
+ *  
+ *
+ *  @param  
+ *  @return     array   retArray        array('result'=>false,'message'=>'')
+ */
+public function XXXX() {
+    $retArray = array(
+            'result'    => false,
+            'message'   => ''
+            );
+    
+    return $retArray;
+}/*END XXXX*/
+    
+?>

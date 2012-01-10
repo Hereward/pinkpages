@@ -1,0 +1,25 @@
+<?php
+
+/**
+ *  XXXX Class
+ *
+ *  
+ *  @author     Vinod Kumar
+ *  @package    Project Name
+ *
+ */
+class XXXX {
+     
+     /**
+     *  __construct
+     *
+     *  //instantiate required Service Class Objects here
+     *
+     */
+    public function __construct() {
+        //instantiate required Service Class Objects here
+    }
+
+}/*END XXXX */
+
+?> 

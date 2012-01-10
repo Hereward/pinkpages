@@ -1,0 +1,125 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+#Domain Rewrite to change sydneypinkpagesonline to pinkpages
+RewriteCond %{HTTP_HOST}   !^www\.pinkpages\.com.au [NC]
+RewriteRule (.*) http://www.pinkpages.com.au/$1 [R=301] 
+
+#Rewrite used in the Contact US page as the Action for the form
+RewriteRule ^/?(Listing)/contactUsDetails/ID/([0-9])? main.php?do=$1&action=contactUsDetails&ID=$2 [L]
+
+#Rewrite used in the main Contact page on the home page
+RewriteRule ^/?Content/sendMail? main.php?do=Content&action=sendMail [L]
+
+#Rewites used for Region keyword searches 
+#RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z_,+&-]+\region)/([0-9]+)/pnum/([1-9]+)/fr/([1-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&shire_name=$2&search=$3&pnum=$4&fr=$5 [NC,L]
+#RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z_,+&-]+\Region)/([0-9]+)/$ main.php?do=Listing&action=categorySearch&category=$1&shire_name=$2&search=$3 [NC,L]
+
+#Rewrite used for new Region Alias(parramatta-region)
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([a-zA-Z_,+&]+\-region)/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&shire_name=$3&search=$4 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([a-zA-Z_,+&]+\-region)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&shire_name=$3&search=$4&pnum=$5&fr=$6 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z_,+&]+\-region)/([0-9]+)/?$ main.php?do=Listing&action=categorySearch&category=$1&shire_name=$2&search=$3 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z_,+&]+\-region)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&shire_name=$2&search=$3&pnum=$4&fr=$5 [NC,L]
+
+#Rewrite used for new District Alias(hills-district)
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([a-zA-Z_,+&]+\-district)/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&shire_name=$3&search=$4 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([a-zA-Z_,+&]+\-district)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&shire_name=$3&search=$4&pnum=$5&fr=$6 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z_,+&]+\-district)/([0-9]+)/?$ main.php?do=Listing&action=categorySearch&category=$1&shire_name=$2&search=$3 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z_,+&]+\-district)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&shire_name=$2&search=$3&pnum=$4&fr=$5 [NC,L]
+
+#Rewrite used for new District Alias(cbd-surrounds)
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([a-zA-Z_,+&]+\-surrounds)/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&shire_name=$3&search=$4 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([a-zA-Z_,+&]+\-surrounds)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&shire_name=$3&search=$4&pnum=$5&fr=$6 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z_,+&]+\-surrounds)/([0-9]+)/?$ main.php?do=Listing&action=categorySearch&category=$1&shire_name=$2&search=$3 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z_,+&]+\-surrounds)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&shire_name=$2&search=$3&pnum=$4&fr=$5 [NC,L]
+
+#Rewrite used for new Region Alias(penrith & nepean region)
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([a-zA-Z_,+&]+\-[a-zA-Z_,+&]+\-region)/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&shire_name=$3&search=$4 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([a-zA-Z_,+&]+\-[a-zA-Z_,+&]+\-region)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&shire_name=$3&search=$4&pnum=$5&fr=$6 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z_,+&]+\-[a-zA-Z_,+&]+\-region)/([0-9]+)/?$ main.php?do=Listing&action=categorySearch&category=$1&shire_name=$2&search=$3 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z_,+&]+\-[a-zA-Z_,+&]+\-region)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&shire_name=$2&search=$3&pnum=$4&fr=$5 [NC,L]
+
+#Rewrite used for new Region Alias(manly-warringah-pittwater-region)
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([a-zA-Z_,+&]+\-[a-zA-Z_,+&]+\-[a-zA-Z_,+&]+\-region)/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&shire_name=$3&search=$4 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([a-zA-Z_,+&]+\-[a-zA-Z_,+&]+\-[a-zA-Z_,+&]+\-region)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&shire_name=$3&search=$4&pnum=$5&fr=$6 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z_,+&]+\-[a-zA-Z_,+&]+\-[a-zA-Z_,+&]+\-region)/([0-9]+)/?$ main.php?do=Listing&action=categorySearch&category=$1&shire_name=$2&search=$3 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z_,+&]+\-[a-zA-Z_,+&]+\-[a-zA-Z_,+&]+\-region)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&shire_name=$2&search=$3&pnum=$4&fr=$5 [NC,L]
+
+#Rewrites used for Suburb keyword searches 
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([a-zA-Z_+&'\-]+)/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&shire_town=$3&search=$4 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([a-zA-Z_+&'\-]+)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&shire_town=$3&search=$4&pnum=$5&fr=$6 [NC,L]
+
+#Rewrites used for PostCode keyword searches 
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([0-9]+)/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&postcode=$3&search=$4 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'-]+)/([a-zA-Z]+)/([0-9]+)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&postcode=$3&search=$4&pnum=$5&fr=$6 [NC,L]
+
+#Rewrite used for the ALL STATES keyword search
+RewriteRule ^/?Listing/categorySearchAlpha/search/([0-9]+)/category/([a-zA-Z_+&'\-]+)$ main.php?do=Listing&action=categorySearchAlpha&search=$1&category=$2 [NC,L]
+RewriteRule ^/?Listing/categorySearchAlpha/search/([0-9]+)/category/([a-zA-Z_+&'\-]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearchAlpha&search=$1&category=$2&pnum=$3&fr=$4 [NC,L]
+
+#Rewrites used for the All Sydney keyword search (classification Name)/(state)/(classificationID)
+RewriteRule ^/?([a-zA-Z_+&'\-]+)/([a-zA-Z]+)/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&search=$3 [NC,L]
+RewriteRule ^/?([a-zA-Z_+&'\-]+)/([a-zA-Z]+)/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&category=$1&state=$2&search=$3&pnum=$4&fr=$5 [NC,L]
+
+#Rewrite used for All Sydney urls with searchID presented first - discuss with Graham
+RewriteRule ^/?([0-9]+)/([a-zA-Z_+&'\-]+)/?$ main.php?do=Listing&action=categorySearch&search=$1&category=$2 [NC,L]
+RewriteRule ^/?([0-9]+)/([a-zA-Z_+&'\-]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&search=$1&category=$2&pnum=$3&fr=$4 [NC,L]
+
+#Pagination Search issues where urls may need to be 301 redirected
+RewriteRule ^/?search=([0-9]+)/category=([a-zA-Z_+&'\-\s]+)/val=/?$ main.php?do=Listing&action=categorySearch&search=$1&category=$2 [NC,L]
+RewriteRule ^/?search=([0-9]+)/category=([a-zA-Z_+&'\-\s]+)/val=/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&search=$1&category=$2&pnum=$3&fr=$4 [NC,L]
+
+RewriteRule ^/?search=([0-9]+)/category=([a-zA-Z_+&'\-\s]+)/Suburb=/?$ main.php?do=Listing&action=categorySearch&search=$1&category=$2 [NC,L]
+RewriteRule ^/?search=([0-9]+)/category=([a-zA-Z_+&'\-\s]+)/Suburb=/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&search=$1&category=$2&pnum=$3&fr=$4 [NC,L]
+
+RewriteRule ^/?search=([0-9]+)/category=([a-zA-Z_+&'\-\s]+)/shire_name=([a-zA-Z_+&'\-]+)/Suburb=/?$ main.php?do=Listing&action=categorySearch&search=$1&category=$2&shire_name=$3 [NC,L]
+RewriteRule ^/?search=([0-9]+)/category=([a-zA-Z_+&'\-\s]+)/shire_name=([a-zA-Z_+&'\-]+)/Suburb=/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&search=$1&category=$2&shire_name=$3&pnum=$4&fr=$5 [NC,L]
+
+
+##--Malformed All Sydney with State Present - discuss with Graham
+RewriteRule ^/?([0-9]+)/([a-zA-Z]+)/([a-zA-Z_+&'\-]+)/?$ main.php?do=Listing&action=categorySearch&search=$1&category=$3 [NC,L]
+RewriteRule ^/?([0-9]+)/([a-zA-Z]+)/([a-zA-Z_+&'\-]+)/pnum/([0-9]+)/fr/([0-9]+)$ main.php?do=Listing&action=categorySearch&search=$1&category=$3&pnum=$4&fr=$5 [NC,L]
+
+#Rewrite used to display individual Listings
+RewriteRule ^/?([a-zA-Z0-9_+-]+)/([0-9]+)/(listing)$ main.php?do=Listing&action=boldListing&ID=$2 [NC,L]
+
+#Rewrite used when the email link is selected on an individual client's listing page
+#RewriteRule ^/?(Listing)/contactUS/ID=([a-zA-Z0-9&=]+)$ main.php?do=$1&action=contactUs&ID=$2 [NC,L]
+
+#Rewrites used for the business types links on the front page
+RewriteRule ^/?(Listing)/(browseCategory)/(search)/([a-zA-Z]+)$ main.php?do=$1&action=$2&$3=$4 [NC,L]
+RewriteRule ^/?([search0-9=]+)/([category=a-zA-Z_+&\-]+)/(val=)$ main.php?do=Listing&action=categorySearchAlpha&$1&$2&$3 [NC,L]
+
+#Rewrite used for the ambiguous location searches (REGIONS)
+RewriteRule ^/?([^/]*)/([^/]*)/Search1/([^/]*)/Search2/([^/]*)/exact/([^/]*)$ /main.php?do=$1&action=$2&Search1=$3&Search2=$4&exact=$5 [NC,L]
+
+#Rewrite used for the ambiguous location AND STREET searches (SUBURBS)
+RewriteRule ^/?([^/]*)/([^/]*)/Search1/([^/]*)/ID/([^/]*)/Search2/([^/]*)/exact/([^/]*)$ /main.php?do=$1&action=$2&Search1=$3&ID=$4&Search2=$5&exact=$6 [NC,L]
+RewriteRule ^/?([^/]*)/([^/]*)/Search1/([^/]*)/ID/([^/]*)/Search2/([^/]*)/exact/([^/]*)/pnum/([0-9]+)/fr/([0-9]+)$ /main.php?do=$1&action=$2&Search1=$3&ID=$4&Search2=$5&exact=$6&pnum=$7&fr=$8 [NC,L]
+
+#Rewrite used for alternate region search when classi/suburb results are displayed
+RewriteRule ^/?(Listing)/searchKeyword/Search1/([a-zA-Z_+&]+)/Search2/([a-zA-Z_,+&])/ambg_suburb/([a-zA-Z_,+&])/c/$5$  /main.php?do=$1&action=searchKeyword&Search1=$2&Search2=$3&ambg_suburb=$4&c=$5  [NC,L]
+
+#Rewrite used when a Keyword Search Fails and a Business Name Search is suggested
+RewriteRule ^/?(Listing)/search/t/tab/SearchOption/1/Search1/([a-zA-Z0-9_+-]+)? main.php?do=$1&action=search&t=tab&SearchOption=1&Search1=$2 [NC,L]
+RewriteRule ^/?(Listing)/search/t/tab/SearchOption/1/Search1/([a-zA-Z0-9_+-]+)/pnum/([0-9]+)/fr/([0-9]+)? main.php?do=$1&action=search&t=tab&SearchOption=1&Search1=$2&pnum=$3&fr=$4 [NC,L]
+RewriteRule ^/?(Listing)/search/t/tab/SearchOption/1/Search1/([a-zA-Z0-9_+-]+)/Submit.x/0/Submit.y/0/Submit/Search/pnum/([0-9]+)/fr/([0-9]+)? main.php?do=$1&action=search&t=tab&SearchOption=1&Search1=$2&pnum=$3&fr=$4 [NC,L]
+RewriteRule ^/?(Listing)/search/SearchOption/1/Search1/([a-zA-Z0-9_+-]+)/Submit.x/0/Submit.y/0/Submit/Search/pnum/([0-9]+)/fr/([0-9]+)? main.php?do=$1&action=search&t=tab&SearchOption=1&Search1=$2&Submit.x=0&Submit.y=0&Submit&Search&pnum=$3&fr=$4 [NC,L]
+
+#Rewrite used to display the Contact US page on an individual listing
+RewriteRule ^/?(Listing)/contactUs/ID/([0-9]+)/act/([a-zA-Z]+)? main.php?do=$1&action=contactUs&ID=$2&act=$3 [NC,L]
+
+#Rewrite used for Business Search to display individual Listings
+#RewriteRule ^/?Listing/boldListing/ID/([0-9]+)$ main.php?do=Listing&action=boldListing&ID=$1 [NC,L]
+RewriteRule ^/?Listing/search/SearchOption/([0-9]+)/Search1/([a-zA-Z_+&'-]+)/Submit.x/([0-9]+)/Submit.y/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)?  main.php?do=Listing&action=search&SearchOption=$1&Search1=$2&Submit.x=$3&Submit.y=$4/pnum/$5/fr/$6 [NC,L]
+
+#404 Homepage Redirect
+ErrorDocument 404 http://www.pinkpages.com.au/?404
+
+
+
+
+
+
+
+

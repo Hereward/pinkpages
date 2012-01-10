@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.navbar li {
+float: left;
+clear: both;
+width: 100%;
+margin: 0 0 1px 0;
+}
+
+.navbar li a {
+float: left;
+clear: both;
+width: 227px;
+}
+
+.projectinfo {
+height: 5em;
+}
+
+
+.submenu li a {
+float: left;
+clear: both;
+width: 228px;
+}
+
+h3 {
+
+background-repeat: no-repeat;
+background-position: left center;
+}
+
+
+
+/* IE6 ONly png fixes */
+
+.png {
+background-image: expression(
+this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" + 
+(this.tagName=='IMG' ? this['src'] : this.currentStyle['backgroundImage'].split('\"')[1]) + ")",
+this.runtimeStyle.backgroundImage = "none",
+this.src = (this.tagName=='IMG' ? this.src : this.currentStyle['backgroundImage'].split('\"')[1]).substring(0,(this.tagName=='IMG' ? this.src : this.currentStyle['backgroundImage'].split('\"')[1]).lastIndexOf("/") + 1) + "1x1.gif");
+}
+
+
+.logout {
+position: relative; 
+background-image: none; 
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', src='Images/icon_logout_16.png', sizingMethod='crop');
+}
+
+.account {
+position: relative; 
+background-image: none; 
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', src='Images/icon_account_16.png', sizingMethod='crop');
+}
+
+.useradmin {
+float: right;
+width: 35em;
+margin-right: 5px;
+}
+
+.admin {
+position: relative; 
+background-image: none; 
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', src='Images/icon_admin_16.png', sizingMethod='crop');
+}
+
+
+.help {
+position: relative; 
+background-image: none; 
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', src='Images/icon_help_16.png', sizingMethod='crop');
+}
+
+.solarwebpowered {
+position: relative; 
+background-image: none; 
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', src='Images/logo_solarweb.png', sizingMethod='crop');
+}

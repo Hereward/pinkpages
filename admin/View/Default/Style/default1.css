@@ -1,0 +1,676 @@
+﻿@charset utf-8;
+/* This Style Sheet is for sydneypinkpages  */
+
+/*
+CSS Document
+HEX Colour Definitions:
+
+GREEN:
+
+100% = #b3d337
+090% = #bad64a
+080% = #c1da60
+070% = #c9de76
+060% = #d0e28a
+050% = #d6e69c
+040% = #deeaae
+030% = #e5efc2
+020% = #edf4d5
+010% = #f4f8e8
+005% = #f8fbf2
+
+BLACK:
+
+100% = #000
+
+WHITE:
+
+100% = #fff
+*/
+
+html{}
+
+body{
+font-family: verdana,Arial, Helvetica, sans-serif;
+color: #333;
+min-width: 980px;
+margin: 0;
+padding: 0;
+background-color: #fff;
+background-image: url(../Images/bg_shadow_tile.gif);
+background-repeat: repeat-x;
+background-position: 0 0px;
+}
+
+h1 {
+font-size: 1.5em;
+padding: 0;
+margin: 25px 0 0 20px ;
+float: left;
+position: absolute;
+}
+
+h2 {
+font-size: 1.3em;
+font-weight: normal;
+padding: 0 0 15px 0;
+margin: 0;
+}
+
+h3 {
+font-size: 1.1em;
+font-weight: normal;
+padding: 0 0 0 20px;
+margin: 15px 0 10px 0;
+background-image: url(../Images/arrow_headings.png);
+background-repeat: no-repeat;
+background-position: left center;
+}
+
+h4 {
+font-size: 1em;
+font-weight: normal;
+color: #b3d337;
+background-color: transparent;
+padding: 0 0 10px 0;
+margin-bottom: 0;
+}
+
+.h4reversed {
+color: #fff;
+background-color: #DC4074;
+background-image: url(../Images/bg_pink.gif);
+background-repeat: repeat-x;
+background-position: 0 -5px;
+border-top: #999 solid 2px;
+padding: 8px 10px;
+margin-bottom: 0;
+}
+
+p {
+font-size: 0.8em;
+line-height: 1.5em;
+padding: 0 0 10px 0;
+margin: 0 0 10px 0;
+}
+
+label {
+font-size: 12px;
+}
+
+input {
+font-family: verdana,Arial, Helvetica, sans-serif;
+font-size: 12px;
+}
+
+/*img { 
+behavior: url("../pngbehavior.htc");
+}*/
+
+/* START - DIV Structure */
+
+.header {
+height: 111px;
+border-bottom: #999 solid 1px;
+padding: 0;
+margin: 0 0 5px 0;
+background-image: url(../Images/header-right.gif);
+background-repeat: no-repeat;
+background-position: bottom right;
+}
+
+
+.navigation {
+float: left;
+padding: 0 5px 5px 5px;
+}
+
+.content {
+border-left: #ccc solid 1px;
+padding: 15px;
+margin: 0 0 0 270px;
+background-image: url(../Images/bg_content_tile.gif);
+background-repeat: repeat-x;
+background-position: top;
+}
+
+.footer {
+clear: both;
+border-top: #666 solid 2px;
+padding: 5px;
+height: 2.5em;
+background-image: url(../Images/bg_content_tile.gif);
+background-repeat: repeat-x;
+background-position: top;
+}
+
+.searchinfo {
+background-color: #F6F6F6;
+background-repeat: repeat-x;
+background-position: center;
+padding: 15px 10px 0 10px;
+margin: 0 0 20px 0;
+border:#999999 solid 3px;
+}
+
+.searchinfo ul {
+font-size: 0.8em;
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.searchinfo li {
+list-style-type: none;
+padding: 0 0 10px 0;
+margin: 0;
+}
+
+.branding {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.branding li {
+border: #eee solid 1px;
+margin: 5px 0 5px 0;
+padding: 10px;
+background-image: url(../Images/bg_grey_tile.gif);
+background-repeat: repeat-x;
+background-position: bottom;
+}
+
+.brand01 {
+text-indent: -9999px;
+display: block;
+padding: 50px;
+background-image: url(../Images/logo_RSWT.gif);
+background-repeat: no-repeat;
+background-position: center;
+}
+
+.brand02 {
+text-indent: -9999px;
+display: block;
+padding: 50px;
+background-image: url(../Images/logo_localfood.gif);
+background-repeat: no-repeat;
+background-position: center;
+}
+
+/* END - DIV Structure */
+
+/* START - Styling */
+
+
+
+
+
+
+.search {
+/*float: right;*/
+
+margin: 0;
+padding: 0;
+}
+
+.search label {
+font-size: 0.85em;
+color: #000;
+background-color: transparent;
+}
+
+.search li {
+float: right;
+list-style-type: none;
+margin: 0px 2px 0px 2px;
+}
+
+.privacylinks {
+margin: 0;
+padding: 0;
+}
+
+.privacylinks li {
+float: left;
+list-style-type: none;
+padding: 0 10px 0 10px;
+margin: 10px 0 0 0;
+border-right: #333 solid 1px;
+}
+
+.privacylinks a:link {
+color: #333;
+text-decoration: none;
+}
+
+.privacylinks a:visited {
+color: #333;
+text-decoration: none;
+}
+
+.privacylinks a:hover {
+text-decoration: underline;
+}
+
+.privacylinks a:active {
+text-decoration: underline;
+}
+
+
+.powered {
+width: 300px;
+padding: 10px 0 10px 0;
+float: right;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+}
+
+li.noborder {
+border: none;
+}
+
+.tasks {
+padding: 0;
+margin: 0 0 20px 0;
+background-image: url(../Images/bg_task_tile.gif);
+}
+
+.tasks h3 {
+font-size: 150%;
+color: #b3d337;
+background-color: transparent;
+margin: 0 30px 0 0;
+padding: 20px 0 20px 0;
+}
+
+.findexisting {
+background-image: url(../Images/icon_find_existing_128.gif);
+background-repeat: no-repeat;
+background-position: right center;
+}
+
+.tasks li {
+list-style-type: none;
+margin: 0;
+padding: 0 10px 20px 20px;
+border-bottom: #ccc solid 2px;
+background-image: url(../Images/bg_task_watermark.gif);
+background-repeat: no-repeat;
+background-position: right center;
+}
+
+.tasks label {
+display: block;
+padding: 0 0 10px 0;
+}
+
+.tasks input {
+display: block;
+}
+
+.skip {
+padding: 0;
+margin: 0 0 5px 0;
+background-color: #ECF3F7;
+/*background-image: url(../Images/bg_skip_tile.gif);*/
+background-position: bottom;
+height:30px;
+}
+
+.skip h3 {
+font-size: 90%;
+color: #333;
+margin: 0 30px 0 0;
+padding: 10px 0 10px 15px;
+}
+
+.skip li {
+list-style-type: none;
+margin: 0;
+padding: 0 10px 20px 15px;
+border-bottom: #ccc solid 2px;
+}
+
+.skip label {
+display: block;
+padding: 0 0 10px 0;
+}
+
+.searchbox {
+width: 230px;
+}
+
+.searchboxlong {
+width: 630px;
+}
+
+.navbar {
+width: 260px;
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+
+.navbar li {
+/* This height has been added to fix an IE6 issue with spacing within the navigation bar, 
+this has created another issue of an overlapping menu item when text wraps in the nav bar 
+particurarly when text is resized in the browser */
+padding: 0;
+margin: 0 0 1px 0;
+}
+
+
+.navbar a:link {
+text-decoration: none;
+font-size: 0.9em;
+color: #E2007F;
+display: block;
+padding: 6px 3px 6px 30px;
+border: #eee solid 1px;
+background-image: url(../Images/sprite_nav_btn.gif);
+background-repeat: repeat-x;
+background-position: 0% 50%;
+/*background-image: url(../Images/sprite_nav_btn.gif);
+background-repeat: repeat-x;
+background-position: 0% 50%; /* 0% across- 50% down */
+							  /* white gradient */
+}
+
+.navbar a:visited {
+text-decoration: none;
+font-size: 0.9em;
+color: #E2007F;
+display: block;
+background-image: url(../Images/sprite_nav_btn.gif);
+background-repeat: no-repeat;
+background-position: 0% 50%; /* 0% across- 100% down */
+							  /* white gradient */
+padding: 6px 3px 6px 30px;
+border: #eee solid 1px;
+}
+
+
+.navbar a:hover {
+color: #E2007F;
+background-color: #ECF3F7;
+background-image: url(../Images/sprite_nav_btn.gif);
+background-repeat: repeat-x;
+background-position: 0% 50%; /* grey gradient */
+border: #eee solid 1px;
+}
+
+/* focus pseudo class needed for firefox/gecko based browsers -
+   otherwise on click the a:active style will appear and then
+   disappear on mouseup.
+   I don't know who is correct - gecko or IE? :) */
+.navbar a:active, .navbar a:focus {
+text-decoration: none;
+font-size: 0.9em;
+color: #E2007F;
+background-color: transparent;
+display: block;
+background-image: url(../Images/sprite_nav_btn.gif);
+background-repeat: repeat-x;
+background-position: 0% 50%; /* grey gradient */
+padding: 6px 3px 6px 30px;
+border: #eee solid 1px;
+}
+
+
+.submenu {
+width: 240px;
+list-style-type: none;
+padding: 0;
+margin: 1px 0 0 0;
+}
+
+.submenu li {
+margin: 0 0 1px 0;
+font-size: 13px;
+padding: 2px 3px 4px 5px;
+background-color: #ffffff;
+color:#333333;
+}
+.submenu li select{
+border:1px solid #D5D5D5; height:25px; width:240px; color:#666; vertical-align:middle;
+
+}
+.submenu li a:link {
+text-decoration: underline;
+font-size: 13px;
+color: #2834D2;
+display: block;
+padding: 2px 3px 4px 5px;
+background-color: #ffffff;
+background-image: none;
+border: #eee solid 0px;
+}
+
+.submenu li a:visited {
+text-decoration: underline;
+font-size: 13px;
+color: #2834D2;
+display: block;
+background-color: #ffffff;
+padding: 2px 3px 4px 5px;
+background-image: none;
+border: #eee solid 0px;
+}
+
+.submenu li a:hover {
+color: #2834D2;
+background-color: #ffffff;
+background-image: none;
+}
+
+/* focus pseudo class needed for firefox/gecko based browsers -
+   otherwise on click the a:active style will appear and then
+   disappear on mouseup.
+   I don't know who is correct - gecko or IE? :) */
+.submenu li a:active, .submenu li a:focus {
+text-decoration: underline;
+font-size: 13px;
+color: #2834D2;
+display: block;
+background-color: #ffffff;
+padding: 2px 3px 4px 15px;
+background-repeat: no-repeat;
+background-position: 13px center;
+border: #eee solid 0px;
+}
+
+.controlbar {
+list-style-type: none;
+height: 3em;
+padding: 0;
+margin: 0;
+background-image: url(../Images/bg_controlbar_tile.gif);
+background-position: bottom;
+background-repeat: repeat-x;
+}
+
+.controlbar li {
+float: left;
+padding: 10px 0px 10px 10px;
+margin: 0;
+}
+
+.controlgreen {
+font-size: 0.9em;
+font-weight: bold;
+width: 8em; 
+color: #fff;
+background-color: transparent;
+background-image: url(../Images/bg_green_tile.gif);
+background-repeat: repeat-x;
+background-position: 0 -5px;
+border: #999 solid 1px;
+margin: 0;
+padding: 5px;
+}
+
+.controlgrey {
+font-size: 0.9em;
+font-weight: normal;
+width: 8em; 
+color: #666;
+background-image: url(../Images/bg_grey_tile.gif);
+background-repeat: repeat-x;
+background-position: bottom;
+border: #999 solid 1px;
+margin: 0;
+padding: 5px;
+}
+
+.shadowrule {
+height: 15px;
+background-image: url(../Images/bg_shadow_tile.gif);
+background-repeat: repeat-x;
+}
+
+.floatright {
+float: right;
+}
+
+.borderleft {
+padding: 0 0 0 5px;
+border-left: #ccc solid 1px;
+}
+
+/* START - Forms */
+
+.radiolist, .checkboxlist, .textfieldlist {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.radiolist li, .checkboxlist li, .textfieldlist li {
+padding: 5px;
+}
+
+.radiolist label, .checkboxlist label {
+padding: 5px;
+}
+
+.textfieldlist label {
+padding: 0px 8px 0 0;
+}
+
+.textfieldlist label {
+display: block;
+}
+
+.textfieldlong {
+width: 630px;
+margin: 10px 0 0 0;
+display: block;
+}
+
+.textfieldshort {
+width: 330px;
+margin: 10px 0 0 0;
+}
+
+.textfieldskip {
+width: 165px;
+margin: 0;
+}
+
+/* END - Forms */
+
+
+/* END - Styling */
+
+/* START - Table */
+
+	.datatable  {
+	width: 99%;
+	color: #333;
+	font-size: 0.8em;
+	line-height: 1.3em;
+	background-color: #fff;
+	border-collapse: collapse;
+	margin: 0px 0px 10px 0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	}	
+	
+	.datatable a {
+	color:#2A5CD1;
+	}
+
+	.datatable thead {
+	color: #333;
+	text-align: left;
+	}
+	
+	.datatable tfoot {
+	font-weight: bold;
+	}
+	
+	.datatable tbody tr:hover {
+	background-color:#FDF9FA;
+	}
+	
+	.datatable td {
+	padding: 3px 5px 3px 0px;
+	
+	
+	}
+	
+	td.task {
+	padding: 3px 5px 3px 25px;
+	}
+	
+	td.overdue {
+	padding: 3px 5px 3px 25px;
+	background-image: url(../Images/warning_16.gif);
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	}
+	
+	.datatable th {
+	color: #999;
+	font-size: 85%;
+	padding: 10px 5px 10px 10px;
+	font-weight: normal;
+	background-image: url(../Images/arrow_sort.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	}
+	
+	th.task {
+	padding: 3px 5px 3px 35px;
+	background-image: url(../Images/arrow_sort.gif);
+	background-repeat: no-repeat;
+	background-position: 25px center;
+	}
+		
+	.odd {
+	background-color: #F6F6F6;
+	}
+	
+	.nowrap {
+	white-space: nowrap;
+	}
+	
+	.noborder {
+	border: none;
+	}
+	
+	.rightalign {
+	text-align: right;
+	}
+	
+	.leftalign {
+	text-align: left;
+	}
+	
+	.centeralign {
+	text-align: center;
+	}
+
+/* END - Table */

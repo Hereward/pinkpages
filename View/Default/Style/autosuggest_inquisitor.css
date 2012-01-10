@@ -1,0 +1,48 @@
+/* 
+================================================
+autosuggest, inquisitor style
+================================================
+*/
+body{position: relative;}
+div.autosuggest{font-size:12px; margin-right:4px; font-weight:bold; position: absolute;background-image: url(../Images/suggest/as_pointer.gif);background-position: top left; margin-top:18px; background-repeat: no-repeat;padding: 10px 0 0 0;}
+div.autosuggest div.as_header,div.autosuggest div.as_footer{position: relative;height: 6px;	padding: 0 6px;	background-image: url(../Images/suggest/ul_corner_tr.gif);	background-position: top right;	background-repeat: no-repeat;overflow: hidden;}
+div.autosuggest div.as_footer{background-image: url(../Images/suggest/ul_corner_br.gif);}
+
+div.autosuggest div.as_header div.as_corner,div.autosuggest div.as_footer div.as_corner{position: absolute;top: 0;left: 0;height: 6px;	width: 6px;	background-image: url(../Images/suggest/ul_corner_tl.gif);background-position: top left;background-repeat: no-repeat;}
+
+div.autosuggest div.as_footer div.as_corner{background-image: url(../Images/suggest/ul_corner_bl.gif);}
+
+div.autosuggest div.as_header div.as_bar,div.autosuggest div.as_footer div.as_bar{height: 6px;overflow: hidden;background-color: #cad8f5;}
+
+div.autosuggest ul{	list-style: none;margin: 0 0 -4px 0;	padding: 0;	overflow: hidden;background-color: #cad8f5; border-right:thick; border-left:thick; max-height:250px; }
+
+
+div.autosuggest ul li{font-weight:bold; color: #0d2147;padding: 4px 4px 4px 4px;margin: 0 0px 0px;text-align: left;}
+
+div.autosuggest ul li a{font-weight:bold; color: #0d2147;display: block;text-decoration: none;background-color: transparent;text-shadow: #000 0px 0px 0px;position: relative;padding: 0;}
+
+div.autosuggest ul li a:hover{background-color: #cad8f5;}
+
+div.autosuggest ul li.as_highlight a:hover{	background-color: #ffffff; }
+
+div.autosuggest ul li a span{padding: 6px 6px 6px 6px;font-weight: normal;}
+
+div.autosuggest ul li a span small{font-weight: normal;color: #0d2147;}
+
+div.autosuggest ul li.as_highlight a span small{color: #0d2147;}
+
+div.autosuggest ul li.as_highlight a{color: #0d2147;background-color: #87c4ec;}
+
+div.autosuggest ul li.as_highlight a span{}
+
+div.autosuggest ul li a .tl,div.autosuggest ul li a .tr{background-image: transparent;background-repeat: no-repeat;width: 6px;	height: 6px;position: absolute;top: 0;padding: 0;margin: 0;}
+
+div.autosuggest ul li a .tr{right: 0;}
+
+div.autosuggest ul li.as_highlight a .tl{left: 0;}
+
+div.autosuggest ul li.as_highlight a .tr{right: 0;}
+
+div.autosuggest ul li.as_warning{font-weight: bold;text-align: center;}
+
+div.autosuggest ul em{font-size: 12px;font-weight:bold; font-style: normal;color: #0d2147;}

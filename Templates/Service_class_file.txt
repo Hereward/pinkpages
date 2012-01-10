@@ -1,0 +1,25 @@
+<?php
+
+/**
+ *  XXXX Class
+ *
+ *  
+ *  @author     Vinod Kumar
+ *  @package    Project Name
+ *
+ */
+class XXXX extends BaseService {
+     
+     /**
+     *  __construct
+     *
+     *  calling base class constructor
+     *
+     */
+    public function __construct() {
+        parent::__construct();
+    }
+
+}/*END XXXX */
+
+?>

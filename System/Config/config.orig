@@ -1,0 +1,95 @@
+<?php
+session_start();
+//ini_set("display_errors", 1);
+//error_reporting(E_ALL);
+
+//DB Settings
+$DB_NAME = "ppo_prd";
+$DB_HOST = "localhost";
+$DB_USER = "root";
+$DB_PASS = "H1virJ2a";
+//DB Settings
+$APP_ROOT_ABS_PATH = "/home/pinkdev/public_html/";//absolute path of the application root
+define("SITE_NAME", "PinkPages");
+define("SITE_PATH", "http://dev.sydneypinkpagesonline.com.au/");//site URL
+
+/* options: smtp, sendmail, qmail */
+define("MAIL_METHOD", "sendmail");
+
+$INCLUDE_PATH_SEPERATOR = ":";//use colon(:) for Linux Server & semicolon(;) for Windows Server
+
+########## NOTE-PLEASE DO NOT EDIT THE BELOW CONTENT ##############
+
+// If there is a local config, load it up and override default database 
+// and other settings. File local.conf.ini should be ignored by SVN
+
+/*$file = '';
+$file_paths = array('System/local.conf.ini', '../System/local.conf.ini');
+foreach ($file_paths as $fp) {
+    if (file_exists($fp)) {
+        $file = $fp;
+        break;
+    }
+}
+
+if ($file != '') {
+    $ls = parse_ini_file($file,true);
+    if (isset($ls['DB']) && is_array($ls['DB'])) {
+        // there is a database settings section
+        if (isset($ls['DB']['DB_HOST']) && $ls['DB']['DB_HOST'] != "") {
+            $DB_HOST = $ls['DB']['DB_HOST'];
+        }
+        if (isset($ls['DB']['DB_USER']) && $ls['DB']['DB_USER'] != "") {
+            $DB_USER = $ls['DB']['DB_USER'];
+        }
+        if (isset($ls['DB']['DB_PASS'])) {
+            $DB_PASS = $ls['DB']['DB_PASS'];
+        }
+    }
+    if (isset($ls['SYS']) && is_array($ls['SYS'])) {
+        // there is a database settings section
+        if (isset($ls['SYS']['APP_ROOT_ABS_PATH']) && $ls['SYS']['APP_ROOT_ABS_PATH'] != "") {
+            $APP_ROOT_ABS_PATH = $ls['SYS']['APP_ROOT_ABS_PATH'];
+        }
+        if (isset($ls['SYS']['PEAR_PATH']) && $ls['SYS']['PEAR_PATH'] != "") {
+            $PEAR_PATH = $ls['SYS']['PEAR_PATH'];
+        }
+        if (isset($ls['SYS']['INCLUDE_PATH_SEPERATOR']) && $ls['SYS']['INCLUDE_PATH_SEPERATOR'] != "") {
+            $INCLUDE_PATH_SEPERATOR = $ls['SYS']['INCLUDE_PATH_SEPERATOR'];
+        }
+    }
+}*/
+
+//Uncomment for Production
+//$PEAR_PATH = $APP_ROOT_ABS_PATH."System/Utils/ThirdParty/PEAR";
+
+//Comment for Production
+$PEAR_PATH = $APP_ROOT_ABS_PATH."System/Utils/ThirdParty/PEAR";
+
+ini_set('include_path',ini_get('include_path').$INCLUDE_PATH_SEPERATOR.$PEAR_PATH);
+
+/* PATHS SETTINGS */
+
+
+define("APP_ROOT_ABS_PATH", $APP_ROOT_ABS_PATH);
+define("SYSTEM_PATH", APP_ROOT_ABS_PATH."System/");
+define("FACADE_PATH", SYSTEM_PATH."Facade/");
+define("SHARED_FACADE_PATH", APP_ROOT_ABS_PATH."Shared/Facade/");
+define("UTILS_PATH", SYSTEM_PATH."Utils/");
+define("THIRD_PARTY_LIB", UTILS_PATH."ThirdParty/");
+define("CONTROL_PATH", SYSTEM_PATH."Control/");
+define("TEMP_PATH", SYSTEM_PATH."Temp/");
+define("VALIDATION_PATH", SYSTEM_PATH."Validations/");
+
+/* PATHS SETTINGS */
+
+/* DATABASE SETTINGS */
+define("DB_HOST", $DB_HOST);
+define("DB_USER", $DB_USER);
+define("DB_PASS", $DB_PASS);
+define("DB_NAME", $DB_NAME);
+define("DB_TYPE", "mysql");
+define("DSN", DB_TYPE."://".DB_USER.":".DB_PASS."@".DB_HOST."/".DB_NAME);
+/* DATABASE SETTINGS */
+
+?>

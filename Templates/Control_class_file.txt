@@ -1,0 +1,26 @@
+<?php
+/**
+ *  XXXX Class
+ *
+ *  
+ *  @author     Vinod Kumar
+ *  @package    Project Name
+ *
+ */
+class XXXX extends MainControl {
+    
+    /**
+     *  __construct
+     *
+     *  Set up request object & MainPage object
+     *
+     *  @param  object  request Request object
+     */
+    function __construct(&$request) {
+
+        $this->request = $request;
+        $this->mainPage = new MainPage();
+    }
+
+}/*END XXXX */
+?>

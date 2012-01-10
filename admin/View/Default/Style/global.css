@@ -1,0 +1,644 @@
+/* CSS Document */
+
+html{}
+
+body{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:0.8em;
+	color: #000;
+	min-width:970px;
+	margin: 0;
+	padding:32px 22px;
+	background-color: #fff;
+	background-image: url(../Images/bg_body.gif);
+}
+
+h1 {
+	padding:12px 0 12px 20px;
+	margin:0;
+	float: left;
+	display:block;
+}
+
+h2{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	color:#1E2128;
+	font-size:1.3em;
+	margin:10px 0 10px 10px ;
+	padding:0;
+}
+
+h5{
+	color:#1F6296;
+	font-weight:bold;
+	font-size:1.2em;
+	padding:0;
+	margin:0;
+	}
+
+.clearBoth{
+	clear:both;
+	}
+	
+ul{
+margin:0;
+padding:0;
+}
+
+li{
+margin:0;
+padding:0;
+list-style:none;
+line-height:18px;
+}
+/* START - DIV Structure */
+
+
+.roundTop{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	height:11px;
+	clear:both;
+	}
+	
+.roundTop .left{
+	float:left;
+	}
+.roundTop .right{
+	float:right;
+	}
+/***************/
+
+
+
+.main{
+	background:#fff;
+	}
+.container{
+	padding:0 11px 0 11px;
+	background:#fff;
+	margin:0 auto;
+	}
+	
+.header{
+	float:left;
+	padding:0;
+	margin:0 auto;
+	}
+.content{
+	padding:5px;
+	background:#ffffff;
+	float:left;
+	margin:0 auto;
+	width:95%;
+	
+	}
+	
+	.frmcontent{
+	padding:5px;
+	background:#ffffff;
+	float:left;
+	margin:0;
+	}
+.footer{
+	padding:0 11px;
+	background:#ffffff url(../Images/bg_footer.gif);
+	color:#fff;
+	clear:both;
+	height:70px;
+	}
+.rightPanel{
+	width:60%;
+	float:right;
+	}
+	
+.rightPanel .borderImage{
+	height:12px;
+	}
+.rightPanel ul{
+	margin:10px 10px 7px 20px;
+	padding:0;
+	line-height:normal;
+	list-style-type:none;
+	font: 0.88em/1.4em Verdana, Arial, Helvetica, sans-serif;
+	color:#333;
+
+	}
+.rightPanel li{
+	display:block;
+	padding:5px;
+	}
+.rightPanel li p{
+	margin:0;
+	padding:1px 0;
+	}
+	
+.title{
+	margin:0 0 0 0;
+	padding:0 0 2px 30px;
+	clear:both;
+	height:60px;
+}
+
+
+/*********************/
+
+	
+.title ul{
+	margin:0 auto;
+	padding:0;
+	list-style-type:none;
+	}
+	
+.title li{
+	padding:0;
+	margin:0 5px 0 0;
+	float:left;
+	}
+
+	.bottom{
+	width:96%;
+	float:left;
+	background:#FFFFCC;
+	padding:10px 0 0 10px;
+	margin:10px 0 0 10px;
+	border:#666666 solid 1px;
+	
+	}
+	
+/**********************/
+.roundBot{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	background: url(../Images/bg_roundBot.gif) repeat-x;
+	height:11px;
+	clear:both;
+	}
+	
+.roundBot .left{
+	float:left;
+	}
+.roundBot .right{
+	float:right;
+	}
+	
+/* END - DIV Structure */
+	
+/***** STYLE STRUCTURE START *********/
+	
+.log{
+	margin:0;
+	padding:40px 25px 0 0;
+	font-size:0.85em;
+	color:#000;
+	display:block;
+	float:right;
+
+}
+.log li{
+	list-style-type:none;
+	margin:0;
+	padding:2px 0;
+}
+.log li.vsworx{
+	color:#000;
+	}
+.log li a{
+	color:#9BAA12;
+	text-decoration:underline;
+} 
+.log li a:hover{
+	text-decoration:none;
+}
+
+
+
+/******* Navigation start ********/
+
+.nav{
+	margin:0;
+	clear:both;
+	background:#fff;
+	padding:11px;
+	height:60px;
+}
+.tabAdmin{
+	margin:0;
+	clear:both;
+	background:#fff;
+	padding:11px;
+	height:60px;
+}
+
+.nav ul{
+	list-style-type:none;
+	margin-left:7px; /*Left offset of entire tab menu relative to page*/
+	padding:0;
+	float:left;
+}
+
+.nav li{
+	display:inline;
+}
+
+.nav a{
+	float:left;
+	background:url(../Images/tab-left.gif) no-repeat left top;
+	margin:0;
+	margin-right:8px; /*spacing between each tab*/
+	padding:0 0 0 7px;
+	text-decoration:none;
+	cursor:pointer;
+}
+
+.nav a span{
+	float:left;
+	display:block;
+	background:url(../Images/tab.gif) no-repeat right top;
+	padding: 10px 20px 12px 12px;
+	font-weight:normal;
+	color:#3B3B3B;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+.nav a span {float:none;}
+/* End IE5-Mac hack */
+
+.nav a:hover span {
+color: white;
+}
+
+.nav li.selected a{ /*Selected Tab style*/
+background-position:0 -40px; /*Shift background image up to start of 2nd tab image*/
+}
+
+.nav li.selected a span{ /*Selected Tab style*/
+background-position:100% -40px; /*Shift background image up to start of 2nd tab image*/
+color: #FFFFFF;
+}
+
+.nav a:hover, .nav li.selected a:hover{ /*onMouseover style*/
+background-position:0% -40px; /*Shift background image up to start of 2nd tab image*/
+}
+
+.nav a:hover span, .nav li.selected a:hover span{ /*onMouseover style*/
+background-position:100% -40px; /*Shift background image up to start of 2nd tab image*/
+
+
+}
+
+.nav .subNav{
+	position:absolute;
+	}
+	
+.adminDash {
+padding: 10px;
+margin:10px;
+border: 1px solid #ccc;
+}
+.adminDash h2{
+	font:bold 1.6em  Arial, Helvetica, sans-serif;
+	color:#1E2128;
+	margin:0 0 5px 10px ;
+	padding:0;
+	}
+.note {
+margin-top: 15px;
+padding: 10px;
+margin:10px;
+border: 1px solid #ccc;
+font-size: 11px;
+background-color: #FBFBEF;
+
+}
+
+
+.faq {
+margin-top: 15px;
+padding: 10px;
+border: 1px solid #ccc;
+font-size: 11px;
+background-color: #FBFBEF;
+}
+
+.clearbreak {
+	CLEAR: both; PADDING-RIGHT: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+
+
+
+.note h1 {
+font-family: verdana;
+color: #000;
+font-size: 11px;
+font-weight: bold;
+border-bottom: 1px dashed #ccc;
+margin: 0 0 5px 0;
+}
+
+.faq h1 {
+font-family: verdana;
+color: #900;
+font-size: 11px;
+font-weight: bold;
+border-bottom: 1px dashed #ccc;
+margin: 0 0 5px 0;
+}
+
+/********** Navigation end *************/
+
+ .footer ul{
+	margin:0;
+	padding:15px 0;
+	font:normal 0.7em Verdana, Arial, Helvetica, sans-serif;
+	color:#fff;
+	}
+.footer li{
+	list-style-type:none;
+	float:right;
+	padding:0;
+	margin:0 6px 0 0;
+	display:inline;
+	}
+
+
+
+
+/********** table styles start *************/
+
+TABLE#adminlinks {
+	FLOAT: left; MARGIN-RIGHT: 20px; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #fbfbef
+}
+TABLE#adminlinks TH {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 20px; PADDING-BOTTOM: 5px; MARGIN: 0px; PADDING-TOP: 5px; BACKGROUND-COLOR: #ebebdd; TEXT-ALIGN: left
+}
+TABLE#adminlinks TD {
+	MARGIN: 0px
+}
+TABLE#adminlinks TD.leftlean {
+	PADDING-RIGHT: 40px; PADDING-LEFT: 20px; PADDING-BOTTOM: 20px; PADDING-TOP: 0px; 
+}
+TABLE#adminlinks TD.leftlean a {
+	font:normal 0.88em Verdana, Arial, Helvetica, sans-serif;
+	color:#0033CC;
+	}
+TABLE#adminlinks TD.leftlean a:hover {
+	background:#EBEBDD;
+	color:#000;
+	text-decoration:none;
+	}
+TABLE#adminlinks TD.rightlean {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 0px; PADDING-BOTTOM: 20px; PADDING-TOP: 0px
+}
+TABLE#adminlinks TD.rightlean a {
+	font:normal 0.88em Verdana, Arial, Helvetica, sans-serif;
+	color:#0033CC;
+	}
+TABLE#adminlinks TD.rightlean a:hover {
+	background:#EBEBDD;
+	color:#000;
+	text-decoration:none;
+
+	}
+
+
+
+.adminexplain H3 {
+	font:bold 14px Arial, Helvetica, sans-serif;
+	color:#0033CC;
+}
+.adminexplain H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 0px; MARGIN: 5px 0px; COLOR: #333; PADDING-TOP: 0px; FONT-FAMILY: arial, verdana, sans-serif
+}
+.adminexplain P {
+	MARGIN-TOP: 0px
+}
+
+ 
+ /********** table styles End *************/
+ 
+ 
+/***** STYLE STRUCTURE END *********/
+
+
+.tabAdmin .links ul{
+margin:0;
+padding:5px 0 4px 0;
+font: normal 12px Verdana;
+list-style-type: none;
+text-align: left;
+width:910px;
+border-bottom:1px solid #ccc;
+}
+
+.tabAdmin .links li{
+display: inline;
+}
+
+.tabAdmin .links li a{
+text-decoration: none;
+padding: 3px 7px 6px 7px;
+margin-right: 2px;
+border: 1px solid #ccc;
+border-bottom:none;
+background-color: #F5F5F5;
+color: #0033CC;
+}
+
+.tabAdmin .links li a:visited{
+color: #2d2b2b;
+}
+
+.tabAdmin .links li a:hover, .links li a.current{
+background-color: #fff;
+color: black;
+border-bottom:1px solid #ffffff;
+}
+
+.tabAdmin .links li a:active{
+color: black;
+
+}
+
+.tabcontainer{
+clear: left;
+width:95%; 
+height:1.5em;
+}
+
+.tabcontent{
+display:none;
+}
+.tabcontent ul{
+margin:0 0 0 5px;
+padding:5px;
+font:normal 11px Verdana, Arial, Helvetica, sans-serif;
+color:#0033CC;
+}
+
+.tabcontent li{
+display: inline;
+margin: 0;
+}
+.tabcontent a{
+border-right:1px solid #000;
+padding:0 3px 0 0;
+color:#0033CC;
+}
+.tabcontent a:hover{
+	text-decoration:none;
+	}
+
+
+
+/*-------------------------------------------------
+FORMS
+-------------------------------------------------*/
+
+form { margin: 0; }
+
+form dt {
+}
+
+form dd {
+margin: 0 0 10px 0px;
+}
+
+#name, #email {
+width: 200px;
+}
+
+.date {
+width: 75px;
+}
+
+.medium {
+width: 190px;
+}
+
+.thisform label {
+font-weight: bold;
+}
+
+
+.thisform fieldset {
+border: 0px solid #ccc;
+padding: 0;
+}
+
+/*
+.thisform legend {
+font-family: arial, sans-serif;
+font-weight: bold;
+font-size: 90%;
+color: #666;
+background: #eee;
+border: 1px solid #ccc;
+border-bottom-color: #999;
+border-right-color: #999;
+padding: 4px 8px;
+}
+*/
+
+.submit {
+margin-top: 15px;
+border-top: 1px solid #390;
+padding: 10px 0;
+}
+
+dd p, p.explanation {
+font-size: 10px;
+line-height: 13px;
+margin: 2px;
+padding: 0;
+color: #666;
+width: 440px;
+}
+
+p.explanation {
+margin: 5px 0;
+width: 70%;
+}
+
+.spacer { height: 2px; }
+
+
+.main {
+border: 1px solid #ccc;
+padding: 10px;
+margin-top: 15px;
+}
+
+.multiselectbox {
+height:120px;
+width:360px;
+}
+
+#border_table {
+	margin-top:10px;
+	border-collapse:collapse;
+	border-right:1px solid #B6CDE7;
+	border-bottom:1px solid #B6CDE7;
+}
+#border_table tr {
+	/*background-image:url(../Images/header-bg.gif);*/
+	height:9px;
+}
+
+#border_table th {
+	/*background-image:url(../Images/header-bg.gif);*/
+	border-left:1px solid #B6CDE7;
+	border-top:1px solid #B6CDE7;
+	padding:5px 5px 5px 5px;
+	background-color:#CCCCCC;
+	font-size:10px;
+}
+
+#border_table td {
+	border-left:1px solid #B6CDE7;
+	border-top:1px solid #B6CDE7;
+	padding:5px 5px 5px 5px;
+	align:left;
+	font-size:10px;
+}
+
+#FormTable {
+	margin-top:10px;
+	border-collapse:collapse;
+	border-top:1px solid #B6CDE7;
+	border-left:1px solid #B6CDE7;
+	border-right:1px solid #B6CDE7;
+	border-bottom:1px solid #B6CDE7;
+}
+#FormTable tr {
+	/*background-image:url(../Images/header-bg.gif);*/
+	height:9px;
+}
+
+#FormTable th {
+	/*background-image:url(../Images/header-bg.gif);*/
+	border-left:1px solid #B6CDE7;
+	border-top:1px solid #B6CDE7;
+	padding:5px 5px 5px 5px;
+	background-color:#CCCCCC;
+	font-size:13px;
+	height:30px;
+}
+
+#FormTable td {
+	
+	padding:5px 5px 5px 5px;
+	align:left;
+	font-size:10px;
+}
+
+/* Pagination CSS */
+.Paginator { font-family: Arial, Helvetica, sans-serif;font-size: 12px; padding-top: 10px; padding-bottom: 10px; margin-left: 0px; margin-right: auto;}
+.Paginator a, .pageList .this-page { padding: 2px 6px; border: solid 1px #ddd; background: #fff; text-decoration: none; }
+.Paginator a:visited { padding: 2px 6px; border: solid 1px #ddd; background: #fff; text-decoration: none; }
+.Paginator .this-page {padding: 2px 6px; border-color: #999; font-weight: bold; font-size: 13px; vertical-align: top; background: #fff; color: #FF0084; }
+.Paginator a:hover {color: #fff; background: #0063DC; border-color: #036; text-decoration: none;}
+/* Pagination CSS */

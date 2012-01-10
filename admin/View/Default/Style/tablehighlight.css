@@ -1,0 +1,21 @@
+.hlt {
+    /* highlighted column or row heading */
+    background-color: black;
+    color: #ff0;
+}
+.hlt-col {
+    /* highlighted cell in column */
+    /*background-color: #ff0;*/
+    color: black;
+}
+.hlt td {
+    /* highlighted cell in row */
+    background-color: #c00;
+    color: #fff;
+}
+.hlt .hlt-col {
+    /* cell highlighted by both column and row */
+    border: 1px solid #f90;
+    background-color: #f90;
+    color: #000;
+}

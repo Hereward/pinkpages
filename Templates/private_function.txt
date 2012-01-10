@@ -1,0 +1,19 @@
+<?php
+
+/**
+ *  XXXX
+ *
+ *  
+ *
+ *  @param  
+ *  @return 
+ */
+private function __XXXX() {
+    $retVal = "";
+    
+    return $retVal;
+}/*END XXXX*/
+
+NOTE: Private function name must start with a double underscore sign (__)
+
+?>

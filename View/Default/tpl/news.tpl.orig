@@ -1,0 +1,70 @@
+ <div class="news_links" >
+ <table width="100%" align="center">
+<tr>
+<td  >
+	<table width="680px"  bgcolor="#ffffff"  class="news_links_text" >
+
+    
+        <tr  >
+    <td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px" valign="top">
+   <table bgcolor="#2695d2" width="100%" height="266px"><tr><td height="50px">
+   <div class="news_links_text_title"><a class="news_links_text_title" href="http://www.pinkpages.com.au/main.php?do=Listing&amp;action=boldListing&amp;ID=9875330" ><b>Lube Mobile</b></a></div></td></tr>
+    <tr><td bgcolor="#ffffff" valign="top">
+   <p> 
+      <a href="http://www.pinkpages.com.au/main.php?do=Listing&amp;action=boldListing&amp;ID=9875330"><img src="{$IMAGES_PATH}lube2.PNG" align="right"  alt="Lube Mobile Service &amp; Repair All Makes &amp; Models" width="90px" /></a>
+      Lube Mobile Service &amp; Repair All Makes &amp; Models,  Including New Cars &amp; 4WDs.<br /><br /> We Come To You! 12 Month National  Warranty.<br />
+      <br />
+      Fully qualified mechanics. Starter motor and alternators. Overheating problems. Competitive quotes. Pensioner discounts.<br />
+      <br />
+    </p>
+    </td></tr></table></td>
+   
+   <td  width="33%" style="padding:4px;" valign="top">
+   <table bgcolor="#2695d2" width="100%" height="266px">
+     <tr>
+       <td height="50px">
+         <div class="news_links_text_title"><a class="news_links_text_title" href="http://www.pinkpages.com.au/main.php?do=Listing&action=boldListing&ID=7566566"><b>Menash &amp; Technosat</b></a></div>
+       </td>
+     </tr>
+     <tr>
+	   <td bgcolor="#ffffff" valign="top">    
+	     <p>
+		   <a href="http://www.pinkpages.com.au/main.php?do=Listing&action=boldListing&ID=7566566"><img src="{$IMAGES_PATH}menash.PNG" alt="Menash &amp; Technosat" align="right" width="90px" /></a>
+           Your telecommunications one stop shop since 1980! <br />
+<br />
+Digital TV is here to stay.  Get the best picture quality by ensuring you have the right equipment.  High quality HD/SD digital set top boxes at ridiculous prices.  Also Digital DAB+ radios & TV antennas.
+<br />
+ Call us today on 1300 344 759.
+<br />
+           <br />
+         </p>
+    </td></tr></table></td>
+    
+     <td  width="33%" style="padding:4px;" valign="top"><table bgcolor="#2695d2" width="100%" height="266px">
+    <tr>
+      <td height="50px" >
+       <div class="news_links_text_title"> <a class="news_links_text_title" href="http://www.pinkpages.com.au/main.php?do=Listing&amp;action=boldListing&amp;ID=9875306"><b>Omega Service Solutions</b></a></div></td></tr>
+    <tr>
+    <td bgcolor="#ffffff" valign="top">
+     <p>
+	    <a href="http://www.pinkpages.com.au/main.php?do=Listing&amp;action=boldListing&amp;ID=9875306"><img src="{$IMAGES_PATH}omega3.PNG" align="right" alt="Omega Service Solutions" width="100px" /></a>
+        Drains, Plumbing,  Electrical, hot water<br />
+        No dig pipe repairs.<br />
+        <br />
+        Up front fixed price quotes. <br />
+        <br />
+        Mention Pink Pages when booking your job and receive $50.00 off any work done, and pay NO call out fee.
+	 </p>
+	</td>
+</tr></table></td>
+    
+    </tr>
+    </table>
+</td>
+<td width="4px"></td>
+<td ><a href="http://www.directclicks.com.au/" target="_blank" ><img src="{$IMAGES_PATH}directclicks.gif" alt="Let Direct Clicks create your website today"/></a>
+</td>
+</tr>
+</table>
+<br />
+</div>

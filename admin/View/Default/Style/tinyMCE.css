@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* tinyMCE CSS */
+
+.greenHeader {
+color: #07979a;
+font-size: 21px;
+margin-bottom: 15px;
+display: block;
+}
+
+.darkGreyHeader {
+color: #474747;
+font-size: 18px;
+margin-bottom: 15px;
+display: block;
+}
+
+.lightGreyHeader {
+color: #A1A1A1;
+font-size: 18px;
+margin-bottom: 15px;
+display: block;
+}

@@ -1,0 +1,119 @@
+@charset utf-8;
+/* This Style Sheet is for pinkpages  */
+
+body{margin:0 auto; padding:0; background:#FCFCFC url(../website-images/background-bg.jpg) repeat-x center top; font:normal 12px/16px verdana,Arial, Helvetica, sans-serif; color:#636363;}
+
+h1,h2,h3,h4, h5, h6{font:normal 12px/16px Arial, Helvetica, sans-serif; margin:0; padding:0;}
+
+p{margin:0; padding:0;}
+img {border:none;}
+
+form { margin:0; padding:0;}
+
+.floatright{float:right;}
+.floatleft{float:left;}
+.clearboth{ clear:both;}
+.padd-top12{ padding:12px 0 0 0;}
+.margin-top15{ margin:15px 0 0 0;}
+
+
+
+#header{ margin:0 auto; padding:0; width:998px; height:131px; background:url(../website-images/head-bg.jpg) no-repeat left top;}
+#header .comp-logo{ float:left; width:411px; height:57px; padding:30px 0 0 20px;}
+
+
+
+
+#body-container{margin:0 auto; padding:0 8px 20px 8px; width:982px; background: #FFFFFF; repeat-y; overflow:hidden;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- inner Start ----*/
+
+.inner-left{ float:left; width:236px; padding:0; background:url(../website-images/pinkpages-left-bg.jpg) repeat-y;}
+.inner-left .round-top{ margin:0; padding:0; width:236px; height:12px; clear:both;}
+.inner-left div{ clear:both; padding:0 5px 5px 10px;}
+.inner-left div img.thumb{float:left; }
+.inner-left div p{ float:left; width:auto; margin:0 0 10px 5px; color:#003399; font-size:12px;}
+.inner-left div p strong{ display:block;}
+.inner-left div p a{ color:#FF8A00; text-decoration:none; font-size:11px;}
+.inner-left div ul{ border-bottom:1px solid #E6E6E6; padding:3px 0 10px 0; margin:5px;}
+.inner-left div ul li{ display:block; clear:both; font:normal 12px/13px verdana,Arial, Helvetica, sans-serif;}
+.inner-left div ul li a{ color:#558D00; text-decoration:none; clear:both;}
+.inner-left ul{ margin:0 6px 25px 6px; padding:0; list-style:none; clear:both;}
+.inner-left ul li{ clear:both;  }
+.inner-left ul li a{ cursor:pointer;}
+
+.inner-left ul li .menuitem{background: #fff url(../website-images/left-ulbg.jpg)  repeat-x bottom; color:#E2007F; font:normal 14px/15px verdana,Arial, Helvetica, sans-serif; font-weight:bold; height:25px;display: block;position: relative; /*To help in the anchoring of the ".statusicon" icon image*/width: auto; padding:10px 0 0 3px;text-decoration: none; clear:both; margin:0 5px 5px 5px;}
+
+.inner-left ul li .menuitem:visited, a.menuitem:active{color: black; }
+
+.inner-left ul li .menuitem .statusicon{ /*CSS for icon image that gets dynamically added to headers*/position: absolute; top:7px; right: 5px;border: none;}
+
+.inner-left ul li img{ vertical-align:middle; margin:0 0 0 0;}
+.inner-left ul li .submenu{ clear:both;}
+.inner-left ul li ul{list-style:none; margin:0 0 8px 5px; border:none; padding:0; position:relative;}
+.inner-left ul li ul li{clear:both; color:#303030; margin:0 0 4px 0; padding:2px; }
+.inner-left ul li ul li a{ text-decoration:underline; color:#2834D2;}
+
+.inner-left .round-bot{ margin:0; padding:0; width:236px; height:12px; clear:both;}
+
+.inner-mid {float:left; width:727px; margin:0 0 0 13px;}
+.inner-mid .searchbox{float:left; width:727px; background:#fff url(../website-images/search-inner.jpg)   no-repeat ; height:127px;}
+.inner-mid .heading{float:left; margin:15px 0 0 0;  padding:10px 0 10px 10px; width:727px; background:#fff url(../website-images/heading.jpg) no-repeat; height:20px; color:#000000; font:normal 14px/15px verdana,Arial, Helvetica, sans-serif; font-weight:bold;}
+
+.inner-mid .serach-detail{float:left; width:727px; background:#fff url(../website-images/search-detailbg.jpg)   repeat-x  bottom; min-height:116px; margin:0px; padding:0px;}
+.inner-mid .serach-detail .leftpannel{float:left; width:400px; margin:5px; padding:0px;}
+.inner-mid .serach-detail .leftpannel ul{margin:0; list-style:none; padding:0;}
+.inner-mid .serach-detail .leftpannel ul li{ font:normal 12px/14px verdana,Arial, Helvetica, sans-serif; line-height:18px;}
+.inner-mid .serach-detail .leftpannel ul li b{ color:#000; font:bold 13px 'verdana', Arial, Helvetica, sans-serif;}
+.inner-mid .serach-detail .leftpannel ul li a{ color:#295BCE; text-decoration:none;}
+.inner-mid .serach-detail .leftpannel ul li img{ margin:0 10px 0 10px;}
+
+
+.inner-mid .serach-detail .middlepannel{float:left; width:180px; margin:0; padding:0;}
+.inner-mid .serach-detail .rightpannel{float:left; width:120px; margin:0; padding:0;}
+
+
+.inner-mid .profile-details{ background:#EFF3FC; padding:5px; margin:0 0 20px 0;}
+.inner-mid .profile-details h1{ color:#003399; font:normal 21px/42px 'Trebuchet MS', Arial, Helvetica, sans-serif; padding:0 0 0 10px;}
+.inner-mid .profile-details p{ color:#303030; font:normal 12px/22px Arial, Helvetica, sans-serif; padding:0 0 5px 10px;}
+.inner-mid .profile-details ul{ background:#fff; padding:12px; margin:0; list-style:none;}
+.inner-mid .profile-details ul li{ clear:both; font:normal 12px/14px Arial, Helvetica, sans-serif; line-height:30px;}
+.inner-mid .profile-details ul li b{ color:#000; font:bold 12px 'Trebuchet MS', Arial, Helvetica, sans-serif;}
+.inner-mid .profile-details ul li a{ color:#003399; text-decoration:none;}
+.inner-mid .profile-details ul li a:hover{ color:#003399; text-decoration:underline;}
+.inner-mid .profile-details ul li h5{ display:inline; color:#FF8A00; font-weight:bold; margin:0 5px 0 0;}
+.inner-mid .profile-details ul li p{ border:1px solid #CECECE; padding:1px; clear:both; height:22px; }
+.inner-mid .profile-details ul li p b{ background:url(../website-images/bar.jpg) repeat-x left; height:22px; width:70%; display:block; margin:0; border:none; padding:0;}
+.inner-mid .profile-details div{ background:#fff; padding:10px 5px 15px 12px;}
+.inner-mid .profile-details div img{ margin:0 20px 0 0;}
+
+
+.inner-right {float:left; width:335px; margin:0 0 0 10px;}
+
+/* ----- MyDHD End ----*/
+
+
+
+#footer{ margin:0 auto; padding:0 8px 20px 8px; width:974px; background:url(../website-images/footer.jpg) repeat-x; overflow:hidden; color:#000; }
+#footer p{ padding:10px; margin:50px 10px 10px 10px; clear:both;  color:#003399;}
+#footer p b{ color:#000; display:block; padding:5px 0; font-weight:normal;}
+#footer a{ color:#003399; text-decoration:underline; text-decoration: none; margin:0 5px;}
+#footer a:hover{ text-decoration:underline;}
+#footer span{ display:block; padding:0 15px 0 0; text-align:right;}
+
+
+.top-mess{background:#ffffff; padding:2px 10px; margin:0 0 10px 0; color:#333333; clear:both;}
+.top-mess span{color:#ff0000; clear:both; display:block;}

@@ -1,0 +1,17 @@
+<?php
+
+/**
+ *  XXXX
+ *
+ *  
+ *
+ *  @param  
+ *  @return     bool    retBool     True/false
+ */
+public function XXXX() {
+    $retBool = false;
+    
+    return $retBool;
+}/*END XXXX*/
+    
+?>

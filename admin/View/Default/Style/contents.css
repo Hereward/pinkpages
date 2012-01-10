@@ -1,0 +1,36 @@
+/* CSS Document */
+
+#contents-container .content-left { width:709px; border:1px solid #dddddd; margin:5px 0px 0px 0px; padding:0; float:left; }
+#contents-container .content-right{ width:253px; border:1px solid #dddddd; margin:5px 0px 5px 0px; padding:0;  float:right;}
+.search-phones { width:253px; border:1px solid #dddddd; margin:0; padding:0;  float:right; height:150px;}
+.grey-head-bg{width:auto; height:25px; background-color:#f9f9f9; text-align:left; font: bold 11px/25px Tahoma; color:#E20074; margin:0; padding:0 0 0 10px;}
+.search-phones-img { float:left; margin:5px 0 0 2px; padding:0; width:82px}
+.search-phones-txt { margin:5px 0 0 2px; padding:10px 10px 0 0; float:right; width:100px;}
+.showme { border:0px; margin:10px 0px 0 0; padding:0 10px 0 0 ; float:right;}
+
+.latest-mobile-released { width:709px; border:1px solid #dddddd; margin:5px 0 0 0; padding:0; float:left; background:url(../images/latest_mobile_released_bg.gif)  repeat-x top left; height:181px; }
+
+.search-phones-make{ width:253px; border:1px solid #dddddd; margin:5px 0px 5px 0px; padding:0; height:auto; float:right;}
+
+#right_links { width:90%; margin:0; padding:0; text-align:left;}
+
+#right_links ul{ margin:0 0 0 30px; padding:0; text-align:left;  font:normal 11px/20px Arial, Helvetica, sans-serif; color:#E20074;  }
+#right_links li{ margin:0; padding:0;list-style-type:square; border-bottom:#FFDBFF 1px solid;} 
+
+#right_links li .link{ margin:0; padding: 0 5px 0 0;  font:normal 12px/16px Arial, Helvetica, sans-serif; color:#E20074; text-decoration:none;  }
+#right_links li .link:hover{ margin:0; padding: 0 5px 0 0; font:normal 12px/16px Arial, Helvetica, sans-serif; color:#333333; text-decoration:none; }
+
+
+.phone-gifts{ width:350px; border:1px solid #dddddd; margin:5px 0 0 0; padding:0; float:left; background:url(../images/latest_mobile_released_bg.gif)  repeat-x top left; height:181px; }
+.slim-mobile{ width:350px; border:1px solid #dddddd; margin:5px 6px 0 0; padding:0; float:left; background:url(../images/latest_mobile_released_bg.gif)  repeat-x top left; height:181px;}
+
+.top-mobile-retail {width:709px; border:1px solid #dddddd; margin:5px 0 0 0; padding:0; float:left; background:url(../images/latest_mobile_released_bg.gif)  repeat-x top left; height:181px; }
+
+.top-mobile img {margin:0 0 0 5px; padding:2px; border:1px solid #dddddd; text-align:center;}
+
+.top-mobile { float:left; margin:0 0 0 5px; padding:2px; display:inline; }
+.top-mobile h5{ margin:0; padding:0 15px 0 10px; font:normal 10px/14px Arial, Helvetica, sans-serif; color:#333333; text-decoration:none; }
+.top-mobile-link{ text-align:center; font:normal 10px/14px Arial, Helvetica, sans-serif; color:#333333; text-decoration:none;}
+.top-mobile-link:hover{ text-align:center; font:normal 10px/14px Arial, Helvetica, sans-serif; color:#666666; text-decoration:none;}
+
+.banner-bottom {width:709px;  margin:5px 0 5px 0; padding:0; float:left; height:99px; overflow:hidden;}
