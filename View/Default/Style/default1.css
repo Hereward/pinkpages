@@ -1976,4 +1976,14 @@ color:#CC0066;
   padding-top: 52px;
 }
 
+#cityListFooter a, #cityListFooter a:visited, #cityListFooter a:link {
+	color:#666;
+	text-decoration:none;
+	font-size:11px;
+}
+
+#cityListFooter th {
+	font-size:11px;
+}
+
 /********* contact end ********/
