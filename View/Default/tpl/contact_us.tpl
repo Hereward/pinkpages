@@ -8,7 +8,7 @@
 
 		<div class="searchbox-index-left-con"> 
         
-            If you wish to enquire about advertising in Pink Pages Online or update your listing,<br />contact us on: (02) 9635 1400 during office hours,
+            If you wish to enquire about advertising in Pink Pages Online or update your listing,<br />contact us on: (02) 8898 1900 during office hours,
 			or simply complete our contact form<br /><br /><br />
 
 				<form name="contactUs" action="{$action}" method="post" onsubmit="return check_req_val();">
