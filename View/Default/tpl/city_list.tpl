@@ -4,9 +4,7 @@
 	<table bgcolor="#e5e5e5" align="center" width="980px" height="290px"  style="font-family:Verdana;">
 	<tr>
 	<td>
-	<table><tr><td>
-	<div >Top 20 Searched in Sydney</div>
-	</td></tr>
+	<table><tr><th>Top 20 Searched in Sydney</th></tr>
 	    	<tr><td><a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Tyres+Retail&Search2=Sydney">Tyres Retail</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Sydney">Medical Practitionars</a></td></tr>
@@ -49,9 +47,7 @@
 	</table>
    	
 	<td>
-	<table bgcolor="#e5e5e5" width="200" height="320px"><tr><td height="25px">
-	<div >Top 20 Searched in Newcastle Region
-	</div></td></tr>
+	<table bgcolor="#e5e5e5" width="200" height="320px"><tr><th>Top 20 Searched in Newcastle Region</th></tr>
 	    	<tr><td bgcolor="#e5e5e5" valign="top"><a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Accountants&Search2=Newcastle+Region">Accountants</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Counselling&Search2=Newcastle+Region">Counselling</a></td></tr>
@@ -94,9 +90,7 @@
 	</table>
 
     	<td>
-	<table><tr><td>
-	<div >Top 20 Searched in Canberra
-	</div></td></tr>
+	<table><tr><th>Top 20 Searched in Canberra</th></tr>
 	    	<tr><td bgcolor="#e5e5e5" valign="top"><a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Restaurants&Search2=Canberra">Restaurants</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CLEANING+DOMESTIC&Search2=Canberra">Cleaning - Domestic</a></td></tr>
@@ -139,9 +133,7 @@
 	</table>
 	
 	<td>
-	<table bgcolor="#e5e5e5" width="200" height="320px"><tr><td height="25px">
-	<div >Top 20 Searched in Melbourne
-	</div></td></tr>
+	<table bgcolor="#e5e5e5" width="200" height="320px"><tr><th>Top 20 Searched in Melbourne</th></tr>
 	    	<tr><td bgcolor="#e5e5e5" valign="top"><a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Solicitors&Search2=Melbourne">Solicitors</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Melbourne">Medical Practitionaers</a></td></tr>
