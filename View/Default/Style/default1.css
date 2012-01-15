@@ -1986,6 +1986,10 @@ table#cityListFooter {
 	font-size:11px;
 }
 
+#cityListFooter a:hover {
+	color:blue;
+}
+
 #cityListFooter th {
 	font-size:11px;
 	height:30px;
@@ -1993,6 +1997,8 @@ table#cityListFooter {
 
 #cityListFooter td {
 	height:10px;
+	padding:0px;
+	margin:0px;
 }
 
 /********* contact end ********/
