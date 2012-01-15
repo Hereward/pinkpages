@@ -1991,4 +1991,8 @@ table#cityListFooter {
 	height:30px;
 }
 
+#cityListFooter td {
+	height:10px;
+}
+
 /********* contact end ********/
