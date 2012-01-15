@@ -4,10 +4,16 @@
 		<div class="footer">
 		<ul>
 				<li style="float:center;">
+					Browse by City: &nbsp;&nbsp; <a href="{$SITE_PATH}main.php?do=Index&action=home&p=s">Sydney</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{$SITE_PATH}main.php?do=Index&action=home&p=n">Newcastle</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{$SITE_PATH}main.php?do=Index&action=home&p=c">Canberra</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{$SITE_PATH}main.php?do=Index&action=home&p=m">Melbourne</a>
+				</li>
+				<li style="float:center;">
+					&nbsp;&nbsp;
+				</li>
+				<li style="float:center;">
 					Copyright &copy 2009 Dawson Media Pty Ltd. &nbsp;&nbsp; <a href="{$SITE_PATH}terms_conditions">Terms and Conditions</a>&nbsp;&nbsp; <a href="{$SITE_PATH}privacy">Privacy Policy</a>&nbsp;&nbsp; <a href="{$SITE_PATH}disclaimer">Disclaimer</a>
 				</li>
 					
-			</ul>
+		</ul>
 	
 		
 
