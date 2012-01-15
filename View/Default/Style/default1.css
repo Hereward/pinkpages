@@ -2001,4 +2001,9 @@ table#cityListFooter {
 	margin:0px;
 }
 
+li#browse_by_city {
+	font-weight:bold;
+	font-size:12px;
+}
+
 /********* contact end ********/

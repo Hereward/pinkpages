@@ -3,7 +3,7 @@
 </div>
 		<div class="footer">
 		<ul>
-				<li style="float:center;">
+				<li id="browse_by_city" style="float:center;">
 					Browse by City: &nbsp;&nbsp; <a href="{$SITE_PATH}main.php?do=Index&action=home&p=s">Sydney</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{$SITE_PATH}main.php?do=Index&action=home&p=n">Newcastle</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{$SITE_PATH}main.php?do=Index&action=home&p=c">Canberra</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{$SITE_PATH}main.php?do=Index&action=home&p=m">Melbourne</a>
 				</li>
 				<li style="float:center;">
