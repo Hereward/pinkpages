@@ -1976,6 +1976,10 @@ color:#CC0066;
   padding-top: 52px;
 }
 
+div#cityListFooter {
+	margin:20px;
+}
+
 #cityListFooter a, #cityListFooter a:visited, #cityListFooter a:link {
 	color:#666;
 	text-decoration:none;

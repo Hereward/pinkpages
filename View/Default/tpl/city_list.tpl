@@ -1,6 +1,5 @@
-<table width="100%" height="290px" align="center" id="cityListFooter" > 
-<tr>
-<td>
+<div id="cityListFooter" > 
+
 	<table bgcolor="#e5e5e5" align="center" width="980px" height="290px"  style="font-family:Verdana;">
 	<tr>
 	<td>
@@ -180,9 +179,7 @@
 
     </table>
 
-</td>
-</tr>
-</table>
+</div>
 
-<br />
+
 
