@@ -1,7 +1,7 @@
 <table width="100%" height="290px" align="center" id="cityListFooter" > 
 <tr>
 <td>
-	<table bgcolor="#e5e5e5" align="center" width="980px" height="290px"  style="padding:10px 10px 10px 40px;font-family:Verdana;">
+	<table bgcolor="#e5e5e5" align="center" width="980px" height="290px"  style="padding:10px 10px 10px 42px;font-family:Verdana;">
 	<tr>
 	<td>
 	<table cellpadding="0" cellspacing="0" ><tr><th valign="top">Top 20 Searched in Sydney</th></tr>
