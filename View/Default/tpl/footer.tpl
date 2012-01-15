@@ -4,7 +4,7 @@
 		<div class="footer">
 		<ul>
 				<li style="float:center;">
-					Copyright &copy 2009 Dawson Media Pty Ltd. &nbsp;&nbsp; <a href="{$SITE_PATH}terms_conditions">Terms and Conditions</a>&nbsp;&nbsp; <a href="{$SITE_PATH}privacy">Privacy Policy</a>&nbsp;&nbsp; <a href="{$SITE_PATH}disclaimer/index.htm">Disclaimer</a>
+					Copyright &copy 2009 Dawson Media Pty Ltd. &nbsp;&nbsp; <a href="{$SITE_PATH}terms_conditions">Terms and Conditions</a>&nbsp;&nbsp; <a href="{$SITE_PATH}privacy">Privacy Policy</a>&nbsp;&nbsp; <a href="{$SITE_PATH}disclaimer">Disclaimer</a>
 				</li>
 					
 			</ul>
