@@ -4,7 +4,7 @@
 <table width="100%">
 <tr>
 
-<td>
+<td valign="top">
 <table cellpadding="0" cellspacing="0" >
 <tr><th valign="top">Top 20 Searched in Sydney</th></tr>
 <tr><td><a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Tyres+Retail&Search2=Sydney">Tyres Retail</a></td></tr>
@@ -49,21 +49,21 @@
 </table>
 </td>
 
-<td>
+<td valign="top">
 <table cellpadding="0" cellspacing="0" >
 <tr><th valign="top">Top 20 Searched in Newcastle Region</th></tr>
 <tr><td><a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Tyres+Retail&Search2=Sydney">Tyres Retail</a></td></tr>
 </table>
 </td>
 
-<td>
+<td valign="top">
 <table cellpadding="0" cellspacing="0" >
 <tr><th valign="top">Top 20 Searched in Canberra</th></tr>
 <tr><td><a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Tyres+Retail&Search2=Sydney">Tyres Retail</a></td></tr>
 </table>
 </td>
 
-<td>
+<td valign="top">
 <table cellpadding="0" cellspacing="0" >
 <tr><th valign="top">Top 20 Searched in Melbourne</th></tr>
 <tr><td><a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Tyres+Retail&Search2=Sydney">Tyres Retail</a></td></tr>
