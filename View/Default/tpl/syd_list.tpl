@@ -1,10 +1,10 @@
 <!--<div class="news_links" >-->
 
-<table width="100%" height="290px" align="center" id="cityListFooter">
+<table width="100%" align="center" id="cityListFooter">
 <tr>
 <td>
     
-	<table bgcolor="#e5e5e5" width="980px" height="290px" cellpadding="0" cellspacing="0" style="padding:10px 10px 10px 42px;font-family:Verdana;">
+	<table bgcolor="#e5e5e5" width="980px" cellpadding="0" cellspacing="0" style="padding:10px 10px 10px 42px;font-family:Verdana;">
 	<tr><td><h2>Top 20 Searched in Sydney</h2></td></tr>
 	<tr>
 	
