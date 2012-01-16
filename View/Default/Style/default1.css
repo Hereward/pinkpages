@@ -1977,11 +1977,11 @@ color:#CC0066;
 }
 
 div#cityListFooter {
-	margin:10px auto;
+	margin:0px auto;
 	font-family:Verdana;
 	background-color:#e5e5e5;
 	padding:20px;
-	border:1px solid red;
+	/* border:1px solid red; */
 	
 }
 
