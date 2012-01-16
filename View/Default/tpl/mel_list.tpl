@@ -20,9 +20,7 @@
 	</table>
    	
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
-	<table bgcolor="#e5e5e5" width="200" ><tr><td height="25px">
-	<div >
-	</div></td></tr>
+	<table bgcolor="#e5e5e5" width="200" >
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=TILES+-+WALL+%26+FLOOR&Search2=Melbourne">Tiles - Wall &amp; Floor</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
@@ -36,9 +34,7 @@
 	</table>
 
     	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
-	<table bgcolor="#e5e5e5" width="200" ><tr><td height="25px">
-	<div >
-	</div></td></tr>
+	<table bgcolor="#e5e5e5" width="200" >
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CONCRETE+CONTRACTORS&Search2=Melbourne">Concrete Contractors</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
@@ -52,9 +48,7 @@
 	</table>
 	
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
-	<table bgcolor="#e5e5e5" width="200" ><tr><td height="25px">
-	<div >
-	</div></td></tr>
+	<table bgcolor="#e5e5e5" width="200" >
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CLEANING+CONTRACTORS&Search2=Melbourne">Cleaning Contractors</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
