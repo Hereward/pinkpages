@@ -7,7 +7,7 @@
 	<tr><td><h2>Top 20 Searched in Canberra</h2></td></tr>
 	<tr>
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
-	<table bgcolor="#e5e5e5" width="200" height="150px">
+	<table bgcolor="#e5e5e5" width="200">
 	    	    	<tr><td bgcolor="#e5e5e5" valign="top"><a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Restaurants&Search2=Canberra">Restaurants</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=CLEANING+DOMESTIC&Search2=Canberra">Cleaning - Domestic</a></td></tr>
