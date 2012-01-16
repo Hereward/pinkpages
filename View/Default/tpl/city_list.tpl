@@ -1,7 +1,13 @@
 <div id="cityListFooter">
 boo
 <table>
-<tr><td>row</td></tr>
+<tr>
+<table cellpadding="0" cellspacing="0" >
+<tr>
+<th valign="top">Top 20 Searched in Sydney</th>
+</tr>
+</table>
+</tr>
 </table>
 {*
 	<table align="center" width="980px" style="padding:10px 10px 10px 42px;font-family:Verdana;">
