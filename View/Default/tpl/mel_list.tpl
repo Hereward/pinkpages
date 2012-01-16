@@ -6,7 +6,7 @@
 	<table bgcolor="#e5e5e5" width="980px" height="290px" >
 	<tr>
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
-	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><tr><th valign="top">Top 20 Searched in Melbourne</th></tr>
+	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><tr><th valign="top" style="height:10px;">Top 20 Searched in Melbourne</th></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top"><a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Solicitors&Search2=Melbourne">Solicitors</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Melbourne">Medical Practitionaers</a></td></tr>

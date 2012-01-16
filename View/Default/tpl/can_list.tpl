@@ -6,7 +6,7 @@
 	<table bgcolor="#e5e5e5" width="980px" height="290px" >
 	<tr>
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
-	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><th valign="top">Top 20 Searched in Canberra</th></tr>
+	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><th valign="top" style="height:10px;">Top 20 Searched in Canberra</th></tr>
 	    	    	<tr><td bgcolor="#e5e5e5" valign="top"><a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Restaurants&Search2=Canberra">Restaurants</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=CLEANING+DOMESTIC&Search2=Canberra">Cleaning - Domestic</a></td></tr>
