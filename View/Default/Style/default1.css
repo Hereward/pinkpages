@@ -1981,15 +1981,13 @@ div#cityListFooter {
 	font-family:Verdana;
 	background-color:#e5e5e5;
 	padding:20px;
-	/* border:1px solid red; */
+	border:1px solid red;
 	position:relative;
 	top:20px;
+	clear:both;
 	
 }
 
-div#cityListFooterWrapper {
-	clear:both;
-}
 
 #cityListFooter a, #cityListFooter a:visited, #cityListFooter a:link {
 	color:#666;
