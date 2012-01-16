@@ -1,12 +1,12 @@
 <!--<div class="news_links" >-->
 
-<table width="100%" height="290px" align="center"  id="cityListFooter">
+<table width="100%" align="center"  id="cityListFooter">
 <tr>
 <td>
-	<table bgcolor="#e5e5e5" width="980px" height="290px" style="padding:10px 10px 10px 42px;font-family:Verdana;">
+	<table bgcolor="#e5e5e5" width="980px" cellpadding="0" cellspacing="0" style="padding:10px 10px 10px 42px;font-family:Verdana;">
+	<tr><td><h2>Top 20 Searched in Melbourne</h2></td></tr>
 	<tr>
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
-	<h2>Top 20 Searched in Melbourne</h2>
 	<table bgcolor="#e5e5e5" width="200" height="150px">
 		<tr><td bgcolor="#e5e5e5" valign="top"><a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Solicitors&Search2=Melbourne">Solicitors</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
