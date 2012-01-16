@@ -1976,8 +1976,10 @@ color:#CC0066;
   padding-top: 52px;
 }
 
-table#cityListFooter {
-	
+div#cityListFooter {
+	margin:10px auto;
+	font-family:Verdana;
+	background-color:#e5e5e5;
 }
 
 #cityListFooter a, #cityListFooter a:visited, #cityListFooter a:link {
