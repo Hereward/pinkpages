@@ -2001,6 +2001,10 @@ table#cityListFooter {
 	margin:0px;
 }
 
+#cityListFooter h2 {
+	color:black;
+}
+
 li#browse_by_city {
 	font-weight:bold;
 	font-size:12px;
