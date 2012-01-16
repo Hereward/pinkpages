@@ -1,7 +1,7 @@
 <div class="breaker"></div>
 <div id="cityListFooter">
 
-<table>
+<table width="100%">
 <tr>
 
 <td>
