@@ -1982,6 +1982,10 @@ div#cityListFooter {
 	background-color:#e5e5e5;
 	padding:20px;
 	border:1px solid red;
+	
+}
+
+div#cityListFooterWrapper {
 	clear:both;
 }
 

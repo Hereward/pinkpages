@@ -1,3 +1,4 @@
+<div id="cityListFooterWrapper">
 <div id="cityListFooter">
 
 <table>
@@ -188,5 +189,6 @@
 
     </table>
 *}
+</div>
 </div>
 
