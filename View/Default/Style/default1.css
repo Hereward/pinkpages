@@ -1980,6 +1980,7 @@ div#cityListFooter {
 	margin:10px auto;
 	font-family:Verdana;
 	background-color:#e5e5e5;
+	padding:20px;
 }
 
 #cityListFooter a, #cityListFooter a:visited, #cityListFooter a:link {
