@@ -1,4 +1,4 @@
-
+<div class="breaker"></div>
 <div id="cityListFooter">
 
 <table>

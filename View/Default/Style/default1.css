@@ -1982,8 +1982,12 @@ div#cityListFooter {
 	background-color:#e5e5e5;
 	padding:20px;
 	border:1px solid red;
+	
+}
 
+.breaker {
 	clear:both;
+	height:20px;
 	
 }
 
