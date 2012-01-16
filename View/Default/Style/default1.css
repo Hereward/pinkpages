@@ -1982,6 +1982,7 @@ div#cityListFooter {
 	background-color:#e5e5e5;
 	padding:20px;
 	border:1px solid red;
+	clear:both;
 }
 
 #cityListFooter a, #cityListFooter a:visited, #cityListFooter a:link {
