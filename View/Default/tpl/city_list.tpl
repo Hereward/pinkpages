@@ -1,4 +1,6 @@
 <div id="cityListFooter">
+
+{*
 	<table align="center" width="980px" style="padding:10px 10px 10px 42px;font-family:Verdana;">
 	<tr>
 	<td>
@@ -177,6 +179,6 @@
     </tr>
 
     </table>
-
+*}
 </div>
 
