@@ -2003,6 +2003,8 @@ table#cityListFooter {
 
 #cityListFooter h2 {
 	color:black;
+	font-size:12px;
+	font-weight:bold;
 }
 
 li#browse_by_city {
