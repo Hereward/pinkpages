@@ -4,11 +4,12 @@
 <tr>
 <td>
     
-	<table bgcolor="#e5e5e5" width="980px" height="290px" style="padding:10px 10px 10px 42px;font-family:Verdana;">
+	<table bgcolor="#e5e5e5" width="980px" height="290px" cellpadding="0" cellspacing="0" style="padding:10px 10px 10px 42px;font-family:Verdana;">
+	<tr><td><h2>Top 20 Searched in Sydney</h2></td></tr>
 	<tr>
 	
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
-	<h2>Top 20 Searched in Sydney</h2>
+	
 	<table bgcolor="#e5e5e5" width="200" >
 	    
 	    	<tr><td bgcolor="#e5e5e5" valign="top"><a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Tyres+Retail&Search2=Sydney">Tyres Retail</a></td></tr>
