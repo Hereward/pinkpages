@@ -4,7 +4,7 @@
 <tr>
 <td>
 	<table bgcolor="#e5e5e5" width="980px" height="290px" style="padding:10px 10px 10px 42px;font-family:Verdana;">
-	<tr><td colspan="4"><h2>Top 20 Searched in Newcastle Region</h2></td></tr>
+	<tr><td style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" colspan="4"><h2>Top 20 Searched in Newcastle Region</h2></td></tr>
 	<tr>
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
 	
