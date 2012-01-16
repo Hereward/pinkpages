@@ -6,9 +6,7 @@
 	<table bgcolor="#e5e5e5" width="980px" height="290px" >
 	<tr>
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
-	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><td height="25px">
-	<div ><b>Top 20 Searched in Sydney
-	</div></td></tr>
+	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><th valign="top">Top 20 Searched in Sydney</th></tr>
 	    	<tr><td bgcolor="#e5e5e5" valign="top"><a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Tyres+Retail&Search2=Sydney">Tyres Retail</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Sydney">Medical Practitionars</a></td></tr>
@@ -22,7 +20,7 @@
    	
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
 	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><td height="25px">
-	<div ><b>
+	<div >
 	</div></td></tr>
 	    	<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Hairdressers&Search2=Sydney">Hairdressers</a></td></tr>
@@ -31,14 +29,14 @@
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=ACCOUNTANTS&Search2=Sydney">Accountants</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
-			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=DOG+%26+CAT+GROOMING&Search2=Sydney">Dog & Cat Grooming</a></td></tr>
+			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=DOG+%26+CAT+GROOMING&Search2=Sydney">Dog &amp; Cat Grooming</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=BEAUTY+SALONS&Search2=Sydney">Beauty Salons</a></td></tr>
 	</table>
 
     	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
 	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><td height="25px">
-	<div ><b>
+	<div >
 	</div></td></tr>
 	    	<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Electricians&Search2=Sydney">Electricians</a></td></tr>
@@ -54,7 +52,7 @@
 	
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
 	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><td height="25px">
-	<div ><b>
+	<div >
 	</div></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Painters&Search2=Sydney">Painters</a></td></tr>
@@ -63,7 +61,7 @@
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Plumbers&Search2=Sydney">Plumbers</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
-			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=CAR+%26+TRUCK+DETAILING&Search2=Sydney">Car & Truck Detailing</a></td></tr>
+			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=CAR+%26+TRUCK+DETAILING&Search2=Sydney">Car &amp; Truck Detailing</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=CLEANING+CONTRACTORS&Search2=Sydney">Cleaning Contractors</a></td></tr>
 	</table>
@@ -77,5 +75,3 @@
 </table>
 
 <br />
-
-</div>

@@ -6,14 +6,12 @@
 	<table bgcolor="#e5e5e5" width="980px" height="290px" >
 	<tr>
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
-	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><td height="25px">
-	<div ><b>Top 20 Searched in Melbourne
-	</div></td></tr>
+	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><tr><th valign="top">Top 20 Searched in Melbourne</th></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top"><a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Solicitors&Search2=Melbourne">Solicitors</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Melbourne">Medical Practitionaers</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
-			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=TREE+FELLING+%26+STUMP+REMOVAL&Search2=Melbourne">Tree Felling & Stump Removal</a></td></tr>
+			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=TREE+FELLING+%26+STUMP+REMOVAL&Search2=Melbourne">Tree Felling &amp; Stump Removal</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=LANDSCAPE+CONTRACTORS&Search2=Melbourne">Landscape Contractors</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
@@ -22,10 +20,10 @@
    	
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
 	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><td height="25px">
-	<div ><b>
+	<div >
 	</div></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
-			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=TILES+-+WALL+%26+FLOOR&Search2=Melbourne">Tiles - Wall & Floor</a></td></tr>
+			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=TILES+-+WALL+%26+FLOOR&Search2=Melbourne">Tiles - Wall &amp; Floor</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Chemists&Search2=Melbourne">Chemists</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
@@ -38,7 +36,7 @@
 
     	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
 	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><td height="25px">
-	<div ><b>
+	<div >
 	</div></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CONCRETE+CONTRACTORS&Search2=Melbourne">Concrete Contractors</a></td></tr>
@@ -54,12 +52,12 @@
 	
 	<td  width="33%" style="padding-top:4px; padding-bottom:4px; padding-left:0px; padding-right:4px; font-size: 12px;" valign="top">
 	<table bgcolor="#e5e5e5" width="200" height="150px"><tr><td height="25px">
-	<div ><b>
+	<div >
 	</div></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CLEANING+CONTRACTORS&Search2=Melbourne">Cleaning Contractors</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
-			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=FURNITURE+REMOVALS+%26+STORAGE&Search2=Melbourne">Furniture Removals & Storage</a></td></tr>
+			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=FURNITURE+REMOVALS+%26+STORAGE&Search2=Melbourne">Furniture Removals &amp; Storage</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
 			<a href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Restaurants&Search2=Melbourne">Restaurants</a></td></tr>
 		<tr><td bgcolor="#e5e5e5" valign="top">
@@ -79,4 +77,3 @@
 
 <br />
 
-</div>
