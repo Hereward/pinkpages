@@ -1,7 +1,7 @@
 <div class="breaker"></div>
 <div id="cityListFooter">
     <table width="100%">
-        <tr><th colspan="4">Top 20 Searched in Sydney</th></tr>
+        <tr><th valign="top" colspan="4">Top 20 Searched in Sydney</th></tr>
         
 
 	</table>
