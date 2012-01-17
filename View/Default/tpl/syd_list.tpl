@@ -1,8 +1,15 @@
 <div class="breaker"></div>
 <div id="cityListFooter">
-<table width="100%">
+    <table width="100%">
         <tr><th colspan="4">Top 20 Searched in Sydney</th></tr>
         
+
+	</table>
+</div>
+
+
+{*
+
         <tbody valign="top">
 		<tr>
 
@@ -63,8 +70,7 @@
 
 		</tr>
 		</tbody>
-	</table>
-</div>
+		*}
 
 {*
 <table width="100%" align="center" id="cityListFooter">
