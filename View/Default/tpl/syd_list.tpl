@@ -2,18 +2,9 @@
 <div id="cityListFooter">
     <table width="100%">
         <tr><th valign="top" colspan="4">Top 20 Searched in Sydney</th></tr>
-        <tr>
-						<td><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Tyres+Retail&Search2=Sydney">Tyres
-								Retail</a>
-						</td>
-					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Sydney">Medical
-								Practitionars</a>
-						</td>
-					</tr>
+        <tr><td bgcolor="#e5e5e5" valign="top"><a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Tyres+Retail&Search2=Sydney">Tyres Retail</a></td></tr>
+		<tr><td bgcolor="#e5e5e5" valign="top">
+			<a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Sydney">Medical Practitionars</a></td></tr>
         
 
 	</table>
