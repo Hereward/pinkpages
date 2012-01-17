@@ -25,14 +25,12 @@
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
 								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=FURNITURE+REMOVALS+%26+STORAGE&Search2=Newcastle+Region">Furniture
-									Removals &amp; Storage</a>
-							</td>
+									Removals &amp; Storage</a></td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
 								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=MASSAGE+THERAPEUTIC&Search2=Newcastle+Region">Massage
-									Therapeutic</a>
-							</td>
+									Therapeutic</a></td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
@@ -51,8 +49,7 @@
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
 								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=FOOD+%26+GENERAL+STORES&Search2=Newcastle+Region">Food
-									&amp; General Stores</a>
-							</td>
+									&amp; General Stores</a></td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
@@ -86,14 +83,12 @@
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
 								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=SCHOOLS+-+PUBLIC&Search2=Newcastle+Region">School
-									- Public</a>
-							</td>
+									- Public</a></td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
 								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=WINDSCREENS+%26+REPAIRS&Search2=Newcastle+Region">Windscreens
-									&amp; Repairs</a>
-							</td>
+									&amp; Repairs</a></td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
@@ -107,8 +102,7 @@
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
 								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=DEPARTMENT+STORES&Search2=Newcastle+Region">Department
-									Stores</a>
-							</td>
+									Stores</a></td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
@@ -118,8 +112,7 @@
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
 								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=MOTOR+ENGINEERS+%26+REPAIRERS&Search2=Newcastle+Region">Motor
-									Engineers &amp; Repairers</a>
-							</td>
+									Engineers &amp; Repairers</a></td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
@@ -133,11 +126,7 @@
 						</tr>
 					</table></td>
 			</tr>
-	</table>
-	</td>
-
-	</tr>
-	</tbody>
+		</tbody>
 
 	</table>
 </div>
