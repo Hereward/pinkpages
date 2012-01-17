@@ -2,6 +2,8 @@
 <div id="cityListFooter">
 <table width="100%">
         <tr><th colspan="4">Top 20 Searched in Sydney</th></tr>
+        
+        <tbody valign="top">
 		<tr>
 
 			<td valign="top">
@@ -60,6 +62,7 @@
 				</table></td>
 
 		</tr>
+		</tbody>
 	</table>
 </div>
 
