@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: http://www.pinkpages.com.au/sitemapindex.xml.gz
