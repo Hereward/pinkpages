@@ -44,16 +44,16 @@
 		<div class="contact_address">
 		<table class="contact_page_details">
 		<tr><td>Dawson Media Pty Ltd Est 1968</td></tr>
-		<tr><td>Level 5<br>
-106 Church St<br>
-Parramatta 2150<br>
+		<tr><td>Level 7<br>
+99 Mount St<br>
+North Sydney 2060<br>
 NSW Australia<br>
 <br>
-PO Box 199<br>
-Parramatta 2124<br>
+PO Box 6073<br>
+North Sydney NSW 2059<br>
 <br>
 Ph: 02 8898 1900<br>
-Fax: 02 9761 0462 </td></tr></table>
+Fax: 02 9929 2935</td></tr></table>
 
 		
 		</div>
