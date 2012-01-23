@@ -25,7 +25,7 @@
              <tr>
            <td ><p class="inputbox"><input type="text" name="Search1" id="Search1" value="" /></p>
            </td>
-           <td><p class="inputbox"><input type="text" name="Search2" id="Search2" value="{if $smarty.get.p eq 's'}All Sydney{elseif $smarty.get.p eq 'n'}All Newcastle{elseif $smarty.get.p eq 'c'}All Canberra{elseif $smarty.get.p eq 'm'}All Melbourne{else}All States{/if}" /></p>
+           <td><p class="inputbox"><input type="text" name="Search2" id="Search2" value="{if $smarty.get.p eq 's'}All Sydney{elseif $smarty.get.p eq 'n'}Newcastle{elseif $smarty.get.p eq 'c'}Canberra{elseif $smarty.get.p eq 'm'}Melbourne{else}All States{/if}" /></p>
            </td>
          
            <td ><input class="btn" src="{$IMAGES_PATH}btn-search.gif" type="image" name="Submit" id="Submit" value="Search" />
