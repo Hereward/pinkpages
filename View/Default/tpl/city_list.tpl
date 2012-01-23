@@ -242,113 +242,113 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Restaurants&Search2=Canberra">Restaurants</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Restaurants&Search2=Canberra+Region">Restaurants</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CLEANING+DOMESTIC&Search2=Canberra">Cleaning
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CLEANING+DOMESTIC&Search2=Canberra+Region">Cleaning
 								- Domestic</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Plumbers&Search2=Canberra">Plumbers</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Plumbers&Search2=Canberra+Region">Plumbers</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Chemists&Search2=Canberra">Chemists</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Chemists&Search2=Canberra+Region">Chemists</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Solicitors&Search2=Canberra">Solicitors</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Solicitors&Search2=Canberra+Region">Solicitors</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=WEDDING+RECEPTION+VENUES&Search2=Canberra">Wedding
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=WEDDING+RECEPTION+VENUES&Search2=Canberra+Region">Wedding
 								Reception Venues</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MOTOR+ENGINEERS+%26+REPAIRERS&Search2=Canberra">Motor
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MOTOR+ENGINEERS+%26+REPAIRERS&Search2=Canberra+Region">Motor
 								Engineers &amp; Repairers</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MASSAGE+THERAPEUTIC&Search2=Canberra">Massage
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MASSAGE+THERAPEUTIC&Search2=Canberra+Region">Massage
 								Therapeutic</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Panel+Beaters&Search2=Canberra">Panel
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Panel+Beaters&Search2=Canberra+Region">Panel
 								Beaters</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BEAUTY+SALONS&Search2=Canberra">Beauty
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BEAUTY+SALONS&Search2=Canberra+Region">Beauty
 								Salons</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Dentists&Search2=Canberra">Dentists</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Dentists&Search2=Canberra+Region">Dentists</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Accountants&Search2=Canberra">Accountants</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Accountants&Search2=Canberra+Region">Accountants</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Vets&Search2=Canberra">Vets</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Vets&Search2=Canberra+Region">Vets</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CLEANING+CONTRACTORS&Search2=Canberra">Cleaning
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CLEANING+CONTRACTORS&Search2=Canberra+Region">Cleaning
 								Contractors</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MARTIAL+ARTS&Search2=Canberra">Martial
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MARTIAL+ARTS&Search2=Canberra+Region">Martial
 								Arts</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Canberra">Medical
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Canberra+Region">Medical
 								Practitioners</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=PARTY+HIRE&Search2=Canberra">Party
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=PARTY+HIRE&Search2=Canberra+Region">Party
 								Hire</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Caterers&Search2=Canberra">Caterers</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Caterers&Search2=Canberra+Region">Caterers</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BUILDING+CONTRACTORS&Search2=Canberra">Building
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BUILDING+CONTRACTORS&Search2=Canberra+Region">Building
 								Contractors</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BUILDING+CONSULTANTS&Search2=Canberra">Building
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BUILDING+CONSULTANTS&Search2=Canberra+Region">Building
 								Consultants</a>
 						</td>
 					</tr>
