@@ -49,7 +49,8 @@
 					<option value="0">--Select One--</option>
 					<option value="30">30 Days</option>
 					<option value="60">60 Days</option>
-					<option value="90">90 Days</option>					
+					<option value="90">90 Days</option>	
+					<option value="365">12 Months</option>	
 					<option value="-1">Recurring</option>										
 				</select>
 			</li>			
