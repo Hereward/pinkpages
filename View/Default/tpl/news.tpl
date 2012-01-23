@@ -1,3 +1,4 @@
+{*
  <div class="news_links" >
 
  <table width="100%" align="center">
@@ -122,3 +123,4 @@
 <br />
 
 </div>
+*}
