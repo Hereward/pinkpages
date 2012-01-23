@@ -20,7 +20,7 @@
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
 								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Melbourne">Medical
-									Practitionaers</a>
+									Practitioners</a>
 							</td>
 						</tr>
 						<tr>

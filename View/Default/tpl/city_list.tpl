@@ -11,111 +11,111 @@
 					</tr>
 					<tr>
 						<td><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Tyres+Retail&Search2=Sydney">Tyres
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Tyres+Retail&Search2=All%20Sydney">Tyres
 								Retail</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Sydney">Medical
+							href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=All%20Sydney">Medical
 								Practitionars</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Turf&Search2=Sydney">Turf</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Turf&Search2=All%20Sydney">Turf</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BUILDING+CONTRACTORS+-+GENERAL&Search2=Sydney">Building
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BUILDING+CONTRACTORS+-+GENERAL&Search2=All%20Sydney">Building
 								Contractors - General</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=DENTISTS&Search2=Sydney">Dentists</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=DENTISTS&Search2=All%20Sydney">Dentists</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Hairdressers&Search2=Sydney">Hairdressers</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Hairdressers&Search2=All%20Sydney">Hairdressers</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=RESTAURANTS&Search2=Sydney">Restaurants</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=RESTAURANTS&Search2=All%20Sydney">Restaurants</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=ACCOUNTANTS&Search2=Sydney">Accountants</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=ACCOUNTANTS&Search2=All%20Sydney">Accountants</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=DOG+%26+CAT+GROOMING&Search2=Sydney">Dog
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=DOG+%26+CAT+GROOMING&Search2=All%20Sydney">Dog
 								&amp; Cat Grooming</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BEAUTY+SALONS&Search2=Sydney">Beauty
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BEAUTY+SALONS&Search2=All%20Sydney">Beauty
 								Salons</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Electricians&Search2=Sydney">Electricians</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Electricians&Search2=All%20Sydney">Electricians</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=DRIVING+SCHOOLS&Search2=Sydney">Driving
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=DRIVING+SCHOOLS&Search2=All%20Sydney">Driving
 								Schools</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Printers&Search2=Sydney">Printers</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Printers&Search2=All%20Sydney">Printers</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MECHANICS+-+MOBILE&Search2=Sydney">Mechanics
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MECHANICS+-+MOBILE&Search2=All%20Sydney">Mechanics
 								- Mobile</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Solicitors&Search2=Sydney">Solicitors</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Solicitors&Search2=All%20Sydney">Solicitors</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Painters&Search2=Sydney">Painters</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Painters&Search2=All%20Sydney">Painters</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=SCHOOLS+-+PUBLIC&Search2=Sydney">Schools
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=SCHOOLS+-+PUBLIC&Search2=All%20Sydney">Schools
 								- Public</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Plumbers&Search2=Sydney">Plumbers</a>
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Plumbers&Search2=All%20Sydney">Plumbers</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CAR+%26+TRUCK+DETAILING&Search2=Sydney">Car
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CAR+%26+TRUCK+DETAILING&Search2=All%20Sydney">Car
 								&amp; Truck Detailing</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CLEANING+CONTRACTORS&Search2=Sydney">Cleaning
+							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CLEANING+CONTRACTORS&Search2=All%20Sydney">Cleaning
 								Contractors</a>
 						</td>
 					</tr>
@@ -124,7 +124,7 @@
 			<td valign="top">
 				<table cellpadding="0" cellspacing="0">
 					<tr>
-						<th valign="top">Top 20 Searched in Newcastle Region</th>
+						<th valign="top">Top 20 Searched in Newcastle</th>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
@@ -367,7 +367,7 @@
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Melbourne">Medical
-								Practitionaers</a>
+								Practitioners</a>
 						</td>
 					</tr>
 					<tr>
