@@ -81,7 +81,8 @@
 	                <option selected="selected">--Select One--</option>
 					{else}
 					 {foreach from=$values item=key}			
-			              <option id="postcode1" value="{$key.shiretown_postcode},{$key.shiretown_townname}" {if $key.shiretown_townname eq $values12.business_suburb} selected="selected" {/if}>                                                     {$key.shiretown_townname}
+			              <option id="postcode1" value="{$key.shiretown_postcode},{$key.shiretown_townname}" {if $key.shiretown_townname|upper eq $values12.business_suburb|upper} selected="selected" {/if}>                                                     
+			              {$key.shiretown_townname|upper}
 						  </option>
 					  {/foreach} 
 					  {/if}
