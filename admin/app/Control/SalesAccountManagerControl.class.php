@@ -848,6 +848,7 @@ class SalesAccountManagerControl extends MainControl {
 	*/		
 	public function rankBusiness()
 	{
+		$this->page->force_compile = false;
 		$this->page->pageTitle 				= "Rank Business";
 		$this->page->assign("do",$_GET['do']);
 		$this->page->assign("action1",$_GET['action']);
