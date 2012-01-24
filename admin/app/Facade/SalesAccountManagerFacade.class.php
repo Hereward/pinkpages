@@ -305,11 +305,11 @@ class SalesAccountManagerFacade extends MainFacade {
 	{
 
 		//$initials 		= (!empty($post['initials']))?$post['initials']:NULL;
-		$url_alias		= (!empty($post['url_alias']))?$post['url_alias']:NULL;		
-		$name 			= (!empty($post['name']))?$post['name']:NULL;
-		$street1 		= (!empty($post['street1']))?$post['street1']:NULL;
-		$street2 		= (!empty($post['street2']))?$post['street2']:NULL;
-		$phonestd 		= (!empty($post['phonestd']))?$post['phonestd']:NULL;
+		$url_alias		= (!empty($post['url_alias']))?mysql_real_escape_string($post['url_alias']):NULL;		
+		$name 			= (!empty($post['name']))?mysql_real_escape_string($post['name']):NULL;
+		$street1 		= (!empty($post['street1']))?mysql_real_escape_string($post['street1']):NULL;
+		$street2 		= (!empty($post['street2']))?mysql_real_escape_string($post['street2']):NULL;
+		$phonestd 		= (!empty($post['phonestd']))?mysql_real_escape_string($post['phonestd']):NULL;
 		$phone 			= (!empty($post['phone']))?$post['phone']:NULL;
 		$faxstd 		= (!empty($post['faxstd']))?$post['faxstd']:NULL;
 		$fax 			= (!empty($post['fax']))?$post['fax']:NULL;
@@ -319,7 +319,7 @@ class SalesAccountManagerFacade extends MainFacade {
 		$mobile 		= (!empty($post['mobile']))?$post['mobile']:NULL;
 		$contact 		= (!empty($post['contact']))?$post['contact']:NULL;
 		$postcode 		= (!empty($post['postcode']))?$post['postcode']:0;
-		$description 	= (!empty($post['description']))?$post['description']:NULL;
+		$description 	= (!empty($post['description']))?mysql_real_escape_string($post['description']):NULL;
 		$classification = (!empty($post['classification']))?$post['classification']:NULL;
 		$state 			= (!empty($post['state']))?$post['state']:NULL;
 		$rank 			= (!empty($post['rank']))?$post['rank']:NULL;

@@ -1431,6 +1431,7 @@ class SalesAccountManagerControl extends MainControl {
 		$res3=$this->SalesAccountManagerFacade->editListingFetchDetails();
 
         $this->page->assign("values12",$res3[0]);
+        
 
 		$res2=$this->SalesAccountManagerFacade->selectStates();
 		$this->page->assign("values21",$res2);
