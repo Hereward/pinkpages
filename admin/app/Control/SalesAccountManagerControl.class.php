@@ -456,6 +456,7 @@ class SalesAccountManagerControl extends MainControl {
 				
 		move_uploaded_file($tmp,"View/Default/Images/client_image/$image2");		
 		$res=$this->SalesAccountManagerFacade->addlist1($_POST,$_FILES);
+		dev_log::write("SalesAccountManagerControl::listingAddition | POST = ".var_export($_POST, true));
 		
 		if($res['result']==0)
 		{
