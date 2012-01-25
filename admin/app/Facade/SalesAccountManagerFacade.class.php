@@ -406,7 +406,7 @@ class SalesAccountManagerFacade extends MainFacade {
 														'{$classification}',
 														'{$state}',
 														'{$archived}',
-														'',
+														'{$AccNo}',
 														'{$shire[1]}',
 														'{$suburb[1]}',
 														'{$Add3}'
