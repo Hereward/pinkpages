@@ -269,6 +269,7 @@ class ListingControl extends MainControl {
 			$this->page->assign("home",$this->request->createURL("Affiliate", "showhomePageAffiliate"));
 			
 			$res 			=$this->listingFacade->SearchResult($this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"),$_GET);
+			dev_log::write("Listing::search res = ".var_export($res, true));
 			//pre($res);
 			$selectArray = array('days'=>'',
 						'fromHrs'=>'',
