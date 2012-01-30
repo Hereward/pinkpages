@@ -269,7 +269,7 @@ class ListingControl extends MainControl {
 			$this->page->assign("home",$this->request->createURL("Affiliate", "showhomePageAffiliate"));
 			
 			$res 			=$this->listingFacade->SearchResult($this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"),$_GET);
-			dev_log::write("Listing::search res['paging'] = ".var_export($res['paging'], true));
+			
 			//pre($res);
 			$selectArray = array('days'=>'',
 						'fromHrs'=>'',
@@ -413,6 +413,7 @@ class ListingControl extends MainControl {
 					}
 				}
 				if($classifications) {
+					dev_log::write("Listing::searchKeyword classifications = ".var_export($classifications, true));
 					$total_recs = $classifications['total_recs'];
 					$this->page->assign("values",$classifications['classifications']);
 					if(isset($classifications['ambiguous']) && $classifications['ambiguous']) {
