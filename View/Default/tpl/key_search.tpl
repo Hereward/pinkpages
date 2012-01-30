@@ -34,7 +34,7 @@
        
 			<tr>
 
-			<td> &nbsp;&nbsp;&nbsp;&nbsp;  <a href="{$values[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$values[i].localclassification_name}&nbsp;&nbsp;&nbsp;&nbsp; <span> {$values[i].cnt} business results </span></a></td>
+			<td> &nbsp;&nbsp;&nbsp;&nbsp;  <a href="{$values[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}{$smarty.get.Search1}"> {$values[i].localclassification_name}&nbsp;&nbsp;&nbsp;&nbsp; <span> {$values[i].cnt} business results </span></a></td>
 			</tr>
         
 		{/section}
