@@ -413,7 +413,7 @@ class ListingControl extends MainControl {
 					}
 				}
 				if($classifications) {
-					dev_log::write("Listing::searchKeyword classifications = ".var_export($classifications, true));
+					//dev_log::write("Listing::searchKeyword classifications = ".var_export($classifications, true));
 					$total_recs = $classifications['total_recs'];
 					$this->page->assign("values",$classifications['classifications']);
 					if(isset($classifications['ambiguous']) && $classifications['ambiguous']) {
