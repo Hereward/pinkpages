@@ -111,7 +111,8 @@ RewriteRule ^/?(Listing)/contactUs/ID/([0-9]+)/act/([a-zA-Z]+)? main.php?do=$1&a
 
 #Rewrite used for Business Search to display individual Listings
 #RewriteRule ^/?Listing/boldListing/ID/([0-9]+)$ main.php?do=Listing&action=boldListing&ID=$1 [NC,L]
-RewriteRule ^/?Listing/search/SearchOption/([0-9]+)/Search1/([a-zA-Z_+&'-]+)/Submit.x/([0-9]+)/Submit.y/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)?  main.php?do=Listing&action=search&SearchOption=$1&Search1=$2&Submit.x=$3&Submit.y=$4/pnum/$5/fr/$6 [NC,L]
+#RewriteRule ^/?Listing/search/SearchOption/([0-9]+)/Search1/([a-zA-Z_+&'-]+)/Submit.x/([0-9]+)/Submit.y/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)?  main.php?do=Listing&action=search&SearchOption=$1&Search1=$2&Submit.x=$3&Submit.y=$4/pnum/$5/fr/$6 [NC,L]
+RewriteRule ^/?Listing/search/SearchOption/([0-9]+)/Search1/([a-zA-Z_+&'-]+)/Submit.x/([0-9]+)/Submit.y/([0-9]+)/pnum/([0-9]+)/fr/([0-9]+)?  main.php?do=Listing&action=search&SearchOption=$1&Search1=$2&Submit.x=$3&Submit.y=$4&pnum=$5&fr=$6 [NC,L]
 
 #404 Homepage Redirect
 ErrorDocument 404 http://www.pinkpages.com.au/?404
