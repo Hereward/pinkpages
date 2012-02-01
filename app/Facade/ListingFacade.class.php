@@ -3699,6 +3699,58 @@ class ListingFacade extends MainFacade {
 		}
 		return 0;
 	}
+	
+	public function relatedClassifications($classification)
+	{
+		$classifications = array();
+		//First search in classification table
+		$sql = "SELECT
+					localclassification_id
+				FROM 
+					local_classification 
+				WHERE 
+					localclassification_name REGEXP '[[:<:]]".$this->myDB->quote($classification)."'";
+
+		$res = $this->myDB->query($sql);
+		if($res) {
+			foreach ($res as $classification) {
+				$classifications[] = $classification['localclassification_id'];
+			}
+		}
+		//Now search for synonyms
+		$sql = "SELECT
+					localclassification_id
+				FROM
+					keywords
+				WHERE
+					keyword REGEXP '[[:<:]]".$this->myDB->quote($classification)."'";
+		$res = $this->myDB->query($sql);
+		if($res) {
+			foreach ($res as $synonym) {
+				$classifications[] = $synonym['localclassification_id'];
+			}
+		}
+
+		//look in verticals(groups)
+		$sql = "SELECT
+					gc.classification_id
+				FROM
+					groups AS gp
+					LEFT JOIN
+						group_classification AS gc
+						ON (gp.group_id=gc.group_id)
+				WHERE
+					gp.group_title REGEXP '[[:<:]]".$this->myDB->quote($classification)."'";
+		$res = $this->myDB->query($sql);
+		if($res) {
+			foreach ($res as $group) {
+				$classifications[] = $group['classification_id'];
+
+			}
+		}
+
+		return array_unique($classifications);
+	}/* END resolveClassification */
 
 	public function resolveClassification($keyword)
 	{
