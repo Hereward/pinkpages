@@ -121,7 +121,7 @@ class ListingFacade extends MainFacade {
 									$fr,".DEFAULT_PAGING_SIZE;
 		//prexit($sql);
 		$result = $this->myDB->query($sql);
-		
+		dev_log::write("ListingFacade::SearchResult sql = ".$sql);
 		if(count($result)>0) {
             $this->successfulSearch($get,"Business Name");
 			$classificationFacade = new ClassificationFacade($this->myDB);
