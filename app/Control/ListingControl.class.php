@@ -227,6 +227,7 @@ class ListingControl extends MainControl {
      */
 		public function search()
 		{
+			die("hello");
 	
 			$this->page->pageTitle 			= "Pink Pages &shy; Search results for [".$_GET['Search1']."] ";
 			$do         				= $_GET['do'];
