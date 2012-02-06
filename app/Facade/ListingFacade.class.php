@@ -1032,7 +1032,7 @@ class ListingFacade extends MainFacade {
 
 			$hours_sql 			= "SELECT DISTINCT `hour_id`, `hour_name` FROM `business_hours` WHERE business_id IN ($business_ids_sql)";
 			$hours 				= $this->myDB->query($hours_sql);
-            dev_log::write("ListingFacade::categorySearchResult sql = ".$sql);
+            //dev_log::write("ListingFacade::categorySearchResult sql = ".$sql);
 			$result = $this->myDB->query($sql);
 
 			foreach ($result as $k=>$category) {
