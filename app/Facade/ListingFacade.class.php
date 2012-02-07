@@ -582,6 +582,7 @@ class ListingFacade extends MainFacade {
 				WHERE 
 					$condition";
 		//prexit($sql);
+		dev_log::write("ListingFacade::SearchResult sql = ".$sql);
 		$count_result = $this->myDB->query($sql);
 		//Limit results to 100 in order to stop SCRAPING
 		$count = (count($count_result) > 100) ? 100 : count($count_result);
