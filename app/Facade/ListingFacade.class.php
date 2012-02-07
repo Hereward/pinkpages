@@ -582,7 +582,7 @@ class ListingFacade extends MainFacade {
 				WHERE 
 					$condition";
 		//prexit($sql);
-		dev_log::write("ListingFacade::SearchResult sql = ".$sql);
+		
 		$count_result = $this->myDB->query($sql);
 		//Limit results to 100 in order to stop SCRAPING
 		$count = (count($count_result) > 100) ? 100 : count($count_result);
@@ -1033,7 +1033,7 @@ class ListingFacade extends MainFacade {
 
 			$hours_sql 			= "SELECT DISTINCT `hour_id`, `hour_name` FROM `business_hours` WHERE business_id IN ($business_ids_sql)";
 			$hours 				= $this->myDB->query($hours_sql);
-            //dev_log::write("ListingFacade::categorySearchResult sql = ".$sql);
+            dev_log::write("ListingFacade::categorySearchResult sql = ".$sql);
 			$result = $this->myDB->query($sql);
 
 			foreach ($result as $k=>$category) {
