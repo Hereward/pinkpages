@@ -227,7 +227,7 @@ class ListingControl extends MainControl {
      */
 		public function search()
 		{
-            dev_log::cur_url("Listing::categorySearch");
+            dev_log::cur_url("Listing::search");
 			$this->page->pageTitle 			= "Pink Pages &shy; Search results for [".$_GET['Search1']."] ";
 			$do         				= $_GET['do'];
 			$action						= $_GET['action'];
