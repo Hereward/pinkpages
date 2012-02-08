@@ -3559,7 +3559,7 @@ class ListingFacade extends MainFacade {
 								
 				$count = $this->myDB->exec($shire_sql);
 				dev_log::write("count = ".$count);
-				if (!$count) {dev_log::write("sql = ".$sql);}
+				if (!$count) {dev_log::write("sql = ".$shire_sql);}
 				if($count) {
 
 					$classification_name = $classificationFacade->getClassificationNameById($classification_id);
