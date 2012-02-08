@@ -3781,11 +3781,12 @@ class ListingFacade extends MainFacade {
 				FROM
 					keywords
 				WHERE
-					keyword REGEXP '^".$this->myDB->quote($keyword)."'";
+					keyword REGEXP '^".$this->myDB->quote($keyword)."([:alpha:].*|[[:>:]])'";
 		//keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
+		dev_log::write("keyword sql = $sql");
 		$res = $this->myDB->query($sql);
 		dev_log::write("keywords = ".var_export($res, true));
-		dev_log::write("keyword sql = $sql");
+		
 		if($res) {
 			foreach ($res as $synonym) {
 				$classifications[] = $synonym['localclassification_id'];
