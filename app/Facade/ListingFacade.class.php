@@ -3805,7 +3805,7 @@ class ListingFacade extends MainFacade {
 				WHERE
 					gp.group_title REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 		$res = $this->myDB->query($sql);
-		//dev_log::write("verticals = ".var_export($res, true));
+		dev_log::write("verticals = ".var_export($res, true));
 		if($res) {
 			foreach ($res as $group) {
 				$classifications[] = $group['classification_id'];
