@@ -1033,7 +1033,7 @@ class ListingFacade extends MainFacade {
 
 			$hours_sql 			= "SELECT DISTINCT `hour_id`, `hour_name` FROM `business_hours` WHERE business_id IN ($business_ids_sql)";
 			$hours 				= $this->myDB->query($hours_sql);
-            dev_log::write("ListingFacade::categorySearchResult sql = ".$sql);
+            //dev_log::write("ListingFacade::categorySearchResult sql = ".$sql);
 			$result = $this->myDB->query($sql);
 
 			foreach ($result as $k=>$category) {
@@ -3449,7 +3449,7 @@ class ListingFacade extends MainFacade {
 
 	public function getClassificationCountByLocation($location, $classification_ids, $fr=0, $paging_size = DEFAULT_PAGING_SIZE)
 	{
-		dev_log::write("ListingFacade::getClassificationCountByLocation BEGIN");
+		//dev_log::write("ListingFacade::getClassificationCountByLocation BEGIN");
 		$locationParams = explode(' - ', $location);		
 		$location = $locationParams[0];	
 	
@@ -3519,7 +3519,7 @@ class ListingFacade extends MainFacade {
 			$i=0;
 			$classificationFacade = new ClassificationFacade($this->myDb);
 			foreach ($classification_ids as $classification_id) {
-                dev_log::write("classification = ".$classification_id);
+                //dev_log::write("classification = ".$classification_id);
 				$main_cond	= " bc.localclassification_id=".$this->myDB->quote($classification_id)." AND lb.expired=0 ";
 				$condition = " AND br.localclassification_id=bc.localclassification_id ";
 
@@ -3558,8 +3558,8 @@ class ListingFacade extends MainFacade {
 								$condition ";
 								
 				$count = $this->myDB->exec($shire_sql);
-				dev_log::write("count = ".$count);
-				if (!$count) {dev_log::write("sql = ".$shire_sql);}
+				//dev_log::write("count = ".$count);
+				//if (!$count) {dev_log::write("sql = ".$shire_sql);}
 				if($count) {
 
 					$classification_name = $classificationFacade->getClassificationNameById($classification_id);
@@ -3781,7 +3781,8 @@ class ListingFacade extends MainFacade {
 				FROM
 					keywords
 				WHERE
-					keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
+					keyword LIKE '%".$this->myDB->quote($keyword)."%'";
+		//keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 		$res = $this->myDB->query($sql);
 		dev_log::write("keywords = ".var_export($res, true));
 		if($res) {
