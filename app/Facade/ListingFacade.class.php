@@ -539,7 +539,7 @@ class ListingFacade extends MainFacade {
 		$rank_col = " br.businessrank_rank ";
 		$time_stamp_col = "br.businessrank_timestamp,";
 		
-		if(!$shire_id || $shire_id==59) {
+		if(!$shire_id || $shire_id==59 || $shire_id==314 || $shire_id==315 || $shire_id==316) {
 			//$rank_col = " 9999 ";
 			//$OrderBy ="ORDER BY (CASE WHEN lb.business_name = 'Strike First Pest Management Systems' THEN 1  WHEN lb.business_name = 'MENASH & TECHNOSAT' THEN 1 WHEN lb.business_name = 'BIG BOB REMOVALS' THEN 2 WHEN lb.business_name = 'JUMBUCK POOL & HOME FENCING' THEN 3 WHEN lb.business_name = 'STREAMLINE ELECTRICAL AND SECURITY PTY LTD' THEN 4 WHEN lb.business_name = 'PHOENIX BATHROOM RENOVATIONS' THEN 5 WHEN lb.business_name = 'A SOUTH EAST KITCHEN MAKEOVER' THEN 6 ELSE 7 END), rank ASC, lb.business_name";
             $OrderBy ="ORDER BY lb.business_name";			
@@ -705,7 +705,7 @@ class ListingFacade extends MainFacade {
                 }  				
 								
 			}
-			if((!$shire_id || $shire_id==59) && !$fr) {//case all-sydney results
+			if((!$shire_id || $shire_id==59 || $shire_id==314 || $shire_id==315 || $shire_id==316) && !$fr) {//case all-sydney results
 				$temp=array();
 				foreach ($result as $k=>$listing) {
 					if($listing['rank']==9999) {
@@ -893,7 +893,7 @@ class ListingFacade extends MainFacade {
 		$rank_col = " br.businessrank_rank ";
 		$time_stamp_col = "br.businessrank_timestamp,";
 		
-		if(!$shire_id || $shire_id==59) {
+		if(!$shire_id || $shire_id==59 || $shire_id==314 || $shire_id==315 || $shire_id==316) {
 			//$rank_col = " 9999 ";
 			//$OrderBy ="ORDER BY (CASE WHEN lb.business_name = 'Strike First Pest Management Systems' THEN 1  WHEN lb.business_name = 'MENASH & TECHNOSAT' THEN 1 WHEN lb.business_name = 'BIG BOB REMOVALS' THEN 2 WHEN lb.business_name = 'JUMBUCK POOL & HOME FENCING' THEN 3 WHEN lb.business_name = 'STREAMLINE ELECTRICAL AND SECURITY PTY LTD' THEN 4 WHEN lb.business_name = 'PHOENIX BATHROOM RENOVATIONS' THEN 5 WHEN lb.business_name = 'A SOUTH EAST KITCHEN MAKEOVER' THEN 6 ELSE 7 END), rank ASC, lb.business_name";
             $OrderBy ="ORDER BY rank ASC, lb.business_name";			
@@ -1065,7 +1065,7 @@ class ListingFacade extends MainFacade {
 				  $result[$k]['url'] = $this->request->createURL("Listing", "googleMapView", "Street={$category['business_street1']}&Suburb={$category['business_suburb']}&State={$category['business_state']}&Postcode={$category['business_postcode']}&businessId={$category['business_id']}&name={$category['business_name']}&rank={$category['rank']}&classification={$result_classification[0]['localclassification_name']}");								
                 }  
 			}
-			if((!$shire_id || $shire_id==59) && !$fr) {//case all-sydney results
+			if((!$shire_id || $shire_id==59 || $shire_id==314 || $shire_id==315 || $shire_id==316) && !$fr) {//case all-sydney results
 				$temp=array();
 				foreach ($result as $k=>$listing) {
 					if($listing['rank']==9999) {
@@ -3537,7 +3537,7 @@ class ListingFacade extends MainFacade {
 				$rank_col = " br.businessrank_rank ";
 				$rank_condition =" AND br.shirename_id=$shire_id";
 				$time_stamp_col = "br.businessrank_timestamp,";
-				if(!$shire_id || $shire_id==59) {
+				if(!$shire_id || $shire_id==59 || $shire_id==314 || $shire_id==315 || $shire_id==316) {
 					$rank_col = " 6 ";
 					$rank_condition ="";
 					$time_stamp_col = "";
@@ -3637,7 +3637,7 @@ class ListingFacade extends MainFacade {
 				$rank_col = " br.businessrank_rank ";
 				$rank_condition =" AND br.shirename_id=$shire_id";
 				$time_stamp_col = "br.businessrank_timestamp,";
-				if(!$shire_id || $shire_id==59) {
+				if(!$shire_id || $shire_id==59 || $shire_id==314 || $shire_id==315 || $shire_id==316) {
 					$rank_col = " 6 ";
 					$rank_condition ="";
 					$time_stamp_col = "";
@@ -3755,6 +3755,7 @@ class ListingFacade extends MainFacade {
 
 	public function resolveClassification($keyword)
 	{
+		dev_log::write("ListingFacade::resolveClassification BEGIN");
 		$classifications = array();
 		//First search in classification table
 		$sql = "SELECT
@@ -3765,6 +3766,7 @@ class ListingFacade extends MainFacade {
 					localclassification_name REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 
 		$res = $this->myDB->query($sql);
+		dev_log::write("classifications = ".var_export($res, true));
 		if($res) {
 			foreach ($res as $classification) {
 				$classifications[] = $classification['localclassification_id'];
@@ -3778,6 +3780,7 @@ class ListingFacade extends MainFacade {
 				WHERE
 					keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 		$res = $this->myDB->query($sql);
+		dev_log::write("keywords = ".var_export($res, true));
 		if($res) {
 			foreach ($res as $synonym) {
 				$classifications[] = $synonym['localclassification_id'];
@@ -3795,13 +3798,14 @@ class ListingFacade extends MainFacade {
 				WHERE
 					gp.group_title REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 		$res = $this->myDB->query($sql);
+		dev_log::write("verticals = ".var_export($res, true));
 		if($res) {
 			foreach ($res as $group) {
 				$classifications[] = $group['classification_id'];
 
 			}
 		}
-
+        dev_log::write("ListingFacade::resolveClassification END");
 		return array_unique($classifications);
 	}/* END resolveClassification */
 
