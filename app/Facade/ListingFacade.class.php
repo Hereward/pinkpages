@@ -3785,6 +3785,7 @@ class ListingFacade extends MainFacade {
 		//keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 		$res = $this->myDB->query($sql);
 		dev_log::write("keywords = ".var_export($res, true));
+		dev_log::write("keyword sql = $sql");
 		if($res) {
 			foreach ($res as $synonym) {
 				$classifications[] = $synonym['localclassification_id'];
