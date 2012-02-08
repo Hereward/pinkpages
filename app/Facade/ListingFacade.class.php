@@ -3781,7 +3781,7 @@ class ListingFacade extends MainFacade {
 				FROM
 					keywords
 				WHERE
-					keyword LIKE '%".$this->myDB->quote($keyword)."%'";
+					keyword REGEXP '^".$this->myDB->quote($keyword)."'";
 		//keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 		$res = $this->myDB->query($sql);
 		dev_log::write("keywords = ".var_export($res, true));
