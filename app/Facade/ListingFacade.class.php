@@ -3519,7 +3519,7 @@ class ListingFacade extends MainFacade {
 			$i=0;
 			$classificationFacade = new ClassificationFacade($this->myDb);
 			foreach ($classification_ids as $classification_id) {
-                dev_log::write("ListingFacade::getClassificationCountByLocation classification = ".$classification);
+                dev_log::write("ListingFacade::getClassificationCountByLocation classification = ".$classification_id);
 				$main_cond	= " bc.localclassification_id=".$this->myDB->quote($classification_id)." AND lb.expired=0 ";
 				$condition = " AND br.localclassification_id=bc.localclassification_id ";
 
