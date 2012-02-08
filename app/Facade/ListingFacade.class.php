@@ -3805,6 +3805,7 @@ class ListingFacade extends MainFacade {
 
 			}
 		}
+		dev_log::write("final = ".var_export(array_unique($classifications), true));
         dev_log::write("ListingFacade::resolveClassification END");
 		return array_unique($classifications);
 	}/* END resolveClassification */
