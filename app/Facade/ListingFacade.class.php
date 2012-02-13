@@ -3759,7 +3759,7 @@ class ListingFacade extends MainFacade {
 	public function resolveClassification($keyword)
 	{
 		$cc = strlen($keyword);
-		$kw_criteria = ($cc>3)?"keyword REGEXP '[[:<:]]{$this->myDB->quote($keyword)}'":"keyword = '{$this->myDB->quote($keyword)}'";
+		$search_criteria = ($cc>3)?"REGEXP '[[:<:]]{$this->myDB->quote($keyword)}'":"keyword = '{$this->myDB->quote($keyword)}'";
 		dev_log::write("ListingFacade::resolveClassification BEGIN");
 		$classifications = array();
 		//First search in classification table
@@ -3768,7 +3768,8 @@ class ListingFacade extends MainFacade {
 				FROM 
 					local_classification 
 				WHERE 
-					localclassification_name REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
+					localclassification_name $search_criteria";
+		//REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'
 
 		$res = $this->myDB->query($sql);
 		dev_log::write("classifications = ".var_export($res, true));
@@ -3783,7 +3784,7 @@ class ListingFacade extends MainFacade {
 				FROM
 					keywords
 				WHERE
-					$kw_criteria";
+					keyword $search_criteria";
 		//keyword REGEXP '^".$this->myDB->quote($keyword).' '."|^{$this->myDB->quote($keyword)}$'
 		//SELECT * FROM keywords WHERE keyword REGEXP '^car |^car$'
 		//keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
