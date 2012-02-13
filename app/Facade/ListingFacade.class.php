@@ -3772,7 +3772,8 @@ class ListingFacade extends MainFacade {
 		//REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'
 
 		$res = $this->myDB->query($sql);
-		dev_log::write("classification sql = $sql");
+		$class_count = count(res);
+		dev_log::write("classification | count = $class_count | sql = $sql");
 		//dev_log::write("classifications = ".var_export($res, true));
 		if($res) {
 			foreach ($res as $classification) {
@@ -3789,8 +3790,12 @@ class ListingFacade extends MainFacade {
 		//keyword REGEXP '^".$this->myDB->quote($keyword).' '."|^{$this->myDB->quote($keyword)}$'
 		//SELECT * FROM keywords WHERE keyword REGEXP '^car |^car$'
 		//keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
-		dev_log::write("keyword sql = $sql");
+		
 		$res = $this->myDB->query($sql);
+		
+		$keyword_count = count(res);
+		dev_log::write("keyword | count = $keyword_count | sql = $sql");
+		
 		//dev_log::write("keywords = ".var_export($res, true));
 		
 		if($res) {
