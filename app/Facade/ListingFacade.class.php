@@ -3782,7 +3782,7 @@ class ListingFacade extends MainFacade {
 				FROM
 					keywords
 				WHERE
-					keyword REGEXP '[[:<:]]$this->myDB->quote($keyword)'";
+					keyword REGEXP '[[:<:]]{$this->myDB->quote($keyword)}'";
 		//keyword REGEXP '^".$this->myDB->quote($keyword).' '."|^{$this->myDB->quote($keyword)}$'
 		//SELECT * FROM keywords WHERE keyword REGEXP '^car |^car$'
 		//keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
