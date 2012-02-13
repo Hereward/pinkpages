@@ -3758,6 +3758,7 @@ class ListingFacade extends MainFacade {
 
 	public function resolveClassification($keyword)
 	{
+		$cc = strlen($str);
 		dev_log::write("ListingFacade::resolveClassification BEGIN");
 		$classifications = array();
 		//First search in classification table
@@ -3769,7 +3770,7 @@ class ListingFacade extends MainFacade {
 					localclassification_name REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 
 		$res = $this->myDB->query($sql);
-		dev_log::write("classifications = ".var_export($res, true));
+		//dev_log::write("classifications = ".var_export($res, true));
 		if($res) {
 			foreach ($res as $classification) {
 				$classifications[] = $classification['localclassification_id'];
@@ -3781,12 +3782,13 @@ class ListingFacade extends MainFacade {
 				FROM
 					keywords
 				WHERE
-					keyword REGEXP '^".$this->myDB->quote($keyword).' '."|^{$this->myDB->quote($keyword)}$'";
+					keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
+		//keyword REGEXP '^".$this->myDB->quote($keyword).' '."|^{$this->myDB->quote($keyword)}$'
 		//SELECT * FROM keywords WHERE keyword REGEXP '^car |^car$'
 		//keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 		dev_log::write("keyword sql = $sql");
 		$res = $this->myDB->query($sql);
-		dev_log::write("keywords = ".var_export($res, true));
+		//dev_log::write("keywords = ".var_export($res, true));
 		
 		if($res) {
 			foreach ($res as $synonym) {
@@ -3805,7 +3807,7 @@ class ListingFacade extends MainFacade {
 				WHERE
 					gp.group_title REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 		$res = $this->myDB->query($sql);
-		dev_log::write("verticals = ".var_export($res, true));
+		//dev_log::write("verticals = ".var_export($res, true));
 		if($res) {
 			foreach ($res as $group) {
 				$classifications[] = $group['classification_id'];
