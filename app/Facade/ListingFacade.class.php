@@ -3758,7 +3758,7 @@ class ListingFacade extends MainFacade {
 
 	public function resolveClassification($keyword)
 	{
-		$cc = strlen($str);
+		$cc = strlen($keyword);
 		$kw_criteria = ($cc>3)?"keyword REGEXP '[[:<:]]{$this->myDB->quote($keyword)}'":"keyword = '{$this->myDB->quote($keyword)}'";
 		dev_log::write("ListingFacade::resolveClassification BEGIN");
 		$classifications = array();
