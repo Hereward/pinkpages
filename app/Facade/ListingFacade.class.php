@@ -3759,7 +3759,7 @@ class ListingFacade extends MainFacade {
 	public function resolveClassification($keyword)
 	{
 		$cc = strlen($keyword);
-		$search_criteria = ($cc>3)?"REGEXP '[[:<:]]{$this->myDB->quote($keyword)}'":"keyword = '{$this->myDB->quote($keyword)}'";
+		$search_criteria = ($cc>3)?"REGEXP '[[:<:]]{$this->myDB->quote($keyword)}'":"= '{$this->myDB->quote($keyword)}'";
 		dev_log::write("ListingFacade::resolveClassification BEGIN");
 		$classifications = array();
 		//First search in classification table
