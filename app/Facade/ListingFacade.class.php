@@ -3772,7 +3772,7 @@ class ListingFacade extends MainFacade {
 		//REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'
 
 		$res = $this->myDB->query($sql);
-		$class_count = count(res);
+		$class_count = count($res);
 		dev_log::write("classification | count = $class_count | sql = $sql");
 		//dev_log::write("classifications = ".var_export($res, true));
 		if($res) {
@@ -3793,7 +3793,7 @@ class ListingFacade extends MainFacade {
 		
 		$res = $this->myDB->query($sql);
 		
-		$keyword_count = count(res);
+		$keyword_count = count($res);
 		dev_log::write("keyword | count = $keyword_count | sql = $sql");
 		
 		//dev_log::write("keywords = ".var_export($res, true));
