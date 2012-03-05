@@ -1807,7 +1807,10 @@ class SalesAccountManagerFacade extends MainFacade {
 
 		$postcode				= (!empty($post['postcode']))?$post['postcode']:NULL;
 		
-
+        //$business_name = mysql_real_escape_string($post['name']);
+       // $business_street1 = mysql_real_escape_string($post['street1']);
+        //$business_street2 = mysql_real_escape_string($post['street2']);
+       // $business_suburb = mysql_real_escape_string($sub[1]);
 
 		if($shire[0] != '59')
 		{
@@ -1815,7 +1818,7 @@ class SalesAccountManagerFacade extends MainFacade {
 		              local_businesses
 			    SET
 						url_alias='{$post['url_alias']}',
-						business_name='{mysql_real_escape_string($post['name'])}',
+						business_name='{mysql_real_escape_string({$post['name']})}',
 						account_id='{$post['account_id']}',
 						business_street1='{$post['street1']}',
 						business_street2='{$post['street2']}',
