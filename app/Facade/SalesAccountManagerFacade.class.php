@@ -1752,7 +1752,7 @@ class SalesAccountManagerFacade extends MainFacade {
 		}
 		
 
-		$postcode				= (!empty($post['postcode']))?$post['postcode']:NULL;
+		$postcode = (!empty($post['postcode']))?$post['postcode']:NULL;
 		
 
 
@@ -1812,6 +1812,8 @@ class SalesAccountManagerFacade extends MainFacade {
 						archived='{$archived}',
 						business_state='{$post['state']}' WHERE business_id=$condition"; 
 		}
+		
+		die("SQL = $SQL");
 		$this->MyDB->query($SQL);
 
 		//Updating new entry in indexed lookup table
