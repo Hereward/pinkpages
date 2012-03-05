@@ -1807,10 +1807,12 @@ class SalesAccountManagerFacade extends MainFacade {
 
 		$postcode				= (!empty($post['postcode']))?$post['postcode']:NULL;
 		
-        //$business_name = mysql_real_escape_string($post['name']);
-       // $business_street1 = mysql_real_escape_string($post['street1']);
-        //$business_street2 = mysql_real_escape_string($post['street2']);
-       // $business_suburb = mysql_real_escape_string($sub[1]);
+        $business_name = mysql_real_escape_string($post['name']);
+        $business_street1 = mysql_real_escape_string($post['street1']);
+        $business_street2 = mysql_real_escape_string($post['street2']);
+        $business_suburb = mysql_real_escape_string($sub[1]);
+        $business_description = mysql_real_escape_string($post['description']);
+        $shire_town = mysql_real_escape_string($sub[1]);
 
 		if($shire[0] != '59')
 		{
@@ -1818,11 +1820,11 @@ class SalesAccountManagerFacade extends MainFacade {
 		              local_businesses
 			    SET
 						url_alias='{$post['url_alias']}',
-						business_name='{mysql_real_escape_string({$post['name']})}',
+						business_name='$business_name',
 						account_id='{$post['account_id']}',
-						business_street1='{$post['street1']}',
-						business_street2='{$post['street2']}',
-						business_suburb='{$sub[1]}',
+						business_street1='$business_street1',
+						business_street2='$business_street2',
+						business_suburb='$business_suburb',
 						business_postcode={$postcode},
 						business_phonestd='{$post['phonestd']}',
 						business_phone='{$post['phone']}',
@@ -1835,8 +1837,8 @@ class SalesAccountManagerFacade extends MainFacade {
 						business_logo='{$image}',
 						business_image='{$image2}',						
 						shire_name='{$shire[1]}',
-						business_description='{$post['description']}',
-						shire_town='{$sub[1]}',					
+						business_description='$business_description',
+						shire_town='$shire_town',					
 						street1_status='{$Add1}',
 						street2_status='{$Add2}',	
 						map_status='{$Add3}',					
@@ -1847,10 +1849,10 @@ class SalesAccountManagerFacade extends MainFacade {
 		              local_businesses
 			    SET
 						url_alias='{$post['url_alias']}',				
-						business_name='{$post['name']}',
+						business_name='$business_name',
 						account_id='{$post['account_id']}',
-						business_street1='{$post['street1']}',
-						business_street2='{$post['street2']}',
+						business_street1='$business_street1',
+						business_street2='$business_street2',
 						business_suburb=null,
 						business_postcode=null,
 						business_phonestd='{$post['phonestd']}',
@@ -1864,7 +1866,7 @@ class SalesAccountManagerFacade extends MainFacade {
 						business_logo='{$image}',
 						business_image='{$image2}',						
 						shire_name='{$shire[1]}',
-						business_description='{$post['description']}',
+						business_description='$business_description',
 						shire_town=null,					
 						street1_status='{$Add1}',
 						street2_status='{$Add2}',	
