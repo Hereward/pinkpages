@@ -227,7 +227,7 @@ class ListingControl extends MainControl {
      */
 		public function search()
 		{
-  
+
 			$this->page->pageTitle 			= "Pink Pages &shy; Search results for [".$_GET['Search1']."] ";
 			$do         				= $_GET['do'];
 			$action						= $_GET['action'];
@@ -887,13 +887,10 @@ class ListingControl extends MainControl {
      */
 	public function categorySearch()
 	{	
-		dev_log::cur_url("Listing::categorySearch");
 	    if(isset($_GET['shire_name'])  &&  !empty($_GET['shire_name'])){
 		  $regionAlias        = $_GET['shire_name'];
 		  $_GET['shire_name'] = $this->listingFacade->getShireNameFromAlias($_GET['shire_name']);
 		}	
-		
-		$statewide_search = FALSE;
 	
 		$shire_name							= (!empty($_GET['shire_name']))?$_GET['shire_name']:NULL;
 		$shire_town							= (!empty($_GET['shire_town']))?$_GET['shire_town']:NULL;		
@@ -941,9 +938,7 @@ class ListingControl extends MainControl {
 		     $this->page->assign("regionURLs", $regionURLs);			 		     				 
 		}
 		else {
-			$location = $_GET['state'];
-			$statewide_search = TRUE;
-			// $location = 'All Sydney';
+			$location = 'All Sydney';
 		}		
 		
 		//Assign suburb/region search area
@@ -1012,7 +1007,7 @@ class ListingControl extends MainControl {
 		
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
 		$keyword  = urldecode(ucwords(strtolower($_GET['category'])));
-		$location = ($statewide_search)?strtoupper($location):ucwords(strtolower($location));
+		$location = ucwords(strtolower($location));
 		
 		$this->page->assign("category", $category);
 		$this->page->assign("keyword" , $keyword);

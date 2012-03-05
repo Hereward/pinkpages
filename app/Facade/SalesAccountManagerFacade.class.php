@@ -1562,7 +1562,7 @@ class SalesAccountManagerFacade extends MainFacade {
 			  FROM 
 			        local_pages,
 					 
-			  WHERE business_id=$condition";
+			  WHERE business_id=$condition;
 		$res=$this->MyDB->query($SQL);
 		return $res;
 	}
@@ -1660,7 +1660,10 @@ class SalesAccountManagerFacade extends MainFacade {
 	*/
 	public function selectShires()
 	{
-		$SQL="SELECT * FROM shire_names";
+		$SQL="SELECT
+		            * 
+			  FROM 
+			        shire_names";
 		$res=$this->MyDB->query($SQL);
 		return $res;
 	}
@@ -1752,7 +1755,7 @@ class SalesAccountManagerFacade extends MainFacade {
 		}
 		
 
-		$postcode = (!empty($post['postcode']))?$post['postcode']:NULL;
+		$postcode				= (!empty($post['postcode']))?$post['postcode']:NULL;
 		
 
 
@@ -1812,7 +1815,6 @@ class SalesAccountManagerFacade extends MainFacade {
 						archived='{$archived}',
 						business_state='{$post['state']}' WHERE business_id=$condition"; 
 		}
-		
 		$this->MyDB->query($SQL);
 
 		//Updating new entry in indexed lookup table

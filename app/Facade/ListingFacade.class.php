@@ -539,7 +539,7 @@ class ListingFacade extends MainFacade {
 		$rank_col = " br.businessrank_rank ";
 		$time_stamp_col = "br.businessrank_timestamp,";
 		
-		if(!$shire_id || $shire_id==59 || $shire_id==314 || $shire_id==315 || $shire_id==316) {
+		if(!$shire_id || $shire_id==59) {
 			//$rank_col = " 9999 ";
 			//$OrderBy ="ORDER BY (CASE WHEN lb.business_name = 'Strike First Pest Management Systems' THEN 1  WHEN lb.business_name = 'MENASH & TECHNOSAT' THEN 1 WHEN lb.business_name = 'BIG BOB REMOVALS' THEN 2 WHEN lb.business_name = 'JUMBUCK POOL & HOME FENCING' THEN 3 WHEN lb.business_name = 'STREAMLINE ELECTRICAL AND SECURITY PTY LTD' THEN 4 WHEN lb.business_name = 'PHOENIX BATHROOM RENOVATIONS' THEN 5 WHEN lb.business_name = 'A SOUTH EAST KITCHEN MAKEOVER' THEN 6 ELSE 7 END), rank ASC, lb.business_name";
             $OrderBy ="ORDER BY lb.business_name";			
@@ -582,7 +582,6 @@ class ListingFacade extends MainFacade {
 				WHERE 
 					$condition";
 		//prexit($sql);
-		
 		$count_result = $this->myDB->query($sql);
 		//Limit results to 100 in order to stop SCRAPING
 		$count = (count($count_result) > 100) ? 100 : count($count_result);
@@ -705,7 +704,7 @@ class ListingFacade extends MainFacade {
                 }  				
 								
 			}
-			if((!$shire_id || $shire_id==59 || $shire_id==314 || $shire_id==315 || $shire_id==316) && !$fr) {//case all-sydney results
+			if((!$shire_id || $shire_id==59) && !$fr) {//case all-sydney results
 				$temp=array();
 				foreach ($result as $k=>$listing) {
 					if($listing['rank']==9999) {
@@ -893,7 +892,7 @@ class ListingFacade extends MainFacade {
 		$rank_col = " br.businessrank_rank ";
 		$time_stamp_col = "br.businessrank_timestamp,";
 		
-		if(!$shire_id || $shire_id==59 || $shire_id==314 || $shire_id==315 || $shire_id==316) {
+		if(!$shire_id || $shire_id==59) {
 			//$rank_col = " 9999 ";
 			//$OrderBy ="ORDER BY (CASE WHEN lb.business_name = 'Strike First Pest Management Systems' THEN 1  WHEN lb.business_name = 'MENASH & TECHNOSAT' THEN 1 WHEN lb.business_name = 'BIG BOB REMOVALS' THEN 2 WHEN lb.business_name = 'JUMBUCK POOL & HOME FENCING' THEN 3 WHEN lb.business_name = 'STREAMLINE ELECTRICAL AND SECURITY PTY LTD' THEN 4 WHEN lb.business_name = 'PHOENIX BATHROOM RENOVATIONS' THEN 5 WHEN lb.business_name = 'A SOUTH EAST KITCHEN MAKEOVER' THEN 6 ELSE 7 END), rank ASC, lb.business_name";
             $OrderBy ="ORDER BY rank ASC, lb.business_name";			
@@ -1065,7 +1064,7 @@ class ListingFacade extends MainFacade {
 				  $result[$k]['url'] = $this->request->createURL("Listing", "googleMapView", "Street={$category['business_street1']}&Suburb={$category['business_suburb']}&State={$category['business_state']}&Postcode={$category['business_postcode']}&businessId={$category['business_id']}&name={$category['business_name']}&rank={$category['rank']}&classification={$result_classification[0]['localclassification_name']}");								
                 }  
 			}
-			if((!$shire_id || $shire_id==59 || $shire_id==314 || $shire_id==315 || $shire_id==316) && !$fr) {//case all-sydney results
+			if((!$shire_id || $shire_id==59) && !$fr) {//case all-sydney results
 				$temp=array();
 				foreach ($result as $k=>$listing) {
 					if($listing['rank']==9999) {
@@ -3449,7 +3448,6 @@ class ListingFacade extends MainFacade {
 
 	public function getClassificationCountByLocation($location, $classification_ids, $fr=0, $paging_size = DEFAULT_PAGING_SIZE)
 	{
-		//dev_log::write("ListingFacade::getClassificationCountByLocation BEGIN");
 		$locationParams = explode(' - ', $location);		
 		$location = $locationParams[0];	
 	
@@ -3478,7 +3476,7 @@ class ListingFacade extends MainFacade {
 			if($location) {
 				$shire_id = $this->isRegionExists($location);
 				if($shire_id) {
-					if($shire_id!=59 && $shire_id!=314 && $shire_id!=315 && $shire_id!=316) { // VICTORIA HACK 
+					if($shire_id!=59) { //  && $shire_id!=314 VICTORIA HACK ADDED 20120206
 						$location_cond = " AND lb.shire_name='".$this->myDb->quote($location)."'";
 						$regionURLAlias = $this->getRegionAlias($location);
 						$param = "&shire_name=".urlencode($regionURLAlias);
@@ -3519,7 +3517,7 @@ class ListingFacade extends MainFacade {
 			$i=0;
 			$classificationFacade = new ClassificationFacade($this->myDb);
 			foreach ($classification_ids as $classification_id) {
-                //dev_log::write("classification = ".$classification_id);
+
 				$main_cond	= " bc.localclassification_id=".$this->myDB->quote($classification_id)." AND lb.expired=0 ";
 				$condition = " AND br.localclassification_id=bc.localclassification_id ";
 
@@ -3538,7 +3536,7 @@ class ListingFacade extends MainFacade {
 				$rank_col = " br.businessrank_rank ";
 				$rank_condition =" AND br.shirename_id=$shire_id";
 				$time_stamp_col = "br.businessrank_timestamp,";
-				if(!$shire_id || $shire_id==59 || $shire_id==314 || $shire_id==315 || $shire_id==316) {
+				if(!$shire_id || $shire_id==59) {
 					$rank_col = " 6 ";
 					$rank_condition ="";
 					$time_stamp_col = "";
@@ -3558,8 +3556,6 @@ class ListingFacade extends MainFacade {
 								$condition ";
 								
 				$count = $this->myDB->exec($shire_sql);
-				//dev_log::write("count = ".$count);
-				//if (!$count) {dev_log::write("sql = ".$shire_sql);}
 				if($count) {
 
 					$classification_name = $classificationFacade->getClassificationNameById($classification_id);
@@ -3640,7 +3636,7 @@ class ListingFacade extends MainFacade {
 				$rank_col = " br.businessrank_rank ";
 				$rank_condition =" AND br.shirename_id=$shire_id";
 				$time_stamp_col = "br.businessrank_timestamp,";
-				if(!$shire_id || $shire_id==59 || $shire_id==314 || $shire_id==315 || $shire_id==316) {
+				if(!$shire_id || $shire_id==59) {
 					$rank_col = " 6 ";
 					$rank_condition ="";
 					$time_stamp_col = "";
@@ -3758,9 +3754,6 @@ class ListingFacade extends MainFacade {
 
 	public function resolveClassification($keyword)
 	{
-		$cc = strlen($keyword);
-		$search_criteria = ($cc>3)?"REGEXP '[[:<:]]{$this->myDB->quote($keyword)}'":"= '{$this->myDB->quote($keyword)}'";
-		dev_log::write("ListingFacade::resolveClassification BEGIN");
 		$classifications = array();
 		//First search in classification table
 		$sql = "SELECT
@@ -3768,13 +3761,9 @@ class ListingFacade extends MainFacade {
 				FROM 
 					local_classification 
 				WHERE 
-					localclassification_name $search_criteria";
-		//REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'
+					localclassification_name REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 
 		$res = $this->myDB->query($sql);
-		$class_count = count($res);
-		dev_log::write("classification | count = $class_count | sql = $sql");
-		//dev_log::write("classifications = ".var_export($res, true));
 		if($res) {
 			foreach ($res as $classification) {
 				$classifications[] = $classification['localclassification_id'];
@@ -3786,18 +3775,8 @@ class ListingFacade extends MainFacade {
 				FROM
 					keywords
 				WHERE
-					keyword $search_criteria";
-		//keyword REGEXP '^".$this->myDB->quote($keyword).' '."|^{$this->myDB->quote($keyword)}$'
-		//SELECT * FROM keywords WHERE keyword REGEXP '^car |^car$'
-		//keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
-		
+					keyword REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 		$res = $this->myDB->query($sql);
-		
-		$keyword_count = count($res);
-		dev_log::write("keyword | count = $keyword_count | sql = $sql");
-		
-		//dev_log::write("keywords = ".var_export($res, true));
-		
 		if($res) {
 			foreach ($res as $synonym) {
 				$classifications[] = $synonym['localclassification_id'];
@@ -3815,15 +3794,13 @@ class ListingFacade extends MainFacade {
 				WHERE
 					gp.group_title REGEXP '[[:<:]]".$this->myDB->quote($keyword)."'";
 		$res = $this->myDB->query($sql);
-		//dev_log::write("verticals = ".var_export($res, true));
 		if($res) {
 			foreach ($res as $group) {
 				$classifications[] = $group['classification_id'];
 
 			}
 		}
-		//dev_log::write("final = ".var_export(array_unique($classifications), true));
-        dev_log::write("ListingFacade::resolveClassification END");
+
 		return array_unique($classifications);
 	}/* END resolveClassification */
 
