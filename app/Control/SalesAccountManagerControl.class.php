@@ -1477,8 +1477,8 @@ class SalesAccountManagerControl extends MainControl {
 		$this->page->assign("deleteHour",$this->request->createURL("SalesAccountManager", "deleteHour","ID"));
 		$this->page->assign("deletePayment",$this->request->createURL("SalesAccountManager", "deletePayment","ID"));
 
-		//$res3=$this->SalesAccountManagerFacade->();
-        //$this->page->assign("values12",$res3[0]);			
+		$res3=$this->SalesAccountManagerFacade-> ();
+        $this->page->assign("values12",$res3[0]);			
 		
 		$businessHour=$this->SalesAccountManagerFacade->fetchHour();
 		$this->page->assign("businessHour",$businessHour);
@@ -1806,8 +1806,6 @@ class SalesAccountManagerControl extends MainControl {
 		$this->page->assign("addemployee",$this->request->createURL("SalesAccountManager","registrationAdd"));
 		$this->page->assign("addbusinessform",$this->request->createURL("SalesAccountManager", "addListing"));
 		$this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
-		
-		die("editAddition");
 		
 //Maintain the change in the value after the updation in the business listing details.
 		

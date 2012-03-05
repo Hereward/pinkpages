@@ -1815,7 +1815,7 @@ class SalesAccountManagerFacade extends MainFacade {
 		              local_businesses
 			    SET
 						url_alias='{$post['url_alias']}',
-						business_name='{$post['name']}',
+						business_name='{mysql_real_escape_string($post['name'])}',
 						account_id='{$post['account_id']}',
 						business_street1='{$post['street1']}',
 						business_street2='{$post['street2']}',

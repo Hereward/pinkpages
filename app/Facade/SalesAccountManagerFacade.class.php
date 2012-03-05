@@ -1813,7 +1813,6 @@ class SalesAccountManagerFacade extends MainFacade {
 						business_state='{$post['state']}' WHERE business_id=$condition"; 
 		}
 		
-		die("SQL = $SQL");
 		$this->MyDB->query($SQL);
 
 		//Updating new entry in indexed lookup table
