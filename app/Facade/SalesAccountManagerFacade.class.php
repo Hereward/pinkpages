@@ -1562,7 +1562,7 @@ class SalesAccountManagerFacade extends MainFacade {
 			  FROM 
 			        local_pages,
 					 
-			  WHERE business_id=$condition;
+			  WHERE business_id=$condition";
 		$res=$this->MyDB->query($SQL);
 		return $res;
 	}
@@ -1660,10 +1660,7 @@ class SalesAccountManagerFacade extends MainFacade {
 	*/
 	public function selectShires()
 	{
-		$SQL="SELECT
-		            * 
-			  FROM 
-			        shire_names";
+		$SQL="SELECT * FROM shire_names";
 		$res=$this->MyDB->query($SQL);
 		return $res;
 	}
