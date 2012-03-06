@@ -49,7 +49,7 @@
   </div>
   
 </div>
-
+<div class="breaker"></div>
     <div style="position:relative;">
       <iframe src="http://www.facebook.com/plugins/like.php?href=http://www.pinkpages.com.au/"
         scrolling="no" frameborder="0"
