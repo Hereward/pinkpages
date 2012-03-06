@@ -6,12 +6,7 @@
     <div class="searchbox-front-middle">
     <br />
     <span><a href="/main.php?do=Content&action=contactUs">Advertise with us</a></span>
-    <p>
-      <iframe src="http://www.facebook.com/plugins/like.php?href=http://www.pinkpages.com.au/"
-        scrolling="no" frameborder="0"
-        style="border:none; width:450px; height:80px">
-      </iframe>
-   </p>    <p>Find businesses and organisations</p>
+    <p>Find businesses and organisations</p>
 		<div class="searchbox-index-left-key">
         
 		  <form id="test" action="main.php" name="Homepage" method="get" onsubmit="return check();">
@@ -52,9 +47,15 @@
 
 	
   </div>
-
+  
 </div>
 
+    <div style="position:relative;">
+      <iframe src="http://www.facebook.com/plugins/like.php?href=http://www.pinkpages.com.au/"
+        scrolling="no" frameborder="0"
+        style="border:none; width:450px; height:80px">
+      </iframe>
+   </div>
 <!--Body End-->{if $smarty.get.p eq 's'} {include file="syd_list.tpl" } {elseif $smarty.get.p eq 'n'} {include file="newc_list.tpl" } {elseif $smarty.get.p eq 'c'} {include file="can_list.tpl" } {elseif $smarty.get.p eq 'm'} {include file="mel_list.tpl" } {else} {include file="city_list.tpl" } {/if}
 {* include file="news.tpl" *}
  <!-- <div class="news_links" >
