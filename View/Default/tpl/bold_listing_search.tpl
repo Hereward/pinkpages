@@ -223,7 +223,7 @@
 					 </table>
 </div>
 
-<div style="margin-top:10px;">{include file="facebook_like.tpl" }</div>
+<div style="margin:10px 0 0 5px;;">{include file="facebook_like.tpl" }</div>
 
 {include file="footer.tpl"}
 
