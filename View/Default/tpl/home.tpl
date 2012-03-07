@@ -53,7 +53,7 @@
 
 <div class="breaker"></div>
   <div style="height: 60px; margin: 0 0 0 330px; text-align: left;">
-      <div style="float:left; margin:0 10px 0 0;">{include file="google_plus_one.tpl" }</div> 
+      <span style="float:left; margin:0 10px 0 0;">{include file="google_plus_one.tpl" }</span> 
       <div>{include file="facebook_like.tpl" }</div>
   </div>
 
