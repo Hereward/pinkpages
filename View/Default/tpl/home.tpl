@@ -50,12 +50,12 @@
   
 </div>
 
-{* 
+
 <div class="breaker"></div>
-    <div style="height: 20px; margin: 0 0 0 330px; text-align: left;">
+    <div style="height: 60px; margin: 0 0 0 330px; text-align: left;">
       {include file="facebook_like.tpl" }
    </div>
-*}
+
 <!--Body End-->{if $smarty.get.p eq 's'} {include file="syd_list.tpl" } {elseif $smarty.get.p eq 'n'} {include file="newc_list.tpl" } {elseif $smarty.get.p eq 'c'} {include file="can_list.tpl" } {elseif $smarty.get.p eq 'm'} {include file="mel_list.tpl" } {else} {include file="city_list.tpl" } {/if}
 {* include file="news.tpl" *}
  <!-- <div class="news_links" >
