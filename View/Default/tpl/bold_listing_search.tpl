@@ -223,6 +223,7 @@
 					 </table>
 </div>
 
+<div>{include file="facebook_like.tpl" }</div>
 
 {include file="footer.tpl"}
 
