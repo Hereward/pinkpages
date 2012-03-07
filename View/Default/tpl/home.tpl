@@ -52,9 +52,10 @@
 
 
 <div class="breaker"></div>
-    <div style="height: 60px; margin: 0 0 0 330px; text-align: left;">
-     <div style="float:left; margin:0 10px 0 0;">{include file="google_plus_one.tpl" }</div> {include file="facebook_like.tpl" } 
-   </div>
+  <div style="height: 60px; margin: 0 0 0 330px; text-align: left;">
+      <div style="float:left; margin:0 10px 0 0;">{include file="google_plus_one.tpl" }</div> 
+      <div>{include file="facebook_like.tpl" }</div>
+  </div>
 
 <!--Body End-->{if $smarty.get.p eq 's'} {include file="syd_list.tpl" } {elseif $smarty.get.p eq 'n'} {include file="newc_list.tpl" } {elseif $smarty.get.p eq 'c'} {include file="can_list.tpl" } {elseif $smarty.get.p eq 'm'} {include file="mel_list.tpl" } {else} {include file="city_list.tpl" } {/if}
 {* include file="news.tpl" *}
