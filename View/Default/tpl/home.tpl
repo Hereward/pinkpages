@@ -50,11 +50,8 @@
   
 </div>
 <div class="breaker"></div>
-    <div style="height: 20px; margin: 0 0 0 320px; text-align: left;">
-      <iframe src="http://www.facebook.com/plugins/like.php?href=http://www.pinkpages.com.au/"
-        scrolling="no" frameborder="0"
-        style="border:none; width:450px; height:80px">
-      </iframe>
+    <div style="height: 20px; margin: 0 0 0 330px; text-align: left;">
+      {include file="facebook_like.tpl" }
    </div>
 <!--Body End-->{if $smarty.get.p eq 's'} {include file="syd_list.tpl" } {elseif $smarty.get.p eq 'n'} {include file="newc_list.tpl" } {elseif $smarty.get.p eq 'c'} {include file="can_list.tpl" } {elseif $smarty.get.p eq 'm'} {include file="mel_list.tpl" } {else} {include file="city_list.tpl" } {/if}
 {* include file="news.tpl" *}

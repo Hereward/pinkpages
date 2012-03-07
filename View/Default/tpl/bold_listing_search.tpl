@@ -224,10 +224,6 @@
 </div>
 
 
-<script type="text/javascript">
-alert(window.location.href)
-</script>
-
 {include file="footer.tpl"}
 
 <script type="text/javascript" language="javascript">
