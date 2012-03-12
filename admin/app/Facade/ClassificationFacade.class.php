@@ -850,9 +850,110 @@ class ClassificationFacade extends MainFacade {
 	  //Increase the amount of Memory at PHPs disposal
 	  ini_set('memory_limit', '1256M');	  	
 	}	
-				
-	public function getClassificationRegionReport($from_date, $to_date, $filter_google) {
+	
+	public function getClassificationRegionTotalsReport($from_date, $to_date, $filter_google) {
+			set_time_limit(0);
+		ini_set("memory_limit","80M");
+
+		//getting all regions
+		$sql = "SELECT 
+					`shirename_id` AS region_id, 
+					`region_code` AS region_code 
+				FROM 
+					`shire_names` 
+				ORDER BY 
+					region_code
+				";
+		$regions = $this->MyDB->query($sql);
+		if ($filter_google) {
+			$sql = "SELECT 
+				lc.localclassification_name, 
+				st.classification_id, 
+				st.region_id, 
+				sum(st.views - st.google_views) AS views
+			FROM
+				region_classification_stats AS st
+				LEFT JOIN local_classification AS lc
+					ON (st.classification_id=lc.localclassification_id)
+			WHERE
+				st.view_date BETWEEN '$from_date' AND '$to_date'
+			GROUP BY
+				st.classification_id, st.region_id
+			ORDER BY
+				lc.localclassification_name
+			";
+		} else {
+			$sql = "SELECT 
+				lc.localclassification_name, 
+				st.classification_id, 
+				st.region_id, 
+				sum(st.views) AS views
+			FROM
+				region_classification_stats AS st
+				LEFT JOIN local_classification AS lc
+					ON (st.classification_id=lc.localclassification_id)
+			WHERE
+				st.view_date BETWEEN '$from_date' AND '$to_date'
+			GROUP BY
+				st.classification_id, st.region_id
+			ORDER BY
+				lc.localclassification_name
+			";
+		}		
+		$rows = $this->MyDB->query($sql);
+//		prexit($rows);
+		$classifications = $stat = array();
+		foreach ($rows as $r) {
+			$classifications[$r['classification_id']][] = $r;
+		}
+//		pre($classifications);
+		$i=0;
+		foreach ($classifications as $classification) {
+			$temp = array();
+			$j=0;
+			$total_views = 0;
+			foreach ($regions as $region) {
+				$temp[$j]['views']=0;
+				foreach ($classification as $c) {
+					if($c['region_id']==$region['region_id']) {
+						$temp[$j]['views']=$c['views'];
+						break;
+					}
+				}
+				$temp[$j]['region_code'] = $region['region_code'];
+				$total_views += $temp[$j]['views'];
+				$j++;
+			}
+			$stat[$i]['classification_name'] = $classification[0]['localclassification_name'];
+			$stat[$i]['total_views'] = $total_views;
+			$stat[$i]['regions'] = $temp;
+			$i++;
+		}
+		$d = $i+1;
+		header("Content-type: application/octet-stream");
+		header("Content-Disposition: attachment; filename=\"Report.csv\"");
+		echo "CLASSIFICATION_NAME,";
+		foreach ($regions as $region) {
+			echo $region['region_code'].",";
+		}
+		echo "TOTAL,STARTDATE,ENDDATE";
+		echo "\n";
+		foreach ($stat as $k=>$data) {
+			echo $data['classification_name'].",";
+			foreach ($data['regions'] as $reg) {
+				echo $reg['views'].",";
+			}
+			echo $data['total_views'].",$from_date,$to_date\n";
+		}
+		echo ",";
+		echo "=SUM(B2:B$d),=SUM(C2:C$d),=SUM(D2:D$d),=SUM(E2:E$d),=SUM(F2:F$d),=SUM(G2:G$d),=SUM(H2:H$d),=SUM(I2:I$d),=SUM(J2:J$d),=SUM(K2:K$d),=SUM(L2:L$d),=SUM(M2:M$d),=SUM(N2:N$d),=SUM(O2:O$d),=SUM(P2:P$d),=SUM(Q2:Q$d),=SUM(R2:R$d),=SUM(S2:S$d),=SUM(T2:T$d),=SUM(U2:U$d)";
+	echo "\n";
+		exit;
 		
+	}
+
+	
+	public function getClassificationRegionReport($from_date, $to_date, $filter_google) {
 		set_time_limit(0);
 		ini_set("memory_limit","80M");
 
@@ -866,7 +967,7 @@ class ClassificationFacade extends MainFacade {
 					region_code
 				";
 		$regions = $this->MyDB->query($sql);
-		if ($filter_google != null) {
+		if ($filter_google) {
 			$sql = "SELECT 
 				lc.localclassification_name, 
 				st.classification_id, 

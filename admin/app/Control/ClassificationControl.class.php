@@ -803,9 +803,12 @@ public function class_region_monthly_total_report() {
 	}	
 	
 	public function classRegionReport() {
+		$filter_google = FALSE;
 		$from_date = $_POST['from_date'];
 		$to_date = $_POST['to_date'];
-		$filter_google = $_POST['filter_google'];
+	    if (array_key_exists('filter_google', $_POST)) {
+			$filter_google = TRUE;
+		}
 
 		$this->classificationFacade->getClassificationRegionReport($from_date, $to_date, $filter_google);
 	}
@@ -813,7 +816,11 @@ public function class_region_monthly_total_report() {
 	public function classRegionTotalsReport() {
 		$from_date = $_POST['from_date'];
 		$to_date = $_POST['to_date'];
-		$filter_google = $_POST['filter_google'];
+		$filter_google = FALSE;
+		if (array_key_exists('filter_google', $_POST)) {
+			$filter_google = TRUE;
+		}
+		//$filter_google = $_POST['filter_google'];
 
 		$this->classificationFacade->getClassificationRegionTotalsReport($from_date, $to_date, $filter_google);
 	}
