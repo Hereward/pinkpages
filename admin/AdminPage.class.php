@@ -115,9 +115,7 @@ class AdminPage extends Smarty {
 			if(!in_array($currentAction,$menuArray))
 			{
 			$this->display("menu.tpl");
-			//die("flag_01");
 			}
-			//die("flag_01.1");
 		}
 		else
 		{
@@ -131,9 +129,7 @@ class AdminPage extends Smarty {
 				//$this->assign("search",$request->createURL("SalesAccountManager","searchBusiness"));
 				//$this->assign("addbusinessform",$request->createURL("Employee", "addListing"));
 				$this->display("menu.tpl");
-				//die("flag_02");
 			}
-			//die("flag_02.1");
 			
 		}
 
@@ -149,9 +145,7 @@ class AdminPage extends Smarty {
 			//$this->assign("addbusinessform",$request->createURL("SalesAccountManager", "addListing"));
 			//$this->assign("searchemployee",$request->createURL("SalesAccountManager","searchEmployee"));
 			$this->display("menu.tpl");
-			die("flag_03");
 		}
-		die("flag_03.1");
 	
 
 		//        $this->display("leftpanel.tpl");
