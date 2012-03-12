@@ -90,7 +90,7 @@
 
 		<li><img src="{$IMAGES_PATH}icon-home.gif" /><a href="{$home_url}">Home</a></li>  
 		<li><img src="{$IMAGES_PATH}icon-manage11.gif" /><a href="{$class_region_report}">Classification-Region Report</a></li>  
-		<li><img src="{$IMAGES_PATH}icon-manage11.gif" /><a href="{$class_region_monthly_total_report}">Classification-Region Totals</a></li>  {* report for monthly totals *}
+		<li><img src="{$IMAGES_PATH}icon-manage11.gif" /><a href="boo">Classification-Region Totals</a></li>  {* report for monthly totals *}
 		<li><img src="{$IMAGES_PATH}icon-manage11.gif" /><a href="{$ctr_report}">CTR Report</a></li>  		
 		<li><img src="{$IMAGES_PATH}icon-manage11.gif" /><a href="{$classificationBannerReport}">Classification-Banner Report</a></li>  		
 	<!--	<li><img src="{$IMAGES_PATH}icon-manage11.gif" /><a href="{$sitePerformanceReport}">Site Performance Report</a></li>  
