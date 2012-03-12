@@ -620,7 +620,7 @@ class ClassificationControl extends MainControl
 		
 		$this->page->assign("pagePopularityReport",$this->request->createURL("Admin","pagePopularityReport"));
 		$this->page->assign("class_region_report",$this->request->createURL("Classification","regionReport"));
-		$this->page->assign("class_region_monthly_total_report",$this->request->createURL("Classification","class_region_monthly_total_report"));
+		$this->page->assign("class_region_monthly_total_report",$this->request->createURL("Classification","regionReport"));
 		$this->page->assign("ctr_report",$this->request->createURL("Classification","ctrReport"));		
 		$this->page->assign("sitePerformanceReport",$this->request->createURL("Admin","sitePerformanceReport"));
 		$this->page->assign("rankReport",$this->request->createURL("Admin","rankReport")); 
