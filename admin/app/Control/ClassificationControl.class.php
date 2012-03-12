@@ -721,7 +721,7 @@ public function class_region_monthly_total_report() {
 		$this->page->addJsFile("ui.core.js");
 		$this->page->addJsFile("ui.datepicker.js");
 		
-		$this->page->getPage("class_region_report.tpl");
+		$this->page->getPage("class_region_total_report.tpl");
 	}
 	
 	
