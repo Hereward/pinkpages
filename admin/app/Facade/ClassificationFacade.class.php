@@ -901,6 +901,7 @@ class ClassificationFacade extends MainFacade {
 			";
 		}		
 		$rows = $this->MyDB->query($sql);
+		
 //		prexit($rows);
 		$classifications = $stat = array();
 		foreach ($rows as $r) {
@@ -929,6 +930,8 @@ class ClassificationFacade extends MainFacade {
 			$stat[$i]['regions'] = $temp;
 			$i++;
 		}
+		var_dump($stat);
+		die();
 		$d = $i+1;
 		header("Content-type: application/octet-stream");
 		header("Content-Disposition: attachment; filename=\"Report.csv\"");
@@ -938,6 +941,7 @@ class ClassificationFacade extends MainFacade {
 		}
 		echo "TOTAL,STARTDATE,ENDDATE";
 		echo "\n";
+		
 		foreach ($stat as $k=>$data) {
 			echo $data['classification_name'].",";
 			foreach ($data['regions'] as $reg) {
