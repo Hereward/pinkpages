@@ -652,7 +652,7 @@ class ClassificationControl extends MainControl
 		$this->page->assign("clientManager",$this->request->createURL("Admin","clientManager"));
 		$this->page->assign("addclient",$this->request->createURL("Admin","addclient"));
 		$this->page->assign("count_listing",$this->request->createURL("Admin","count_listing"));
-		$this->page->assign("class_region_report",$this->request->createURL("Classification","classRegionReport"));
+		$this->page->assign("class_region_report_action",$this->request->createURL("Classification","classRegionReport"));
 		
 		
 		$this->page->assign("act",$_GET['action']);
@@ -710,7 +710,7 @@ public function class_region_monthly_total_report() {
 		$this->page->assign("clientManager",$this->request->createURL("Admin","clientManager"));
 		$this->page->assign("addclient",$this->request->createURL("Admin","addclient"));
 		$this->page->assign("count_listing",$this->request->createURL("Admin","count_listing"));
-		$this->page->assign("class_region_report",$this->request->createURL("Classification","classRegionReport"));
+		$this->page->assign("class_region_report_action",$this->request->createURL("Classification","classRegionTotalsReport"));
 		
 		
 		$this->page->assign("act",$_GET['action']);
@@ -808,6 +808,14 @@ public function class_region_monthly_total_report() {
 		$filter_google = $_POST['filter_google'];
 
 		$this->classificationFacade->getClassificationRegionReport($from_date, $to_date, $filter_google);
+	}
+	
+	public function classRegionTotalsReport() {
+		$from_date = $_POST['from_date'];
+		$to_date = $_POST['to_date'];
+		$filter_google = $_POST['filter_google'];
+
+		$this->classificationFacade->getClassificationRegionTotalsReport($from_date, $to_date, $filter_google);
 	}
 }
 ?>
