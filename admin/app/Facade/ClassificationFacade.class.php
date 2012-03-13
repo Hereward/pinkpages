@@ -884,6 +884,7 @@ class ClassificationFacade extends MainFacade {
 		ini_set("memory_limit","80M");
 		$query ="SELECT * FROM shire_names ORDER BY region_code";
 		$region_rows = $this->MyDB->query($query);
+		$start_time = time();
 		
         $start_ts = strtotime($from_date);
         $end_ts = strtotime($to_date);
@@ -897,7 +898,8 @@ class ClassificationFacade extends MainFacade {
         	$date_pack = $this->total_views_per_day($region_rows,$date_str,$google_filter);
         	$result_set[$date_str] = $date_pack;
         	var_dump($result_set);
-        	die();
+        	$end_time = time();
+        	die("Operation took ".$end_time-$start_time." seconds");
         	$current_ts = mktime(0, 0, 0, date("m",$current_ts), date("d",$current_ts)+1, date("Y",$current_ts));
         }
         var_dump($result_set);
