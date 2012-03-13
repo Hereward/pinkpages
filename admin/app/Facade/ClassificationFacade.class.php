@@ -918,8 +918,9 @@ class ClassificationFacade extends MainFacade {
         while ($current_ts<=$end_ts) {
            $current_date_str = date('Y-m-d',$current_ts);
            $result_set[$current_date_str] = array();
-           $view_count = 0;
+           
 		   foreach ($region_rows as $region) {
+		   	  $view_count = 0;
 		   	  $region_id =  $region['shirename_id'];
 		   	  $region_code = $region['region_code'];
 		   	  //$result_set[$current_date_str][$region_code]['region_code']=$region_code;
