@@ -901,11 +901,11 @@ class ClassificationFacade extends MainFacade {
         //die("start_ts=$start_ts|end_ts=$end_ts|FILTER=$google_filter");
         
         
-        $query_1 = "SELECT views from region_classification_stats,shire_names 
+        $query_1 = "SELECT view_date,views from region_classification_stats,shire_names 
 		WHERE region_classification_stats.region_id = shire_names.shirename_id 
 		AND region_classification_stats.view_date BETWEEN '$from_date' AND '$to_date' ORDER BY shire_names.region_code";
         
-        $query_2 ="SELECT sum(region_classification_stats.views - region_classification_stats.google_views) AS views from region_classification_stats,shire_names 
+        $query_2 ="SELECT view_date,sum(region_classification_stats.views - region_classification_stats.google_views) AS views from region_classification_stats,shire_names 
 		WHERE region_classification_stats.region_id = shire_names.shirename_id 
 		AND region_classification_stats.view_date BETWEEN '$from_date' AND '$to_date' ORDER BY shire_names.region_code";
 		
