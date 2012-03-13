@@ -821,6 +821,7 @@ public function class_region_total_report() {
 			$filter_google = TRUE;
 		}
 		//$filter_google = $_POST['filter_google'];
+		die("FROM=$from_date|TO=$to_date|FILTER=$filter_google");
 
 		$this->classificationFacade->getClassificationRegionTotalsReport($from_date, $to_date, $filter_google);
 	}

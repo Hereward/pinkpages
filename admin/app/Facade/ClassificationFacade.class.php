@@ -851,109 +851,52 @@ class ClassificationFacade extends MainFacade {
 	  ini_set('memory_limit', '1256M');	  	
 	}	
 	
-	public function getClassificationRegionTotalsReport($from_date, $to_date, $filter_google) {
-			set_time_limit(0);
+	private function region_views_per_day($region='',$date='', $google_filter=FALSE) {
+		$query ="SELECT * from region_classification_stats,shire_names 
+		WHERE region_classification_stats.region_id = shire_names.shirename_id 
+		AND region_classification_stats.view_date='$date' AND region_classification_stats.region_id='$region'";
+		$rows = $this->MyDB->query($query);
+		$total_views = 0;
+		foreach ($rows as $row) {
+			$class_total = ($google_filter)?$row['views']-$row['google_views']:$row['views'];
+			$total_views += $class_total;
+		}
+		return $total_views;
+	}
+	
+	
+    private function total_views_per_day($region_rows, $date='', $google_filter=FALSE) {
+		
+		$view_data = array();
+		foreach ($region_rows as $region) {
+			$region_total = $this->region_views_per_day($region, $date, $google_filter);
+			$region_code = $region['region_code'];
+			$view_data[$region_code] = $region_total;
+			//$view_data[$date] = $view_package;
+			
+		}
+		
+	}
+	
+	public function getClassificationRegionTotalsReport($google_filter) {
+		set_time_limit(0);
 		ini_set("memory_limit","80M");
-
-		//getting all regions
-		$sql = "SELECT 
-					`shirename_id` AS region_id, 
-					`region_code` AS region_code 
-				FROM 
-					`shire_names` 
-				ORDER BY 
-					region_code
-				";
-		$regions = $this->MyDB->query($sql);
-		if ($filter_google) {
-			$sql = "SELECT 
-				lc.localclassification_name, 
-				st.classification_id, 
-				st.region_id, 
-				sum(st.views - st.google_views) AS views
-			FROM
-				region_classification_stats AS st
-				LEFT JOIN local_classification AS lc
-					ON (st.classification_id=lc.localclassification_id)
-			WHERE
-				st.view_date BETWEEN '$from_date' AND '$to_date'
-			GROUP BY
-				st.classification_id, st.region_id
-			ORDER BY
-				lc.localclassification_name
-			";
-		} else {
-			$sql = "SELECT 
-				lc.localclassification_name, 
-				st.classification_id, 
-				st.region_id, 
-				sum(st.views) AS views
-			FROM
-				region_classification_stats AS st
-				LEFT JOIN local_classification AS lc
-					ON (st.classification_id=lc.localclassification_id)
-			WHERE
-				st.view_date BETWEEN '$from_date' AND '$to_date'
-			GROUP BY
-				st.classification_id, st.region_id
-			ORDER BY
-				lc.localclassification_name
-			";
-		}		
-		$rows = $this->MyDB->query($sql);
+		$query ="SELECT * FROM shire_names ORDER BY region_code";
+		$region_rows = $this->MyDB->query($query);
 		
-//		prexit($rows);
-		$classifications = $stat = array();
-		foreach ($rows as $r) {
-			$classifications[$r['classification_id']][] = $r;
-		}
-//		pre($classifications);
-		$i=0;
-		foreach ($classifications as $classification) {
-			$temp = array();
-			$j=0;
-			$total_views = 0;
-			foreach ($regions as $region) {
-				$temp[$j]['views']=0;
-				foreach ($classification as $c) {
-					if($c['region_id']==$region['region_id']) {
-						$temp[$j]['views']=$c['views'];
-						break;
-					}
-				}
-				$temp[$j]['region_code'] = $region['region_code'];
-				$total_views += $temp[$j]['views'];
-				$j++;
-			}
-			$stat[$i]['classification_name'] = $classification[0]['localclassification_name'];
-			$stat[$i]['total_views'] = $total_views;
-			$stat[$i]['regions'] = $temp;
-			$i++;
-		}
-		var_dump($stat);
-		die();
-		$d = $i+1;
-		header("Content-type: application/octet-stream");
-		header("Content-Disposition: attachment; filename=\"Report.csv\"");
-		echo "CLASSIFICATION_NAME,";
-		foreach ($regions as $region) {
-			echo $region['region_code'].",";
-		}
-		echo "TOTAL,STARTDATE,ENDDATE";
-		echo "\n";
-		
-		foreach ($stat as $k=>$data) {
-			echo $data['classification_name'].",";
-			foreach ($data['regions'] as $reg) {
-				echo $reg['views'].",";
-			}
-			echo $data['total_views'].",$from_date,$to_date\n";
-		}
-		echo ",";
-		echo "=SUM(B2:B$d),=SUM(C2:C$d),=SUM(D2:D$d),=SUM(E2:E$d),=SUM(F2:F$d),=SUM(G2:G$d),=SUM(H2:H$d),=SUM(I2:I$d),=SUM(J2:J$d),=SUM(K2:K$d),=SUM(L2:L$d),=SUM(M2:M$d),=SUM(N2:N$d),=SUM(O2:O$d),=SUM(P2:P$d),=SUM(Q2:Q$d),=SUM(R2:R$d),=SUM(S2:S$d),=SUM(T2:T$d),=SUM(U2:U$d)";
-	echo "\n";
-		exit;
-		
+        $start_ts = strtotime($from_date);
+        $end_ts = strtotime($to_date);
+        $current_ts = $end_ts;
+        $result_set = array();
+        
+        while ($current_ts<=$end_ts) {
+        	$date_str = date('Y-m-d',$current_ts);
+        	$date_pack = $this->total_views_per_day($region_rows,$date_str,$google_filter);
+        	$result_set[$date_str] = $date_pack;
+        	$current_ts = mktime(0, 0, 0, date("m",$current_ts), date("d",$current_ts)+1, date("Y",$current_ts));
+        }
+        var_dump($result_set);
+        die('END DUMP');
 	}
 
 	
