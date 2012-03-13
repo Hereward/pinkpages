@@ -852,15 +852,23 @@ class ClassificationFacade extends MainFacade {
 	}	
 	
 	private function region_views_per_day($region='',$date='', $google_filter=FALSE) {
-		$query ="SELECT * from region_classification_stats,shire_names 
+		$query_1 = "SELECT views from region_classification_stats,shire_names 
 		WHERE region_classification_stats.region_id = shire_names.shirename_id 
 		AND region_classification_stats.view_date='$date' AND region_classification_stats.region_id='$region' ORDER BY
 				shire_names.region_code";
+		
+		$query_2 ="SELECT sum(region_classification_stats.views - region_classification_stats.google_views) AS views from region_classification_stats,shire_names 
+		WHERE region_classification_stats.region_id = shire_names.shirename_id 
+		AND region_classification_stats.view_date='$date' AND region_classification_stats.region_id='$region' ORDER BY
+				shire_names.region_code";
+		
+		$query = ($google_filter)?$query_2:$query_1;
 		$rows = $this->MyDB->query($query);
 		
 		$total_views = 0;
 		foreach ($rows as $row) {
-			$class_total = ($google_filter)?$row['views']-$row['google_views']:$row['views'];
+			//$class_total = ($google_filter)?$row['views']-$row['google_views']:$row['views'];
+			$class_total = $row['views'];
 			$total_views += $class_total;
 		}
 		return $total_views;
