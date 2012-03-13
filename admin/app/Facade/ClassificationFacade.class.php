@@ -899,7 +899,8 @@ class ClassificationFacade extends MainFacade {
         	$result_set[$date_str] = $date_pack;
         	var_dump($result_set);
         	$end_time = time();
-        	die("Operation took ".$end_time-$start_time." seconds");
+        	$tot_time = $end_time-$start_time;
+        	die("Operation took $tot_time seconds");
         	$current_ts = mktime(0, 0, 0, date("m",$current_ts), date("d",$current_ts)+1, date("Y",$current_ts));
         }
         var_dump($result_set);
