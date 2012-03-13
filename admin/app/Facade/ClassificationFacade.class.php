@@ -866,16 +866,14 @@ class ClassificationFacade extends MainFacade {
 	
 	
     private function total_views_per_day($region_rows, $date='', $google_filter=FALSE) {
-		
 		$view_data = array();
 		foreach ($region_rows as $region) {
 			$region_total = $this->region_views_per_day($region, $date, $google_filter);
 			$region_code = $region['region_code'];
 			$view_data[$region_code] = $region_total;
 			//$view_data[$date] = $view_package;
-			
 		}
-		
+		return $view_data;
 	}
 	
 	public function getClassificationRegionTotalsReport($from_date, $to_date, $google_filter) {
