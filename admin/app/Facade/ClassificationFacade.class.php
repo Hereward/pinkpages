@@ -890,7 +890,7 @@ class ClassificationFacade extends MainFacade {
         $end_ts = strtotime($to_date);
         //die("start_ts=$start_ts|end_ts=$end_ts|FILTER=$google_filter");
         
-        $current_ts = $end_ts;
+        $current_ts = $start_ts;
         $result_set = array();
         
         while ($current_ts<=$end_ts) {
