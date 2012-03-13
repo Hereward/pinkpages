@@ -816,14 +816,14 @@ public function class_region_total_report() {
 	public function classRegionTotalsReport() {
 		$from_date = $_POST['from_date'];
 		$to_date = $_POST['to_date'];
-		$filter_google = FALSE;
+		$google_filter = FALSE;
 		if (array_key_exists('filter_google', $_POST)) {
-			$filter_google = TRUE;
+			$google_filter = TRUE;
 		}
 		//$filter_google = $_POST['filter_google'];
 		//die("FROM=$from_date|TO=$to_date|FILTER=$filter_google");
 
-		$this->classificationFacade->getClassificationRegionTotalsReport($from_date, $to_date, $filter_google);
+		$this->classificationFacade->getClassificationRegionTotalsReport($from_date, $to_date, $google_filter);
 	}
 }
 ?>
