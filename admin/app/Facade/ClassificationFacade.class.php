@@ -914,7 +914,7 @@ class ClassificationFacade extends MainFacade {
 		
 		$current_ts = $start_ts;
         $result_set = array();
-        
+        $count = 0;
         while ($current_ts<=$end_ts) {
            $current_date_str = date('Y-m-d',$current_ts);
            $result_set[$current_date_str] = array();
@@ -938,11 +938,36 @@ class ClassificationFacade extends MainFacade {
 		   var_dump($result_set);
            $end_time = time();
            $tot_time = $end_time-$start_time;
-           die("Operation took $tot_time seconds | GOOGLE FILTER:[$google_filter]");
+           if ($count >10) { 
+           	 die("Operation took $tot_time seconds | GOOGLE FILTER:[$google_filter]");
+           }
 		   $current_ts = mktime(0, 0, 0, date("m",$current_ts), date("d",$current_ts)+1, date("Y",$current_ts));
+		   $count++;
         }
+        
+        header("Content-type: application/octet-stream");
+		header("Content-Disposition: attachment; filename=\"Report_Totals_$from_date--$to_date.csv\"");
 		
-
+        echo "DATE,";
+        
+       // foreach ($region_rows as $region) {
+        for ($i = 0; $i <= count($region_rows); $i++) {
+			echo $region_rows[$i]['region_code'];
+			if ($i < count($region_rows)-1) { echo ',';}
+			//if end($fruits) .",";
+		}
+		echo "\n";
+		
+		foreach ($result_set as $date => $values) {
+			echo "$date,";
+			$i=0;
+			foreach ($values as $region_code => $total) {
+				echo $total;
+			    if ($i < count($values)-1) { echo ',';}
+				$i++;
+			}
+			
+		}
 		/*
         $current_ts = $start_ts;
         $result_set = array();
