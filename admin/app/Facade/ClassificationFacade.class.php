@@ -852,7 +852,7 @@ class ClassificationFacade extends MainFacade {
 	}	
 	
 	private function region_views_per_day($region='',$date='', $google_filter=FALSE) {
-		die("GOOGLE FILTER = [$google_filter]");
+		//die("GOOGLE FILTER = [$google_filter]");
 		$query_1 = "SELECT views from region_classification_stats,shire_names 
 		WHERE region_classification_stats.region_id = shire_names.shirename_id 
 		AND region_classification_stats.view_date='$date' AND region_classification_stats.region_id='$region' ORDER BY
