@@ -886,6 +886,8 @@ class ClassificationFacade extends MainFacade {
 		
         $start_ts = strtotime($from_date);
         $end_ts = strtotime($to_date);
+        die("start_ts=$start_ts|end_ts=$end_ts|FILTER=$google_filter");
+        
         $current_ts = $end_ts;
         $result_set = array();
         
