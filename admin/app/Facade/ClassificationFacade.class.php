@@ -886,7 +886,7 @@ class ClassificationFacade extends MainFacade {
 		
         $start_ts = strtotime($from_date);
         $end_ts = strtotime($to_date);
-        die("start_ts=$start_ts|end_ts=$end_ts|FILTER=$google_filter");
+        //die("start_ts=$start_ts|end_ts=$end_ts|FILTER=$google_filter");
         
         $current_ts = $end_ts;
         $result_set = array();
@@ -895,6 +895,8 @@ class ClassificationFacade extends MainFacade {
         	$date_str = date('Y-m-d',$current_ts);
         	$date_pack = $this->total_views_per_day($region_rows,$date_str,$google_filter);
         	$result_set[$date_str] = $date_pack;
+        	var_dump($result_set);
+        	die();
         	$current_ts = mktime(0, 0, 0, date("m",$current_ts), date("d",$current_ts)+1, date("Y",$current_ts));
         }
         var_dump($result_set);
