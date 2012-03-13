@@ -856,7 +856,7 @@ class ClassificationFacade extends MainFacade {
 		WHERE region_classification_stats.region_id = shire_names.shirename_id 
 		AND region_classification_stats.view_date='$date' AND region_classification_stats.region_id='$region'";
 		$rows = $this->MyDB->query($query);
-		die($query);
+		
 		$total_views = 0;
 		foreach ($rows as $row) {
 			$class_total = ($google_filter)?$row['views']-$row['google_views']:$row['views'];
