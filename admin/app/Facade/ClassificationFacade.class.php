@@ -900,6 +900,49 @@ class ClassificationFacade extends MainFacade {
         $end_ts = strtotime($to_date);
         //die("start_ts=$start_ts|end_ts=$end_ts|FILTER=$google_filter");
         
+        
+        $query_1 = "SELECT views from region_classification_stats,shire_names 
+		WHERE region_classification_stats.region_id = shire_names.shirename_id 
+		AND region_classification_stats.view_date BETWEEN '$from_date' AND '$to_date' ORDER BY shire_names.region_code";
+        
+        $query_2 ="SELECT sum(region_classification_stats.views - region_classification_stats.google_views) AS views from region_classification_stats,shire_names 
+		WHERE region_classification_stats.region_id = shire_names.shirename_id 
+		AND region_classification_stats.view_date BETWEEN '$from_date' AND '$to_date' ORDER BY shire_names.region_code";
+		
+		$query = ($google_filter)?$query_2:$query_1;
+		$stat_rows = $this->MyDB->query($query);
+		
+		$current_ts = $start_ts;
+        $result_set = array();
+        
+        while ($current_ts<=$end_ts) {
+           $current_date_str = date('Y-m-d',$current_ts);
+           $result_set[$current_date_str] = array();
+           $view_count = 0;
+		   foreach ($region_rows as $region) {
+		   	  $region_id =  $region['shirename_id'];
+		   	  $region_code = $region['region_code'];
+		   	  //$result_set[$current_date_str][$region_code]['region_code']=$region_code;
+		      foreach ($stat_rows as $stat_entry) {
+		   	     $entry_date = $stat_entry['view_date'];
+		   	     $views = $stat_entry['views'];
+		   	     
+		   	     if ($entry_date == $current_date_str) {
+		   	     	$view_count+=$views;
+		   	     }
+		      }
+		      $result_set[$current_date_str][$region_code] = $view_count;
+		      //$result_set[$current_date_str][$region_id]['views']=$view_count;
+		   }
+		   var_dump($result_set);
+           $end_time = time();
+           $tot_time = $end_time-$start_time;
+           die("Operation took $tot_time seconds | GOOGLE FILTER:[$google_filter]");
+		   $current_ts = mktime(0, 0, 0, date("m",$current_ts), date("d",$current_ts)+1, date("Y",$current_ts));
+        }
+		
+
+		/*
         $current_ts = $start_ts;
         $result_set = array();
         
@@ -915,6 +958,7 @@ class ClassificationFacade extends MainFacade {
         }
         var_dump($result_set);
         die('END DUMP');
+        */
 	}
 
 	
