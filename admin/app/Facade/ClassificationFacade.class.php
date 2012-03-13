@@ -854,7 +854,8 @@ class ClassificationFacade extends MainFacade {
 	private function region_views_per_day($region='',$date='', $google_filter=FALSE) {
 		$query ="SELECT * from region_classification_stats,shire_names 
 		WHERE region_classification_stats.region_id = shire_names.shirename_id 
-		AND region_classification_stats.view_date='$date' AND region_classification_stats.region_id='$region'";
+		AND region_classification_stats.view_date='$date' AND region_classification_stats.region_id='$region' ORDER BY
+				shire_names.region_code";
 		$rows = $this->MyDB->query($query);
 		
 		$total_views = 0;
