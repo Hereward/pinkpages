@@ -937,7 +937,7 @@ class ClassificationFacade extends MainFacade {
 		      //$result_set[$current_date_str][$region_id]['views']=$view_count;
 		   }
 		   
-           if ($count > 10) { 
+           if ($count > 31) { 
            	 //var_dump($result_set);
              $end_time = time();
              $tot_time = $end_time-$start_time;
@@ -960,7 +960,7 @@ class ClassificationFacade extends MainFacade {
         
        // foreach ($region_rows as $region) {
         for ($i = 0; $i <= count($region_rows)-1; $i++) {
-			echo $region_rows[$i]['region_code'];
+			echo $region_rows[$i]['region_code'] . ' - ' . $region_rows[$i]['shirename_id'];
 			if ($i < count($region_rows)-1) { echo ',';}
 			//if end($fruits) .",";
 		}
