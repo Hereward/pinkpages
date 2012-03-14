@@ -52,10 +52,10 @@
 
 
 <div class="breaker"></div>
-{include file="social_networking_footer.tpl" }
 
 <!--Body End-->{if $smarty.get.p eq 's'} {include file="syd_list.tpl" } {elseif $smarty.get.p eq 'n'} {include file="newc_list.tpl" } {elseif $smarty.get.p eq 'c'} {include file="can_list.tpl" } {elseif $smarty.get.p eq 'm'} {include file="mel_list.tpl" } {else} {include file="city_list.tpl" } {/if}
 {* include file="news.tpl" *}
+{include file="social_networking_footer.tpl" }
  <!-- <div class="news_links" >
  <table width="100%" align="center">
 <tr>
