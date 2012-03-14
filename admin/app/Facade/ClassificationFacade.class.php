@@ -1014,8 +1014,8 @@ class ClassificationFacade extends MainFacade {
 		   $current_ts = mktime(0, 0, 0, date("m",$current_ts), date("d",$current_ts)+1, date("Y",$current_ts));
 		   $count++;
         }
-        
-        die($result_set);
+        var_dump($result_set);
+        die();
         
         $end_time = time();
         $tot_time = $end_time-$start_time;
