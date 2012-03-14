@@ -906,6 +906,8 @@ class ClassificationFacade extends MainFacade {
 		WHERE view_date BETWEEN '$from_date' AND '$to_date' ORDER BY region_id";
         */
         $query_1 = '';
+        
+        /*
        if ($google_filter) {
 			$query_1 = "SELECT 
 				lc.localclassification_name, 
@@ -943,6 +945,20 @@ class ClassificationFacade extends MainFacade {
 				lc.localclassification_name
 			";
 		}		
+		*/
+		
+		 if ($google_filter) {
+			$query_1 = "SELECT st.region_id, st.view_date, sum(st.views - st.google_views) 
+			AS views FROM region_classification_stats AS st 
+			WHERE st.view_date BETWEEN '$from_date' AND '$to_date' 
+			GROUP BY st.region_id,st.view_date  ORDER BY st.region_id ASC";
+		 } else {
+		 	$query_1 = "SELECT st.region_id, st.view_date, sum(st.views) 
+			AS views FROM region_classification_stats AS st 
+			WHERE st.view_date BETWEEN '$from_date' AND '$to_date' 
+			GROUP BY st.region_id,st.view_date  ORDER BY st.region_id ASC";
+		 }
+			
 		
 		
         
@@ -955,7 +971,7 @@ class ClassificationFacade extends MainFacade {
 		
 		$query = $query_1; //($google_filter)?$query_2:$query_1;
 		
-		die($query);
+		//die($query);
 		
 		//die($query);
 		
