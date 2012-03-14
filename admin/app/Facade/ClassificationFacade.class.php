@@ -938,7 +938,7 @@ class ClassificationFacade extends MainFacade {
 		   }
 		   
            if ($count > 2) { 
-           	 var_dump($result_set);
+           	 //var_dump($result_set);
              $end_time = time();
              $tot_time = $end_time-$start_time;
              $message = "Operation took $tot_time seconds | GOOGLE FILTER:[$google_filter] | count = $count";
