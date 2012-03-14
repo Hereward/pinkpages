@@ -909,8 +909,12 @@ class ClassificationFacade extends MainFacade {
         $query_2 ="SELECT region_id,view_date,sum(region_classification_stats.views - region_classification_stats.google_views) AS views from region_classification_stats,shire_names 
 		WHERE region_classification_stats.region_id = shire_names.shirename_id 
 		AND region_classification_stats.view_date BETWEEN '$from_date' AND '$to_date' ORDER BY shire_names.region_code";
+        
+        
 		
 		$query = ($google_filter)?$query_2:$query_1;
+		
+		die($query);
 		$stat_rows = $this->MyDB->query($query);
 		
 		$current_ts = $start_ts;
