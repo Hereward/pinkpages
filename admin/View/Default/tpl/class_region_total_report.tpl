@@ -70,3 +70,4 @@ function CompareDates(str1, str2)
 } 
 </script>
 {/literal}
+</div>
