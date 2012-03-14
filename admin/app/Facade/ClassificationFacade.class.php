@@ -911,6 +911,7 @@ class ClassificationFacade extends MainFacade {
 				lc.localclassification_name, 
 				st.classification_id, 
 				st.region_id, 
+				st.view_date,
 				sum(st.views - st.google_views) AS views
 			FROM
 				region_classification_stats AS st
@@ -928,6 +929,7 @@ class ClassificationFacade extends MainFacade {
 				lc.localclassification_name, 
 				st.classification_id, 
 				st.region_id, 
+				st.view_date,
 				sum(st.views) AS views
 			FROM
 				region_classification_stats AS st
