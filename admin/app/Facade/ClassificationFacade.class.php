@@ -955,7 +955,7 @@ class ClassificationFacade extends MainFacade {
 		
 		$query = $query_1; //($google_filter)?$query_2:$query_1;
 		
-		//die($query);
+		die($query);
 		
 		//die($query);
 		
