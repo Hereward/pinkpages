@@ -1015,6 +1015,8 @@ class ClassificationFacade extends MainFacade {
 		   $count++;
         }
         
+        die($result_set);
+        
         $end_time = time();
         $tot_time = $end_time-$start_time;
         $filter_on = ($google_filter)?'YES':'NO';
