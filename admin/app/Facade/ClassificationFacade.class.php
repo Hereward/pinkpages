@@ -902,19 +902,20 @@ class ClassificationFacade extends MainFacade {
         //die("start_ts=$start_ts|end_ts=$end_ts|FILTER=$google_filter");
         
         
-        $query_1 = "SELECT region_id,view_date,views from region_classification_stats,shire_names 
+        $query_1 = "SELECT region_id,view_date,views,google_views from region_classification_stats,shire_names 
 		WHERE region_classification_stats.region_id = shire_names.shirename_id 
 		AND region_classification_stats.view_date BETWEEN '$from_date' AND '$to_date' ORDER BY shire_names.region_code";
         
-        $query_2 ="SELECT region_id,view_date,sum(region_classification_stats.views - region_classification_stats.google_views) AS views from region_classification_stats,shire_names 
+        /*
+        $query_2 ="SELECT region_id,view_date,views,google_views from region_classification_stats,shire_names 
 		WHERE region_classification_stats.region_id = shire_names.shirename_id 
 		AND region_classification_stats.view_date BETWEEN '$from_date' AND '$to_date' ORDER BY shire_names.region_code";
-        
+        */
         
 		
-		$query = ($google_filter)?$query_2:$query_1;
+		$query = $query_1; //($google_filter)?$query_2:$query_1;
 		
-		die($query);
+		//die($query);
 		$stat_rows = $this->MyDB->query($query);
 		
 		$current_ts = $start_ts;
@@ -931,7 +932,11 @@ class ClassificationFacade extends MainFacade {
 		   	  //$result_set[$current_date_str][$region_code]['region_code']=$region_code;
 		      foreach ($stat_rows as $stat_entry) {
 		   	     $entry_date = $stat_entry['view_date'];
-		   	     $views = $stat_entry['views'];
+		   	     $unfiltered_views = $stat_entry['views'];
+		   	     $google_views = $stat_entry['google_views'];
+		   	     $filtered_views = $unfiltered_views-$google_views;
+		   	     $views = ($google_filter)?$filtered_views:$unfiltered_views;
+		   	     
 		   	     $stat_entry_region = $stat_entry['region_id'];
 		   	     if ($entry_date == $current_date_str && $stat_entry_region == $region_id) {
 		   	     	$view_count+=$views;
