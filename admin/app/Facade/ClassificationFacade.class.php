@@ -920,7 +920,7 @@ class ClassificationFacade extends MainFacade {
 			WHERE
 				st.view_date BETWEEN '$from_date' AND '$to_date'
 			GROUP BY
-				st.classification_id, st.region_id
+				st.view_date, st.region_id
 			ORDER BY
 				lc.localclassification_name
 			";
@@ -938,7 +938,7 @@ class ClassificationFacade extends MainFacade {
 			WHERE
 				st.view_date BETWEEN '$from_date' AND '$to_date'
 			GROUP BY
-				st.classification_id, st.region_id
+				st.view_date, st.region_id
 			ORDER BY
 				lc.localclassification_name
 			";
@@ -1101,7 +1101,7 @@ class ClassificationFacade extends MainFacade {
 				lc.localclassification_name
 			";
 		}	
-		die($sql);
+
 		$rows = $this->MyDB->query($sql);
 //		prexit($rows);
 		$classifications = $stat = array();
