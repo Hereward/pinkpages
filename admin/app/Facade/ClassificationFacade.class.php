@@ -895,6 +895,7 @@ class ClassificationFacade extends MainFacade {
 		$query ="SELECT * FROM shire_names ORDER BY region_code";
 		$region_rows = $this->MyDB->query($query);
 		$start_time = time();
+		$message = '';
 		
         $start_ts = strtotime($from_date);
         $end_ts = strtotime($to_date);
@@ -940,7 +941,10 @@ class ClassificationFacade extends MainFacade {
            	 var_dump($result_set);
              $end_time = time();
              $tot_time = $end_time-$start_time;
-           	 die("Operation took $tot_time seconds | GOOGLE FILTER:[$google_filter] | count = $count");
+             $message = "Operation took $tot_time seconds | GOOGLE FILTER:[$google_filter] | count = $count";
+             break;
+             
+           	 //die("Operation took $tot_time seconds | GOOGLE FILTER:[$google_filter] | count = $count");
            }
 		   $current_ts = mktime(0, 0, 0, date("m",$current_ts), date("d",$current_ts)+1, date("Y",$current_ts));
 		   $count++;
@@ -949,6 +953,8 @@ class ClassificationFacade extends MainFacade {
         
         header("Content-type: application/octet-stream");
 		header("Content-Disposition: attachment; filename=\"Report_Totals_$from_date--$to_date.csv\"");
+		
+		//echo "$message \n";
 		
         echo "DATE,";
         
