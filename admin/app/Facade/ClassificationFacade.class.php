@@ -939,18 +939,17 @@ class ClassificationFacade extends MainFacade {
 		   
            if ($count > 30) { 
            	 //var_dump($result_set);
-             $end_time = time();
-             $tot_time = $end_time-$start_time;
-             $message = "Operation took $tot_time seconds | GOOGLE FILTER:[$google_filter] | count = $count";
              break;
-             
            	 //die("Operation took $tot_time seconds | GOOGLE FILTER:[$google_filter] | count = $count");
            }
 		   $current_ts = mktime(0, 0, 0, date("m",$current_ts), date("d",$current_ts)+1, date("Y",$current_ts));
 		   $count++;
         }
         
-        
+        $end_time = time();
+        $tot_time = $end_time-$start_time;
+        $message = "Operation took $tot_time seconds | GOOGLE FILTER:[$google_filter] | count = $count";
+
         header("Content-type: application/octet-stream");
 		header("Content-Disposition: attachment; filename=\"Report_Totals_$from_date--$to_date.csv\"");
 		
