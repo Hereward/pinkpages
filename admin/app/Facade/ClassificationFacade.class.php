@@ -974,7 +974,7 @@ class ClassificationFacade extends MainFacade {
 			    if ($i < count($values)-1) { echo ',';}
 				$i++;
 			}
-			
+			echo "\n";
 		}
 		
 		/*
