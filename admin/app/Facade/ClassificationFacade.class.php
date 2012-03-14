@@ -936,12 +936,12 @@ class ClassificationFacade extends MainFacade {
 		      //$result_set[$current_date_str][$region_id]['views']=$view_count;
 		   }
 		   
-           //if ($count > 10) { 
+           if ($count > 10) { 
            	 var_dump($result_set);
              $end_time = time();
              $tot_time = $end_time-$start_time;
            	 die("Operation took $tot_time seconds | GOOGLE FILTER:[$google_filter]");
-          // }
+           }
 		   $current_ts = mktime(0, 0, 0, date("m",$current_ts), date("d",$current_ts)+1, date("Y",$current_ts));
 		   $count++;
         }
