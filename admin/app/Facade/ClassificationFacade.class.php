@@ -937,7 +937,7 @@ class ClassificationFacade extends MainFacade {
 		      //$result_set[$current_date_str][$region_id]['views']=$view_count;
 		   }
 		   
-           if ($count > 31) { 
+           if ($count > 30) { 
            	 //var_dump($result_set);
              $end_time = time();
              $tot_time = $end_time-$start_time;
@@ -955,6 +955,8 @@ class ClassificationFacade extends MainFacade {
 		header("Content-Disposition: attachment; filename=\"Report_Totals_$from_date--$to_date.csv\"");
 		
 		//echo "$message \n";
+		
+		echo "$message \n";
 		
         echo "DATE,";
         
