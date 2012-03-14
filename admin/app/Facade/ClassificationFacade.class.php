@@ -961,7 +961,7 @@ class ClassificationFacade extends MainFacade {
 			
 		
 		
-        
+        die($query);
         /*
         $query_2 ="SELECT region_id,view_date,views,google_views from region_classification_stats,shire_names 
 		WHERE region_classification_stats.region_id = shire_names.shirename_id 
