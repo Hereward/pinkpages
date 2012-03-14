@@ -936,7 +936,7 @@ class ClassificationFacade extends MainFacade {
 		      //$result_set[$current_date_str][$region_id]['views']=$view_count;
 		   }
 		   
-           if ($count > 10) { 
+           if ($count > 2) { 
            	 var_dump($result_set);
              $end_time = time();
              $tot_time = $end_time-$start_time;
