@@ -1100,7 +1100,8 @@ class ClassificationFacade extends MainFacade {
 			ORDER BY
 				lc.localclassification_name
 			";
-		}		
+		}	
+		die($sql);
 		$rows = $this->MyDB->query($sql);
 //		prexit($rows);
 		$classifications = $stat = array();
