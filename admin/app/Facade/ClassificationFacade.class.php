@@ -906,7 +906,7 @@ class ClassificationFacade extends MainFacade {
 		WHERE view_date BETWEEN '$from_date' AND '$to_date' ORDER BY region_id";
         */
         $query_1 = '';
-       if ($google_filrer) {
+       if ($google_filter) {
 			$query_1 = "SELECT 
 				lc.localclassification_name, 
 				st.classification_id, 
