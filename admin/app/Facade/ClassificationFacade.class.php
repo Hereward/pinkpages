@@ -948,7 +948,8 @@ class ClassificationFacade extends MainFacade {
         
         $end_time = time();
         $tot_time = $end_time-$start_time;
-        $message = "Operation took $tot_time seconds | GOOGLE FILTER:[$google_filter] | count = $count";
+        $filter_on = ($google_filter)?'YES':'NO';
+        $message = "Operation took $tot_time seconds | GOOGLE FILTER: $filter_on | total days = $count";
 
         header("Content-type: application/octet-stream");
 		header("Content-Disposition: attachment; filename=\"Report_Totals_$from_date--$to_date.csv\"");
