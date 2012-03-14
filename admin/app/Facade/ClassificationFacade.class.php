@@ -901,9 +901,48 @@ class ClassificationFacade extends MainFacade {
         $end_ts = strtotime($to_date);
         //die("start_ts=$start_ts|end_ts=$end_ts|FILTER=$google_filter");
         
-        
+        /*
         $query_1 = "SELECT region_id,view_date,views,google_views from region_classification_stats 
-		WHERE region_classification_stats.view_date BETWEEN '$from_date' AND '$to_date' ORDER BY region_id";
+		WHERE view_date BETWEEN '$from_date' AND '$to_date' ORDER BY region_id";
+        */
+        $query_1 = '';
+       if ($google_filrer) {
+			$query_1 = "SELECT 
+				lc.localclassification_name, 
+				st.classification_id, 
+				st.region_id, 
+				sum(st.views - st.google_views) AS views
+			FROM
+				region_classification_stats AS st
+				LEFT JOIN local_classification AS lc
+					ON (st.classification_id=lc.localclassification_id)
+			WHERE
+				st.view_date BETWEEN '$from_date' AND '$to_date'
+			GROUP BY
+				st.classification_id, st.region_id
+			ORDER BY
+				lc.localclassification_name
+			";
+		} else {
+			$query_1 = "SELECT 
+				lc.localclassification_name, 
+				st.classification_id, 
+				st.region_id, 
+				sum(st.views) AS views
+			FROM
+				region_classification_stats AS st
+				LEFT JOIN local_classification AS lc
+					ON (st.classification_id=lc.localclassification_id)
+			WHERE
+				st.view_date BETWEEN '$from_date' AND '$to_date'
+			GROUP BY
+				st.classification_id, st.region_id
+			ORDER BY
+				lc.localclassification_name
+			";
+		}		
+		
+		
         
         /*
         $query_2 ="SELECT region_id,view_date,views,google_views from region_classification_stats,shire_names 
@@ -913,6 +952,8 @@ class ClassificationFacade extends MainFacade {
         
 		
 		$query = $query_1; //($google_filter)?$query_2:$query_1;
+		
+		die($query);
 		
 		//die($query);
 		
@@ -933,11 +974,11 @@ class ClassificationFacade extends MainFacade {
 		   	  //$result_set[$current_date_str][$region_code]['region_code']=$region_code;
 		      foreach ($stat_rows as $stat_entry) {
 		   	     $entry_date = $stat_entry['view_date'];
-		   	     $unfiltered_views = $stat_entry['views'];
-		   	     $google_views = $stat_entry['google_views'];
-		   	     $filtered_views = $unfiltered_views-$google_views;
-		   	     $views = ($google_filter)?$filtered_views:$unfiltered_views;
-		   	     
+		   	     //$unfiltered_views = $stat_entry['views'];
+		   	     //$google_views = $stat_entry['google_views'];
+		   	     //$filtered_views = $unfiltered_views-$google_views;
+		   	    // $views = ($google_filter)?$filtered_views:$unfiltered_views;
+		   	     $views = $stat_entry['views'];
 		   	     $stat_entry_region = $stat_entry['region_id'];
 		   	     if ($entry_date == $current_date_str && $stat_entry_region == $region_id) {
 		   	     	$view_count+=$views;
