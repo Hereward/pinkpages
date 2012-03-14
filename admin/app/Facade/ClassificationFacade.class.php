@@ -955,7 +955,7 @@ class ClassificationFacade extends MainFacade {
 		
 		//echo "$message \n";
 		
-		echo "BOOOO \n";
+		echo "$message \n";
 		
         echo "DATE,";
         
