@@ -959,7 +959,7 @@ class ClassificationFacade extends MainFacade {
         echo "DATE,";
         
        // foreach ($region_rows as $region) {
-        for ($i = 0; $i <= count($region_rows); $i++) {
+        for ($i = 0; $i <= count($region_rows)-1; $i++) {
 			echo $region_rows[$i]['region_code'];
 			if ($i < count($region_rows)-1) { echo ',';}
 			//if end($fruits) .",";
