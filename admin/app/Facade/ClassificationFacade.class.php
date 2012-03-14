@@ -903,7 +903,7 @@ class ClassificationFacade extends MainFacade {
         
         
         $query_1 = "SELECT region_id,view_date,views,google_views from region_classification_stats 
-		WHERE region_classification_stats.view_date BETWEEN '$from_date' AND '$to_date' ORDER BY region_code";
+		WHERE region_classification_stats.view_date BETWEEN '$from_date' AND '$to_date' ORDER BY region_id";
         
         /*
         $query_2 ="SELECT region_id,view_date,views,google_views from region_classification_stats,shire_names 
