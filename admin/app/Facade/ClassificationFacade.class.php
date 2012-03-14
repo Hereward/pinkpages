@@ -1006,6 +1006,9 @@ class ClassificationFacade extends MainFacade {
 		      //$result_set[$current_date_str][$region_id]['views']=$view_count;
 		   }
 		   
+		   var_dump($result_set);
+           die();
+		   
            if ($count > 30) { 
            	 //var_dump($result_set);
              break;
@@ -1014,8 +1017,8 @@ class ClassificationFacade extends MainFacade {
 		   $current_ts = mktime(0, 0, 0, date("m",$current_ts), date("d",$current_ts)+1, date("Y",$current_ts));
 		   $count++;
         }
-        var_dump($result_set);
-        die();
+        //var_dump($result_set);
+        //die();
         
         $end_time = time();
         $tot_time = $end_time-$start_time;
