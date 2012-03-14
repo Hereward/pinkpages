@@ -1006,8 +1006,6 @@ class ClassificationFacade extends MainFacade {
 		      //$result_set[$current_date_str][$region_id]['views']=$view_count;
 		   }
 		   
-		   var_dump($result_set);
-           die();
 		   
            if ($count > 30) { 
            	 //var_dump($result_set);
