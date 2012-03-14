@@ -892,7 +892,7 @@ class ClassificationFacade extends MainFacade {
 	public function getClassificationRegionTotalsReport($from_date, $to_date, $google_filter) {
 		set_time_limit(0);
 		ini_set("memory_limit","80M");
-		$query ="SELECT * FROM shire_names ORDER BY region_code";
+		$query ="SELECT * FROM shire_names ORDER BY shirename_id";
 		$region_rows = $this->MyDB->query($query);
 		$start_time = time();
 		$message = '';
