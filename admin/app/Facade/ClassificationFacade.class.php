@@ -946,6 +946,7 @@ class ClassificationFacade extends MainFacade {
 		   $count++;
         }
         
+        /*
         header("Content-type: application/octet-stream");
 		header("Content-Disposition: attachment; filename=\"Report_Totals_$from_date--$to_date.csv\"");
 		
@@ -969,6 +970,7 @@ class ClassificationFacade extends MainFacade {
 			}
 			
 		}
+		*/
 		/*
         $current_ts = $start_ts;
         $result_set = array();
