@@ -208,6 +208,7 @@
 
 
  {/section} 
+ <div class="breaker"></div>
 {include file="social_networking_footer.tpl" }
      <div class="mapbottom">
    <table align="center" width="98%">
@@ -224,7 +225,7 @@
 </div>
 
 
-<div class="breaker"></div>
+
 {include file="footer.tpl"}
 
 <script type="text/javascript" language="javascript">
