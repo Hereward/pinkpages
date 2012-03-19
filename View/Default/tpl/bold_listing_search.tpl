@@ -208,7 +208,7 @@
 
 
  {/section} 
-
+{include file="social_networking_footer.tpl" }
      <div class="mapbottom">
    <table align="center" width="98%">
    <tr><td height="6px" colspan="2"></td></tr>
@@ -223,7 +223,7 @@
 					 </table>
 </div>
 
-{include file="social_networking_footer.tpl" }
+
 
 {include file="footer.tpl"}
 
