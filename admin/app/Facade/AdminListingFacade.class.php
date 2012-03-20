@@ -825,7 +825,11 @@ private function gz_read($file, $path) {
 	    $success = 0;
 		$failure = 0;
 		//Remove Existing Entries
-		$this->deleteExistingFreeListings();
+		//$this->deleteExistingFreeListings();
+		$class_id = '616';
+		$this->deleteFreeListingsClassification($class_id);
+		
+		die();
 		
 		//Get all the ShireIDs
 		$this->shireIDs    = $this->fetchTownDetails();
@@ -1022,6 +1026,29 @@ private function __Validation(&$data)
       //Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
       $sql = "delete from local_businesses where business_initials = 'Free';";
 	  $result  = $this->MyDB->query($sql);	  					  
+	}
+	
+  private function deleteFreeListingsClassification($class_id){
+	  print("Deleting Free Listings");	  
+	  $sql_01 = "SELECT * from business_classification WHERE localclassification_id = $class_id";
+	  $rows =$this->MyDB->query($sql_01);
+							
+		//$deleteQuery	="DELETE FROM business_ranks WHERE `business_id` ='{$BusinessID}'";
+		//$this->MyDB->query($deleteQuery);
+       $id_list = array();
+		foreach($rows as $row) {
+			$id = $row['business_id'];
+			if (!in_array($id, $id_list)) {
+				array_push($id_list, $id);
+			}
+		}
+		
+		$in_string = implode(',', $id_list);
+	  
+      //Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
+      $sql02 = "delete from local_businesses where business_initials = 'Free' AND business_id IN ($in_string);";
+      die($sql02);
+	  //$result  = $this->MyDB->query($sql_02);	  					  
 	}
 	
 	public function importCSV($post)
