@@ -453,7 +453,7 @@ class AdminListingControl extends MainControl {
         $this->page->assign("delete",$this->request->createURL("AdminListing", "delete","businessname={$this->request->getAttribute('businessname')}&fr={$this->request->getAttribute("fr")}&ID"));
 		$this->page->assign("addbusinessform",$this->request->createURL("SalesAccountManager", "addListing"));
 	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
-	    $this->page->assign("search",$this->request->createURL("AdminListing","class_relationships"));
+	    $this->page->assign("class_relationships",$this->request->createURL("AdminListing","class_relationships"));
 		$this->page->getPage("csv_upload_form.tpl");
 	}
 	
@@ -484,7 +484,7 @@ class AdminListingControl extends MainControl {
         $this->page->assign("delete",$this->request->createURL("AdminListing", "delete","businessname={$this->request->getAttribute('businessname')}&fr={$this->request->getAttribute("fr")}&ID"));
 		$this->page->assign("addbusinessform",$this->request->createURL("SalesAccountManager", "addListing"));
 	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
-	    $this->page->assign("search",$this->request->createURL("AdminListing","class_relationships"));
+	    $this->page->assign("class_relationships",$this->request->createURL("AdminListing","class_relationships"));
 		$this->page->getPage("csv_upload_form.tpl");
 	}
 	
@@ -515,7 +515,7 @@ class AdminListingControl extends MainControl {
         $this->page->assign("delete",$this->request->createURL("AdminListing", "delete","businessname={$this->request->getAttribute('businessname')}&fr={$this->request->getAttribute("fr")}&ID"));
 		$this->page->assign("addbusinessform",$this->request->createURL("SalesAccountManager", "addListing"));
 	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
-	    $this->page->assign("search",$this->request->createURL("AdminListing","class_relationships"));
+	    $this->page->assign("class_relationships",$this->request->createURL("AdminListing","class_relationships"));
 		$this->page->getPage("csv_upload_form.tpl");
 	}
 	
