@@ -154,7 +154,7 @@
 	
 		<li><img src="{$IMAGES_PATH}icon-home.gif" /><a href="{$home_url}">Home</a></li>
 		<li><img src="{$IMAGES_PATH}icon-add1.gif" /><a href="{$csvfile}"/>Import Listing</a></li>
-		<li><img src="{$IMAGES_PATH}icon-add1.gif" /><a href="{$export_class_relationships}"/>Export Relationships</a></li>
+		<li><img src="{$IMAGES_PATH}icon-add1.gif" /><a href="{$class_relationships}"/>Export Relationships</a></li>
 		<!--<li><img src="{$IMAGES_PATH}icon-view1.gif" /><a href="{$searchFreeListing}"/>View Free Listing</a></li>
 		<li><img src="{$IMAGES_PATH}icon-view1.gif" /><a href="{$viewlisting}"/>View Multiple Listing</a></li>
 		<li><img src="{$IMAGES_PATH}icon-search1.gif" /><a href="{$searchfreeLists}"/>Search Listing</a></li>-->
