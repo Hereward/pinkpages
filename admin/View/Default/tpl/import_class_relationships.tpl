@@ -3,7 +3,7 @@
 <h4 class="h4reversed" align="center"><b>Import Class Relationships</b></h4>
 	<ul class="textfieldlist" >
 	<br />
-		<form name="loginform1" action="{$action}" method="post" enctype="multipart/form-data">
+		<form name="loginform1" action="{$import_class_relationships_action}" method="post" enctype="multipart/form-data">
 			<label>&nbsp;<b>Select CSV file:</b></label>
 			<li><input type="file" name="csvfile" id="name" value="" class="textfieldshort" size="47"/></li>
 		<br />
