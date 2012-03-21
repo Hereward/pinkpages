@@ -12,3 +12,10 @@
 </form>
 
 </div>
+
+{literal}
+<script language="javascript">
+function validate()
+{
+	return true;
+}
