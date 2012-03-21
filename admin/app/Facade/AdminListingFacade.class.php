@@ -135,7 +135,7 @@ class AdminListingFacade extends MainFacade {
 		}
 
 		//$final_master_string = "<table border='1' cellpadding='7'>\n";
-		$final_master_string = "CLASS ID,RELATED \n";
+		$final_master_string = '';
 
 		foreach ($final_master as $id=>$value) {
 			//$final_master_string .= "\t<tr>\n";
@@ -156,7 +156,7 @@ class AdminListingFacade extends MainFacade {
 		header("Content-Disposition: attachment; filename=\"class_reationships.csv\"");
 
 		//echo "$message \n";
-		echo "$message \n";
+		//echo "$message \n";
 		echo $final_output2;
 		exit;
 			
