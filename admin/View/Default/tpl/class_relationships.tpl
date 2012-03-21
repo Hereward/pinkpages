@@ -19,3 +19,5 @@ function validate()
 {
 	return true;
 }
+</script>
+{/literal}
