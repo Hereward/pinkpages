@@ -487,6 +487,7 @@ class AdminListingControl extends MainControl {
 		$this->page->assign("addbusinessform",$this->request->createURL("SalesAccountManager", "addListing"));
 	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
 	    $this->page->assign("class_relationships",$this->request->createURL("AdminListing","class_relationships"));
+	    $this->page->assign("export_class_relationships_action",$this->request->createURL("AdminListing","export_class_relationships"));
 		$this->page->getPage("class_relationships.tpl");
 	}
 	
