@@ -23,7 +23,7 @@ class AdminListingFacade extends MainFacade {
         $start_time = time();
 		$db_link = mysql_connect('localhost', 'pinkpages', 'waiz7ahW')
 		or die('Could not connect: ' . mysql_error());
-		echo 'Connected successfully';
+		//echo 'Connected successfully';
 		mysql_select_db('ppo_dev') or die('Could not select database');
 			
 		$data_store = array();
@@ -60,7 +60,7 @@ class AdminListingFacade extends MainFacade {
 			$num_rows = mysql_num_rows($result2);
 			if ($num_rows > 1) {
 				$business_count++;
-				echo "$business_count Found: $business_id|$business_name  >> NUMROWS = $num_rows \n\n";
+				//echo "$business_count Found: $business_id|$business_name  >> NUMROWS = $num_rows \n\n";
 				//$output .= "\t<tr>\n";
 				$output .= "$business_id,";
 				$output .= "$business_name,";
