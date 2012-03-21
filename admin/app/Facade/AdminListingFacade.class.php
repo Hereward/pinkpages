@@ -38,9 +38,6 @@ class AdminListingFacade extends MainFacade {
 		$result1 = mysql_query($query1) or die('Query 1 failed: ' . mysql_error());
 		
 
-		//echo "CLASS ID,RELATED \n";
-
-		// Printing results in HTML
 		$output .= "ID,NAME,RELATED CLASS\n";
 
 
@@ -69,40 +66,23 @@ class AdminListingFacade extends MainFacade {
 				$class_list = array();
 				$row = '';
 				while ($classifications = mysql_fetch_array($result2, MYSQL_ASSOC)) {
-
-					//foreach ($classifications as $col_value) {
 					$name = $classifications['localclassification_name'];
 					$id = $classifications['localclassification_id'];
 					$row .= "$name|$id"; //$col_value;
 
 					if ($i < $num_rows) { $row .= ', '; }
 					$class_list["classid_$id"] = $name;
-					//array_push($class_list,array('name'=>$name, 'id'=>$id));
-					$i++;
-					//}
 
+					$i++;
 				}
-				//echo "writing $row \n\n";
+
 				array_push($data_store,$class_list);
 				$output .= "$row\n";
-				//$output .= "</td>\n";
-				//$output .= "\t</tr>\n";
+
 			}
 			$tot_count++;
-			//if ($tot_count >10000) { die("Limit Reached");}
+			
 		}
-		//$output .= "</table>\n";
-
-		//echo "STAGE 1 operation completed \n\n";
-		//echo "TOT COUNT = $tot_count | BUSINESS COUNT = $business_count \n\n";
-
-//$final_output = '';
-
-	
-		//$final_output .= $output;
-
-		//file_put_contents('class_dump.html', $final_output);
-		//echo "STAGE 2 - Creating Classifaction Relationships \n\n";
 
 		$query3 = 'SELECT * FROM `local_classification`';
 		$result3 = mysql_query($query3) or die('Query 3 failed: ' . mysql_error());
@@ -110,16 +90,13 @@ class AdminListingFacade extends MainFacade {
 		while ($unique_classification = mysql_fetch_array($result3, MYSQL_ASSOC)) {
 			$localclassification_id = $unique_classification['localclassification_id'];
 			$localclassification_name = $unique_classification['localclassification_name'];
-			//echo "$localclassification_id: Building Classifaction \n";
 			$sublist = array();
 			$flag = array();
 			foreach ($data_store as $c_group) {
-				//if (in_array($localclassification_id, $c_group)) {
+
 				if (array_key_exists("classid_$localclassification_id", $c_group)) {
 					foreach ($c_group as $key=>$value) {
-						//$name = $item['name'];
-						//$id = $item['id'];
-						//$block = FALSE;
+
 						if ("classid_$localclassification_id" != $key && (!array_key_exists($key, $flag))) {
 							array_push($sublist,"$key|$value");
 							$flag[$key] = TRUE;
@@ -129,23 +106,17 @@ class AdminListingFacade extends MainFacade {
 
 			}
 			
-			//echo "Writing Sublist >> ".implode(', ',$sublist)."\n\n";
 			$final_master["$localclassification_id|$localclassification_name"]=$sublist;
-			//}
 		}
 
-		//$final_master_string = "<table border='1' cellpadding='7'>\n";
 		$final_master_string = '';
 
 		foreach ($final_master as $id=>$value) {
-			//$final_master_string .= "\t<tr>\n";
 			$final_master_string .= "$id,";
 			$string = implode(', ',$value);
 			$final_master_string .= "$string\n";
-			//$final_master_string .= "\t</tr>\n";
 		}
 
-		//$final_master_string .= "</table>\n";
         $final_output2 = $final_master_string;
 		
         $end_time = time();
@@ -155,11 +126,8 @@ class AdminListingFacade extends MainFacade {
 		header("Content-type: application/octet-stream");
 		header("Content-Disposition: attachment; filename=\"class_reationships.csv\"");
 
-		//echo "$message \n";
-		//echo "$message \n";
 		echo $final_output2;
 		exit;
-			
 	}
 
 
