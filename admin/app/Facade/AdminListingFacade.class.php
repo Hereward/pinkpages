@@ -956,8 +956,10 @@ class AdminListingFacade extends MainFacade {
 					echo "File successfully uploaded to " . $uploadDir . $file;
 					echo "<br />Now attempt to extract file to " .$uploadDir . $file ." <br />";
 					$values = $this->gz_read($file, $uploadDir);
-			  $report[] = count($values);
-				} else echo "File was <strong>NOT</strong> successfully uploaded to " . $uploadDir . $_FILES['data']['name'];
+			        $report[] = count($values);
+				} else {
+					echo "File was <strong>NOT</strong> successfully uploaded to " . $uploadDir . $_FILES['data']['name'];
+				}
 				$viewlog = $this->viewlog($uploadDir . $file);
 				$report[] = count($viewlog);
 				$report[] = $this->insert_class_relationships($viewlog);
@@ -969,6 +971,14 @@ class AdminListingFacade extends MainFacade {
 		}
 	}
 
+	
+	public function insert_class_relationships($post){
+		$this->deleteClassRelationships();
+		foreach($post as $row) {
+			
+			
+		
+	}
 
 	public function insertCSV($post)
 	{
@@ -1177,6 +1187,13 @@ class AdminListingFacade extends MainFacade {
 		print("Deleting Free Listings");
 		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
 		$sql = "delete from local_businesses where business_initials = 'Free';";
+		$result  = $this->MyDB->query($sql);
+	}
+	
+	private function deleteClassRelationships(){
+		print("Deleting Class Relationships");
+		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
+		$sql = "delete from class_relationships";
 		$result  = $this->MyDB->query($sql);
 	}
 
