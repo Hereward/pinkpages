@@ -150,10 +150,11 @@
 		<li><img src="{$IMAGES_PATH}icon-search1.gif" /><a href="{$searchLoc}">Search Locations</a></li>
 		<li><img src="{$IMAGES_PATH}icon-logout.gif" /><a href="{$logout_url}">Logout</a></li>
 		
-	{elseif ($do eq 'AdminListing' AND $action1 eq 'csvFormShow') || ($do eq 'AdminListing' AND $action1 eq 'csvFileUpload') ||  ($do eq 'AdminListing' AND $action1 eq 'import')||  ($do eq 'AdminListing' AND $action1 eq 'Edit')||  ($do eq 'AdminListing' AND $action1 eq 'delete')||  ($do eq 'AdminListing' AND $action1 eq 'editAdd')||  ($do eq 'AdminListing' AND $action1 eq 'search')||  ($do eq 'AdminListing' AND $action1 eq 'searchList') || ($do eq 'AdminListing' AND $action1 eq 'addClassification')|| ($do eq 'AdminListing' AND $action1 eq 'rankBusiness')|| ($do eq 'AdminListing' AND $action1 eq 'addRank') || ($do eq 'AdminListing' AND $action1 eq 'class_relationships') || ($do eq 'AdminListing' AND $action1 eq 'export_class_relationships')}
+	{elseif ($do eq 'AdminListing' AND $action1 eq 'csvFormShow') || ($do eq 'AdminListing' AND $action1 eq 'csvFileUpload') ||  ($do eq 'AdminListing' AND $action1 eq 'import')||  ($do eq 'AdminListing' AND $action1 eq 'Edit')||  ($do eq 'AdminListing' AND $action1 eq 'delete')||  ($do eq 'AdminListing' AND $action1 eq 'editAdd')||  ($do eq 'AdminListing' AND $action1 eq 'search')||  ($do eq 'AdminListing' AND $action1 eq 'searchList') || ($do eq 'AdminListing' AND $action1 eq 'addClassification')|| ($do eq 'AdminListing' AND $action1 eq 'rankBusiness')|| ($do eq 'AdminListing' AND $action1 eq 'addRank') || ($do eq 'AdminListing' AND $action1 eq 'class_relationships') || ($do eq 'AdminListing' AND $action1 eq 'export_class_relationships') || ($do eq 'AdminListing' AND $action1 eq 'import_class_relationships') || ($do eq 'AdminListing' AND $action1 eq 'import_class_relationships_page')}
 	
 		<li><img src="{$IMAGES_PATH}icon-home.gif" /><a href="{$home_url}">Home</a></li>
 		<li><img src="{$IMAGES_PATH}icon-add1.gif" /><a href="{$csvfile}"/>Import Listing</a></li>
+		<li><img src="{$IMAGES_PATH}icon-add1.gif" /><a href="{$class_relationships}"/>Export Relationships</a></li>
 		<li><img src="{$IMAGES_PATH}icon-add1.gif" /><a href="{$class_relationships}"/>Export Relationships</a></li>
 		<!--<li><img src="{$IMAGES_PATH}icon-view1.gif" /><a href="{$searchFreeListing}"/>View Free Listing</a></li>
 		<li><img src="{$IMAGES_PATH}icon-view1.gif" /><a href="{$viewlisting}"/>View Multiple Listing</a></li>
