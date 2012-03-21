@@ -1068,6 +1068,7 @@ class ClassificationFacade extends MainFacade {
         var_dump($result_set);
         die('END DUMP');
         */
+		exit;
 	}
 
 	

@@ -158,6 +158,7 @@ class AdminListingFacade extends MainFacade {
 		//echo "$message \n";
 		echo "$message \n";
 		echo $final_output2;
+		exit;
 			
 	}
 
