@@ -489,6 +489,7 @@ public function import_class_relationships()
 	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
 	    $this->page->assign("class_relationships",$this->request->createURL("AdminListing","class_relationships"));
 	    $this->page->assign("import_class_relationships",$this->request->createURL("AdminListing","class_relationships_import_page"));
+	    $this->page->assign("import_class_relationships_action",$this->request->createURL("AdminListing","import_class_relationships"));
 	    $this->page->assign("export_class_relationships_action",$this->request->createURL("AdminListing","export_class_relationships"));
 		$this->page->getPage("import_class_relationships.tpl");
 	}
