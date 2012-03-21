@@ -20,7 +20,12 @@ class AdminListingFacade extends MainFacade {
 
 
 	public function export_class_relationships() {
-		 
+        $start_time = time();
+		$db_link = mysql_connect('localhost', 'pinkpages', 'waiz7ahW')
+		or die('Could not connect: ' . mysql_error());
+		echo 'Connected successfully';
+		mysql_select_db('ppo_dev') or die('Could not select database');
+			
 		$data_store = array();
 		$final_master = array();
 
@@ -31,14 +36,13 @@ class AdminListingFacade extends MainFacade {
 		// Performing SQL query
 		$query1 = 'SELECT business_id,business_name FROM `local_businesses`';
 		$result1 = mysql_query($query1) or die('Query 1 failed: ' . mysql_error());
+		
+
+		//echo "CLASS ID,RELATED \n";
 
 		// Printing results in HTML
-		$output .= "<table border='1' cellpadding='7'>\n";
-		$output .= "<tr>
-  <th>Business ID</th>
-  <th>Business Name</th>
-  <th>Classifications</th>
-</tr>";
+		$output .= "ID,NAME,RELATED CLASS\n";
+
 
 		while ($business_ids = mysql_fetch_array($result1, MYSQL_ASSOC)) {
 			$business_id = $business_ids['business_id'];
@@ -57,10 +61,10 @@ class AdminListingFacade extends MainFacade {
 			if ($num_rows > 1) {
 				$business_count++;
 				echo "$business_count Found: $business_id|$business_name  >> NUMROWS = $num_rows \n\n";
-				$output .= "\t<tr>\n";
-				$output .= "\t\t<td>$business_id</td>\n";
-				$output .= "\t\t<td>$business_name</td>\n";
-				$output .= "\t\t<td>";
+				//$output .= "\t<tr>\n";
+				$output .= "$business_id,";
+				$output .= "$business_name,";
+				//$output .= "\t\t<td>";
 				$i = 1;
 				$class_list = array();
 				$row = '';
@@ -78,40 +82,27 @@ class AdminListingFacade extends MainFacade {
 					//}
 
 				}
-				echo "writing $row \n\n";
+				//echo "writing $row \n\n";
 				array_push($data_store,$class_list);
-				$output .= $row;
-				$output .= "</td>\n";
-				$output .= "\t</tr>\n";
+				$output .= "$row\n";
+				//$output .= "</td>\n";
+				//$output .= "\t</tr>\n";
 			}
 			$tot_count++;
 			//if ($tot_count >10000) { die("Limit Reached");}
 		}
-		$output .= "</table>\n";
+		//$output .= "</table>\n";
 
-		echo "STAGE 1 operation completed \n\n";
-		echo "TOT COUNT = $tot_count | BUSINESS COUNT = $business_count \n\n";
+		//echo "STAGE 1 operation completed \n\n";
+		//echo "TOT COUNT = $tot_count | BUSINESS COUNT = $business_count \n\n";
 
+//$final_output = '';
 
+	
+		//$final_output .= $output;
 
-
-
-		$final_output = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Businesses and Classifications</title>
-</head>
-<body>';
-
-		$final_output .= $output;
-
-		$final_output .= '</body></html>';
-
-		file_put_contents('class_dump.html', $final_output);
-
-
-		echo "STAGE 2 - Creating Classifaction Relationships \n\n";
+		//file_put_contents('class_dump.html', $final_output);
+		//echo "STAGE 2 - Creating Classifaction Relationships \n\n";
 
 		$query3 = 'SELECT * FROM `local_classification`';
 		$result3 = mysql_query($query3) or die('Query 3 failed: ' . mysql_error());
@@ -119,7 +110,7 @@ class AdminListingFacade extends MainFacade {
 		while ($unique_classification = mysql_fetch_array($result3, MYSQL_ASSOC)) {
 			$localclassification_id = $unique_classification['localclassification_id'];
 			$localclassification_name = $unique_classification['localclassification_name'];
-			echo "$localclassification_id: Building Classifaction \n";
+			//echo "$localclassification_id: Building Classifaction \n";
 			$sublist = array();
 			$flag = array();
 			foreach ($data_store as $c_group) {
@@ -136,67 +127,38 @@ class AdminListingFacade extends MainFacade {
 					}
 				}
 
-				/*
-				 foreach ($c_group as $item) {
-				 $name = $item['name'];
-				 $id = $item['id'];
-				 $block = FALSE;
-				 if ($localclassification_id == $id) {
-				 //$flag = TRUE;
-				 $block = TRUE;
-				 }
-				 if (!$block) {array_push($sublist,"$id|$name");}
-				 }
-				 */
-
-				//array_push($data_store,'');
 			}
-			//if ($flag) {
-			echo "Writing Sublist >> ".implode(', ',$sublist)."\n\n";
+			
+			//echo "Writing Sublist >> ".implode(', ',$sublist)."\n\n";
 			$final_master["$localclassification_id|$localclassification_name"]=$sublist;
 			//}
 		}
 
-		$final_master_string = "<table border='1' cellpadding='7'>\n";
-		$final_master_string .= "<tr>
-  <th>Classification ID</th>
-  <th>Related Classifications</th>
-</tr>";
-
+		//$final_master_string = "<table border='1' cellpadding='7'>\n";
+		$final_master_string = "CLASS ID,RELATED \n";
 
 		foreach ($final_master as $id=>$value) {
-			$final_master_string .= "\t<tr>\n";
-			$final_master_string .= "\t\t<td>$id</td>\n";
+			//$final_master_string .= "\t<tr>\n";
+			$final_master_string .= "$id,";
 			$string = implode(', ',$value);
-			$final_master_string .= "\t\t<td>$string</td>\n";
-			$final_master_string .= "\t</tr>\n";
+			$final_master_string .= "$string\n";
+			//$final_master_string .= "\t</tr>\n";
 		}
 
-		$final_master_string .= "</table>\n";
-
-		$final_output2 = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Related Classifications</title>
-</head>
-<body>';
-
-		$final_output2 .= $final_master_string;
-
-		$final_output2 .= '</body></html>';
-		 
-		 
-		$message = "Operation took $tot_time seconds | GOOGLE FILTER: $filter_on | total days = $count";
+		//$final_master_string .= "</table>\n";
+        $final_output2 = $final_master_string;
+		
+        $end_time = time();
+	    $tot_time = $end_time-$start_time;
+		$message = "Operation took $tot_time seconds";
 
 		header("Content-type: application/octet-stream");
-		header("Content-Disposition: attachment; filename=\"Report_Totals_$from_date--$to_date.csv\"");
+		header("Content-Disposition: attachment; filename=\"class_reationships.csv\"");
 
 		//echo "$message \n";
-
 		echo "$message \n";
-
-		 
+		echo $final_output2;
+			
 	}
 
 
@@ -215,7 +177,7 @@ class AdminListingFacade extends MainFacade {
 			$retArray = array("result"=>false, "message"=>'Username Already Exists!! please try some other name');
 			return $retArray;
 		}
-		 
+			
 		else{
 			$sub=explode(';',$_POST['suburb']);
 			$image=explode('\ ',$_POST['logo']);
@@ -264,7 +226,7 @@ class AdminListingFacade extends MainFacade {
 		}
 	}
 
-	 
+
 	public function selectStates()
 	{
 		$sql="SELECT
@@ -413,7 +375,7 @@ class AdminListingFacade extends MainFacade {
 
 		foreach($post['addclassification'] as $value)
 		{
-				
+
 			$add_classification = "INSERT INTO `business_classification` (`businessclassification_id`, `business_id`, `localclassification_id`) VALUES ('', '{$BusinessID}', '{$value}')";
 
 			$result  =$this->MyDB->query($add_classification);
@@ -476,7 +438,7 @@ class AdminListingFacade extends MainFacade {
 				if(isset($post[$key]) && !empty($post[$key]))
 				{
 					$rank = $post[$key];
-						
+
 					/*	$rankDetails		="SELECT * FROM `business_ranks` WHERE `businessrank_rank`='{$rank}' AND  	`localclassification_id` ='{$valClass['localclassification_id']}' AND `shirename_id` = '{$valRegion['shirename_id']}'";
 					 $rankDetails_result		=$this->MyDB->query($rankDetails);
 					 var_dump($rankDetails_result);*/
@@ -499,9 +461,9 @@ class AdminListingFacade extends MainFacade {
 					 '' , '{$BusinessID}', '{$valClass['localclassification_id']}', '{$rank}', '', '', '{$valRegion['shirename_id']}', '', '' , '' , ".getSession("userid").", ''
 					 )";
 					 $result_rank		=$this->MyDB->query($rankQuery);*/
-						
+
 					$tempArray[]		=array('classification'=>$valClass['localclassification_id'],'rank'=>$rank,'region'=>$valRegion['shirename_id']);
-						
+
 				}
 			}
 
@@ -512,7 +474,7 @@ class AdminListingFacade extends MainFacade {
 			$rankDetails		="SELECT * FROM `business_ranks` WHERE `businessrank_rank`='{$value['rank']}' AND  	`localclassification_id` ='{$value['classification']}' AND `shirename_id` = '{$value['region']}'";
 			$rankDetails_result	=$this->MyDB->query($rankDetails);
 			//var_dump(count($rankDetails_result));
-				
+
 			if(count($rankDetails_result) > 0)
 			{
 					
@@ -656,7 +618,7 @@ class AdminListingFacade extends MainFacade {
 						business_description='{$post['description']}',
 						classification='{$post['classification']}',
 						business_state='{$post['state']}' WHERE business_id=$condition";
-				
+
 		}
 		elseif($image==''&& $desc!=''){
 			$SQL="UPDATE
@@ -683,7 +645,7 @@ class AdminListingFacade extends MainFacade {
 						shire_town='{$sub[1]}',
 						classification='{$post['classification']}',
 						business_state='{$post['state']}' WHERE business_id=$condition";
-				
+
 		}
 		elseif($image!=''&& $desc==''){
 			$SQL="UPDATE
@@ -710,7 +672,7 @@ class AdminListingFacade extends MainFacade {
 						shire_town='{$sub[1]}',
 						classification='{$post['classification']}',
 						business_state='{$post['state']}' WHERE business_id=$condition";
-				
+
 		}
 		$this->MyDB->query($SQL);
 		$result = array("result"=>true, "message"=>'Update Successfully');
@@ -1084,7 +1046,7 @@ class AdminListingFacade extends MainFacade {
 							)
 							VALUES (
 							'{$row[0]}', 'Free', '{$name}', '{$street1}', '{$street2}', 0, 0, '{$suburb}', '{$state}', '{$row[5]}', '{$row[6]}', '{$row[7]}', '{$faxSTD}', '{$fax}', '{$email}', '{$url}', '{$origin}', '{$shireID}', '{$shireName}', '{$shireTown}', '{$mobile}', '{$contact}', {$boldListing}, {$archived}, '{$accountID}', '{$logo}', '{$description}');";						 
-				
+
 			//$res1	=   mysql_query($sql);
 
 			//Find and assign all Classification Codes
@@ -1097,7 +1059,7 @@ class AdminListingFacade extends MainFacade {
 				if($sql2) {
 					//Insert into local_businesses
 					$res1	=   mysql_query($sql);
-						
+
 					if($res1){
 						$success++;
 					} else {
@@ -1109,7 +1071,7 @@ class AdminListingFacade extends MainFacade {
 
 					//Insert into business_classification
 					$res2   =   mysql_query($sql2);
-						
+
 					//fwrite($fp1, $sql) or die("Cannot write first query to file");
 					//fwrite($fp2, $sql2) or die("Cannot write second query to file");
 					if($res2){
@@ -1120,11 +1082,11 @@ class AdminListingFacade extends MainFacade {
 						$failed_sqls[] = mysql_error() . "      " . $sql2;
 						$failure++;
 					}
-						
+
 				}
 			}
 
-				
+
 			$Array = array("result"=>true,"message"=>"Business inserted successfully");
 		}
 		if($failure)
@@ -1225,7 +1187,7 @@ class AdminListingFacade extends MainFacade {
 		}
 
 		$in_string = implode(',', $id_list);
-		 
+			
 		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
 		$sql02 = "delete from local_businesses where business_initials = 'Free' AND business_id IN ($in_string);";
 		die($sql02);
@@ -1363,9 +1325,9 @@ class AdminListingFacade extends MainFacade {
 							)
 							VALUES (
 							'{$_POST['BisinessInitial'.$i]}', 'Free', '{$businessName}', '{$_POST['BisinessStreet1'.$i]}', '{$_POST['BisinessStreet2'.$i]}', 0, 0, '{$_POST['BisinessSuburb'.$i]}', 'NSW', '{$_POST['BisinessPostcode'.$i]}', '{$_POST['Bisinessphonestd'.$i]}', '{$_POST['Bisinessphone'.$i]}', '{$_POST['Bisinessfaxstd'.$i]}', '{$_POST['Bisinessfax'.$i]}', '{$_POST['Bisinessemail'.$i]}', '{$_POST['Bisinessurl'.$i]}', '{$_POST['Bisinessorigin'.$i]}', '{$_POST['shiretown_id'.$i]}', '{$_POST['shire_name'.$i]}', '{$_POST['shire_town'.$i]}', '{$_POST['Bisinessmobile'.$i]}', '{$_POST['Bisinesscontact'.$i]}', {$_POST['bold_listing'.$i]}, {$_POST['archived'.$i]}, '{$_POST['account_id'.$i]}', '{$_POST['Bisinesslogo'.$i]}', '{$_POST['business_description'.$i]}');";						 
-				
+
 			$res1	=   mysql_query($sql);
-				
+
 			if($res1){
 				//print("SQL Insert Success");
 				//print("<br /> $sql <br />");
@@ -1375,7 +1337,7 @@ class AdminListingFacade extends MainFacade {
 				print("<br /> $sql <br />");
 				$failure++;
 			}
-				
+
 			//Find and assign all Classification Codes
 
 			if($_POST['BisinessClass1'.$i] || $_POST['BisinessClass2'.$i] || $_POST['BisinessClass3'.$i] || $_POST['BisinessClass4'.$i] || $_POST['BisinessClass5'.$i]){
@@ -1383,7 +1345,7 @@ class AdminListingFacade extends MainFacade {
 				$res2               = $this->insertClassificationID($classiIDs, $_POST['BisinessInitial'.$i]);
 			}
 
-				
+
 			$Array = array("result"=>true,"message"=>"Business inserted successfully");
 		}
 		if($failure)
@@ -1429,8 +1391,8 @@ class AdminListingFacade extends MainFacade {
 			);";
 			print("<br /> $sql <br />");
 			//$res	=   mysql_query($sql);
-			 
-				
+
+
 			$Array = array("result"=>true,"message"=>"Business inserted successfully");
 			}
 			*/
