@@ -426,6 +426,74 @@ class AdminListingControl extends MainControl {
     }
     
     
+public function import_class_relationships()
+	{   
+	    $this->page->pageTitle = "Import Listings";
+	    $this->page->assign("do",$_GET['do']);
+		$this->page->assign("action1",$_GET['action']);
+	    $this->page->assign("login_url",$this->request->createURL("Admin", "login"));
+		$this->page->assign("reg_url",$this->request->createURL("Admin", "registrationAdd"));
+		$this->page->assign("action",$this->request->createURL("AdminListing","csvFileUpload"));
+		$this->page->assign("searchFreeListing",$this->request->createURL("SalesAccountManager", "searchFreeListing"));
+		$this->page->assign("searchfreeLists",$this->request->createURL("SalesAccountManager","searchfreeLists")); 
+		$this->page->assign("edit_classification",$this->request->createURL("SalesAccountManager", "addClassification"));
+		$this->page->assign("edit_rank",$this->request->createURL("SalesAccountManager", "rankBusiness"));		 
+		 $this->page->assign("searchlists",$this->request->createURL("AdminListing","search"));    
+		$this->page->assign("csvfile",$this->request->createURL("AdminListing","csvFormShow"));
+		$this->page->assign("TeamManager_url",$this->request->createURL("Admin", "adminManager"));
+		$this->page->assign("privacyStatement",$this->request->createURL("Content","privacyStatement"));
+		$this->page->assign("termsAndConditions",$this->request->createURL("Content","termsAndConditions"));
+		$this->page->assign("contactUs",$this->request->createURL("Content","contactUs"));
+        $this->page->assign("logout_url",$this->request->createURL("Admin", "doLogout"));
+        $this->page->assign("back",$this->request->createURL("Admin", "showhomePageAdmin"));
+        $this->page->assign("MultipleListngMgr_url",$this->request->createURL("AdminListing", "addListing"));
+        $this->page->assign("viewlisting",$this->request->createURL("AdminListing", "viewList"));
+       // $this->page->assign("edit",$this->request->createURL("Business", "Edit","ID"));
+		$this->page->assign("edit_url",$this->request->createURL("AdminListing", "Edit"));
+        $this->page->assign("delete",$this->request->createURL("AdminListing", "delete","businessname={$this->request->getAttribute('businessname')}&fr={$this->request->getAttribute("fr")}&ID"));
+		$this->page->assign("addbusinessform",$this->request->createURL("SalesAccountManager", "addListing"));
+	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
+	    $this->page->assign("class_relationships",$this->request->createURL("AdminListing","class_relationships"));
+	    $this->page->assign("import_class_relationships",$this->request->createURL("AdminListing","class_relationships_import_page"));
+	    $this->page->assign("import_class_relationships_action",$this->request->createURL("AdminListing","import_class_relationships"));
+		$res=$this->adminlistingFacade->import_class_relationships();
+	    $this->page->getPage("import_class_relationships.tpl");
+	}
+	
+   public function class_relationships_import_page()
+	{   
+	    $this->page->pageTitle = "Import Listings";
+	    $this->page->assign("do",$_GET['do']);
+		$this->page->assign("action1",$_GET['action']);
+	    $this->page->assign("login_url",$this->request->createURL("Admin", "login"));
+		$this->page->assign("reg_url",$this->request->createURL("Admin", "registrationAdd"));
+		$this->page->assign("action",$this->request->createURL("AdminListing","csvFileUpload"));
+		$this->page->assign("searchFreeListing",$this->request->createURL("SalesAccountManager", "searchFreeListing"));
+		$this->page->assign("searchfreeLists",$this->request->createURL("SalesAccountManager","searchfreeLists")); 
+		$this->page->assign("edit_classification",$this->request->createURL("SalesAccountManager", "addClassification"));
+		$this->page->assign("edit_rank",$this->request->createURL("SalesAccountManager", "rankBusiness"));		 
+		 $this->page->assign("searchlists",$this->request->createURL("AdminListing","search"));    
+		$this->page->assign("csvfile",$this->request->createURL("AdminListing","csvFormShow"));
+		$this->page->assign("TeamManager_url",$this->request->createURL("Admin", "adminManager"));
+		$this->page->assign("privacyStatement",$this->request->createURL("Content","privacyStatement"));
+		$this->page->assign("termsAndConditions",$this->request->createURL("Content","termsAndConditions"));
+		$this->page->assign("contactUs",$this->request->createURL("Content","contactUs"));
+        $this->page->assign("logout_url",$this->request->createURL("Admin", "doLogout"));
+        $this->page->assign("back",$this->request->createURL("Admin", "showhomePageAdmin"));
+        $this->page->assign("MultipleListngMgr_url",$this->request->createURL("AdminListing", "addListing"));
+        $this->page->assign("viewlisting",$this->request->createURL("AdminListing", "viewList"));
+       // $this->page->assign("edit",$this->request->createURL("Business", "Edit","ID"));
+		$this->page->assign("edit_url",$this->request->createURL("AdminListing", "Edit"));
+        $this->page->assign("delete",$this->request->createURL("AdminListing", "delete","businessname={$this->request->getAttribute('businessname')}&fr={$this->request->getAttribute("fr")}&ID"));
+		$this->page->assign("addbusinessform",$this->request->createURL("SalesAccountManager", "addListing"));
+	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
+	    $this->page->assign("class_relationships",$this->request->createURL("AdminListing","class_relationships"));
+	    $this->page->assign("import_class_relationships",$this->request->createURL("AdminListing","class_relationships_import_page"));
+	    $this->page->assign("export_class_relationships_action",$this->request->createURL("AdminListing","export_class_relationships"));
+		$this->page->getPage("import_class_relationships.tpl");
+	}
+    
+    
  public function export_class_relationships()
 	{   
 	    $this->page->pageTitle = "Import Listings";
@@ -455,6 +523,7 @@ class AdminListingControl extends MainControl {
 	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
 	    $this->page->assign("class_relationships",$this->request->createURL("AdminListing","class_relationships"));
 	    $this->page->assign("export_class_relationships_action",$this->request->createURL("AdminListing","export_class_relationships"));
+	    $this->page->assign("import_class_relationships",$this->request->createURL("AdminListing","class_relationships_import_page"));
 		$res=$this->adminlistingFacade->export_class_relationships();
 	    $this->page->getPage("class_relationships.tpl");
 	}
@@ -488,6 +557,7 @@ class AdminListingControl extends MainControl {
 	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
 	    $this->page->assign("class_relationships",$this->request->createURL("AdminListing","class_relationships"));
 	    $this->page->assign("export_class_relationships_action",$this->request->createURL("AdminListing","export_class_relationships"));
+	    $this->page->assign("import_class_relationships",$this->request->createURL("AdminListing","class_relationships_import_page"));
 		$this->page->getPage("class_relationships.tpl");
 	}
 	
@@ -519,6 +589,7 @@ class AdminListingControl extends MainControl {
 		$this->page->assign("addbusinessform",$this->request->createURL("SalesAccountManager", "addListing"));
 	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
 	    $this->page->assign("class_relationships",$this->request->createURL("AdminListing","class_relationships"));
+	    $this->page->assign("import_class_relationships",$this->request->createURL("AdminListing","class_relationships_import_page"));
 		$this->page->getPage("csv_upload_form.tpl");
 	}
 	
@@ -549,7 +620,9 @@ class AdminListingControl extends MainControl {
         $this->page->assign("delete",$this->request->createURL("AdminListing", "delete","businessname={$this->request->getAttribute('businessname')}&fr={$this->request->getAttribute("fr")}&ID"));
 		$this->page->assign("addbusinessform",$this->request->createURL("SalesAccountManager", "addListing"));
 	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
+	    $this->page->assign("import_class_relationships",$this->request->createURL("AdminListing","class_relationships_import_page"));
 		$res=$this->adminlistingFacade->csvFileUpload($_FILES['csvfile']['name']);
+		
 	    $this->page->assign("values",$res);
 	    $this->page->getPage("csv_report.tpl");
 	}

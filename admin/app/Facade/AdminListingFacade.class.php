@@ -928,6 +928,46 @@ class AdminListingFacade extends MainFacade {
 			echo 'PHP Exception: ' . $e->getMessage();
 		}
 	}
+	
+	
+   public function class_relationships_upload($file)
+	{
+		try {
+			//print("Debug inside csvFileUpload<br />");
+			//print_r($_FILES);
+			$this->setini();
+			//$check = move_uploaded_file($_FILES['csvfile']['tmp_name'],$_FILES['csvfile']['name']);
+			$res1 =$this->__Validation($file);
+			if(!$res1['result'])
+			{
+				//print("<br /><strong>No File Uploaded</strong><br />"	   );
+				return $res1;
+			}
+			else
+			{
+				$tmp       = $_FILES['csvfile']['tmp_name'];
+				$uploadDir = $this->sys_get_temp_dir();
+				$file      = $_FILES['csvfile']['name'];
+				setSession("file",$uploadDir.$file);
+					
+				//print("<br />Attempting to upload file $tmp to $uploadDir$file <br />");
+				if(move_uploaded_file($tmp, $uploadDir . $file) or die("Cannot copy uploaded file")){
+					// display success message
+					echo "File successfully uploaded to " . $uploadDir . $file;
+					echo "<br />Now attempt to extract file to " .$uploadDir . $file ." <br />";
+					$values = $this->gz_read($file, $uploadDir);
+			  $report[] = count($values);
+				} else echo "File was <strong>NOT</strong> successfully uploaded to " . $uploadDir . $_FILES['data']['name'];
+				$viewlog = $this->viewlog($uploadDir . $file);
+				$report[] = count($viewlog);
+				$report[] = $this->insert_class_relationships($viewlog);
+
+				return $report;
+			}
+		} catch (Exception $e) {
+			echo 'PHP Exception: ' . $e->getMessage();
+		}
+	}
 
 
 	public function insertCSV($post)
