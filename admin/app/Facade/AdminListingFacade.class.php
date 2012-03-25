@@ -965,9 +965,10 @@ class AdminListingFacade extends MainFacade {
 					if (($handle = fopen("$uploadDir$file", "r")) !== FALSE) {
 						while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 							$num = count($data);
+							dev_log::write("class_relationships_upload -  ".var_export($data, true));
 							//echo "<p> $num fields in line $row: <br /></p>\n";
 							$row++;
-							
+							if ($row > 50) { break;}
 							$arr = explode($data[0], $data);
 							$class_id = $arr[0];
 							
@@ -980,6 +981,7 @@ class AdminListingFacade extends MainFacade {
 								}
 							  } 
 							}
+							
 							$query = "INSERT INTO `class_relationships` (`class_id` ,`related`) VALUES ($class_id, $related)";
 							dev_log::write("class_relationships_upload - $query");
 							//$rows = $this->MyDB->query($query);
