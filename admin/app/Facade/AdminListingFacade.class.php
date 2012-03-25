@@ -965,13 +965,13 @@ class AdminListingFacade extends MainFacade {
 					if (($handle = fopen("$uploadDir$file", "r")) !== FALSE) {
 						while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 							$num = count($data);
-							dev_log::write("class_relationships_upload ZZ -  ".var_export($data, true));
+							//dev_log::write("class_relationships_upload ZZ -  ".var_export($data, true));
 							//echo "<p> $num fields in line $row: <br /></p>\n";
-							dev_log::write("class_relationships_upload DATA[0] -  ".$data[0]);
+							//dev_log::write("class_relationships_upload DATA[0] -  ".$data[0]);
 							$row++;
-							if ($row > 1) { break;}
+							if ($row > 2) { break;}
 							
-							$arr = explode($data[0], $data);
+							$arr = explode('|', $data[0]);
 							
 							$class_id = $arr[0];
 							//dev_log::write("class_relationships_upload -  ARR[0] = ".var_export($arr[0], true));
