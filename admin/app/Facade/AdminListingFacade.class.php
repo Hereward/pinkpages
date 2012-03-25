@@ -965,7 +965,7 @@ class AdminListingFacade extends MainFacade {
 					if (($handle = fopen("$uploadDir$file", "r")) !== FALSE) {
 						while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 							$num = count($data);
-							dev_log::write("class_relationships_upload -  ".var_export($data, true));
+							//dev_log::write("class_relationships_upload -  ".var_export($data, true));
 							//echo "<p> $num fields in line $row: <br /></p>\n";
 							$row++;
 							if ($row > 50) { break;}
@@ -975,7 +975,7 @@ class AdminListingFacade extends MainFacade {
 							$related = '';
 							if ($num >0) {
 							  for ($i=1; $i <= $num; $i++) {
-								$related .= $data[$c];
+								$related .= $data[$i];
 								if ($i < $num) { 
 									$related .= ',';
 								}
