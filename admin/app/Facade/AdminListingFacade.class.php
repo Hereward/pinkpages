@@ -81,7 +81,7 @@ class AdminListingFacade extends MainFacade {
 
 			}
 			$tot_count++;
-				
+
 		}
 
 		$query3 = 'SELECT * FROM `local_classification`';
@@ -105,7 +105,7 @@ class AdminListingFacade extends MainFacade {
 				}
 
 			}
-				
+
 			$final_master["$localclassification_id|$localclassification_name"]=$sublist;
 		}
 
@@ -929,7 +929,7 @@ class AdminListingFacade extends MainFacade {
 		}
 	}
 
-    /* class_relationships_upload -- added by Hereward Fenton 21 march 2012 */
+	/* class_relationships_upload -- added by Hereward Fenton 21 march 2012 */
 	public function class_relationships_upload($file)
 	{
 		try {
@@ -938,9 +938,9 @@ class AdminListingFacade extends MainFacade {
 			$this->setini();
 			//$check = move_uploaded_file($_FILES['csvfile']['tmp_name'],$_FILES['csvfile']['name']);
 			$res1 =$this->__Validation($file);
-			
-			//dev_log::write("class_relationships_upload - init");
 				
+			//dev_log::write("class_relationships_upload - init");
+
 			$output = '';
 			if(!$res1['result'])
 			{
@@ -960,7 +960,7 @@ class AdminListingFacade extends MainFacade {
 					// display success message
 					echo "File successfully uploaded to " . $uploadDir . $file;
 					echo "<br />Now attempt to extract file to " .$uploadDir . $file ." <br />";
-						
+
 					$row = 1;
 					if (($handle = fopen("$uploadDir$file", "r")) !== FALSE) {
 						while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
@@ -970,29 +970,32 @@ class AdminListingFacade extends MainFacade {
 							//dev_log::write("class_relationships_upload DATA[0] -  ".$data[0]);
 							$row++;
 							if ($row > 2) { break;}
-							
+								
 							$arr = explode('|', $data[0]);
-							
+								
 							$class_id = $arr[0];
 							//dev_log::write("class_relationships_upload -  ARR[0] = ".var_export($arr[0], true));
 							$related = '';
 							if ($num >0) {
-							  for ($i=1; $i <= $num-1; $i++) {
-								$related .= $data[$i];
-								if ($i < $num) { 
-									$related .= ',';
+								for ($i=1; $i <= $num-1; $i++) {
+									if ($data[$i]) {
+										$related .= $data[$i];
+										if ($i < $num) {
+											$related .= ',';
+										}
+									}
 								}
-							  } 
 							}
-							
-							$query = "INSERT INTO `class_relationships` (`class_id` ,`related`) VALUES ($class_id, $related)";
-							dev_log::write("class_relationships_upload - $query");
+						    if ($related) {
+							  $query = "INSERT INTO `class_relationships` (`class_id` ,`related`) VALUES ($class_id, $related)";
+							  dev_log::write("class_relationships_upload - $query");
+						    }
 							//$rows = $this->MyDB->query($query);
 						}
 						fclose($handle);
 					}
-						
-						
+
+
 					//$values = $this->gz_read($file, $uploadDir);
 					//$report[] = count($values);
 				} else {
@@ -1012,61 +1015,61 @@ class AdminListingFacade extends MainFacade {
 
 
 
-		public function insertCSV($post)
+	public function insertCSV($post)
+	{
+
+
+		$success = 0;
+		$failure = 0;
+		//Remove Existing Entries
+		//$this->deleteExistingFreeListings();
+		$class_id = '616';
+		$this->deleteFreeListingsClassification($class_id);
+
+		die();
+
+		//Get all the ShireIDs
+		$this->shireIDs    = $this->fetchTownDetails();
+		$this->classificationIDs = $this->fetchClassificationDetails();
+
+		set_time_limit(2000);
+
+		//Uncomment references to these file if you want the SQL to be output to files also
+		//$fp1     = fopen('local_business_queries.sql', "ab+") or die ("Cannot open file");
+		//$fp2     = fopen('classification_queries.sql', "ab+") or die ("Cannot open file");
+
+		foreach($post as $row)
 		{
+			//Find ShireID
+			if($row[0]){
 
+				$shireDetails = $this->getShireID($row[4], $row[5]);
+				$shireID      = $shireDetails['shireID'];
+				$shireName    = $shireDetails['shireRegion'];
+				$state        = $shireDetails['shireState'];
+			}
 
-			$success = 0;
-			$failure = 0;
-			//Remove Existing Entries
-			//$this->deleteExistingFreeListings();
-			$class_id = '616';
-			$this->deleteFreeListingsClassification($class_id);
+			//Some default values for free listings;
+			$boldListing                   = 0;
+			$archived                      = 0;
+			$faxSTD                        = '';
+			$fax                           = '';
+			$email                         = '';
+			$url                           = '';
+			$origin                        = '';
+			$shireTown                     = '';
+			$mobile                        = '';
+			$contact                       = '';
+			$bold                          = '';
+			$accountID                     = '';
+			$logo                          = '';
+			$description                   = '';
+			$name                          = mysql_real_escape_string($row[1]);
+			$street1                       = mysql_real_escape_string($row[2]);
+			$street2                       = mysql_real_escape_string($row[3]);
+			$suburb                        = mysql_real_escape_string($row[4]);
 
-			die();
-
-			//Get all the ShireIDs
-			$this->shireIDs    = $this->fetchTownDetails();
-			$this->classificationIDs = $this->fetchClassificationDetails();
-
-			set_time_limit(2000);
-
-			//Uncomment references to these file if you want the SQL to be output to files also
-			//$fp1     = fopen('local_business_queries.sql', "ab+") or die ("Cannot open file");
-			//$fp2     = fopen('classification_queries.sql', "ab+") or die ("Cannot open file");
-
-			foreach($post as $row)
-			{
-				//Find ShireID
-				if($row[0]){
-
-					$shireDetails = $this->getShireID($row[4], $row[5]);
-					$shireID      = $shireDetails['shireID'];
-					$shireName    = $shireDetails['shireRegion'];
-					$state        = $shireDetails['shireState'];
-				}
-
-				//Some default values for free listings;
-				$boldListing                   = 0;
-				$archived                      = 0;
-				$faxSTD                        = '';
-				$fax                           = '';
-				$email                         = '';
-				$url                           = '';
-				$origin                        = '';
-				$shireTown                     = '';
-				$mobile                        = '';
-				$contact                       = '';
-				$bold                          = '';
-				$accountID                     = '';
-				$logo                          = '';
-				$description                   = '';
-				$name                          = mysql_real_escape_string($row[1]);
-				$street1                       = mysql_real_escape_string($row[2]);
-				$street2                       = mysql_real_escape_string($row[3]);
-				$suburb                        = mysql_real_escape_string($row[4]);
-
-				$sql="INSERT INTO `local_businesses` (
+			$sql="INSERT INTO `local_businesses` (
 							`business_id` ,
 							`business_initials` ,
 							`business_name` ,
@@ -1098,261 +1101,261 @@ class AdminListingFacade extends MainFacade {
 							VALUES (
 							'{$row[0]}', 'Free', '{$name}', '{$street1}', '{$street2}', 0, 0, '{$suburb}', '{$state}', '{$row[5]}', '{$row[6]}', '{$row[7]}', '{$faxSTD}', '{$fax}', '{$email}', '{$url}', '{$origin}', '{$shireID}', '{$shireName}', '{$shireTown}', '{$mobile}', '{$contact}', {$boldListing}, {$archived}, '{$accountID}', '{$logo}', '{$description}');";						 
 
-				//$res1	=   mysql_query($sql);
+			//$res1	=   mysql_query($sql);
 
-				//Find and assign all Classification Codes
+			//Find and assign all Classification Codes
 
-				if($row[8] || $row[9] || $row[10] || $row[11] || $row[12]){
-					$classiIDs = $this->getClassificationIDs(array($row[8], $row[9], $row[10], $row[11], $row[12]));
-					//$res2               = $this->insertClassificationID($classiIDs, $row[0]);
-					$sql2               = $this->insertClassificationID($classiIDs, $row[0]);
-					//Only bother writing entry to file if there is at least one classification
-					if($sql2) {
-						//Insert into local_businesses
-						$res1	=   mysql_query($sql);
+			if($row[8] || $row[9] || $row[10] || $row[11] || $row[12]){
+				$classiIDs = $this->getClassificationIDs(array($row[8], $row[9], $row[10], $row[11], $row[12]));
+				//$res2               = $this->insertClassificationID($classiIDs, $row[0]);
+				$sql2               = $this->insertClassificationID($classiIDs, $row[0]);
+				//Only bother writing entry to file if there is at least one classification
+				if($sql2) {
+					//Insert into local_businesses
+					$res1	=   mysql_query($sql);
 
-						if($res1){
-							$success++;
-						} else {
-							//print("<br /> SQL Insert Error " . mysql_error());
-							//print("<br /> $sql <br />");
-							$failed_sqls[] = mysql_error() . "      " . $sql;
-							$failure++;
-						}
-
-						//Insert into business_classification
-						$res2   =   mysql_query($sql2);
-
-						//fwrite($fp1, $sql) or die("Cannot write first query to file");
-						//fwrite($fp2, $sql2) or die("Cannot write second query to file");
-						if($res2){
-							$success++;
-						} else {
-							//print("<br /> SQL Insert Error " . mysql_error());
-							//print("<br /> $sql <br />");
-							$failed_sqls[] = mysql_error() . "      " . $sql2;
-							$failure++;
-						}
-
+					if($res1){
+						$success++;
+					} else {
+						//print("<br /> SQL Insert Error " . mysql_error());
+						//print("<br /> $sql <br />");
+						$failed_sqls[] = mysql_error() . "      " . $sql;
+						$failure++;
 					}
-				}
 
+					//Insert into business_classification
+					$res2   =   mysql_query($sql2);
 
-				$Array = array("result"=>true,"message"=>"Business inserted successfully");
-			}
-			if($failure)
-			print("<br />$failure rows failed to be inserted into the database<br />");
-				
-			if($success)
-			print("<br />$success rows were successfully inserted into the database<br />");
-				
-			//fclose($fp1) or die ("Cannot close file");
-			//fclose($fp2) or die ("Cannot close file");
-				
-			//return array('success'=>$success, 'failure'=>$failure);
-			return array('success'=>$success, 'failure'=>$failure, 'failed_sqls'=>$failed_sqls);
-		}
-
-		private function __Validation(&$data)
-		{
-			//print("Debug inside __Validation");
-			$retArray = array("result"=>false, "message"=>'');
-			$errors = array();
-			if(empty($data['name']))
-			{
-				$errors[] = "Field is blank!!";
-			}
-			if(count($errors) == 0)
-			{
-				$retArray['result'] = true;
-			}
-			$retArray['message'] = $errors;
-			return $retArray;
-		}
-
-		private function getShireID($suburb, $postcode = ''){
-			foreach($this->shireIDs as $shireID) {
-				if(strtolower($shireID['shiretown_townname']) == strtolower(trim($suburb))){
-					$shireDetails = array('shireID' => $shireID['shiretown_id'], 'shireRegion' => $shireID['shirename_shirename'], 'shireState' => $shireID['localstate_name']);
-					return $shireDetails;
-					break;
-				}  else if(trim($shireID['shiretown_postcode']) == trim($postcode)) {
-					$shireDetails = array('shireID' => $shireID['shiretown_id'], 'shireRegion' => $shireID['shirename_shirename'], 'shireState' => $shireID['localstate_name']);
-					return $shireDetails;
-					break;
-				}
-			}
-			return 0;
-		}
-
-		private function getClassificationIDs($codes){
-			$ids = array();
-			foreach($this->classificationIDs as $classificationCode) {
-				foreach($codes as $code) {
-					if($classificationCode['localclassification_code'] == trim($code)){
-						array_push($ids, $classificationCode['localclassification_id']);
+					//fwrite($fp1, $sql) or die("Cannot write first query to file");
+					//fwrite($fp2, $sql2) or die("Cannot write second query to file");
+					if($res2){
+						$success++;
+					} else {
+						//print("<br /> SQL Insert Error " . mysql_error());
+						//print("<br /> $sql <br />");
+						$failed_sqls[] = mysql_error() . "      " . $sql2;
+						$failure++;
 					}
-				}
-			}
-			return $ids;
-		}
 
-		/*
-		 private function insertClassificationID($classificationIDs, $businessID){
-		 foreach($classificationIDs as $classificationID){
-		 $sql1 = "INSERT INTO `business_classification` (`business_id`, `localclassification_id`) VALUES ('{$businessID}', '{$classificationID}')";
-		 $result1  = $this->MyDB->query($sql1);
-		 }
-		 }
-		 */
-
-		private function insertClassificationID($classificationIDs, $businessID){
-			$sql2 = '';
-			foreach($classificationIDs as $classificationID){
-				$sql2 .= "INSERT INTO `business_classification` (`business_id`, `localclassification_id`) VALUES ('{$businessID}', '{$classificationID}');";
-				return $sql2;
-				//$result1  = $this->MyDB->query($sql1);
-			}
-		}
-
-		private function deleteExistingFreeListings(){
-			print("Deleting Free Listings");
-			//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
-			$sql = "delete from local_businesses where business_initials = 'Free';";
-			$result  = $this->MyDB->query($sql);
-		}
-
-		private function deleteClassRelationships(){
-			print("Deleting Class Relationships");
-			//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
-			$sql = "delete from class_relationships";
-			$result  = $this->MyDB->query($sql);
-		}
-
-		private function deleteFreeListingsClassification($class_id){
-			print("Deleting Free Listings");
-			$sql_01 = "SELECT * from business_classification WHERE localclassification_id = $class_id";
-			$rows =$this->MyDB->query($sql_01);
-				
-			//$deleteQuery	="DELETE FROM business_ranks WHERE `business_id` ='{$BusinessID}'";
-			//$this->MyDB->query($deleteQuery);
-			$id_list = array();
-			foreach($rows as $row) {
-				$id = $row['business_id'];
-				if (!in_array($id, $id_list)) {
-					array_push($id_list, $id);
 				}
 			}
 
-			$in_string = implode(',', $id_list);
-				
-			//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
-			$sql02 = "delete from local_businesses where business_initials = 'Free' AND business_id IN ($in_string);";
-			die($sql02);
-			//$result  = $this->MyDB->query($sql_02);
-		}
 
-		public function importCSV($post)
+			$Array = array("result"=>true,"message"=>"Business inserted successfully");
+		}
+		if($failure)
+		print("<br />$failure rows failed to be inserted into the database<br />");
+
+		if($success)
+		print("<br />$success rows were successfully inserted into the database<br />");
+
+		//fclose($fp1) or die ("Cannot close file");
+		//fclose($fp2) or die ("Cannot close file");
+
+		//return array('success'=>$success, 'failure'=>$failure);
+		return array('success'=>$success, 'failure'=>$failure, 'failed_sqls'=>$failed_sqls);
+	}
+
+	private function __Validation(&$data)
+	{
+		//print("Debug inside __Validation");
+		$retArray = array("result"=>false, "message"=>'');
+		$errors = array();
+		if(empty($data['name']))
 		{
-			$success = 0;
-			$failure = 0;
-			//Remove Existing Entries
-			$this->deleteExistingFreeListings();
+			$errors[] = "Field is blank!!";
+		}
+		if(count($errors) == 0)
+		{
+			$retArray['result'] = true;
+		}
+		$retArray['message'] = $errors;
+		return $retArray;
+	}
 
-			print("<br />ImportCSV Function. Importing ");
-			print_r($_POST['total']);
-			print(" rows<br />");
-			//print_r($_POST['total']);
-			//print_r($_POST);
-			print("<br />");
-			//print("Generating SQL <br />");
-			//Get all the ShireIDs
-			$shireIDs          = $this->fetchTownDetails();
-			$classificationIDs = $this->fetchClassificationDetails();
-			//print_r($classificationIDs);
-			//print_r(array_values($shireIDs));
-			//$shireIDFKs = array_intersect($_POST, $shireIDs);
-			//print_r($shireIDFKs);
+	private function getShireID($suburb, $postcode = ''){
+		foreach($this->shireIDs as $shireID) {
+			if(strtolower($shireID['shiretown_townname']) == strtolower(trim($suburb))){
+				$shireDetails = array('shireID' => $shireID['shiretown_id'], 'shireRegion' => $shireID['shirename_shirename'], 'shireState' => $shireID['localstate_name']);
+				return $shireDetails;
+				break;
+			}  else if(trim($shireID['shiretown_postcode']) == trim($postcode)) {
+				$shireDetails = array('shireID' => $shireID['shiretown_id'], 'shireRegion' => $shireID['shirename_shirename'], 'shireState' => $shireID['localstate_name']);
+				return $shireDetails;
+				break;
+			}
+		}
+		return 0;
+	}
 
-			for($i=1; $i<=$_POST['total']; $i++)
-			{
-				//Find ShireID
-				if($_POST['BisinessSuburb'.$i]){
-					$_POST['shiretown_id'.$i] = $this->getShireID($shireIDs, $_POST['BisinessSuburb'.$i], $_POST['BisinessState'.$i]);
+	private function getClassificationIDs($codes){
+		$ids = array();
+		foreach($this->classificationIDs as $classificationCode) {
+			foreach($codes as $code) {
+				if($classificationCode['localclassification_code'] == trim($code)){
+					array_push($ids, $classificationCode['localclassification_id']);
 				}
+			}
+		}
+		return $ids;
+	}
 
-				//Some default values for free listings;
-				$_POST['bold_listing'.$i]      = 0;
-				$_POST['archived'.$i]          = 0;
-				$_POST['BisinessState'.$i]     = 'NSW';
-				$_POST['Bisinessfaxstd'.$i]    = '';
-				$_POST['Bisinessfax'.$i]       = '';
-				$_POST['Bisinessemail'.$i]     = '';
-				$_POST['Bisinessurl'.$i]       = '';
-				$businessName                  = mysql_real_escape_string($_POST['BisinessName'.$i]);
-				/*
-				 $sql="INSERT INTO `local_businesses` (
-				 `business_id` ,
-				 `business_initials` ,
-				 `business_name` ,
-				 `business_street1` ,
-				 `business_street2` ,
-				 `street1_status`,
-				 `street2_status`,
-				 `business_suburb` ,
-				 `business_state` ,
-				 `business_postcode` ,
-				 `business_phonestd` ,
-				 `business_phone` ,
-				 `business_faxstd` ,
-				 `business_fax` ,
-				 `business_email` ,
-				 `business_url` ,
-				 `business_origin` ,
-				 `shiretown_id`,
-				 `shire_name` ,
-				 `shire_town` ,
-				 `business_mobile` ,
-				 `business_contact` ,
-				 `bold_listing` ,
-				 `archived` ,
-				 `account_id` ,
-				 `business_logo` ,
-				 `business_description`
-				 )
-				 VALUES (
-				 '{$_POST['BisinessInitial'.$i]}',
-				 '',
-				 '{$businessName}',
-				 '{$_POST['BisinessStreet1'.$i]}',
-				 '{$_POST['BisinessStreet2'.$i]}',
-				 0,
-				 0,
-				 '{$_POST['BisinessSuburb'.$i]}',
-				 'NSW',
-				 '{$_POST['BisinessPostcode'.$i]}',
-				 '{$_POST['Bisinessphonestd'.$i]}',
-				 '{$_POST['Bisinessphone'.$i]}',
-				 '{$_POST['Bisinessfaxstd'.$i]}',
-				 '{$_POST['Bisinessfax'.$i]}',
-				 '{$_POST['Bisinessemail'.$i]}',
-				 '{$_POST['Bisinessurl'.$i]}',
-				 '{$_POST['Bisinessorigin'.$i]}',
-				 '{$_POST['shiretown_id'.$i]}',
-				 '{$_POST['shire_name'.$i]}',
-				 '{$_POST['shire_town'.$i]}',
-				 '{$_POST['Bisinessmobile'.$i]}',
-				 '{$_POST['Bisinesscontact'.$i]}',
-				 {$_POST['bold_listing'.$i]},
-				 {$_POST['archived'.$i]},
-				 '{$_POST['account_id'.$i]}',
-				 '{$_POST['Bisinesslogo'.$i]}',
-				 '{$_POST['business_description'.$i]}'
-				 );";
-				 //print("<br /> $sql <br />");
-				 $res	=   mysql_query($sql);
-				 */
-				$sql="INSERT INTO `local_businesses` (
+	/*
+	 private function insertClassificationID($classificationIDs, $businessID){
+	 foreach($classificationIDs as $classificationID){
+	 $sql1 = "INSERT INTO `business_classification` (`business_id`, `localclassification_id`) VALUES ('{$businessID}', '{$classificationID}')";
+	 $result1  = $this->MyDB->query($sql1);
+	 }
+	 }
+	 */
+
+	private function insertClassificationID($classificationIDs, $businessID){
+		$sql2 = '';
+		foreach($classificationIDs as $classificationID){
+			$sql2 .= "INSERT INTO `business_classification` (`business_id`, `localclassification_id`) VALUES ('{$businessID}', '{$classificationID}');";
+			return $sql2;
+			//$result1  = $this->MyDB->query($sql1);
+		}
+	}
+
+	private function deleteExistingFreeListings(){
+		print("Deleting Free Listings");
+		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
+		$sql = "delete from local_businesses where business_initials = 'Free';";
+		$result  = $this->MyDB->query($sql);
+	}
+
+	private function deleteClassRelationships(){
+		print("Deleting Class Relationships");
+		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
+		$sql = "delete from class_relationships";
+		$result  = $this->MyDB->query($sql);
+	}
+
+	private function deleteFreeListingsClassification($class_id){
+		print("Deleting Free Listings");
+		$sql_01 = "SELECT * from business_classification WHERE localclassification_id = $class_id";
+		$rows =$this->MyDB->query($sql_01);
+
+		//$deleteQuery	="DELETE FROM business_ranks WHERE `business_id` ='{$BusinessID}'";
+		//$this->MyDB->query($deleteQuery);
+		$id_list = array();
+		foreach($rows as $row) {
+			$id = $row['business_id'];
+			if (!in_array($id, $id_list)) {
+				array_push($id_list, $id);
+			}
+		}
+
+		$in_string = implode(',', $id_list);
+
+		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
+		$sql02 = "delete from local_businesses where business_initials = 'Free' AND business_id IN ($in_string);";
+		die($sql02);
+		//$result  = $this->MyDB->query($sql_02);
+	}
+
+	public function importCSV($post)
+	{
+		$success = 0;
+		$failure = 0;
+		//Remove Existing Entries
+		$this->deleteExistingFreeListings();
+
+		print("<br />ImportCSV Function. Importing ");
+		print_r($_POST['total']);
+		print(" rows<br />");
+		//print_r($_POST['total']);
+		//print_r($_POST);
+		print("<br />");
+		//print("Generating SQL <br />");
+		//Get all the ShireIDs
+		$shireIDs          = $this->fetchTownDetails();
+		$classificationIDs = $this->fetchClassificationDetails();
+		//print_r($classificationIDs);
+		//print_r(array_values($shireIDs));
+		//$shireIDFKs = array_intersect($_POST, $shireIDs);
+		//print_r($shireIDFKs);
+
+		for($i=1; $i<=$_POST['total']; $i++)
+		{
+			//Find ShireID
+			if($_POST['BisinessSuburb'.$i]){
+				$_POST['shiretown_id'.$i] = $this->getShireID($shireIDs, $_POST['BisinessSuburb'.$i], $_POST['BisinessState'.$i]);
+			}
+
+			//Some default values for free listings;
+			$_POST['bold_listing'.$i]      = 0;
+			$_POST['archived'.$i]          = 0;
+			$_POST['BisinessState'.$i]     = 'NSW';
+			$_POST['Bisinessfaxstd'.$i]    = '';
+			$_POST['Bisinessfax'.$i]       = '';
+			$_POST['Bisinessemail'.$i]     = '';
+			$_POST['Bisinessurl'.$i]       = '';
+			$businessName                  = mysql_real_escape_string($_POST['BisinessName'.$i]);
+			/*
+			 $sql="INSERT INTO `local_businesses` (
+			 `business_id` ,
+			 `business_initials` ,
+			 `business_name` ,
+			 `business_street1` ,
+			 `business_street2` ,
+			 `street1_status`,
+			 `street2_status`,
+			 `business_suburb` ,
+			 `business_state` ,
+			 `business_postcode` ,
+			 `business_phonestd` ,
+			 `business_phone` ,
+			 `business_faxstd` ,
+			 `business_fax` ,
+			 `business_email` ,
+			 `business_url` ,
+			 `business_origin` ,
+			 `shiretown_id`,
+			 `shire_name` ,
+			 `shire_town` ,
+			 `business_mobile` ,
+			 `business_contact` ,
+			 `bold_listing` ,
+			 `archived` ,
+			 `account_id` ,
+			 `business_logo` ,
+			 `business_description`
+			 )
+			 VALUES (
+			 '{$_POST['BisinessInitial'.$i]}',
+			 '',
+			 '{$businessName}',
+			 '{$_POST['BisinessStreet1'.$i]}',
+			 '{$_POST['BisinessStreet2'.$i]}',
+			 0,
+			 0,
+			 '{$_POST['BisinessSuburb'.$i]}',
+			 'NSW',
+			 '{$_POST['BisinessPostcode'.$i]}',
+			 '{$_POST['Bisinessphonestd'.$i]}',
+			 '{$_POST['Bisinessphone'.$i]}',
+			 '{$_POST['Bisinessfaxstd'.$i]}',
+			 '{$_POST['Bisinessfax'.$i]}',
+			 '{$_POST['Bisinessemail'.$i]}',
+			 '{$_POST['Bisinessurl'.$i]}',
+			 '{$_POST['Bisinessorigin'.$i]}',
+			 '{$_POST['shiretown_id'.$i]}',
+			 '{$_POST['shire_name'.$i]}',
+			 '{$_POST['shire_town'.$i]}',
+			 '{$_POST['Bisinessmobile'.$i]}',
+			 '{$_POST['Bisinesscontact'.$i]}',
+			 {$_POST['bold_listing'.$i]},
+			 {$_POST['archived'.$i]},
+			 '{$_POST['account_id'.$i]}',
+			 '{$_POST['Bisinesslogo'.$i]}',
+			 '{$_POST['business_description'.$i]}'
+			 );";
+			 //print("<br /> $sql <br />");
+			 $res	=   mysql_query($sql);
+			 */
+			$sql="INSERT INTO `local_businesses` (
 							`business_id` ,
 							`business_initials` ,
 							`business_name` ,
@@ -1384,92 +1387,92 @@ class AdminListingFacade extends MainFacade {
 							VALUES (
 							'{$_POST['BisinessInitial'.$i]}', 'Free', '{$businessName}', '{$_POST['BisinessStreet1'.$i]}', '{$_POST['BisinessStreet2'.$i]}', 0, 0, '{$_POST['BisinessSuburb'.$i]}', 'NSW', '{$_POST['BisinessPostcode'.$i]}', '{$_POST['Bisinessphonestd'.$i]}', '{$_POST['Bisinessphone'.$i]}', '{$_POST['Bisinessfaxstd'.$i]}', '{$_POST['Bisinessfax'.$i]}', '{$_POST['Bisinessemail'.$i]}', '{$_POST['Bisinessurl'.$i]}', '{$_POST['Bisinessorigin'.$i]}', '{$_POST['shiretown_id'.$i]}', '{$_POST['shire_name'.$i]}', '{$_POST['shire_town'.$i]}', '{$_POST['Bisinessmobile'.$i]}', '{$_POST['Bisinesscontact'.$i]}', {$_POST['bold_listing'.$i]}, {$_POST['archived'.$i]}, '{$_POST['account_id'.$i]}', '{$_POST['Bisinesslogo'.$i]}', '{$_POST['business_description'.$i]}');";						 
 
-				$res1	=   mysql_query($sql);
+			$res1	=   mysql_query($sql);
 
-				if($res1){
-					//print("SQL Insert Success");
-					//print("<br /> $sql <br />");
-					$success++;
-				} else {
-					print("<br /> SQL Insert Error " . mysql_error());
-					print("<br /> $sql <br />");
-					$failure++;
-				}
-
-				//Find and assign all Classification Codes
-
-				if($_POST['BisinessClass1'.$i] || $_POST['BisinessClass2'.$i] || $_POST['BisinessClass3'.$i] || $_POST['BisinessClass4'.$i] || $_POST['BisinessClass5'.$i]){
-					$classiIDs = $this->getClassificationIDs($classificationIDs, array($_POST['BisinessClass1'.$i], $_POST['BisinessClass2'.$i], $_POST['BisinessClass3'.$i], $_POST['BisinessClass4'.$i], $_POST['BisinessClass5'.$i]));
-					$res2               = $this->insertClassificationID($classiIDs, $_POST['BisinessInitial'.$i]);
-				}
-
-
-				$Array = array("result"=>true,"message"=>"Business inserted successfully");
+			if($res1){
+				//print("SQL Insert Success");
+				//print("<br /> $sql <br />");
+				$success++;
+			} else {
+				print("<br /> SQL Insert Error " . mysql_error());
+				print("<br /> $sql <br />");
+				$failure++;
 			}
-			if($failure)
-			print("<br />$failure rows failed to be inserted into the database<br />");
-				
-			if($success)
-			print("<br />$success rows were successfully inserted into the database<br />");
 
-			/*
-			 for($i=1; $i<=$_POST['total']; $i++)
-			 {
+			//Find and assign all Classification Codes
 
-			 $sql="INSERT INTO `local_businesses` (
-			 `business_id` ,
-			 `business_initials` ,
-			 `business_name` ,
-			 `business_street1` ,
-			 `business_street2` ,
-			 `business_suburb` ,
-			 `business_state` ,
-			 `business_postcode` ,
-			 `business_phonestd` ,
-			 `business_phone` ,
-			 `business_faxstd` ,
-			 `business_fax` ,
-			 `business_email` ,
-			 `business_url` ,
-			 `business_origin` ,
-			 `shiretown_id` ,
-			 `shire_name` ,
-			 `shire_town` ,
-			 `business_mobile` ,
-			 `business_contact` ,
-			 `bold_listing` ,
-			 `archived` ,
-			 `account_id` ,
-			 `client_id` ,
-			 `business_logo` ,
-			 `business_description`
-			 )
-			 VALUES (
-			 NULL , '{$_POST['BisinessInitial'.$i]}', '{$_POST['BisinessName'.$i]}', '{$_POST['BisinessStreet1'.$i]}', '{$_POST['BisinessStreet2'.$i]}', '{$_POST['BisinessSuburb'.$i]}', '{$_POST['BisinessState'.$i]}', '{$_POST['BisinessPostcode'.$i]}', '{$_POST['Bisinessphonestd'.$i]}', '{$_POST['Bisinessphone'.$i]}', '{$_POST['Bisinessfaxstd'.$i]}', '{$_POST['Bisinessfax'.$i]}', '{$_POST['Bisinessemail'.$i]}', '{$_POST['Bisinessurl'.$i]}', '{$_POST['Bisinessorigin'.$i]}', '{$_POST['shiretown_id'.$i]}', '{$_POST['shire_name'.$i]}', '{$_POST['shire_town'.$i]}', '{$_POST['Bisinessmobile'.$i]}', '{$_POST['Bisinesscontact'.$i]}', '{$_POST['bold_listing'.$i]}', '{$_POST['archived'.$i]}', '{$_POST['account_id'.$i]}', '{$_POST['client_id'.$i]}', '{$_POST['Bisinesslogo'.$i]}', '{$_POST['business_description'.$i]}'
-			 );";
-			 print("<br /> $sql <br />");
-			 //$res	=   mysql_query($sql);
+			if($_POST['BisinessClass1'.$i] || $_POST['BisinessClass2'.$i] || $_POST['BisinessClass3'.$i] || $_POST['BisinessClass4'.$i] || $_POST['BisinessClass5'.$i]){
+				$classiIDs = $this->getClassificationIDs($classificationIDs, array($_POST['BisinessClass1'.$i], $_POST['BisinessClass2'.$i], $_POST['BisinessClass3'.$i], $_POST['BisinessClass4'.$i], $_POST['BisinessClass5'.$i]));
+				$res2               = $this->insertClassificationID($classiIDs, $_POST['BisinessInitial'.$i]);
+			}
 
 
-			 $Array = array("result"=>true,"message"=>"Business inserted successfully");
-			 }
-			 */
-			/*
-			 print("<strong>POST ARRAY START</strong>");
-			 print_r($_POST);
-			 print("<strong>POST ARRAY END</strong>");
-			 print("<br />");
-			 */
-				
-			return $Array;
+			$Array = array("result"=>true,"message"=>"Business inserted successfully");
 		}
+		if($failure)
+		print("<br />$failure rows failed to be inserted into the database<br />");
+
+		if($success)
+		print("<br />$success rows were successfully inserted into the database<br />");
+
+		/*
+		 for($i=1; $i<=$_POST['total']; $i++)
+		 {
+
+		 $sql="INSERT INTO `local_businesses` (
+		 `business_id` ,
+		 `business_initials` ,
+		 `business_name` ,
+		 `business_street1` ,
+		 `business_street2` ,
+		 `business_suburb` ,
+		 `business_state` ,
+		 `business_postcode` ,
+		 `business_phonestd` ,
+		 `business_phone` ,
+		 `business_faxstd` ,
+		 `business_fax` ,
+		 `business_email` ,
+		 `business_url` ,
+		 `business_origin` ,
+		 `shiretown_id` ,
+		 `shire_name` ,
+		 `shire_town` ,
+		 `business_mobile` ,
+		 `business_contact` ,
+		 `bold_listing` ,
+		 `archived` ,
+		 `account_id` ,
+		 `client_id` ,
+		 `business_logo` ,
+		 `business_description`
+		 )
+		 VALUES (
+		 NULL , '{$_POST['BisinessInitial'.$i]}', '{$_POST['BisinessName'.$i]}', '{$_POST['BisinessStreet1'.$i]}', '{$_POST['BisinessStreet2'.$i]}', '{$_POST['BisinessSuburb'.$i]}', '{$_POST['BisinessState'.$i]}', '{$_POST['BisinessPostcode'.$i]}', '{$_POST['Bisinessphonestd'.$i]}', '{$_POST['Bisinessphone'.$i]}', '{$_POST['Bisinessfaxstd'.$i]}', '{$_POST['Bisinessfax'.$i]}', '{$_POST['Bisinessemail'.$i]}', '{$_POST['Bisinessurl'.$i]}', '{$_POST['Bisinessorigin'.$i]}', '{$_POST['shiretown_id'.$i]}', '{$_POST['shire_name'.$i]}', '{$_POST['shire_town'.$i]}', '{$_POST['Bisinessmobile'.$i]}', '{$_POST['Bisinesscontact'.$i]}', '{$_POST['bold_listing'.$i]}', '{$_POST['archived'.$i]}', '{$_POST['account_id'.$i]}', '{$_POST['client_id'.$i]}', '{$_POST['Bisinesslogo'.$i]}', '{$_POST['business_description'.$i]}'
+		 );";
+		 print("<br /> $sql <br />");
+		 //$res	=   mysql_query($sql);
+
+
+		 $Array = array("result"=>true,"message"=>"Business inserted successfully");
+		 }
+		 */
+		/*
+		 print("<strong>POST ARRAY START</strong>");
+		 print_r($_POST);
+		 print("<strong>POST ARRAY END</strong>");
+		 print("<br />");
+		 */
+
+		return $Array;
+	}
 
 
 
-		public function searchList($get,$fr=0, $noOfRecords=DEFAULT_PAGING_SIZE)
-		{
-			$retArray = array();
-			$SQL="SELECT
+	public function searchList($get,$fr=0, $noOfRecords=DEFAULT_PAGING_SIZE)
+	{
+		$retArray = array();
+		$SQL="SELECT
 	                *
 			FROM	
 			       local_businesses
@@ -1496,44 +1499,44 @@ class AdminListingFacade extends MainFacade {
 			$retArray['paging'] = Paging::numberPaging($count_all[0]['cnt'], $fr, $noOfRecords);
 			return $retArray;
 
-		}
+	}
 
-		public function validatesearch($get)
+	public function validatesearch($get)
+	{
+		$retArray = array("result"=>false, "message"=>'');
+		$errors = array();
+		if(empty($get['businessname']))
 		{
-			$retArray = array("result"=>false, "message"=>'');
-			$errors = array();
-			if(empty($get['businessname']))
-			{
-				$errors[] = "Field is blank!!";
-			}
-			if(count($errors) == 0)
-			{
-				$retArray['result'] = true;
-			}
-			$retArray['message'] = $errors;
-			return $retArray;
+			$errors[] = "Field is blank!!";
 		}
-
-		public function fetchRegion()
+		if(count($errors) == 0)
 		{
-			$SQL="SELECT
+			$retArray['result'] = true;
+		}
+		$retArray['message'] = $errors;
+		return $retArray;
+	}
+
+	public function fetchRegion()
+	{
+		$SQL="SELECT
 		            *
 			  FROM
 			        shire_names";
-			$rec=$this->MyDB->query($SQL);
-			return $rec;
-		}
+		$rec=$this->MyDB->query($SQL);
+		return $rec;
+	}
 
-		public function getSuburb($get)
-		{
-			$SQL="SELECT
+	public function getSuburb($get)
+	{
+		$SQL="SELECT
 		*
 		FROM
 		shire_towns
 		WHERE shirename_id='{$get['ID']}'";
-			$rec=$this->MyDB->query($SQL);
-			return $rec;
-		}
-
+		$rec=$this->MyDB->query($SQL);
+		return $rec;
 	}
-	?>
+
+}
+?>
