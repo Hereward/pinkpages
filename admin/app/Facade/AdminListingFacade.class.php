@@ -962,7 +962,7 @@ class AdminListingFacade extends MainFacade {
 					echo "<br />Now attempt to extract file to " .$uploadDir . $file ." <br />";
 						
 					$row = 1;
-					if (($handle = fopen("$file$uploadDir", "r")) !== FALSE) {
+					if (($handle = fopen("$uploadDir$file", "r")) !== FALSE) {
 						while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 							$num = count($data);
 							//echo "<p> $num fields in line $row: <br /></p>\n";
@@ -989,7 +989,7 @@ class AdminListingFacade extends MainFacade {
 						
 						
 					//$values = $this->gz_read($file, $uploadDir);
-					$report[] = count($values);
+					//$report[] = count($values);
 				} else {
 					echo "File was <strong>NOT</strong> successfully uploaded to " . $uploadDir . $_FILES['data']['name'];
 				}
