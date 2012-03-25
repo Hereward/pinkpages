@@ -977,7 +977,7 @@ class AdminListingFacade extends MainFacade {
 							//dev_log::write("class_relationships_upload -  ARR[0] = ".var_export($arr[0], true));
 							$related = '';
 							if ($num >0) {
-							  for ($i=1; $i <= $num; $i++) {
+							  for ($i=1; $i <= $num-1; $i++) {
 								$related .= $data[$i];
 								if ($i < $num) { 
 									$related .= ',';
@@ -986,7 +986,7 @@ class AdminListingFacade extends MainFacade {
 							}
 							
 							$query = "INSERT INTO `class_relationships` (`class_id` ,`related`) VALUES ($class_id, $related)";
-							//dev_log::write("class_relationships_upload - $query");
+							dev_log::write("class_relationships_upload - $query");
 							//$rows = $this->MyDB->query($query);
 						}
 						fclose($handle);
