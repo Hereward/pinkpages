@@ -967,9 +967,10 @@ class AdminListingFacade extends MainFacade {
 							$num = count($data);
 							dev_log::write("class_relationships_upload -  ".var_export($data, true));
 							//echo "<p> $num fields in line $row: <br /></p>\n";
+							dev_log::write("class_relationships_upload DATA[0] -  ".$data[0]);
 							$row++;
 							if ($row > 1) { break;}
-							dev_log::write("class_relationships_upload DATA[0] -  ".$data[0]);
+							
 							$arr = explode($data[0], $data);
 							
 							$class_id = $arr[0];
