@@ -965,7 +965,7 @@ class AdminListingFacade extends MainFacade {
 					if (($handle = fopen("$uploadDir$file", "r")) !== FALSE) {
 						while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 							$num = count($data);
-							dev_log::write("class_relationships_upload -  ".var_export($data, true));
+							dev_log::write("class_relationships_upload ZZ -  ".var_export($data, true));
 							//echo "<p> $num fields in line $row: <br /></p>\n";
 							dev_log::write("class_relationships_upload DATA[0] -  ".$data[0]);
 							$row++;
