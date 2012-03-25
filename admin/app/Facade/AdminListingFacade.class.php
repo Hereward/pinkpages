@@ -929,7 +929,7 @@ class AdminListingFacade extends MainFacade {
 		}
 	}
 
-
+    /* class_relationships_upload -- added by Hereward Fenton 21 march 2012 */
 	public function class_relationships_upload($file)
 	{
 		try {
@@ -938,6 +938,8 @@ class AdminListingFacade extends MainFacade {
 			$this->setini();
 			//$check = move_uploaded_file($_FILES['csvfile']['tmp_name'],$_FILES['csvfile']['name']);
 			$res1 =$this->__Validation($file);
+			
+			//dev_log::write("class_relationships_upload - init");
 				
 			$output = '';
 			if(!$res1['result'])
@@ -947,6 +949,7 @@ class AdminListingFacade extends MainFacade {
 			}
 			else
 			{
+				dev_log::write("class_relationships_upload - init");
 				$tmp       = $_FILES['csvfile']['tmp_name'];
 				$uploadDir = $this->sys_get_temp_dir();
 				$file      = $_FILES['csvfile']['name'];
@@ -978,7 +981,8 @@ class AdminListingFacade extends MainFacade {
 							  } 
 							}
 							$query = "INSERT INTO `class_relationships` (`class_id` ,`related`) VALUES ($class_id, $related)";
-							$rows = $this->MyDB->query($query);
+							dev_log::write("class_relationships_upload - $query");
+							//$rows = $this->MyDB->query($query);
 						}
 						fclose($handle);
 					}
@@ -1146,7 +1150,7 @@ class AdminListingFacade extends MainFacade {
 
 		private function __Validation(&$data)
 		{
-			print("Debug inside __Validation");
+			//print("Debug inside __Validation");
 			$retArray = array("result"=>false, "message"=>'');
 			$errors = array();
 			if(empty($data['name']))
