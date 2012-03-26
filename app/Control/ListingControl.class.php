@@ -879,6 +879,10 @@ class ListingControl extends MainControl {
 	}/* END keyCategorySearch */
 
 
+	
+	public function relatedClassLinks($shire_name='', $shire_town='', $state='', $class_id='') {
+		
+	}
 
 	/**
      *  categorySearch
@@ -1131,6 +1135,7 @@ class ListingControl extends MainControl {
 		$this->page->getPage('category_result.tpl');
 	}/* END categorySearch */
 	
+	
 	/**
      *  categorySearch
      *
@@ -1152,6 +1157,7 @@ class ListingControl extends MainControl {
 		$this->page->assign("do",$do);
 		$this->page->assign("action",$action);
 		
+		$classificationID = $this->request->getAttribute('search');
 
 		$location = $this->defaultLocation;
 
