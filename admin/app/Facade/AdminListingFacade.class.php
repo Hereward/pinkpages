@@ -979,7 +979,7 @@ class AdminListingFacade extends MainFacade {
 							if ($num >0 && (is_numeric($class_id))) {
 								for ($i=1; $i <= $num-1; $i++) {
 									if ($data[$i]) {
-										if ($i > 1) {
+										if ($i > 1 && ($data[$i-1])) {
 											$related .= ',';
 										}
 										$arr = explode('|', $data[$i]);
