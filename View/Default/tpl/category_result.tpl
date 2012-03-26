@@ -224,7 +224,7 @@
                 <br /><br /><br />
 				
             <div align="center">{include file="pagination.tpl"}</div>
-            <div style="text-align:center; margin-top:10px;">RELATED CLASSIFICATIONS GO HERE [$category]</div>
+            <div style="text-align:center; margin-top:10px;">RELATED CLASSIFICATIONS GO HERE [{$category}]</div>
             
 
 
