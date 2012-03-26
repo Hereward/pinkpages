@@ -976,7 +976,7 @@ class AdminListingFacade extends MainFacade {
 							$class_id = $arr[0];
 							//dev_log::write("class_relationships_upload -  ARR[0] = ".var_export($arr[0], true));
 							$related = '';
-							if ($num >0) {
+							if ($num >0 && is_int($class_id)) {
 								for ($i=1; $i <= $num-1; $i++) {
 									if ($data[$i]) {
 									    if ($i > 1) {
