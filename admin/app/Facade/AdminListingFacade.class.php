@@ -932,6 +932,9 @@ class AdminListingFacade extends MainFacade {
 	/* class_relationships_upload -- added by Hereward Fenton 21 march 2012 */
 	public function class_relationships_upload($file)
 	{
+		$query_1 = "DELETE FROM `class_relationships`";
+		//dev_log::write("class_relationships_upload - $query");
+		$rows = $this->MyDB->query($query_1);
 		try {
 			//print("Debug inside csvFileUpload<br />");
 			//print_r($_FILES);
@@ -999,9 +1002,7 @@ class AdminListingFacade extends MainFacade {
 							if ($related) {
 								$related = trim($related,',');
 								$related = mysql_real_escape_string($related);
-								//$query_1 = "DELETE FROM `class_relationships`";
-								//dev_log::write("class_relationships_upload - $query");
-								//$rows = $this->MyDB->query($query_1);
+								
 								$query_2 = "INSERT INTO `class_relationships` (`class_id` ,`related`) VALUES ($class_id, '$related')";
 								//dev_log::write("class_relationships_upload - $query");
 								$rows = $this->MyDB->query($query_2);
