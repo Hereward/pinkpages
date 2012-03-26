@@ -1000,7 +1000,7 @@ class AdminListingFacade extends MainFacade {
 								$related = trim($related,',');
 								$related = mysql_real_escape_string($related);
 								$query = "INSERT INTO `class_relationships` (`class_id` ,`related`) VALUES ($class_id, '$related')";
-								dev_log::write("class_relationships_upload - $query");
+								//dev_log::write("class_relationships_upload - $query");
 								$rows = $this->MyDB->query($query);
 							}
 							
