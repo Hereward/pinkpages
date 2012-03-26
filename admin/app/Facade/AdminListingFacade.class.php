@@ -932,7 +932,7 @@ class AdminListingFacade extends MainFacade {
 	/* class_relationships_upload -- added by Hereward Fenton 21 march 2012 */
 	public function class_relationships_upload($file)
 	{
-		$query_1 = "DELETE FROM `class_relationships`";
+		$query_1 = "TRUNCATE `class_relationships`";
 		//dev_log::write("class_relationships_upload - $query");
 		$rows = $this->MyDB->query($query_1);
 		try {
