@@ -938,7 +938,7 @@ class AdminListingFacade extends MainFacade {
 			$this->setini();
 			//$check = move_uploaded_file($_FILES['csvfile']['tmp_name'],$_FILES['csvfile']['name']);
 			$res1 =$this->__Validation($file);
-				
+
 			//dev_log::write("class_relationships_upload - init");
 
 			$output = '';
@@ -970,34 +970,37 @@ class AdminListingFacade extends MainFacade {
 							//dev_log::write("class_relationships_upload DATA[0] -  ".$data[0]);
 							$row++;
 							if ($row > 50) { break;}
-								
+
 							$arr = explode('|', $data[0]);
-								
+
 							$class_id = $arr[0];
 							//dev_log::write("class_relationships_upload -  ARR[0] = ".var_export($arr[0], true));
 							$related = '';
 							if ($num >0 && (is_numeric($class_id))) {
 								for ($i=1; $i <= $num-1; $i++) {
 									if ($data[$i]) {
-									    if ($i > 1) {
+										if ($i > 1) {
 											$related .= ',';
 										}
 										$arr = explode('|', $data[$i]);
 										$raw = $arr[0];
 										$arr2 = explode('_', $raw);
-										if ($class_id == '608') {
-											dev_log::write("class id $class_id | arr2[0] = {$arr2[0]} | arr2[1] = {$arr2[0]}");
-										}
+										$count_arr2 = count($arr2);
+										//if (count($arr2>1)) {
+											if ($class_id == '608') {
+												dev_log::write("class id $class_id | count_arr2 = $count_arr2 | arr2[0] = [{$arr2[0]}]");
+											}
+										//}
 										$related .= (count($arr2>1))?$arr2[1]:$arr2[0];
-										
+
 									}
 								}
 							}
-						    if ($related) {
-						      $related = mysql_real_escape_string($related);
-							  $query = "INSERT INTO `class_relationships` (`class_id` ,`related`) VALUES ($class_id, '$related')";
-							  dev_log::write("class_relationships_upload - $query");
-						    }
+							if ($related) {
+								$related = mysql_real_escape_string($related);
+								$query = "INSERT INTO `class_relationships` (`class_id` ,`related`) VALUES ($class_id, '$related')";
+								dev_log::write("class_relationships_upload - $query");
+							}
 							//$rows = $this->MyDB->query($query);
 						}
 						fclose($handle);
