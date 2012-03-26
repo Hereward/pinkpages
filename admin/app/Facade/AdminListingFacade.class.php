@@ -999,9 +999,9 @@ class AdminListingFacade extends MainFacade {
 							if ($related) {
 								$related = trim($related,',');
 								$related = mysql_real_escape_string($related);
-								$query_1 = "DELETE FROM `class_relationships`";
+								//$query_1 = "DELETE FROM `class_relationships`";
 								//dev_log::write("class_relationships_upload - $query");
-								$rows = $this->MyDB->query($query_1);
+								//$rows = $this->MyDB->query($query_1);
 								$query_2 = "INSERT INTO `class_relationships` (`class_id` ,`related`) VALUES ($class_id, '$related')";
 								//dev_log::write("class_relationships_upload - $query");
 								$rows = $this->MyDB->query($query_2);
