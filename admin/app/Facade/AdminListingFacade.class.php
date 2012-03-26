@@ -985,7 +985,9 @@ class AdminListingFacade extends MainFacade {
 										$arr = explode('|', $data[$i]);
 										$raw = $arr[0];
 										$arr2 = explode('_', $raw);
-										
+										if ($class_id == '608') {
+											dev_log::write("class id $class_id | arr2[0] = {$arr2[0]} | arr2[1] = {$arr2[0]}");
+										}
 										$related .= (count($arr2>1))?$arr2[1]:$arr2[0];
 										
 									}
