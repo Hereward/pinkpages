@@ -1126,6 +1126,7 @@ class ListingControl extends MainControl {
 
 		$this->page->assign("contactUs",$this->request->createURL("Listing", "contactUs","ID"));
 		$_GET['pnum'] = (isset($_GET['pnum']) && $_GET['pnum'])?$_GET['pnum']:1;
+		$this->page->assign("classificationID", $classificationID);
 		$this->page->getPage('category_result.tpl');
 	}/* END categorySearch */
 	
