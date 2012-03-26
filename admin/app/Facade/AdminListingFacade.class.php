@@ -949,7 +949,7 @@ class AdminListingFacade extends MainFacade {
 			}
 			else
 			{
-				dev_log::write("class_relationships_upload - init");
+				//dev_log::write("class_relationships_upload - init");
 				$tmp       = $_FILES['csvfile']['tmp_name'];
 				$uploadDir = $this->sys_get_temp_dir();
 				$file      = $_FILES['csvfile']['name'];
@@ -979,7 +979,7 @@ class AdminListingFacade extends MainFacade {
 							if ($num >0 && (is_numeric($class_id))) {
 								for ($i=1; $i <= $num-1; $i++) {
 									if ($data[$i]) {
-										if ($i > 1 && ($data[$i-1])) {
+										if ($i > 1) {
 											$related .= ',';
 										}
 										$arr = explode('|', $data[$i]);
@@ -1004,8 +1004,9 @@ class AdminListingFacade extends MainFacade {
 								$related = mysql_real_escape_string($related);
 								$query = "INSERT INTO `class_relationships` (`class_id` ,`related`) VALUES ($class_id, '$related')";
 								dev_log::write("class_relationships_upload - $query");
+								$rows = $this->MyDB->query($query);
 							}
-							//$rows = $this->MyDB->query($query);
+							
 						}
 						fclose($handle);
 					}
