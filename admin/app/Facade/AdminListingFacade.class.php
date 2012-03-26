@@ -984,7 +984,7 @@ class AdminListingFacade extends MainFacade {
 										$raw = $arr[0];
 										$arr2 = explode('_', $raw);
 										$related .= $arr2[1];
-										if ($i < $num) {
+										if ($i < $num-1) {
 											$related .= ',';
 										}
 									}
