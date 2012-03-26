@@ -986,11 +986,7 @@ class AdminListingFacade extends MainFacade {
 										$raw = $arr[0];
 										$arr2 = explode('_', $raw);
 										$count_arr2 = count($arr2);
-										//if (count($arr2>1)) {
-											if ($class_id == '608') {
-												dev_log::write("class id $class_id | count_arr2 = $count_arr2 | arr2[0] = [{$arr2[0]}]");
-											}
-										//}
+										
 									    if (count($arr2)>1) {
 									    	$related .= $arr2[1];
 									    } else {
@@ -1001,6 +997,7 @@ class AdminListingFacade extends MainFacade {
 								}
 							}
 							if ($related) {
+								$related = trim($related,',');
 								$related = mysql_real_escape_string($related);
 								$query = "INSERT INTO `class_relationships` (`class_id` ,`related`) VALUES ($class_id, '$related')";
 								dev_log::write("class_relationships_upload - $query");
