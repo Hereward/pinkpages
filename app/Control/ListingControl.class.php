@@ -1154,6 +1154,7 @@ class ListingControl extends MainControl {
 		$this->page->assign("contactUs",$this->request->createURL("Listing", "contactUs","ID"));
 		$_GET['pnum'] = (isset($_GET['pnum']) && $_GET['pnum'])?$_GET['pnum']:1;
 		$relatedClassLinks = $this->relatedClassLinks($classificationID);
+		//$relatedClassLinksStr = implode(',', $relatedClassLinks);
 		$this->page->assign("relatedClassLinks", $relatedClassLinks);
 		$this->page->assign("classificationID", $classificationID);
 		
