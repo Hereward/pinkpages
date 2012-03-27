@@ -1168,7 +1168,7 @@ class ListingControl extends MainControl {
 		$_GET['pnum'] = (isset($_GET['pnum']) && $_GET['pnum'])?$_GET['pnum']:1;
 		$relatedClassLinks = $this->relatedClassLinks($classificationID);
         $related_class_count = count($relatedClassLinks['classifications']);
-        $this->page->assign("related_class_count", $relatedClassLinks);
+        $this->page->assign("related_class_count", $related_class_count);
 		$this->page->assign("relatedClassLinks", $relatedClassLinks);
 		$this->page->assign("relatedClassLinks", $relatedClassLinks['classifications']);
 		
@@ -1318,7 +1318,7 @@ class ListingControl extends MainControl {
 		$_GET['pnum'] = (isset($_GET['pnum']) && $_GET['pnum'])?$_GET['pnum']:1;
 		$relatedClassLinks = $this->relatedClassLinks($classificationID);
 		$related_class_count = count($relatedClassLinks['classifications']);
-        $this->page->assign("related_class_count", $relatedClassLinks);
+        $this->page->assign("related_class_count", $related_class_count);
 		$this->page->assign("relatedClassLinks", $relatedClassLinks['classifications']);
 		
 		$this->page->assign("classificationID", $classificationID);
