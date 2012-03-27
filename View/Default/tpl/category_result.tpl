@@ -228,8 +228,8 @@
              <div style="text-align:center; margin-top:10px;">[{$relatedClassLinksStr}]</div> *}
              
              {if ($related_class_count > 0)}
-             <h2 style="font-size:13px; font-weight:bold; padding:0; color:black; margin: 10px 0 0 23px;">{$related_class_count} Related Classifications</h2>
-             <ul style="font-size:11px;">
+             <h2 style="font-size:14px; font-weight:bold; padding:0; color:black; margin: 10px 0 0 25px;">{$related_class_count} Related Classifications</h2>
+             <ul style="font-size:12px;">
                {section name=i loop=$relatedClassLinks}
 			      <li><a href="{$relatedClassLinks[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$relatedClassLinks[i].localclassification_name} <span> {$relatedClassLinks[i].cnt} business results </span></a></li>
 		       {/section}
