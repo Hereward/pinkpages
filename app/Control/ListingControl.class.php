@@ -893,7 +893,7 @@ class ListingControl extends MainControl {
 		dev_log::write("relatedClassLinks class_id = ".$class_id);
 		$classification_ids = $this->listingFacade->relatedClassLinks($class_id);
 		
-       // $str = implode(',', $classification_ids);
+        $str = implode(',', $classification_ids);
         
        // return $str;
 
@@ -905,7 +905,7 @@ class ListingControl extends MainControl {
 		
 		var_dump($classifications);
 		
-		die();
+		die($str);
 		
 		return $classifications;
 
