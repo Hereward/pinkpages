@@ -3458,7 +3458,7 @@ class ListingFacade extends MainFacade {
 			$output = explode(',', $list);
 		}
 		
-		return $list;
+		return $output;
 	}
 
 	public function getClassificationCountByLocation($location, $classification_ids, $fr=0, $paging_size = DEFAULT_PAGING_SIZE)
