@@ -225,6 +225,16 @@
 				
             <div align="center">{include file="pagination.tpl"}</div>
             <div style="text-align:center; margin-top:10px;">RELATED CLASSIFICATIONS GO HERE [{$category}] [{$classificationID}]</div>
+            <div style="text-align:center; margin-top:10px;">{$relatedClassLinks}</div>
+            {*
+            <ul>
+              {section name=i loop=$relatedClassLinks}
+       
+			      <li> &nbsp;&nbsp;&nbsp;&nbsp;  <a href="{$values[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$values[i].localclassification_name}&nbsp;&nbsp;&nbsp;&nbsp; <span> {$values[i].cnt} business results </span></a></li>
+		
+		       {/section}
+            </ul>
+            *}
             
 
 
