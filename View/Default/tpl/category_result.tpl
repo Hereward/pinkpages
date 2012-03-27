@@ -230,7 +230,7 @@
             <ul>
               {section name=i loop=$relatedClassLinks}
        
-			      <li> &nbsp;&nbsp;&nbsp;&nbsp;  <a href="{$relatedClassLinks[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$relatedClassLinks[i].localclassification_name}&nbsp;&nbsp;&nbsp;&nbsp; <span> {$relatedClassLinks[i].cnt} business results </span></a></li>
+			      <li><a href="{$relatedClassLinks['classifications'][i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$relatedClassLinks['classifications'][i].localclassification_name}<span> {$relatedClassLinks['classifications'][i].cnt} business results </span></a></li>
 		
 		       {/section}
             </ul>
