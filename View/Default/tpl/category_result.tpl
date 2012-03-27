@@ -227,8 +227,8 @@
             {* <div style="text-align:center; margin-top:10px;">RELATED CLASSIFICATIONS GO HERE [{$category}] [{$classificationID}]</div>
              <div style="text-align:center; margin-top:10px;">[{$relatedClassLinksStr}]</div> *}
              
-             {if $related_class_count > 0}
-             <h2 style="padding:0; color:black; margin: 10px 0 0 23px;">Related Classifications</h2>
+             {if ($related_class_count > 0)}
+             <h2 style="padding:0; color:black; margin: 10px 0 0 23px;">[{$related_class_count}] Related Classifications</h2>
              <ul>
                {section name=i loop=$relatedClassLinks}
 			      <li><a href="{$relatedClassLinks[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$relatedClassLinks[i].localclassification_name} <span> {$relatedClassLinks[i].cnt} business results </span></a></li>
