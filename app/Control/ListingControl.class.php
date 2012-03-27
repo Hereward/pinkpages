@@ -1161,7 +1161,7 @@ class ListingControl extends MainControl {
 		$relatedClassLinks = $this->relatedClassLinks($classificationID);
 
 		$this->page->assign("relatedClassLinks", $relatedClassLinks);
-		$this->page->assign("classificationID", $classificationID);
+		$this->page->assign("relatedClassLinks", $relatedClassLinks['classifications']);
 		
 		dev_log::cur_url("Listing::categorySearch");
 		$this->page->getPage('category_result.tpl');
