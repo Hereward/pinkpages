@@ -903,6 +903,10 @@ class ListingControl extends MainControl {
 			$classifications = $this->listingFacade->getClassificationCountByAlpha($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 		}
 		
+		var_dump($classifications);
+		
+		die();
+		
 		return $classifications;
 
 	}
