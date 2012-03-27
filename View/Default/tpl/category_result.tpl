@@ -224,8 +224,8 @@
                 <br /><br /><br />
 				
             <div align="center">{include file="pagination.tpl"}</div>
-            <div style="text-align:center; margin-top:10px;">RELATED CLASSIFICATIONS GO HERE [{$category}] [{$classificationID}]</div>
-            {* <div style="text-align:center; margin-top:10px;">[{$relatedClassLinksStr}]</div> *}
+            {* <div style="text-align:center; margin-top:10px;">RELATED CLASSIFICATIONS GO HERE [{$category}] [{$classificationID}]</div>
+             <div style="text-align:center; margin-top:10px;">[{$relatedClassLinksStr}]</div> *}
            
             <ul>
               {section name=i loop=$relatedClassLinks}
