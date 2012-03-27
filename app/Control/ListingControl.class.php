@@ -1167,7 +1167,8 @@ class ListingControl extends MainControl {
 		$this->page->assign("contactUs",$this->request->createURL("Listing", "contactUs","ID"));
 		$_GET['pnum'] = (isset($_GET['pnum']) && $_GET['pnum'])?$_GET['pnum']:1;
 		$relatedClassLinks = $this->relatedClassLinks($classificationID);
-
+        $related_class_count = count($relatedClassLinks['classifications']);
+        $this->page->assign("related_class_count", $relatedClassLinks);
 		$this->page->assign("relatedClassLinks", $relatedClassLinks);
 		$this->page->assign("relatedClassLinks", $relatedClassLinks['classifications']);
 		
@@ -1316,7 +1317,10 @@ class ListingControl extends MainControl {
 		$this->page->assign("contactUs",$this->request->createURL("Listing", "contactUs","ID"));
 		$_GET['pnum'] = (isset($_GET['pnum']) && $_GET['pnum'])?$_GET['pnum']:1;
 		$relatedClassLinks = $this->relatedClassLinks($classificationID);
+		$related_class_count = count($relatedClassLinks['classifications']);
+        $this->page->assign("related_class_count", $relatedClassLinks);
 		$this->page->assign("relatedClassLinks", $relatedClassLinks['classifications']);
+		
 		$this->page->assign("classificationID", $classificationID);
 		dev_log::cur_url("Listing::categorySearch");
 		$this->page->getPage('category_result.tpl');
