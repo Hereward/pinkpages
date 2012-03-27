@@ -906,7 +906,7 @@ class ListingControl extends MainControl {
 		
 		var_dump($classifications);
 		
-		die($str);
+		//die($str);
 		
 		return $classifications;
 
