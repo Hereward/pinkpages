@@ -883,7 +883,8 @@ class ListingControl extends MainControl {
 	public function relatedClassLinks($class_id='',$shire_name='', $shire_town='', $state='') {
 		$defaultLocation = $this->defaultLocation;
 		//$location = GeneralUtils::handle_input($_GET['Search2']);
-		$location = GeneralUtils::handle_input($_GET['shire_town']);
+		$location = (isset($_GET['shire_town']))?$_GET['shire_town']:'';
+		//$location = GeneralUtils::handle_input($_GET['shire_town']);
 		$location = ($location=="") ? $defaultLocation : $location;
 		//$location_tpl = (empty($location))? $defaultLocation : $location;
 		//$this->page->assign("location",$location_tpl);
