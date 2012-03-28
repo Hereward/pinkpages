@@ -1254,6 +1254,7 @@ class AdminListingFacade extends MainFacade {
 		//print("Deleting Free Listings");
 		dev_log::write("Deleting Free Listings");
 		$sql_01 = "SELECT * from business_classification WHERE localclassification_id = $class_id AND business_state='$state'";
+		dev_log::write($sql02);
 		$rows =$this->MyDB->query($sql_01);
 
 		//$deleteQuery	="DELETE FROM business_ranks WHERE `business_id` ='{$BusinessID}'";
