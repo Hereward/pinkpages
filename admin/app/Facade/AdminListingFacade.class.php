@@ -1041,7 +1041,8 @@ class AdminListingFacade extends MainFacade {
 		//Remove Existing Entries
 		//$this->deleteExistingFreeListings();
 		$class_id = '2677';
-		$this->deleteFreeListingsClassification($class_id);
+		$state = 'NSW';
+		$this->deleteFreeListingsClassification($class_id,$state);
 
 		die();
 
