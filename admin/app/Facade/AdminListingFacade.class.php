@@ -1276,7 +1276,7 @@ class AdminListingFacade extends MainFacade {
 		//dev_log::write($sql_02);
 		
 		//die('deleteFreeListingsClassification');
-		$result  = $this->MyDB->query($sql_02);
+		//$result  = $this->MyDB->query($sql_02);
 		dev_log::write("KILL COUNT = $kill_count");
 		dev_log::timer('get');
 	}
