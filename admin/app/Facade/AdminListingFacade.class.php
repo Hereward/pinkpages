@@ -1260,16 +1260,17 @@ class AdminListingFacade extends MainFacade {
 		//$deleteQuery	="DELETE FROM business_ranks WHERE `business_id` ='{$BusinessID}'";
 		//$this->MyDB->query($deleteQuery);
 		$id_list = array();
-		$kill_count = 0;
+		
 		foreach($rows as $row) {
 			$id = $row['business_id'];
 			if (!in_array($id, $id_list)) {
 				array_push($id_list, $id);
-				$kill_count++;
 			}
 		}
 
 		$in_string = implode(',', $id_list);
+		
+		$kill_count = count($id_list);
 
 		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
 		$sql_02 = "delete from local_businesses where business_initials = 'Free' AND business_id IN ($in_string) AND business_state='$state'";
