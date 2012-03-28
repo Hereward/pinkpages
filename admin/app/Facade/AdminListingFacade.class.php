@@ -1253,7 +1253,7 @@ class AdminListingFacade extends MainFacade {
 	private function deleteFreeListingsClassification($class_id, $state){
 		//print("Deleting Free Listings");
 		dev_log::write("Deleting Free Listings");
-		$sql_01 = "SELECT * from business_classification WHERE localclassification_id = $class_id AND business_state='$state'";
+		$sql_01 = "SELECT * from business_classification WHERE localclassification_id = $class_id";
 		dev_log::write($sql_01);
 		$rows =$this->MyDB->query($sql_01);
 
@@ -1270,7 +1270,7 @@ class AdminListingFacade extends MainFacade {
 		$in_string = implode(',', $id_list);
 
 		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
-		$sql02 = "delete from local_businesses where business_initials = 'Free' AND business_id IN ($in_string);";
+		$sql02 = "delete from local_businesses where business_initials = 'Free' AND business_id IN ($in_string) AND business_state='$state'";
 		dev_log::write($sql02);
 		die('deleteFreeListingsClassification');
 		//$result  = $this->MyDB->query($sql_02);
