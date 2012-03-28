@@ -1271,7 +1271,7 @@ class AdminListingFacade extends MainFacade {
 
 		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
 		$sql02 = "delete from local_businesses where business_initials = 'Free' AND business_id IN ($in_string) AND business_state='$state'";
-		dev_log::write($sql02);
+		//dev_log::write($sql02);
 		dev_log::timer('get');
 		die('deleteFreeListingsClassification');
 		//$result  = $this->MyDB->query($sql_02);
