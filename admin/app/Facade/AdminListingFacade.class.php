@@ -1044,7 +1044,9 @@ class AdminListingFacade extends MainFacade {
 		$state = 'NSW';
 		$this->deleteFreeListingsClassification($class_id,$state);
 
-		die();
+		//die();
+		dev_log::write("Insert new listings - BEGIN");
+		
 
 		//Get all the ShireIDs
 		$this->shireIDs    = $this->fetchTownDetails();
@@ -1171,6 +1173,8 @@ class AdminListingFacade extends MainFacade {
 		//fclose($fp2) or die ("Cannot close file");
 
 		//return array('success'=>$success, 'failure'=>$failure);
+		dev_log::write("Insert new listings - END");
+		dev_log::timer('get');
 		return array('success'=>$success, 'failure'=>$failure, 'failed_sqls'=>$failed_sqls);
 	}
 
@@ -1254,7 +1258,7 @@ class AdminListingFacade extends MainFacade {
 		//print("Deleting Free Listings");
 		dev_log::write("Deleting Free Listings");
 		$sql_01 = "SELECT * from business_classification WHERE localclassification_id = $class_id";
-		dev_log::write($sql_01);
+		//dev_log::write($sql_01);
 		$rows =$this->MyDB->query($sql_01);
 
 		//$deleteQuery	="DELETE FROM business_ranks WHERE `business_id` ='{$BusinessID}'";
@@ -1274,7 +1278,7 @@ class AdminListingFacade extends MainFacade {
 
 		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
 		$sql_02 = "delete from local_businesses where business_initials = 'Free' AND business_id IN ($in_string) AND business_state='$state'";
-		dev_log::write($sql_02);
+		//dev_log::write($sql_02);
 		
 		//die('deleteFreeListingsClassification');
 		$result  = $this->MyDB->query($sql_02);
