@@ -1037,6 +1037,12 @@ class AdminListingFacade extends MainFacade {
 
         dev_log::timer('set');
         dev_log::write("Insert new listings - BEGIN");
+        
+        $this->shireIDs    = $this->fetchTownDetails();
+		$this->classificationIDs = $this->fetchClassificationDetails();
+        
+		set_time_limit(2000);
+		
 		$success = 0;
 		$failure = 0;
 		//Remove Existing Entries
@@ -1062,10 +1068,7 @@ class AdminListingFacade extends MainFacade {
         $failed_sqls = array();
 
 		//Get all the ShireIDs
-		$this->shireIDs    = $this->fetchTownDetails();
-		$this->classificationIDs = $this->fetchClassificationDetails();
-
-		set_time_limit(2000);
+		
 
 		//Uncomment references to these file if you want the SQL to be output to files also
 		//$fp1     = fopen('local_business_queries.sql', "ab+") or die ("Cannot open file");
