@@ -1061,7 +1061,7 @@ class AdminListingFacade extends MainFacade {
 		foreach($post as $row)
 		{
 			//Find ShireID
-			if($row[0]){
+			if($row[5]){
 
 				$shireDetails = $this->getShireID($row[4], $row[5]);
 				$shireID      = $shireDetails['shireID'];
@@ -1119,23 +1119,26 @@ class AdminListingFacade extends MainFacade {
 							`business_description`
 							)
 							VALUES (
-							'{$row[0]}', 'Free', '{$name}', '{$street1}', '{$street2}', 0, 0, '{$suburb}', '{$state}', '{$row[5]}', '{$row[6]}', '{$row[7]}', '{$faxSTD}', '{$fax}', '{$email}', '{$url}', '{$origin}', '{$shireID}', '{$shireName}', '{$shireTown}', '{$mobile}', '{$contact}', {$boldListing}, {$archived}, '{$accountID}', '{$logo}', '{$description}');";						 
+							'', 'Free', '{$name}', '{$street1}', '{$street2}', 0, 0, '{$suburb}', '{$state}', '{$row[5]}', '{$row[6]}', '{$row[7]}', '{$faxSTD}', '{$fax}', '{$email}', '{$url}', '{$origin}', '{$shireID}', '{$shireName}', '{$shireTown}', '{$mobile}', '{$contact}', {$boldListing}, {$archived}, '{$accountID}', '{$logo}', '{$description}');";						 
 
 			//$res1	=   mysql_query($sql);
 
 			//Find and assign all Classification Codes
+		   
 
 			if($row[8] || $row[9] || $row[10] || $row[11] || $row[12]){
 				$classiIDs = $this->getClassificationIDs(array($row[8], $row[9], $row[10], $row[11], $row[12]));
 				//$res2               = $this->insertClassificationID($classiIDs, $row[0]);
-				$sql2               = $this->insertClassificationID($classiIDs, $row[0]);
+				
 				//Only bother writing entry to file if there is at least one classification
-				if($sql2) {
+				if(count($classiIDs)) {
 					//Insert into local_businesses
 					$res1	=   mysql_query($sql);
-
+                    $last_insert_id = mysql_insert_id();
+                    dev_log::write("INSERT ID = $last_insert_id");
 					if($res1){
 						$success++;
+						 //$row[0] = $last_insert_id;
 					} else {
 						//print("<br /> SQL Insert Error " . mysql_error());
 						//print("<br /> $sql <br />");
@@ -1145,6 +1148,7 @@ class AdminListingFacade extends MainFacade {
 					}
 
 					//Insert into business_classification
+					$sql2   = $this->insertClassificationID($classiIDs, $last_insert_id);
 					$res2   =   mysql_query($sql2);
 
 					//fwrite($fp1, $sql) or die("Cannot write first query to file");
