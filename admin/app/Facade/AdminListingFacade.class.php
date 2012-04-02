@@ -1036,17 +1036,30 @@ class AdminListingFacade extends MainFacade {
 	{
 
         dev_log::timer('set');
+        dev_log::write("Insert new listings - BEGIN");
 		$success = 0;
 		$failure = 0;
 		//Remove Existing Entries
 		//$this->deleteExistingFreeListings();
 		$class_id = '2677';
-		$state = 'NSW';
-		$this->deleteFreeListingsClassification($class_id,$state);
+		$state = '';
+		dev_log::write("Identifying Classifications and State from CSV data");
+		foreach($post as $row){
+			if($row[8] || $row[9] || $row[10] || $row[11] || $row[12]){
+				$classiIDs = $this->getClassificationIDs(array($row[8], $row[9], $row[10], $row[11], $row[12]));
+			}
+		    if((!$state) && ($row[5])){
+				$shireDetails = $this->getShireID($row[4], $row[5]);
+				$state        = $shireDetails['shireState'];
+			}
+		}
+		$class_id_str = implode(',', $classiIDs);
+		//$state = 'NSW';
+		dev_log::timer('get');
+		dev_log::write("Deleting OLD free listings");
+		dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
+		$this->deleteFreeListingsClassification($class_id_str,$state);
         $failed_sqls = array();
-		
-		dev_log::write("Insert new listings - BEGIN");
-		
 
 		//Get all the ShireIDs
 		$this->shireIDs    = $this->fetchTownDetails();
@@ -1057,7 +1070,9 @@ class AdminListingFacade extends MainFacade {
 		//Uncomment references to these file if you want the SQL to be output to files also
 		//$fp1     = fopen('local_business_queries.sql', "ab+") or die ("Cannot open file");
 		//$fp2     = fopen('classification_queries.sql', "ab+") or die ("Cannot open file");
-
+        dev_log::timer('get');
+		dev_log::write("Inserting NEW free listings");
+		
 		foreach($post as $row)
 		{
 			//Find ShireID
@@ -1261,10 +1276,10 @@ class AdminListingFacade extends MainFacade {
 		$result  = $this->MyDB->query($sql);
 	}
 
-	private function deleteFreeListingsClassification($class_id, $state){
+	private function deleteFreeListingsClassification($class_ids, $state){
 		//print("Deleting Free Listings");
 		dev_log::write("Deleting Free Listings");
-		$sql_01 = "SELECT * from business_classification WHERE localclassification_id = $class_id";
+		$sql_01 = "SELECT * from business_classification WHERE localclassification_id IN ($class_ids)";
 		//dev_log::write($sql_01);
 		$rows =$this->MyDB->query($sql_01);
 
