@@ -1064,6 +1064,8 @@ class AdminListingFacade extends MainFacade {
 		dev_log::timer('get');
 		dev_log::write("Deleting OLD free listings");
 		dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
+		print("<br />STATE = $state | CLASSIFICATIONS = $class_id_str<br />");
+		
 		$this->deleteFreeListingsClassification($class_id_str,$state);
         $failed_sqls = array();
 
@@ -1198,6 +1200,7 @@ class AdminListingFacade extends MainFacade {
 		//fclose($fp2) or die ("Cannot close file");
 
 		//return array('success'=>$success, 'failure'=>$failure);
+		
 		dev_log::write("Insert new listings - END");
 		dev_log::timer('get');
 		return array('success'=>$success, 'failure'=>$failure, 'failed_sqls'=>$failed_sqls);
