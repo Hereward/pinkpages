@@ -1043,7 +1043,7 @@ class AdminListingFacade extends MainFacade {
 		$class_id = '2677';
 		$state = 'NSW';
 		$this->deleteFreeListingsClassification($class_id,$state);
-
+        $failed_sqls = array();
 		
 		dev_log::write("Insert new listings - BEGIN");
 		
