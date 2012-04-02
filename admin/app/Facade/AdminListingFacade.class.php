@@ -1308,7 +1308,6 @@ class AdminListingFacade extends MainFacade {
 		//die('deleteFreeListingsClassification');
 		$result  = $this->MyDB->query($sql_02);
 		dev_log::write("KILL COUNT = $kill_count");
-		dev_log::timer('get');
 	}
 
 	public function importCSV($post)
