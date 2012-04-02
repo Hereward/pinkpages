@@ -1044,7 +1044,7 @@ class AdminListingFacade extends MainFacade {
 		$state = 'NSW';
 		$this->deleteFreeListingsClassification($class_id,$state);
 
-		die();
+		
 		dev_log::write("Insert new listings - BEGIN");
 		
 
