@@ -208,7 +208,8 @@ class ListingFacade extends MainFacade {
 		$SearchVal1			=$this->myDB->quote($SearchVal1);
 		$SearchVal2			=$this->myDB->quote($SearchVal2);
         dev_log::write("successfulSearch - $type | $SearchVal1 | $SearchVal2 ");
-		$date=date("Y-m-d,H:m:s");
+		//$date=date("Y-m-d,H:m:s");
+		$date= date("Y-m-d H:i:s");
 		$sql = "INSERT INTO `successful_searches` (`searchid`, `search_date`, `search_type`, `search_term`, `businessname`, `suburb`, `street`, `regionid`) VALUES (NULL, '{$date}', '{$type}', '{$SearchVal1}', '{$SearchVal2}', '{$SearchVal2}', '{$SearchVal2}', NULL)";
 		$this->myDB->query($sql);
 	}	
