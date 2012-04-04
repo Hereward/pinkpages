@@ -1,15 +1,24 @@
 <?php
 class dev_log {
 
-	public static $log_path ='/home/sydneypink/public_html/dev_log/log.txt';
-
+	//public static $log_path = '/home/sydneypink/public_html/dev_log/log.txt';
+	public static $log_path;
+	
+    //public static $start_time = '';
 	/*
 	 function __construct($path='') {
 		$this->log_path = "$path/log.txt";
 		}
 		*/
-
+    static function init($path='') {
+    	if (!$path) {
+    		$path = "{$_SERVER['DOCUMENT_ROOT']}/dev_log/log.txt";
+    	}
+    	self::$log_path = $path;
+    }
+    
 	public static function write($msg='',$verbose=false) {
+		
 		$ts = date("y/m/d : H:i:s", time());
 
 		ob_start();
@@ -48,8 +57,8 @@ class dev_log {
 		}
 		return $currentUrl;
 	}
-
-
+	
+	
 	public function timer($func) {
 		static $start_time;
 		$ts = date("y/m/d : H:i:s", time());
@@ -64,6 +73,8 @@ class dev_log {
 		
 	}
 
+
+
 	function backtrace($trace) {
 		//var_dump(debug_print_backtrace());
 			
@@ -75,5 +86,15 @@ class dev_log {
 		//var_dump(debug_backtrace());
 
 	}
+	
+	function dump_obj($obj) {
+		ob_start();
+		var_dump($obj);
+		$obj_str = ob_get_contents();
+		ob_end_clean();
+		return $obj_str;
+	}
 
 }
+
+dev_log::init();
