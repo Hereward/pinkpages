@@ -19,7 +19,15 @@
 <div align="right">
 	<font size="-1">Company Name:<strong>{$values12.business_name|upper}</strong> &nbsp;{if $values12.account_id neq 'NULL'}Account Number:<strong>{$values12.account_id}</strong>{/if}</font>
 </div>
-</h3><br />
+</h4><br />
+
+<div>
+<strong>Currently showing results for $ranked_state_name</strong><br/>
+<form name="ranked_region" method="post">
+  {html_options name="ranked_region_options" options=$ranked_region_options selected=$ranked_region_selected}
+</form>
+</div>
+
 <form id="test" action="{$action}={$smarty.get.ID}" name="businessRanks" method="post" >
 <ul class="textfieldlist">
 
