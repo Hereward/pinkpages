@@ -3450,12 +3450,12 @@ class ListingFacade extends MainFacade {
 	
 	public function relatedClassLinks($class_id) {
 		$query = "SELECT * from class_relationships WHERE class_id='$class_id'";
-		dev_log::write("relatedClassLinks query = ".$query);
+		//dev_log::write("relatedClassLinks query = ".$query);
 		$res = $this->myDB->query($query);
 		$list = '';
 	    if($res) {
 	    	$list = $res[0]['related'];
-	    	dev_log::write("relatedClassLinks list = ".$list);
+	    	//dev_log::write("relatedClassLinks list = ".$list);
 			$output = explode(',', $list);
 		}
 		

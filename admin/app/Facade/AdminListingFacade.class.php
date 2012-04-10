@@ -1036,7 +1036,7 @@ class AdminListingFacade extends MainFacade {
 	{
 
         dev_log::timer('set');
-        dev_log::write("Insert new listings - BEGIN");
+        //dev_log::write("Insert new listings - BEGIN");
         
         $this->shireIDs    = $this->fetchTownDetails();
 		$this->classificationIDs = $this->fetchClassificationDetails();
@@ -1049,7 +1049,7 @@ class AdminListingFacade extends MainFacade {
 		//$this->deleteExistingFreeListings();
 		$class_id = '2677';
 		$state = '';
-		dev_log::write("Identifying Classifications and State from CSV data");
+		//dev_log::write("Identifying Classifications and State from CSV data");
 		foreach($post as $row){
 			if($row[8] || $row[9] || $row[10] || $row[11] || $row[12]){
 				$classiIDs = $this->getClassificationIDs(array($row[8], $row[9], $row[10], $row[11], $row[12]));
@@ -1062,8 +1062,8 @@ class AdminListingFacade extends MainFacade {
 		$class_id_str = implode(',', $classiIDs);
 		//$state = 'NSW';
 		dev_log::timer('get');
-		dev_log::write("Deleting OLD free listings");
-		dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
+		//dev_log::write("Deleting OLD free listings");
+		//dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
 		print("<br />STATE = $state | CLASSIFICATIONS = $class_id_str<br />");
 		
 		$this->deleteFreeListingsClassification($class_id_str,$state);
@@ -1075,8 +1075,8 @@ class AdminListingFacade extends MainFacade {
 		//Uncomment references to these file if you want the SQL to be output to files also
 		//$fp1     = fopen('local_business_queries.sql', "ab+") or die ("Cannot open file");
 		//$fp2     = fopen('classification_queries.sql', "ab+") or die ("Cannot open file");
-        dev_log::timer('get');
-		dev_log::write("Inserting NEW free listings");
+        //dev_log::timer('get');
+		//dev_log::write("Inserting NEW free listings");
 		
 		foreach($post as $row)
 		{
@@ -1155,7 +1155,7 @@ class AdminListingFacade extends MainFacade {
 					//Insert into local_businesses
 					$res1	=   mysql_query($sql);
                     $last_insert_id = mysql_insert_id();
-                    dev_log::write("INSERT ID = $last_insert_id");
+                    //dev_log::write("INSERT ID = $last_insert_id");
 					if($res1){
 						$success++;
 						 //$row[0] = $last_insert_id;
@@ -1164,7 +1164,7 @@ class AdminListingFacade extends MainFacade {
 						//print("<br /> $sql <br />");
 						$failed_sqls[] = mysql_error() . "      " . $sql;
 						$failure++;
-						dev_log::write("FAILED SQL: $sql");
+						//dev_log::write("FAILED SQL: $sql");
 					}
 
 					//Insert into business_classification
@@ -1181,7 +1181,7 @@ class AdminListingFacade extends MainFacade {
 						
 						$failed_sqls[] = mysql_error() . "      " . $sql2;
 						$failure++;
-						dev_log::write("FAILED SQL: $sql2"); 
+						//dev_log::write("FAILED SQL: $sql2"); 
 					}
 
 				}
@@ -1201,7 +1201,7 @@ class AdminListingFacade extends MainFacade {
 
 		//return array('success'=>$success, 'failure'=>$failure);
 		
-		dev_log::write("Insert new listings - END");
+		//dev_log::write("Insert new listings - END");
 		dev_log::timer('get');
 		return array('success'=>$success, 'failure'=>$failure, 'failed_sqls'=>$failed_sqls);
 	}
@@ -1284,7 +1284,7 @@ class AdminListingFacade extends MainFacade {
 
 	private function deleteFreeListingsClassification($class_ids, $state){
 		//print("Deleting Free Listings");
-		dev_log::write("Deleting Free Listings");
+		//dev_log::write("Deleting Free Listings");
 		$sql_01 = "SELECT * from business_classification WHERE localclassification_id IN ($class_ids)";
 		//dev_log::write($sql_01);
 		$rows =$this->MyDB->query($sql_01);
@@ -1310,7 +1310,7 @@ class AdminListingFacade extends MainFacade {
 		
 		//die('deleteFreeListingsClassification');
 		$result  = $this->MyDB->query($sql_02);
-		dev_log::write("KILL COUNT = $kill_count");
+		//dev_log::write("KILL COUNT = $kill_count");
 	}
 
 	public function importCSV($post)
