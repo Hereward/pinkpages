@@ -1494,14 +1494,20 @@ class SalesAccountManagerFacade extends MainFacade {
 	/**
 	*@desc  This function is used for fetching all the regions.
 	*/
-	public function fetchRegion($business_id=0)
+	public function fetchRegion($business_id=0,$ranked_region_selected='')
 	{
 		$business_id 		= (!empty($_GET['ID']))?$_GET['ID']:NULL;
 		
 		$SQL="SELECT * FROM shire_names";
-		if($business_id)
-		{
-		$SQL.= " WHERE shirename_id NOT IN (SELECT shire_name FROM multiple_addresses WHERE business_id={$business_id})";
+		if($business_id) {
+		  $SQL.= " WHERE shirename_id NOT IN (SELECT shire_name FROM multiple_addresses WHERE business_id={$business_id})";
+		  if ($ranked_region_selected) { 
+		  	$SQL .= " AND shirename_state = $ranked_region_selected";
+		  }
+		} else {
+		  if ($ranked_region_selected) { 
+		  	$SQL .= " WHERE shirename_state = $ranked_region_selected";
+		  }
 		}
 		$rec=$this->MyDB->query($SQL);
 		return $rec;

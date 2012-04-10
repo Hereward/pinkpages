@@ -850,6 +850,9 @@ class SalesAccountManagerControl extends MainControl {
 	public function rankBusiness()
 	{
 		set_time_limit(300); 
+		$ranked_state_options = array(1 => 'NSW',2 => 'ACT',3 => 'VIC');
+		$ranked_state_name = 'NSW';
+		$ranked_region_selected = 1;
 	    if (array_key_exists('ranked_region_option', $_POST)) {
 			$ranked_region_selected = $_POST['ranked_region_option'];
 			$ranked_state_name = $ranked_state_options[$ranked_region_selected];
@@ -898,7 +901,7 @@ class SalesAccountManagerControl extends MainControl {
 		
 		$this->page->assign("countclassification",count($classificationListResult));
 
-		$regionValue=$this->SalesAccountManagerFacade->fetchRegion();
+		$regionValue=$this->SalesAccountManagerFacade->fetchRegion(0,$ranked_region_selected);
 		$array2 = array(array("shirename_id" => "", "shirename_shirename" => "", "shirename_state" => ""));
 		$finalResult2=array_merge($array2,$regionValue);		
 		$this->page->assign("regionValue",$finalResult2);
@@ -919,13 +922,6 @@ class SalesAccountManagerControl extends MainControl {
 		
 		$this->page->assign("addword1",@$addword[0]['adword_line1']);
 		$this->page->assign("addword2",@$addword[0]['adword_line2']);	
-		
-		$ranked_state_options = array(1 => 'NSW',2 => 'ACT',3 => 'VIC');
-		$ranked_state_name = 'NSW';
-		$ranked_region_selected = 1;
-	
-		
-
 
 	    $this->page->assign('ranked_region_options', $ranked_state_options);
         $this->page->assign('ranked_region_selected', $ranked_region_selected);
