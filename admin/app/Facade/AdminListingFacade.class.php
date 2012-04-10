@@ -1035,7 +1035,7 @@ class AdminListingFacade extends MainFacade {
 	public function insertCSV($post)
 	{
 
-        dev_log::timer('set');
+        //dev_log::timer('set');
         //dev_log::write("Insert new listings - BEGIN");
         
         $this->shireIDs    = $this->fetchTownDetails();
@@ -1061,7 +1061,7 @@ class AdminListingFacade extends MainFacade {
 		}
 		$class_id_str = implode(',', $classiIDs);
 		//$state = 'NSW';
-		dev_log::timer('get');
+		//dev_log::timer('get');
 		//dev_log::write("Deleting OLD free listings");
 		//dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
 		print("<br />STATE = $state | CLASSIFICATIONS = $class_id_str<br />");
@@ -1202,7 +1202,7 @@ class AdminListingFacade extends MainFacade {
 		//return array('success'=>$success, 'failure'=>$failure);
 		
 		//dev_log::write("Insert new listings - END");
-		dev_log::timer('get');
+		//dev_log::timer('get');
 		return array('success'=>$success, 'failure'=>$failure, 'failed_sqls'=>$failed_sqls);
 	}
 

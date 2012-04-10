@@ -1172,7 +1172,7 @@ class ListingControl extends MainControl {
 		$this->page->assign("relatedClassLinks", $relatedClassLinks);
 		$this->page->assign("relatedClassLinks", $relatedClassLinks['classifications']);
 		
-		dev_log::cur_url("Listing::categorySearch");
+		//dev_log::cur_url("Listing::categorySearch");
 		$this->page->getPage('category_result.tpl');
 	}/* END categorySearch */
 
@@ -1322,7 +1322,7 @@ class ListingControl extends MainControl {
 		$this->page->assign("relatedClassLinks", $relatedClassLinks['classifications']);
 		
 		$this->page->assign("classificationID", $classificationID);
-		dev_log::cur_url("Listing::categorySearch");
+		//dev_log::cur_url("Listing::categorySearch");
 		$this->page->getPage('category_result.tpl');
 	}/* END categorySearchAlpha */
 
