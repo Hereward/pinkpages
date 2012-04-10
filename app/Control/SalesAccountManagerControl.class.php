@@ -1477,7 +1477,8 @@ class SalesAccountManagerControl extends MainControl {
 		$this->page->assign("deleteHour",$this->request->createURL("SalesAccountManager", "deleteHour","ID"));
 		$this->page->assign("deletePayment",$this->request->createURL("SalesAccountManager", "deletePayment","ID"));
 
-		$res3=$this->SalesAccountManagerFacade-> ();
+		//$res3=$this->SalesAccountManagerFacade-> (); Hereward 20120410
+		$res3 = $this->SalesAccountManagerFacade->editListingFetchDetails();
         $this->page->assign("values12",$res3[0]);			
 		
 		$businessHour=$this->SalesAccountManagerFacade->fetchHour();
@@ -1611,7 +1612,7 @@ class SalesAccountManagerControl extends MainControl {
 		 $this->page->assign("actionBrand",$this->request->createURL("SalesAccountManager", "add_new_brand","ID"));
 		 $this->page->assign("manageAddress",$this->request->createURL("SalesAccountManager", "manageAddress","ID"));		
 	
-		 $res3							= $this->SalesAccountManagerFacade->editListingFetchDetails();		
+		 $res3 = $this->SalesAccountManagerFacade->editListingFetchDetails();		
 		 $this->page->assign("values12",$res3[0]);
 		 
 		 $res2							= $this->SalesAccountManagerFacade->selectStates();

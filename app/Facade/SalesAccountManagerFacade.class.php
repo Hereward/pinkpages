@@ -1562,17 +1562,19 @@ class SalesAccountManagerFacade extends MainFacade {
 			  FROM 
 			        local_pages,
 					 
-			  WHERE business_id=$condition;
+			  WHERE business_id=$condition";
 		$res=$this->MyDB->query($SQL);
 		return $res;
 	}
 	
 	public function card_details()
 	{
-		$Business_id 			= $_GET['ID'];
+		
+		$Business_id = $_GET['ID'];
 		$SQL="SELECT * FROM  local_pages WHERE business_id=$Business_id ";
 		$res=$this->MyDB->query($SQL);
 		return $res;
+		
 	}
 	
 	
