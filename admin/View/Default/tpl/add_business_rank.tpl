@@ -21,10 +21,10 @@
 </div>
 </h4><br />
 
-<div>
+<div style="margin-left:20px;">
 <strong>Currently showing results for {$ranked_state_name}</strong><br/><br/>
 <form name="ranked_region" method="post">
-  <label>Change to:</label> {html_options onchange="this.form.submit()" name="ranked_region_options" options=$ranked_region_options selected=$ranked_region_selected}
+  <label>Change State:</label> {html_options onchange="this.form.submit()" name="ranked_region_options" options=$ranked_region_options selected=$ranked_region_selected}
 </form>
 </div>
 
