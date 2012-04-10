@@ -68,6 +68,8 @@ class AdminPage extends Smarty {
 	function getPage($midPage) {
 
 		global $request;
+		
+		$output = '';
 
 		$this->assign("LOGO_PATH", LOGO_PATH);
 		$this->assign("IMAGES_PATH", ADMIN_IMAGES_PATH);
@@ -82,14 +84,17 @@ class AdminPage extends Smarty {
 		$this->assign("meta_keywords", $this->metaKeywords);
 
 
-		$this->display("header.tpl");
+		//$this->display("header.tpl");
+		$output .= $this->fetch("header.tpl");
 		if($request->getAttribute("message")) {
 			$this->assign("alert_msg", $this->renderMsg($request->getAttribute("message")));
-			$this->display("alert.tpl");
+			//$this->display("alert.tpl");
+			$output .= $this->fetch("alert.tpl");
 		}
 		if($request->getAttribute("message-succ")) {
 			$this->assign("alert_msg_succ", $this->renderMsg($request->getAttribute("message-succ")));
-			$this->display("alert.tpl");
+			//$this->display("alert.tpl");
+			$output .= $this->fetch("alert.tpl");
 		}
 		if(getSession("userid")&& getSession("localuser_access")=='admin'&& getSession("localuser_status")!="0")
 		{
@@ -114,7 +119,8 @@ class AdminPage extends Smarty {
 						'showClientDetails');
 			if(!in_array($currentAction,$menuArray))
 			{
-			$this->display("menu.tpl");
+			//$this->display("menu.tpl");
+			$output .= $this->fetch("menu.tpl");
 			}
 		}
 		else
@@ -128,7 +134,8 @@ class AdminPage extends Smarty {
 				//$this->assign("home_url",$request->createURL("Admin", "showhomePageEmployee"));
 				//$this->assign("search",$request->createURL("SalesAccountManager","searchBusiness"));
 				//$this->assign("addbusinessform",$request->createURL("Employee", "addListing"));
-				$this->display("menu.tpl");
+				//$this->display("menu.tpl");
+				$output .= $this->fetch("menu.tpl");
 			}
 			
 		}
@@ -144,16 +151,20 @@ class AdminPage extends Smarty {
 			//$this->assign("search",$request->createURL("SalesAccountManager","searchBusiness"));
 			//$this->assign("addbusinessform",$request->createURL("SalesAccountManager", "addListing"));
 			//$this->assign("searchemployee",$request->createURL("SalesAccountManager","searchEmployee"));
-			$this->display("menu.tpl");
+			//$this->display("menu.tpl");
+			$output .= $this->fetch("menu.tpl");
 		}
 	
 
 		//        $this->display("leftpanel.tpl");
 
 		//$this->display($midPage);
-        $mp_content = $this->fetch($midPage);
-        echo $mp_content;
-		$this->display("footer.tpl");
+        //$mp_content = $this->fetch($midPage);
+        $output .= $this->fetch($midPage);
+        //echo $mp_content;
+		//$this->display("footer.tpl");
+		$output .= $this->fetch("footer.tpl");
+		echo $output;
 	}
 
 	private function renderMsg($msg) {
