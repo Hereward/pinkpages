@@ -927,7 +927,7 @@ class SalesAccountManagerControl extends MainControl {
 
 
 	    $this->page->assign('ranked_region_options', $ranked_state_options);
-        $this->page->assign('ranked_region_selected', 1);
+        $this->page->assign('ranked_region_selected', $ranked_region_selected);
         $this->page->assign('ranked_state_name',$ranked_state_name);
 
 		$this->page->getPage('add_business_rank.tpl');
