@@ -150,8 +150,9 @@ class AdminPage extends Smarty {
 
 		//        $this->display("leftpanel.tpl");
 
-		$this->display($midPage);
-
+		//$this->display($midPage);
+        $mp_content = $this->fetch($midPage);
+        echo $mp_content;
 		$this->display("footer.tpl");
 	}
 
