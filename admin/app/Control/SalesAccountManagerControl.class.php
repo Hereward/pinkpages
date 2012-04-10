@@ -850,6 +850,10 @@ class SalesAccountManagerControl extends MainControl {
 	public function rankBusiness()
 	{
 		set_time_limit(300); 
+	    if (array_key_exists('ranked_region_option', $_POST)) {
+			$ranked_region_selected = $_POST['ranked_region_option'];
+			$ranked_state_name = $ranked_state_options[$ranked_region_selected];
+		}
 		$this->page->force_compile = false;
 		$this->page->pageTitle 				= "Rank Business";
 		$this->page->assign("do",$_GET['do']);
@@ -920,10 +924,7 @@ class SalesAccountManagerControl extends MainControl {
 		$ranked_state_name = 'NSW';
 		$ranked_region_selected = 1;
 	
-		if (array_key_exists('ranked_region_option', $_POST)) {
-			$ranked_region_selected = $_POST['ranked_region_option'];
-			$ranked_state_name = $ranked_state_options[$ranked_region_selected];
-		}
+		
 
 
 	    $this->page->assign('ranked_region_options', $ranked_state_options);

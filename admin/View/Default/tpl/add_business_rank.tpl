@@ -21,7 +21,7 @@
 </div>
 </h4><br />
 
-<div style="margin-left:20px;">
+<div style="margin-left:10px;">
 <form name="ranked_region" method="post">
   <label>Showing Business Ranks For:</label> {html_options onchange="this.form.submit()" name="ranked_region_option" options=$ranked_region_options selected=$ranked_region_selected}
 </form>
