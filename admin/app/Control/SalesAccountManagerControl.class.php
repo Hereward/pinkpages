@@ -915,15 +915,19 @@ class SalesAccountManagerControl extends MainControl {
 		
 		$this->page->assign("addword1",@$addword[0]['adword_line1']);
 		$this->page->assign("addword2",@$addword[0]['adword_line2']);	
-
-		$this->page->assign('ranked_region_options', array(
-                                1 => 'NSW',
-                                2 => 'ACT',
-                                3 => 'VIC')
-                                );
-       $this->page->assign('ranked_region_selected', 1);
-       $this->page->assign('ranked_state_name','NSW');
 		
+		$ranked_state_options = array(1 => 'NSW',2 => 'ACT',3 => 'VIC');
+		$ranked_state_name = 'NSW';
+		$ranked_region_selected = 1;
+		
+		if (array_key_exists($_POST, 'ranked_region_option')) {
+			$ranked_region_selected = $_POST['ranked_region_option'];
+			$ranked_state_name = $ranked_state_options[$ranked_region_selected];
+		}
+
+	    $this->page->assign('ranked_region_options', $ranked_state_options);
+        $this->page->assign('ranked_region_selected', 1);
+        $this->page->assign('ranked_state_name',$ranked_state_name);
 
 		$this->page->getPage('add_business_rank.tpl');
 	}
