@@ -14,6 +14,15 @@
  
  
 <h3 align="left">Business Ranks</h3><br />
+<div>
+Currently showing results for $ranked_state_name <br/>
+<form name="ranked_region" method="post">
+
+  {html_options name="ranked_region_options" options=$ranked_region_options selected=$ranked_region_selected}
+  
+</form>
+
+</div>
 <form id="test" action="{$action}={$smarty.get.ID}" name="businessRanks" method="post" >
 <ul class="textfieldlist">
 

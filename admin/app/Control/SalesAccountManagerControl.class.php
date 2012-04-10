@@ -914,7 +914,15 @@ class SalesAccountManagerControl extends MainControl {
 		$addword = $this->SalesAccountManagerFacade->fetchAddWord($_GET);
 		
 		$this->page->assign("addword1",@$addword[0]['adword_line1']);
-		$this->page->assign("addword2",@$addword[0]['adword_line2']);		
+		$this->page->assign("addword2",@$addword[0]['adword_line2']);	
+
+		$this->page->assign('ranked_region_options', array(
+                                1 => 'NSW',
+                                2 => 'ACT',
+                                3 => 'VIC')
+                                );
+       $this->page->assign('ranked_region_selected', 1);
+       $this->page->assign('ranked_state_name','NSW');
 		
 
 		$this->page->getPage('add_business_rank.tpl');
