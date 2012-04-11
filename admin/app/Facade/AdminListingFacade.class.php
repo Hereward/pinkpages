@@ -921,6 +921,9 @@ class AdminListingFacade extends MainFacade {
 					echo "File was <strong>NOT</strong> successfully uploaded to " . $uploadDir . $_FILES['data']['name'];
 				}
 				
+				dev_log::write("csvFileUpload = ".$uploadDir . $file);
+				die();
+				
 				$viewlog = $this->viewlog($uploadDir . $file);
 				$report[] = count($viewlog);
 				$report[] = $this->insertCSV($viewlog);
