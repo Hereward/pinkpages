@@ -1037,6 +1037,7 @@ class AdminListingFacade extends MainFacade {
 
         dev_log::timer('set');
         dev_log::write("Insert new listings - BEGIN");
+        $classiIDs = array();
         
         $this->shireIDs    = $this->fetchTownDetails();
 		$this->classificationIDs = $this->fetchClassificationDetails();
@@ -1049,23 +1050,24 @@ class AdminListingFacade extends MainFacade {
 		//$this->deleteExistingFreeListings();
 		$class_id = '2677';
 		$state = '';
-		//dev_log::write("Identifying Classifications and State from CSV data");
+		dev_log::write("Identifying Classifications and State from CSV data");
 		foreach($post as $row){
 			if($row[8] || $row[9] || $row[10] || $row[11] || $row[12]){
-				$classiIDs = $this->getClassificationIDs(array($row[8], $row[9], $row[10], $row[11], $row[12]));
+				$classiIDs = array_merge($classiIDs,$this->getClassificationIDs(array($row[8], $row[9], $row[10], $row[11], $row[12])));
 			}
 		    if((!$state) && ($row[5])){
 				$shireDetails = $this->getShireID($row[4], $row[5]);
 				$state        = $shireDetails['shireState'];
+				break;
 			}
 		}
 		$class_id_str = implode(',', $classiIDs);
 		//$state = 'NSW';
 		dev_log::timer('get');
 		dev_log::write("Deleting OLD free listings");
-		//dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
+		dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
 		print("<br />STATE = $state | CLASSIFICATIONS = $class_id_str<br />");
-		
+		die();
 		$this->deleteFreeListingsClassification($class_id_str,$state);
         $failed_sqls = array();
 
