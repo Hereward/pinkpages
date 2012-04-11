@@ -1062,6 +1062,8 @@ class AdminListingFacade extends MainFacade {
 			if($row[8] || $row[9] || $row[10] || $row[11] || $row[12]){
 				$classiIDs = array_merge($classiIDs,$this->getClassificationIDs(array($row[8], $row[9], $row[10], $row[11], $row[12])));
 			}
+			
+			$classiIDs = array_unique($classiIDs);
 		    if((!$state) && ($row[5])){
 				$shireDetails = $this->getShireID($row[4], $row[5]);
 				$state        = $shireDetails['shireState'];
