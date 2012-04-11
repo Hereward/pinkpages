@@ -921,8 +921,8 @@ class AdminListingFacade extends MainFacade {
 					echo "File was <strong>NOT</strong> successfully uploaded to " . $uploadDir . $_FILES['data']['name'];
 				}
 				
+				dev_log::timer('get');
 				dev_log::write("csvFileUpload = ".$uploadDir . $file);
-				die();
 				
 				$viewlog = $this->viewlog($uploadDir . $file);
 				$report[] = count($viewlog);
@@ -1041,7 +1041,7 @@ class AdminListingFacade extends MainFacade {
 	public function insertCSV($post)
 	{
 
-        dev_log::timer('set');
+        
         dev_log::write("Insert new listings - BEGIN");
         $classiIDs = array();
         
