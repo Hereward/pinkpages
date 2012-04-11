@@ -1058,7 +1058,7 @@ class AdminListingFacade extends MainFacade {
 		$state = '';
 		dev_log::timer('get');
 		dev_log::write("Identifying Classifications and State from CSV data");
-		$i = 1;
+		//$i = 1;
 		foreach($post as $row){
 			if($row[8] || $row[9] || $row[10] || $row[11] || $row[12]){
 				$classiIDs = array_merge($classiIDs,$this->getClassificationIDs(array($row[8], $row[9], $row[10], $row[11], $row[12])));
@@ -1070,10 +1070,13 @@ class AdminListingFacade extends MainFacade {
 				$state        = $shireDetails['shireState'];
 				
 			}
+			/*
 			$i++;
+			
 			if ($i > 20000) {
 				break;
 			}
+			*/
 		}
 		$class_id_str = implode(',', $classiIDs);
 		//$state = 'NSW';
