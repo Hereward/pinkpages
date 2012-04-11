@@ -911,13 +911,16 @@ class AdminListingFacade extends MainFacade {
 				setSession("file",$uploadDir.$file);
 					
 				//print("<br />Attempting to upload file $tmp to $uploadDir$file <br />");
-				if(move_uploaded_file($tmp, $uploadDir . $file) or die("Cannot copy uploaded file")){
+				if (move_uploaded_file($tmp, $uploadDir . $file) or die("Cannot copy uploaded file")) {
 					// display success message
 					echo "File successfully uploaded to " . $uploadDir . $file;
 					echo "<br />Now attempt to extract file to " .$uploadDir . $file ." <br />";
 					$values = $this->gz_read($file, $uploadDir);
-			  $report[] = count($values);
-				} else echo "File was <strong>NOT</strong> successfully uploaded to " . $uploadDir . $_FILES['data']['name'];
+			        $report[] = count($values);
+				} else {
+					echo "File was <strong>NOT</strong> successfully uploaded to " . $uploadDir . $_FILES['data']['name'];
+				}
+				
 				$viewlog = $this->viewlog($uploadDir . $file);
 				$report[] = count($viewlog);
 				$report[] = $this->insertCSV($viewlog);
