@@ -1056,6 +1056,7 @@ class AdminListingFacade extends MainFacade {
 		//$this->deleteExistingFreeListings();
 		$class_id = '2677';
 		$state = '';
+		dev_log::timer('get');
 		dev_log::write("Identifying Classifications and State from CSV data");
 		$i = 1;
 		foreach($post as $row){
@@ -1070,7 +1071,7 @@ class AdminListingFacade extends MainFacade {
 				
 			}
 			$i++;
-			if ($i > 2000) {
+			if ($i > 20000) {
 				break;
 			}
 		}
