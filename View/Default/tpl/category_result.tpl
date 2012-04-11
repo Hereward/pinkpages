@@ -229,7 +229,7 @@
              <h2 style="font-size:14px; font-weight:bold; padding:0; color:black; margin: 10px 0 0 25px;">Related Classifications</h2>
              <div style="margin:10px 0px 0px 25px; font-size:11px;">
                {section name=i loop=$relatedClassLinks}
-			      <a href="{$relatedClassLinks[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$relatedClassLinks[i].localclassification_name|lower|capitalize}</a>&nbsp;|&nbsp;
+			      <a href="{$relatedClassLinks[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$relatedClassLinks[i].localclassification_name|lower|capitalize}</a>{if !$smarty.section.i.last} &nbsp;|&nbsp; {/if}
 		       {/section}
 		       {* <span> {$relatedClassLinks[i].cnt} business results </span> *}
              </div>
