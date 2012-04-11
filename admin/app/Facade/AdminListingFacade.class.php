@@ -1060,12 +1060,12 @@ class AdminListingFacade extends MainFacade {
 		dev_log::write("Identifying Classifications and State from CSV data");
 		//$i = 1;
 		foreach($post as $row){
-			if($row[8] || $row[9] || $row[10] || $row[11] || $row[12]){
+			if((isset($row[8])) || (isset($row[9])) || (isset($row[10])) || (isset($row[11])) || (isset($row[12]))){
 				$classiIDs = array_merge($classiIDs,$this->getClassificationIDs(array($row[8], $row[9], $row[10], $row[11], $row[12])));
 			}
 			
 			$classiIDs = array_unique($classiIDs);
-		    if((!$state) && ($row[5])){
+		    if((!$state) && (isset($row[5]))){
 				$shireDetails = $this->getShireID($row[4], $row[5]);
 				$state        = $shireDetails['shireState'];
 				
@@ -1084,7 +1084,7 @@ class AdminListingFacade extends MainFacade {
 		dev_log::write("Deleting OLD free listings");
 		dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
 		print("<br />STATE = $state | CLASSIFICATIONS = $class_id_str<br />");
-		die();
+		//die();
 		$this->deleteFreeListingsClassification($class_id_str,$state);
         $failed_sqls = array();
 
