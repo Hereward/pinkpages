@@ -1064,7 +1064,7 @@ class AdminListingFacade extends MainFacade {
 		    if((!$state) && ($row[5])){
 				$shireDetails = $this->getShireID($row[4], $row[5]);
 				$state        = $shireDetails['shireState'];
-				break;
+				
 			}
 		}
 		$class_id_str = implode(',', $classiIDs);
