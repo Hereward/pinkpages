@@ -227,7 +227,7 @@
           
              {if ($related_class_count > 0)}
              <h2 style="font-size:14px; font-weight:bold; padding:0; color:black; margin: 10px 0 0 25px;">Related Classifications</h2>
-             <div style="margin:10px 0px 10px 25px; font-size:11px;">
+             <div style="margin:10px 0px 5px 25px; font-size:11px;">
                {section name=i loop=$relatedClassLinks}
 			      <a href="{$relatedClassLinks[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$relatedClassLinks[i].localclassification_name|lower|capitalize}</a>{if !$smarty.section.i.last} &nbsp;|&nbsp; {/if}
 		       {/section}
