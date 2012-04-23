@@ -67,6 +67,7 @@
                           		<td width="8px"></td>
                           		<td>
 								     {if !$row}
+								      <div style="padding:5px; margin:5px; border:1px solid black;">GOOGLE AD BLOCK GOES HERE</div>
                                        <hr />
 									   {assign var="row" value="1"}
 									 {/if}
