@@ -67,7 +67,8 @@
                           		<td width="8px"></td>
                           		<td>
 								     {if !$row}
-								      <div style="font-weight:bold; text-align:center; color:red; padding:5px; margin:20px; border:1px solid black;">GOOGLE AD BLOCK GOES HERE</div>
+								     {include gab=1 file="google_ad.tpl"}
+								      
                                        <hr />
 									   {assign var="row" value="1"}
 									 {/if}
