@@ -191,10 +191,12 @@
 		{/foreach}
       </div>	
     {/if}	  
+    
+    {include gab=3 file="google_ad.tpl"}
 
 </div>
 
-	
+
 
 
 	
