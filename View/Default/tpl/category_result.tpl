@@ -223,7 +223,11 @@
 				  {/section}
                 </table>
      
-                <br /><br /><br />
+                <br />
+                {include gab=2 file="google_ad.tpl"}
+                <br />
+                
+                <br />
 				
             <div align="center">{include file="pagination.tpl"}</div>
           
