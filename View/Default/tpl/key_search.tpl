@@ -9,6 +9,10 @@
       <h1>Results for <span>'{$smarty.get.Search1}'</span> category</h1></center>
       </td></tr><tr><td>
 		{if $ambiguous}
+		   Showing results under Region <span><b>{$location}</b></span></a></br>
+		   <a href="{$suburb_link}"><b>Click to see all results from Suburb <span>{$ambg_suburb_name}</span></b></a><br />
+		
+		{*
 			{if $smarty.get.c == 'r'}<b>
 				Showing results under Region <span><b>{$location}</b></span></a></br>
 				<a href="{$suburb_link}"><b>Click to see all results from Suburb <span>{$ambg_suburb_name}</span></b></a><br />
@@ -16,7 +20,7 @@
 				<b>Showing results under Suburb <span><b>{$location}</b></span></a></br>
 				<a href="{$region_link}" ><b>Click to see all results from Region <span>{$ambg_region_name}</span></b></a><br />
 			{/if}
-            
+         *}
 		{/if}
 
 	{else}
