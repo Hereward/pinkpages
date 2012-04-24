@@ -3458,8 +3458,8 @@ class ListingFacade extends MainFacade {
 	    	//dev_log::write("relatedClassLinks list = ".$list);
 			$output = explode(',', $list);
 		}
-		
-		return $output;
+		return array();
+		//return $output;
 	}
 
 	public function getClassificationCountByLocation($location, $classification_ids, $fr=0, $paging_size = DEFAULT_PAGING_SIZE)
