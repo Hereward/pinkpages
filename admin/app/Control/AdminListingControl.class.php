@@ -622,7 +622,7 @@ public function import_class_relationships()
 		$this->page->assign("addbusinessform",$this->request->createURL("SalesAccountManager", "addListing"));
 	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
 	    $this->page->assign("import_class_relationships",$this->request->createURL("AdminListing","class_relationships_import_page"));
-	    //dev_log::timer('set');
+	   
 	    $res=$this->adminlistingFacade->csvFileUpload($_FILES['csvfile']['name']);
 	    
 	   // $viewlog = $this->adminlistingFacade->viewlog('/home/sydneypink/bkup/NSW_20120411.csv');
