@@ -3449,7 +3449,7 @@ class ListingFacade extends MainFacade {
 	
 	
 	public function relatedClassLinks($class_id) {
-		/*
+		
 		$query = "SELECT * from class_relationships WHERE class_id='$class_id'";
 		//dev_log::write("relatedClassLinks query = ".$query);
 		$res = $this->myDB->query($query);
@@ -3459,9 +3459,9 @@ class ListingFacade extends MainFacade {
 	    	//dev_log::write("relatedClassLinks list = ".$list);
 			$output = explode(',', $list);
 		}
-		*/
-		return array();
-		//return $output;
+		
+		//return array();
+		return $output;
 	}
 
 	public function getClassificationCountByLocation($location, $classification_ids, $fr=0, $paging_size = DEFAULT_PAGING_SIZE)
