@@ -421,7 +421,12 @@ class ListingControl extends MainControl {
 						$this->page->assign("ambg_region_name",$classifications['ambg_region_name']);
 						$this->page->assign("ambg_suburb_name",$classifications['ambg_suburb_name']);
 						$this->page->assign("suburb_link",$this->request->createNaturalURL("Listing", "searchKeyword", "Search1=$keyword&Search2=".urlencode($classifications['ambg_suburb_name'])."&c=s"));
-						$this->page->assign("region_link",$this->request->createNaturalURL("Listing", "searchKeyword", "Search1=$keyword&Search2=".urlencode($classifications['ambg_region_name'])."&ambg_suburb=".urlencode($classifications['ambg_suburb_name'])."&c=r"));
+						$region_link = $this->request->createNaturalURL("Listing", "searchKeyword", "Search1=$keyword&Search2=".urlencode($classifications['ambg_region_name'])."&ambg_suburb=".urlencode($classifications['ambg_suburb_name'])."&c=r");
+						$this->page->assign("region_link",$region_link);
+					
+					    if (!isset($_GET['c'])) {
+					    	header("Location: $region_link");
+					    }
 					}
 				}
 			}else{
