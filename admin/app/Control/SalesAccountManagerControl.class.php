@@ -849,7 +849,8 @@ class SalesAccountManagerControl extends MainControl {
 	*/		
 	public function rankBusiness()
 	{
-		set_time_limit(300); 
+		set_time_limit(600); 
+		ini_set('memory_limit', '512M');
 		$ranked_state_options = array(1 => 'NSW',2 => 'ACT',3 => 'VIC');
 		$ranked_state_name = 'NSW';
 		$ranked_region_selected = 1;
