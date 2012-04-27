@@ -3468,6 +3468,7 @@ class ListingFacade extends MainFacade {
 	{
 		$locationParams = explode(' - ', $location);		
 		$location = $locationParams[0];	
+		$location_hack = FALSE;
 	
 		$state    = (isset($locationParams[1])) ? $locationParams[1] : '';
 		
@@ -3499,6 +3500,8 @@ class ListingFacade extends MainFacade {
 						$regionURLAlias = $this->getRegionAlias($location);
 						$param = "&shire_name=".urlencode($regionURLAlias);
 						$shire = true;
+					} else {
+						$location_hack = TRUE;
 					}
 				}
 				elseif( $shire_id = $this->isPostCodeExists($location)) {//looking for exact postcode
@@ -3580,6 +3583,13 @@ class ListingFacade extends MainFacade {
 					$classification_name = $classificationFacade->getClassificationNameById($classification_id);
 					$temp_recs[$i]['cnt'] = $count;
 					//$temp_recs[$i]['link'] = $this->request->createURL("Listing", "categorySearch", "category=".urlencode($classification_name).$param."&search=".$classification_id);
+					
+					if ($location_hack) {
+					    // TEST Hack 20120427 - Hereward
+					   $regionURLAlias = $this->getRegionAlias($location);
+					   $param = "&shire_name=".urlencode($regionURLAlias);
+					}
+
 					$temp_recs[$i]['link'] = $this->request->createURL("Listing", "categorySearch", "category=".urlencode($classification_name)."&state=".$state.$param."&search=".$classification_id);					
 					$temp_recs[$i]['localclassification_name'] = $classification_name;
 
