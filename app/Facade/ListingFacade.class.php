@@ -3586,8 +3586,8 @@ class ListingFacade extends MainFacade {
 					
 					if ($location_hack) {
 					    // TEST Hack 20120427 - Hereward
-					   $regionURLAlias = $this->getRegionAlias($location);
-					   $param = "&shire_name=".urlencode($regionURLAlias);
+					   //$regionURLAlias = $this->getRegionAlias($location);
+					   //$param = "&shire_name=".urlencode($regionURLAlias);
 					}
 
 					$temp_recs[$i]['link'] = $this->request->createURL("Listing", "categorySearch", "category=".urlencode($classification_name)."&state=".$state.$param."&search=".$classification_id);					
