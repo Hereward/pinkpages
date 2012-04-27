@@ -3494,7 +3494,7 @@ class ListingFacade extends MainFacade {
 			if($location) {
 				$shire_id = $this->isRegionExists($location);
 				if($shire_id) {
-					if($shire_id!=59) { //  && $shire_id!=314 VICTORIA HACK ADDED 20120206
+					if($shire_id!=59 && $shire_id!=314) { //  && $shire_id!=314 VICTORIA HACK ADDED 20120206
 						$location_cond = " AND lb.shire_name='".$this->myDb->quote($location)."'";
 						$regionURLAlias = $this->getRegionAlias($location);
 						$param = "&shire_name=".urlencode($regionURLAlias);
