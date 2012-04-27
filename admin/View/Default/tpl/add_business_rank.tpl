@@ -14,6 +14,9 @@
  <div class="er-message-success">Rank added successfully</div><br />
  {/if}
  
+ {php}
+ dev_log::write("rankBusiness - FS 1");
+ {/php}
  
 <h4  class="h4reversed"><div align="left">Business Ranks</div>
 <div align="right">
@@ -38,7 +41,9 @@
 
    <tr class="odd">
 		
-   
+{php}
+  dev_log::write("rankBusiness - FS 2");
+{/php}
     {section name=j loop=$classificationListResult}
     {assign var="rankArr" value=$classificationListResult[j].localclassification_name}
     
@@ -91,6 +96,9 @@
   
   
 {/section}
+{php}
+  dev_log::write("rankBusiness - FS 3");
+{/php}
 	<table class="datatable" width="100" border="1" cellpadding="0" cellspacing="0" align="center">
 	<h4  class="h4reversed"><div align="left">Add Words</div>
 		<tr>

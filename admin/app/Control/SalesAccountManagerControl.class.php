@@ -849,7 +849,6 @@ class SalesAccountManagerControl extends MainControl {
 	*/		
 	public function rankBusiness()
 	{
-		dev_log::write("rankBusiness - F 1");
 		set_time_limit(300); 
 		$ranked_state_options = array(1 => 'NSW',2 => 'ACT',3 => 'VIC');
 		$ranked_state_name = 'NSW';
@@ -885,7 +884,6 @@ class SalesAccountManagerControl extends MainControl {
 						'10'=>'10',
 						'9999'=>'11+');
 		$this->page->assign("ranks",$ranks);
-		dev_log::write("rankBusiness - F 2");
 		$rankResult=$this->SalesAccountManagerFacade->rankDetails($_GET);
 		$this->page->assign("rankResult",$rankResult);
 		
@@ -906,7 +904,6 @@ class SalesAccountManagerControl extends MainControl {
 		$array2 = array(array("shirename_id" => "", "shirename_shirename" => "", "shirename_state" => ""));
 		$finalResult2=array_merge($array2,$regionValue);		
 		$this->page->assign("regionValue",$finalResult2);
-		dev_log::write("rankBusiness - F 3");
 		$this->page->assign("action",$this->request->createURL("SalesAccountManager", "addRank","ID"));
 		
 /*			foreach ($finalResult1 as $key=>$val){
@@ -916,7 +913,6 @@ class SalesAccountManagerControl extends MainControl {
 					$finalResult1[$key]['oldRank'] = $bRankArr;
 				}
 			}*/
-		dev_log::write("rankBusiness - F 4");
 		$bRankArr = $this->SalesAccountManagerFacade->selectByClassification();	
 		$this->page->assign("bRankArr",$bRankArr);
 		$this->page->assign("classificationListResult",$finalResult1);
@@ -929,9 +925,8 @@ class SalesAccountManagerControl extends MainControl {
 	    $this->page->assign('ranked_region_options', $ranked_state_options);
         $this->page->assign('ranked_region_selected', $ranked_region_selected);
         $this->page->assign('ranked_state_name',$ranked_state_name);
-        dev_log::write("rankBusiness - F 5");
 		$this->page->getPage('add_business_rank.tpl');
-		dev_log::write("rankBusiness - F 6");
+		
 	}
 	
 	
