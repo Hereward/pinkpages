@@ -424,7 +424,7 @@ class ListingControl extends MainControl {
 						$region_link = $this->request->createNaturalURL("Listing", "searchKeyword", "Search1=$keyword&Search2=".urlencode($classifications['ambg_region_name'])."&ambg_suburb=".urlencode($classifications['ambg_suburb_name'])."&c=r");
 						$this->page->assign("region_link",$region_link);
 					
-					    if (!isset($_GET['c'])) {
+					    if (!isset($_GET['c'])) { // 20120427 HACK FIX FOR REGION/SUBURB SWAP ON RESULTS PAGE - HEREWARD
 					    	header("Location: $region_link");
 					    }
 					}
