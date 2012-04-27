@@ -1,4 +1,4 @@
-{debug}
+
 <div class="content0left">
 <div class="content">
 
