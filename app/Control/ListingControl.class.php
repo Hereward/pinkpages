@@ -993,7 +993,7 @@ class ListingControl extends MainControl {
 				} elseif ($url_state = 'ACT') {
 					$location = 'Canberra Region';
 				}
-				dev_log::write("categorySearch: SET LOCATION F1 $location");
+				dev_log::write("categorySearch: SET LOCATION F1 $location | $url_state");
 			} else {
 				$location = 'BOO';
 				dev_log::write("categorySearch: SET LOCATION F2 $location");
