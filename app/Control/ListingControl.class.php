@@ -993,7 +993,7 @@ class ListingControl extends MainControl {
 					$location = 'Canberra Region';
 				}
 			} else {
-				$location = 'All Sydney';
+				$location = 'BOO';
 			}
 			
 		}
