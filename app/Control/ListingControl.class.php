@@ -940,6 +940,7 @@ class ListingControl extends MainControl {
 		$shire_name							= (!empty($_GET['shire_name']))?$_GET['shire_name']:NULL;
 		$shire_town							= (!empty($_GET['shire_town']))?$_GET['shire_town']:NULL;
 		$state                              = (!empty($_GET['state']))?$_GET['state']:NULL;
+		dev_log::write("categorySearch: STATE = $state");
 
 		if($state == ''){
 			$state = ($this->listingFacade->isStateExistsBySuburb($shire_town)) ? $this->listingFacade->isStateExistsBySuburb($shire_town) : $this->listingFacade->isStateExistsByRegion($shire_name);
