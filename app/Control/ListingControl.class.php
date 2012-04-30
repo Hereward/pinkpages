@@ -983,7 +983,19 @@ class ListingControl extends MainControl {
 			$this->page->assign("regionURLs", $regionURLs);
 		}
 		else {
-			$location = 'All Sydney';
+			if (isset($_GET['state'])) {
+				$url_state = $_GET['state'];
+				if ($url_state = 'NSW') {
+					$location = 'All Sydney';
+				} elseif ($url_state = 'VIC') {
+					$location = 'Victoria Region';
+				} elseif ($url_state = 'ACT') {
+					$location = 'Canberra Region';
+				}
+			} else {
+				$location = 'All Sydney';
+			}
+			
 		}
 
 		//Assign suburb/region search area
