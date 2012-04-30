@@ -984,7 +984,7 @@ class ListingControl extends MainControl {
 			$this->page->assign("regionURLs", $regionURLs);
 		}
 		else {
-			dev_log::write("categorySearch: SET LOCATION");
+		
 			if ($state) {
 				if ($state == 'NSW') {
 					$location = 'All Sydney';
@@ -993,10 +993,10 @@ class ListingControl extends MainControl {
 				} elseif ($state == 'ACT') {
 					$location = 'Canberra Region';
 				}
-				dev_log::write("categorySearch: SET LOCATION F1 $location | $url_state");
+				
 			} else {
 				$location = 'All Sydney';
-				dev_log::write("categorySearch: SET LOCATION F2 $location");
+				
 			}
 			
 		}
