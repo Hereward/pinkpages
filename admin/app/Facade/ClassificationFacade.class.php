@@ -735,7 +735,7 @@ class ClassificationFacade extends MainFacade {
 	  $fromDateItr = new DateIterator('month', $startDate, $endDate);	  
 	  
 	  $report = Array();
-	  
+	  $i=1;
 	  while($fromDateItr->valid()){
 	    $from = $fromDateItr->current();
 		
@@ -750,6 +750,8 @@ class ClassificationFacade extends MainFacade {
         $report[$from .",". $to] = $this->completeCtrSql($from, $to);						
 				
 		$fromDateItr->next();
+		dev_log::write("getCompleteCtrReport: i = $i");
+		$i++;
       }	  	  	  
 	  	  
 	  return $report;	  
@@ -802,6 +804,7 @@ class ClassificationFacade extends MainFacade {
                       GROUP BY bs.business_id) clicks					
 							ON reg.business_id = clicks.business_id
                       ORDER BY localclassification_name, Company";
+            
 					  					  
 	  return $this->MyDB->query($sql);
 	
