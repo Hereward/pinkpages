@@ -804,6 +804,8 @@ class ClassificationFacade extends MainFacade {
                       GROUP BY bs.business_id) clicks					
 							ON reg.business_id = clicks.business_id
                       ORDER BY localclassification_name, Company";
+              
+              die($sql);
             
 					  					  
 	  return $this->MyDB->query($sql);
