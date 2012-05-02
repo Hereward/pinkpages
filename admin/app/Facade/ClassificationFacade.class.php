@@ -753,7 +753,7 @@ class ClassificationFacade extends MainFacade {
 		dev_log::write("getCompleteCtrReport: i = $i");
 		$i++;
       }	  	  	  
-	  	  
+	  dev_log::write("getCompleteCtrReport: END");
 	  return $report;	  
 	}
 	
