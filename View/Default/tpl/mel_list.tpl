@@ -3,7 +3,7 @@
 	<table width="100%">
 		<tr>
 			<th valign="top" align="left" colspan="4">Top 20 Searched in
-				Melbourne xx</th>
+				Melbourne</th>
 		</tr>
 
 
