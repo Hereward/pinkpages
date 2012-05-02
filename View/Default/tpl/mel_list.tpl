@@ -14,30 +14,30 @@
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Solicitors&Search2=Melbourne">Solicitors</a>
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Solicitors&Search2=Victoria+Region+-+VIC">Solicitors</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Melbourne">Medical
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MEDICAL+PRACTITIONERS&Search2=Victoria+Region+-+VIC">Medical
 									Practitioners</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=TREE+FELLING+%26+STUMP+REMOVAL&Search2=Melbourne">Tree
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=TREE+FELLING+%26+STUMP+REMOVAL&Search2=Victoria+Region+-+VIC">Tree
 									Felling &amp; Stump Removal</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=LANDSCAPE+CONTRACTORS&Search2=Melbourne">Landscape
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=LANDSCAPE+CONTRACTORS&Search2=Victoria+Region+-+VIC">Landscape
 									Contractors</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BEAUTY+SALONS&Search2=Melbourne">Beauty
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BEAUTY+SALONS&Search2=Victoria+Region+-+VIC">Beauty
 									Salons</a>
 							</td>
 						</tr>
@@ -47,28 +47,28 @@
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=TILES+-+WALL+%26+FLOOR&Search2=Melbourne">Tiles
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=TILES+-+WALL+%26+FLOOR&Search2=Victoria+Region+-+VIC">Tiles
 									- Wall &amp; Floor</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Chemists&Search2=Melbourne">Chemists</a>
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Chemists&Search2=Victoria+Region+-+VIC">Chemists</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=ACCOUNTANTS&Search2=Melbourne">Accountants</a>
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=ACCOUNTANTS&Search2=Victoria+Region+-+VIC">Accountants</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Dentists&Search2=Melbourne">Dentists</a>
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Dentists&Search2=Victoria+Region+-+VIC">Dentists</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BATHROOM+RENOVATIONS&Search2=Melbourne">Bathroom
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=BATHROOM+RENOVATIONS&Search2=Victoria+Region+-+VIC">Bathroom
 									Renovations</a>
 							</td>
 						</tr>
@@ -78,29 +78,29 @@
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CONCRETE+CONTRACTORS&Search2=Melbourne">Concrete
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CONCRETE+CONTRACTORS&Search2=Victoria+Region+-+VIC">Concrete
 									Contractors</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MASSAGE+THERAPEUTIC&Search2=Melbourne">Massage
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=MASSAGE+THERAPEUTIC&Search2=Victoria+Region+-+VIC">Massage
 									Therapeutic</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Chiropractors&Search2=Melbourne">Chiropractors</a>
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Chiropractors&Search2=Victoria+Region+-+VIC">Chiropractors</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Painters&Search2=Melbourne">Painters</a>
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Painters&Search2=Victoria+Region+-+VIC">Painters</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Plumbers&Search2=Melbourne">Plumbers</a>
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Plumbers&Search2=Victoria+Region+-+VIC">Plumbers</a>
 							</td>
 						</tr>
 					</table></td>
@@ -109,30 +109,30 @@
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CLEANING+CONTRACTORS&Search2=Melbourne">Cleaning
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=CLEANING+CONTRACTORS&Search2=Victoria+Region+-+VIC">Cleaning
 									Contractors</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=FURNITURE+REMOVALS+%26+STORAGE&Search2=Melbourne">Furniture
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=FURNITURE+REMOVALS+%26+STORAGE&Search2=Victoria+Region+-+VIC">Furniture
 									Removals &amp; Storage</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Restaurants&Search2=Melbourne">Restaurants</a>
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=Restaurants&Search2=Victoria+Region+-+VIC">Restaurants</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=TOWING+-+VEHICULAR&Search2=Melbourne">Towing
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=TOWING+-+VEHICULAR&Search2=Victoria+Region+-+VIC">Towing
 									- Vehicular</a>
 							</td>
 						</tr>
 						<tr>
 							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=FURNITURE+REPAIRS&Search2=Melbourne">Furniture
+								href="{$SITE_PATH}/main.php?do=Listing&action=searchKeyword&Search1=FURNITURE+REPAIRS&Search2=Victoria+Region+-+VIC">Furniture
 									Repairs</a>
 							</td>
 						</tr>
