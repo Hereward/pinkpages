@@ -1086,8 +1086,7 @@ class ListingControl extends MainControl {
 
 		$this->page->assign("category", $category);
 		$this->page->assign("keyword" , $keyword);
-		var_dump($category);
-		die();
+		
 		$this->page->assign("location", $location);
 
 		$sortby			= (!empty($_GET['sortby']))?$_GET['sortby']:NULL;
@@ -1283,6 +1282,8 @@ class ListingControl extends MainControl {
 
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
 		$keyword  = urldecode(ucwords(strtolower($_GET['category'])));
+		var_dump($keyword);
+		die();
 		$location = ucwords(strtolower($location));
 
 		$this->page->assign("category", $category);
