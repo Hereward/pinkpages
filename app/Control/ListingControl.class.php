@@ -1221,8 +1221,7 @@ class ListingControl extends MainControl {
 	public function categorySearchAlpha()
 	{
 		
-		var_dump($_GET['category']);
-		die();
+		//var_dump($_GET['category']);
 
 		$this->page->pageTitle = $_GET['category'] . " Business Listings&#58; Pink Pages Australia";
 		$this->page->addMetaTags("robots", "noodp,noydir");
