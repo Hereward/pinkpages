@@ -755,13 +755,13 @@ class ListingControl extends MainControl {
 		$classifications_array = $this->listingFacade->getClassificationsByBusinessComplete($_GET['ID']); //getClassificationsByBusinessComplete
 		for ($i = 0; $i < count($classifications_array); $i++) {
 			$raw = $classifications_array[$i]['localclassification_name'];
-			$conv = str_replace(' ', '+', $raw);
+			$conv = trim($raw);
+			$conv = str_replace(' ', '+', $conv);
             $classifications_array[$i]['localclassification_name'] = $conv;
 		}
 		
 		
-		var_dump($classifications_array);
-		die();
+		//var_dump($classifications_array);
 
 		//Added for drop downs
 		$this->page->addJsFile("bsn.AutoSuggest_2.1.3.js");
