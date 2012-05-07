@@ -1282,7 +1282,7 @@ class ListingControl extends MainControl {
 
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
 		$keyword  = urldecode(ucwords(strtolower($_GET['category'])));
-		var_dump($keyword);
+		var_dump($_GET['category']);
 		die();
 		$location = ucwords(strtolower($location));
 
