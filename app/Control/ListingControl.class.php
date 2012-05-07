@@ -1286,8 +1286,11 @@ class ListingControl extends MainControl {
 		$classification_array = $this->listingFacade->getOneClassification($class_id);
 		$classification_name = $classification_array[0]['localclassification_name'];
 		$classification_name = trim($classification_name);
-	    $classification_name = urlencode($classification_name);
 		$keyword = $classification_name;
+		
+		
+	    //$classification_name = urlencode($classification_name);
+		//$keyword = $classification_name;
 		
 		$location = ucwords(strtolower($location));
 
