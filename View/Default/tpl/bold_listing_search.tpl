@@ -162,7 +162,7 @@
 		    <h2>Classifications</h2>
 			<ul>
 			  {section name=class loop=$classifications}
-			     <li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_name|escape:'urlpathinfo'}">{$classifications[class].localclassification_name}</a></li>
+			     <li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_name|escape:'url'}">{$classifications[class].localclassification_name}</a></li>
                {/section}	
 			</ul>	
 		{/if}	
