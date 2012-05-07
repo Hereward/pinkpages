@@ -1221,7 +1221,8 @@ class ListingControl extends MainControl {
 	public function categorySearchAlpha()
 	{
 		
-		//var_dump($_GET['category']);
+		var_dump($_GET['search']);
+		die();
 
 		$this->page->pageTitle = $_GET['category'] . " Business Listings&#58; Pink Pages Australia";
 		$this->page->addMetaTags("robots", "noodp,noydir");
@@ -1283,7 +1284,14 @@ class ListingControl extends MainControl {
 		$this->page->addCssStyle("autosuggest_inquisitor.css");
 
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
-		$keyword  = urldecode(ucwords(strtolower($_GET['category'])));
+		//$keyword  = urldecode(ucwords(strtolower($_GET['category'])));
+		
+		$class_id = $_GET['search'];
+		$classification_array = $this->listingFacade->getOneClassification($class_id);
+		$classification_name = $classification_array[0]['localclassification_name'];
+		$classification_name = trim($classification_name);
+	    $classification_name = urlencode($classification_name);
+		$keyword = $classification_name;
 		
 		$location = ucwords(strtolower($location));
 

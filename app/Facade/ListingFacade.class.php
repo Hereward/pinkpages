@@ -165,6 +165,21 @@ class ListingFacade extends MainFacade {
 		return rtrim($classifications, ", ");
 	}
 	
+    public function getOneClassification($localclassification_id) {
+		$classifications = '';
+		$sql = "SELECT
+					*
+				FROM
+					local_classification
+						
+				WHERE
+					localclassification_id=$localclassification_id
+				";
+		$result = $this->myDB->query($sql);
+
+		return $result;
+	}
+	
      public function getClassificationsByBusinessComplete($business_id) {
 		$classifications = array();
 		$sql = "SELECT
