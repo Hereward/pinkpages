@@ -1294,11 +1294,19 @@ class ListingControl extends MainControl {
 		
 		$referrer = $_SERVER['HTTP_REFERER'];
 		$parsed_referrer = parse_url($referrer);
-		echo $parsed_referrer['host'];
+		$keyword = '';
+		if ($parsed_referrer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referrer['host'] == 'pinkpages.com.au') {
+			$keyword = $classification_name;
+		} else {
+			parse_str($parsed_q, $parsed_referrer['query']);
+			$keyword = $parsed_q['q'];		
+		}
+		print "HOST = {$parsed_referrer['host']}";
+		print "keyword = [$keyword]";
 		die();
 		
 		
-		$keyword = $classification_name;
+		//$keyword = $classification_name;
 		
 		
 	    //$classification_name = urlencode($classification_name);
