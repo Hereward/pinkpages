@@ -757,7 +757,7 @@ class ListingControl extends MainControl {
 			$raw = $classifications_array[$i]['localclassification_name'];
 			$conv = trim($raw);
 			$conv = str_replace(' ', '+', $conv);
-            $classifications_array[$i]['localclassification_name'] = $conv;
+            $classifications_array[$i]['localclassification_name_conv'] = $conv;
 		}
 		
 		
