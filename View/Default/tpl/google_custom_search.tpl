@@ -1,3 +1,4 @@
+{literal}
 <script src="http://www.google.com/adsense/search/ads.js" type="text/javascript"></script> 
 <script type="text/javascript" charset="utf-8"> 
 var pageOptions = { 
@@ -16,3 +17,4 @@ var adblock2 = {
 
 new google.ads.search.Ads(pageOptions, adblock1, adblock2);
 </script>
+{/literal}
