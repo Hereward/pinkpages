@@ -147,7 +147,7 @@
 		</li>
 		
         <li>		
-        {*
+        
 		{if $classifications[0] neq ''}
 			<h2>Classifications</h2>
 			<ul>
@@ -157,7 +157,7 @@
 			{/foreach}				
 			</ul>	
 		{/if}
-		*}
+		{*
 		{if $class_count > 0}
 		    <h2>Classifications</h2>
 			<ul>
@@ -166,6 +166,7 @@
                {/section}	
 			</ul>	
 		{/if}	
+		*}
 		</li>	
 		
 		
