@@ -752,7 +752,7 @@ class ListingControl extends MainControl {
 		$res = $this->listingFacade->boldListingResult($_GET);
 
 		$classifications = explode(',', $this->listingFacade->getClassificationsByBusiness($_GET['ID']));
-		$classifications_array = $this->listingFacade->getClassificationsByBusinessComplete($_GET['ID']);
+		$classifications_array = $this->listingFacade->getClassificationsByBusiness($_GET['ID']); //getClassificationsByBusinessComplete
 		//var_dump($classifications_array);
 
 		//Added for drop downs
