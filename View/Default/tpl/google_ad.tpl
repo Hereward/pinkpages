@@ -1,1 +1,1 @@
-<div style="font-weight:bold; text-align:center; color:red; padding:5px; margin:20px; border:1px solid black;">GOOGLE AD BLOCK {$gab} GOES HERE</div>
+<div id="{$ad_container_id}" style="font-weight:bold; text-align:center; color:red; padding:5px; margin:20px; border:1px solid black;"></div>

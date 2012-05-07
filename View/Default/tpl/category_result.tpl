@@ -1,3 +1,4 @@
+ {include file="google_custom_search"}
  <div class="bbbg"><div class="white-sperater">
 </div>
 {include file="left_form.tpl"}
@@ -67,7 +68,7 @@
                           		<td width="8px"></td>
                           		<td>
 								     {if !$row}
-								      {include gab=1 file="google_ad.tpl"}
+								      {include ad_container_id="adcontainer1" gab=1 file="google_ad.tpl"}
 								      
                                        <hr />
 									   {assign var="row" value="1"}
@@ -223,7 +224,7 @@
 				  {/section}
                 </table>
                 <br/>
-              {include gab=2 file="google_ad.tpl"}
+              {include ad_container_id="adcontainer2" gab=2 file="google_ad.tpl"}
 				
             <div align="center">{include file="pagination.tpl"}</div>
           
