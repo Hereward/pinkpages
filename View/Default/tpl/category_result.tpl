@@ -1,4 +1,4 @@
- {include file="google_custom_search.tpl"}
+
  <div class="bbbg"><div class="white-sperater">
 </div>
 {include file="left_form.tpl"}
@@ -313,3 +313,5 @@ google_ad_height = 60;
 <div class="bottomseperator">
 </div>
 </div>
+
+ {include file="google_custom_search.tpl"}
