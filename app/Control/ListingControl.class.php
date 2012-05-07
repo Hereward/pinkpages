@@ -1282,10 +1282,22 @@ class ListingControl extends MainControl {
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
 		//$keyword  = urldecode(ucwords(strtolower($_GET['category'])));
 		
+		
 		$class_id = $_GET['search'];
+		
+		
+		
 		$classification_array = $this->listingFacade->getOneClassification($class_id);
 		$classification_name = $classification_array[0]['localclassification_name'];
 		$classification_name = trim($classification_name);
+		
+		
+		$referrer = $_SERVER['HTTP_REFERER'];
+		$parsed_referrer = parse_url($referrer);
+		echo $parsed_referrer['host'];
+		die();
+		
+		
 		$keyword = $classification_name;
 		
 		
