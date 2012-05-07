@@ -956,9 +956,9 @@ class ListingControl extends MainControl {
 			parse_str($parsed_q, $parsed_referrer['query']);
 			$keyword = $parsed_q['q'];		
 		}
-		print "HOST = {$parsed_referrer['host']} <br/>";
-		print "keyword = [$keyword]";
-		die();
+		//print "HOST = {$parsed_referrer['host']} <br/>";
+		//print "keyword = [$keyword]";
+		//die();
 		
 		return $keyword;
 		
