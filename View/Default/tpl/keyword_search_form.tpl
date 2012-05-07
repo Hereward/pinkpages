@@ -192,7 +192,7 @@
       </div>	
     {/if}	  
     
-    {* {include gab=4 file="google_ad.tpl"} *}
+    {include gab=4 file="google_ad.tpl"}
 
 </div>
 

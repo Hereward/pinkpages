@@ -67,7 +67,7 @@
                           		<td width="8px"></td>
                           		<td>
 								     {if !$row}
-								      {* {include gab=1 file="google_ad.tpl"} *}
+								      {include gab=1 file="google_ad.tpl"}
 								      
                                        <hr />
 									   {assign var="row" value="1"}
@@ -223,7 +223,7 @@
 				  {/section}
                 </table>
                 <br/>
-                {* {include gab=2 file="google_ad.tpl"} *}
+              {include gab=2 file="google_ad.tpl"}
 				
             <div align="center">{include file="pagination.tpl"}</div>
           
