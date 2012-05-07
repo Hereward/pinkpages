@@ -1,4 +1,4 @@
- {include file="google_custom_search"}
+ {include file="google_custom_search.tpl"}
  <div class="bbbg"><div class="white-sperater">
 </div>
 {include file="left_form.tpl"}
