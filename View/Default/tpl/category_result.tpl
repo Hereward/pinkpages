@@ -24,7 +24,7 @@
 		{/if}
 		{/section}
 		 	
-		
+		{*
 		{if $smarty.capture.google eq ''}
 	
 		<table align="center"  width="590px" class="googleadds" >
@@ -50,7 +50,7 @@
 		
 		
 		{/if}
-  	  
+  	    *}
 
       <table class="datatable">
                   
