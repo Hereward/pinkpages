@@ -753,8 +753,7 @@ class ListingControl extends MainControl {
 
 		$classifications = explode(',', $this->listingFacade->getClassificationsByBusiness($_GET['ID']));
 		$classifications_array = $this->listingFacade->getClassificationsByBusinessComplete($_GET['ID']);
-		var_dump($classifications_array);
-		die();
+		//var_dump($classifications_array);
 
 		//Added for drop downs
 		$this->page->addJsFile("bsn.AutoSuggest_2.1.3.js");
