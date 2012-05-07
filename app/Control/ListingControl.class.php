@@ -939,6 +939,30 @@ class ListingControl extends MainControl {
 		return $classifications;
 
 	}
+	
+	public function resolve_keyword() {
+		$class_id = $_GET['search'];
+		
+		$classification_array = $this->listingFacade->getOneClassification($class_id);
+		$classification_name = $classification_array[0]['localclassification_name'];
+		$classification_name = trim($classification_name);
+		
+		$referrer = $_SERVER['HTTP_REFERER'];
+		$parsed_referrer = parse_url($referrer);
+		$keyword = '';
+		if ($parsed_referrer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referrer['host'] == 'pinkpages.com.au') {
+			$keyword = $classification_name;
+		} else {
+			parse_str($parsed_q, $parsed_referrer['query']);
+			$keyword = $parsed_q['q'];		
+		}
+		print "HOST = {$parsed_referrer['host']} <br/>";
+		print "keyword = [$keyword]";
+		die();
+		
+		return $keyword;
+		
+	}
 
 	/**
 	 *  categorySearch
@@ -1081,7 +1105,10 @@ class ListingControl extends MainControl {
 		$this->page->addCssStyle("autosuggest_inquisitor.css");
 
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
-		$keyword  = urldecode(ucwords(strtolower($_GET['category'])));
+		//$keyword  = urldecode(ucwords(strtolower($_GET['category'])));
+		
+		$keyword = $this->resolve_keyword();
+		
 		$location = ucwords(strtolower($location));
 
 		$this->page->assign("category", $category);
@@ -1282,15 +1309,14 @@ class ListingControl extends MainControl {
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
 		//$keyword  = urldecode(ucwords(strtolower($_GET['category'])));
 		
+		$keyword = $this->resolve_keyword();
 		
+		/*
 		$class_id = $_GET['search'];
-		
-		
 		
 		$classification_array = $this->listingFacade->getOneClassification($class_id);
 		$classification_name = $classification_array[0]['localclassification_name'];
 		$classification_name = trim($classification_name);
-		
 		
 		$referrer = $_SERVER['HTTP_REFERER'];
 		$parsed_referrer = parse_url($referrer);
@@ -1304,7 +1330,7 @@ class ListingControl extends MainControl {
 		print "HOST = {$parsed_referrer['host']} <br/>";
 		print "keyword = [$keyword]";
 		die();
-		
+		*/
 		
 		//$keyword = $classification_name;
 		
