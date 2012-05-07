@@ -777,6 +777,8 @@ class ListingControl extends MainControl {
 
 		$this->page->assign("classi", $classi);
 		$this->page->assign("classifications", $classifications);
+		var_dump($classifications);
+		die();
 		$this->page->assign("location", $location);
 
 		//Adding Meta Tags
