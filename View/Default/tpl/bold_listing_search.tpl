@@ -151,6 +151,7 @@
 			<h2>Classifications</h2>
 			<ul>
 			{foreach from=$classifications item=key}
+			<li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/1898/category/HAIRDRESSERS">{$key}</a></li>
 			<li> <a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1={$key|escape:'url'}&Search2=All+States">{$key}</a></li>
 			{/foreach}				
 			</ul>	

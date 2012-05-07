@@ -752,6 +752,9 @@ class ListingControl extends MainControl {
 		$res = $this->listingFacade->boldListingResult($_GET);
 
 		$classifications = explode(',', $this->listingFacade->getClassificationsByBusiness($_GET['ID']));
+		$classifications_array = explode(',', $this->listingFacade->getClassificationsByBusinessComplete($_GET['ID']));
+		var_dump($classifications_array);
+		die();
 
 		//Added for drop downs
 		$this->page->addJsFile("bsn.AutoSuggest_2.1.3.js");
@@ -776,9 +779,8 @@ class ListingControl extends MainControl {
 		$location = ucwords(strtolower($res[0][0]['business_suburb']));
 
 		$this->page->assign("classi", $classi);
-		$this->page->assign("classifications", $classifications);
-		var_dump($classifications);
-		die();
+		$this->page->assign("classifications", $classifications_array);
+
 		$this->page->assign("location", $location);
 
 		//Adding Meta Tags

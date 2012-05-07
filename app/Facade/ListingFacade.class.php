@@ -164,6 +164,23 @@ class ListingFacade extends MainFacade {
 		}
 		return rtrim($classifications, ", ");
 	}
+	
+     public function getClassificationsByBusinessComplete($business_id) {
+		$classifications = array();
+		$sql = "SELECT
+					* 
+				FROM
+					business_classification AS bc
+					LEFT JOIN local_classification AS lc
+						ON (bc.localclassification_id=lc.localclassification_id)
+				WHERE
+					bc.business_id=$business_id
+				";
+		$result = $this->myDB->query($sql);
+
+		return $result;
+		
+	}
 
 	private function isRanked($business_id) {
 		$sql = "SELECT COUNT(businessrank_id) AS cnt FROM business_ranks WHERE business_id=$business_id";
