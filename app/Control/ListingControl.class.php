@@ -752,7 +752,7 @@ class ListingControl extends MainControl {
 		$res = $this->listingFacade->boldListingResult($_GET);
 
 		$classifications = explode(',', $this->listingFacade->getClassificationsByBusiness($_GET['ID']));
-		$classifications_array = explode(',', $this->listingFacade->getClassificationsByBusinessComplete($_GET['ID']));
+		$classifications_array = $this->listingFacade->getClassificationsByBusinessComplete($_GET['ID']);
 		var_dump($classifications_array);
 		die();
 
