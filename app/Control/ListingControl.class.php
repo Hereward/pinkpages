@@ -1086,6 +1086,8 @@ class ListingControl extends MainControl {
 
 		$this->page->assign("category", $category);
 		$this->page->assign("keyword" , $keyword);
+		var_dump($category);
+		die();
 		$this->page->assign("location", $location);
 
 		$sortby			= (!empty($_GET['sortby']))?$_GET['sortby']:NULL;
