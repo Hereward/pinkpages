@@ -1220,6 +1220,9 @@ class ListingControl extends MainControl {
 	 */
 	public function categorySearchAlpha()
 	{
+		
+		var_dump($_GET['category']);
+		die();
 
 		$this->page->pageTitle = $_GET['category'] . " Business Listings&#58; Pink Pages Australia";
 		$this->page->addMetaTags("robots", "noodp,noydir");
@@ -1282,8 +1285,7 @@ class ListingControl extends MainControl {
 
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
 		$keyword  = urldecode(ucwords(strtolower($_GET['category'])));
-		var_dump($_GET['category']);
-		die();
+		
 		$location = ucwords(strtolower($location));
 
 		$this->page->assign("category", $category);
