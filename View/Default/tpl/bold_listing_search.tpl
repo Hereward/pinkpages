@@ -146,14 +146,24 @@
 		{/if}
 		</li>
 		
-        <li>		
+        <li>	
+        {*	
 		{if $classifications[0] neq ''}
 			<h2>Classifications</h2>
 			<ul>
 			{foreach from=$classifications item=key}
-			<li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/1898/category/HAIRDRESSERS">{$key}</a></li>
+			
 			<li> <a href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1={$key|escape:'url'}&Search2=All+States">{$key}</a></li>
 			{/foreach}				
+			</ul>	
+		{/if}
+		*}
+		{if $class_count > 0}
+		    <h2>Classifications X</h2>
+			<ul>
+			  {section name=class loop=$classifications}
+			     <li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_name|escape:'url'}">{$key}</a></li>
+               {/section}	
 			</ul>	
 		{/if}
 		</li>		

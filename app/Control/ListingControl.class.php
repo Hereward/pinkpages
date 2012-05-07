@@ -779,7 +779,9 @@ class ListingControl extends MainControl {
 		$location = ucwords(strtolower($res[0][0]['business_suburb']));
 
 		$this->page->assign("classi", $classi);
+		$class_count= count($classifications_array);
 		$this->page->assign("classifications", $classifications_array);
+		$this->page->assign("class_count", $class_count);
 
 		$this->page->assign("location", $location);
 
