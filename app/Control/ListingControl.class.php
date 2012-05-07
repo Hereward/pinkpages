@@ -753,7 +753,7 @@ class ListingControl extends MainControl {
 
 		$classifications = explode(',', $this->listingFacade->getClassificationsByBusiness($_GET['ID']));
 		$classifications_array = $this->listingFacade->getClassificationsByBusinessComplete($_GET['ID']); //getClassificationsByBusinessComplete
-		for ($i = 0; $i <= count($classifications_array); $i++) {
+		for ($i = 0; $i < count($classifications_array); $i++) {
 			$raw = $classifications_array[$i]['localclassification_name'];
 			$conv = str_replace(' ', '+', $raw);
             $classifications_array[$i]['localclassification_name'] = $conv;
