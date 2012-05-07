@@ -1285,8 +1285,6 @@ class ListingControl extends MainControl {
 		$class_id = $_GET['search'];
 		$classification_array = $this->listingFacade->getOneClassification($class_id);
 		$classification_name = $classification_array[0]['localclassification_name'];
-		var_dump("[$classification_name]");
-		die();
 		$classification_name = trim($classification_name);
 	    $classification_name = urlencode($classification_name);
 		$keyword = $classification_name;
