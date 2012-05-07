@@ -22,5 +22,5 @@ new google.ads.search.Ads(pageOptions, adblock1, adblock2);
 </script>
 {/literal}
 <script type="text/javascript" charset="utf-8"> 
-init_gcs('cars');
+init_gcs('{$keyword}');
 </script>
