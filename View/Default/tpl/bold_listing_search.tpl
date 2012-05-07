@@ -147,7 +147,7 @@
 		</li>
 		
         <li>		
-        
+        {*
 		{if $classifications[0] neq ''}
 			<h2>Classifications</h2>
 			<ul>
@@ -157,16 +157,17 @@
 			{/foreach}				
 			</ul>	
 		{/if}
-		{*
+		*}
+		
 		{if $class_count > 0}
 		    <h2>Classifications</h2>
 			<ul>
 			  {section name=class loop=$classifications}
-			     <li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_name_conv|escape:'url'}">{$classifications[class].localclassification_name}</a></li>
+			     <li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_url_encode}">{$classifications[class].localclassification_name}</a></li>
                {/section}	
 			</ul>	
 		{/if}	
-		*}
+		
 		</li>	
 		
 		
