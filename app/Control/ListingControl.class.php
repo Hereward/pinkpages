@@ -947,19 +947,31 @@ class ListingControl extends MainControl {
 		$classification_name = $classification_array[0]['localclassification_name'];
 		$classification_name = trim($classification_name);
 		
-		$referrer = $_SERVER['HTTP_REFERER'];
-		$parsed_referrer = parse_url($referrer);
+		$referer = $_SERVER['HTTP_REFERER'];
+		$parsed_referer = parse_url($referer);
 		$keyword = '';
-		if ($parsed_referrer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referrer['host'] == 'pinkpages.com.au') {
+		$search_type = 'internal';
+		if ($parsed_referer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referer['host'] == 'pinkpages.com.au' || (!isset($parsed_referer['query']))) {
 			$keyword = $classification_name;
-		} else {
-			parse_str($parsed_q, $parsed_referrer['query']);
-			$keyword = $parsed_q['q'];		
+			
+		} elseif (strpos($referer,"google")) {
+			
+			parse_str($parsed_q, $parsed_referer['query']);
+			if (!isset($parsed_q['q'])) {
+				$keyword = $classification_name;
+			} else {
+				$search_type = 'internal';
+				$keyword = urldecode($parsed_q['q']);
+			}
 		}
-		//print "HOST = {$parsed_referrer['host']} <br/>";
+		//print "HOST = {$parsed_referer['host']} <br/>";
 		//print "keyword = [$keyword]";
 		//die();
-		
+	
+		dev_log::cur_url("ListingControl::resolve_keyword");
+		dev_log::write("referer = $referer");
+		dev_log::write("search_type = $search_type");
+		dev_log::write("keyword = $keyword");
 		return $keyword;
 		
 	}
@@ -1311,32 +1323,8 @@ class ListingControl extends MainControl {
 		
 		$keyword = $this->resolve_keyword();
 		
-		/*
-		$class_id = $_GET['search'];
-		
-		$classification_array = $this->listingFacade->getOneClassification($class_id);
-		$classification_name = $classification_array[0]['localclassification_name'];
-		$classification_name = trim($classification_name);
-		
-		$referrer = $_SERVER['HTTP_REFERER'];
-		$parsed_referrer = parse_url($referrer);
-		$keyword = '';
-		if ($parsed_referrer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referrer['host'] == 'pinkpages.com.au') {
-			$keyword = $classification_name;
-		} else {
-			parse_str($parsed_q, $parsed_referrer['query']);
-			$keyword = $parsed_q['q'];		
-		}
-		print "HOST = {$parsed_referrer['host']} <br/>";
-		print "keyword = [$keyword]";
-		die();
-		*/
-		
-		//$keyword = $classification_name;
-		
-		
+
 	    //$classification_name = urlencode($classification_name);
-		//$keyword = $classification_name;
 		
 		$location = ucwords(strtolower($location));
 
