@@ -1,1 +1,1 @@
-<div id="{$ad_container_id}" style="padding:0px; margin:10px 0 10px -2px;"></div>
+<div id="{$ad_container_id}" style="padding:0px; margin:10px 0 10px -2px;"></div> 
