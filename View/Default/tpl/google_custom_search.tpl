@@ -15,7 +15,14 @@ var adblock1 = {
 var adblock2 = { 
   'container': 'adcontainer2'
 };
-new google.ads.search.Ads(pageOptions, adblock1, adblock2);
+
+var adblock3 = { 
+		  'container': 'adcontainer3'
+};
+
+
+
+new google.ads.search.Ads(pageOptions, adblock1, adblock2, adblock3);
 }
 
 
@@ -24,3 +31,5 @@ new google.ads.search.Ads(pageOptions, adblock1, adblock2);
 <script type="text/javascript" charset="utf-8"> 
 init_gcs('{$keyword}');
 </script>
+
+
