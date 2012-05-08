@@ -942,40 +942,47 @@ class ListingControl extends MainControl {
 	
 	public function resolve_keyword() {
 		$class_id = $_GET['search'];
-		
+
 		$classification_array = $this->listingFacade->getOneClassification($class_id);
 		$classification_name = $classification_array[0]['localclassification_name'];
 		$classification_name = trim($classification_name);
-		
+
 		$referer = (isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
 		$parsed_referer = parse_url($referer);
 		//var_dump($parsed_referer);
 		//die();
 		$keyword = '';
-		$search_type = 'internal';
-		if ($parsed_referer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referer['host'] == 'pinkpages.com.au' || (!isset($parsed_referer['query']))) {
+		$search_type = '';
+		if (!$referer) {
 			$keyword = $classification_name;
-			
+			$search_type = 'direct';
+		} elseif ($parsed_referer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referer['host'] == 'pinkpages.com.au') {
+			$keyword = $classification_name;
+			$search_type = 'internal';
 		} elseif (strpos($referer,"google")) {
-			
-			parse_str($parsed_q, $parsed_referer['query']);
-			if (!isset($parsed_q['q'])) {
-				$keyword = $classification_name;
+				
+			if (isset($parsed_referer['query'])) {
+				parse_str($parsed_q, $parsed_referer['query']);
+				if (!isset($parsed_q['q'])) {
+					$keyword = $classification_name;
+				} else {
+					$keyword = urldecode($parsed_q['q']);
+				}
 			} else {
-				$search_type = 'internal';
-				$keyword = urldecode($parsed_q['q']);
+				$keyword = $classification_name;
 			}
+			$search_type = 'external';
 		}
 		//print "HOST = {$parsed_referer['host']} <br/>";
 		//print "keyword = [$keyword]";
 		//die();
-	
+
 		dev_log::cur_url("ListingControl::resolve_keyword");
 		dev_log::write("referer = $referer");
 		dev_log::write("search_type = $search_type");
 		dev_log::write("keyword = $keyword");
 		return $keyword;
-		
+
 	}
 
 	/**
