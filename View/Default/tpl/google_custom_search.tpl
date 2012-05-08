@@ -17,7 +17,7 @@ var adblock1 = {
 };
 
 var adblock2 = { 
-		  'container': 'adcontainer1',
+		  'container': 'adcontainer2',
 		  'number': '4',
 		  'lines': '3',
 		  'fontSizeTitle': '14px',
