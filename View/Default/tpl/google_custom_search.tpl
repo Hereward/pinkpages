@@ -17,8 +17,9 @@ var adblock1 = {
 };
 
 var adblock2 = { 
-		  'container': 'adcontainer2',
+		  'container': 'adcontainer1',
 		  'number': '4',
+		  'lines': '3',
 		  'fontSizeTitle': '14px',
 		  'colorDomainLink': '000000'
 };
@@ -35,5 +36,6 @@ new google.ads.search.Ads(pageOptions, adblock1, adblock2);
 <script type="text/javascript" charset="utf-8"> 
 init_gcs('{$keyword}');
 </script>
+
 
 
