@@ -956,7 +956,7 @@ class ListingControl extends MainControl {
 		if (!$referer) {
 			$keyword = $classification_name;
 			$search_type = 'direct';
-		} elseif ($parsed_referer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referer['host'] == 'pinkpages.com.au') {
+		} elseif ($parsed_referer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referer['host'] == 'www.pinkpages.com.au') {
 			$keyword = $classification_name;
 			$search_type = 'internal';
 		} elseif (strpos($referer,"google")) {
