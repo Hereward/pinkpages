@@ -192,7 +192,9 @@
       </div>	
     {/if}	  
     
+    {*
     {include ad_container_id="adcontainer3" gab=4 file="google_ad.tpl"}
+    *}
 
 </div>
 

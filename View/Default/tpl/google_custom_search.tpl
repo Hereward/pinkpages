@@ -9,20 +9,24 @@ var pageOptions = {
 };
 
 var adblock1 = { 
-  'container': 'adcontainer1'
+		  'container': 'adcontainer1',
+		  'number': '4',
+		  'lines': '3',
+		  'fontSizeTitle': '14px',
+		  'colorDomainLink': '000000'
 };
 
 var adblock2 = { 
-  'container': 'adcontainer2'
+		  'container': 'adcontainer2',
+		  'number': '4',
+		  'fontSizeTitle': '14px',
+		  'colorDomainLink': '000000'
 };
 
-var adblock3 = { 
-		  'container': 'adcontainer3'
-};
 
 
 
-new google.ads.search.Ads(pageOptions, adblock1, adblock2, adblock3);
+new google.ads.search.Ads(pageOptions, adblock1, adblock2);
 }
 
 

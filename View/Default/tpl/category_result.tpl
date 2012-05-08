@@ -69,8 +69,7 @@
                           		<td>
 								     {if !$row}
 								      {include ad_container_id="adcontainer1" gab=1 file="google_ad.tpl"}
-								      
-                                       <hr />
+
 									   {assign var="row" value="1"}
 									 {/if}
                          			 <table>
