@@ -949,6 +949,8 @@ class ListingControl extends MainControl {
 		
 		$referer = $_SERVER['HTTP_REFERER'];
 		$parsed_referer = parse_url($referer);
+		var_dump($parsed_referer);
+		die();
 		$keyword = '';
 		$search_type = 'internal';
 		if ($parsed_referer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referer['host'] == 'pinkpages.com.au' || (!isset($parsed_referer['query']))) {
