@@ -947,7 +947,7 @@ class ListingControl extends MainControl {
 		$classification_name = $classification_array[0]['localclassification_name'];
 		$classification_name = trim($classification_name);
 		
-		$referer = $_SERVER['HTTP_REFERER'];
+		$referer = (isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
 		$parsed_referer = parse_url($referer);
 		var_dump($parsed_referer);
 		die();
