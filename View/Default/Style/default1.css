@@ -1570,7 +1570,8 @@ text-decoration:underline;
 font-size:11px;
 text-transform:uppercase;
 line-height:14px;
-color:#EA6AB5;
+/* color:#EA6AB5; */
+color:#000FF;
 }
 
 .smallrextlowtitle  a{
