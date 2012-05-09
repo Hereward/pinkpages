@@ -980,8 +980,8 @@ class ListingControl extends MainControl {
 		//die();
         
 		dev_log::cur_url("ListingControl::resolve_keyword");
-		dev_log::write("parsed referer host = {$parsed_referer['host']}");
 		dev_log::write("referer = $referer");
+		dev_log::write("parsed referer host = {$parsed_referer['host']}");
 		dev_log::write("google search query = $google_search_query");
 		dev_log::write("search_type = $search_type");
 		dev_log::write("keyword = $keyword");
