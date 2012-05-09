@@ -997,7 +997,7 @@ class ListingControl extends MainControl {
 		dev_log::write("cur url = $cur_url");
 		dev_log::write("parsed cur url = ".var_export($parsed_cur_url,true));
 		dev_log::write("referer = $referer");
-		dev_log::write("has query = $has_query");
+		dev_log::write("referer has query = $referer_has_query");
 		dev_log::write("parsed referer = ".var_export($parsed_referer,true));
 		dev_log::write("parsed referer host = {$parsed_referer['host']}");
 		dev_log::write("referer search query = ".var_export($referer_search_query,true));
