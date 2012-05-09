@@ -959,7 +959,7 @@ class ListingControl extends MainControl {
 		if ($gpp_match) {
 			
 			$google_query_param = $matches[1];
-			die("MATCH [$google_query_param]");
+			//die("MATCH [$google_query_param]");
 		}
 		//$referer_search_query = '';
 		
@@ -1009,6 +1009,7 @@ class ListingControl extends MainControl {
 		dev_log::write("parsed referer = ".var_export($parsed_referer,true));
 		dev_log::write("parsed referer host = {$parsed_referer['host']}");
 		dev_log::write("referer search query = ".var_export($referer_search_query,true));
+		dev_log::write("google query param = $google_query_param");
 		dev_log::write("google parsed keyword = $google_parsed_keyword");
 		dev_log::write("search_type = $search_type");
 		dev_log::write("keyword = $keyword");
