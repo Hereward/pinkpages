@@ -974,6 +974,9 @@ class ListingControl extends MainControl {
 				$keyword = $classification_name;
 			}
 			$search_type = 'google';
+		} else {
+			$keyword = $classification_name;
+			$search_type = 'other';
 		}
 		//print "HOST = {$parsed_referer['host']} <br/>";
 		//print "keyword = [$keyword]";
