@@ -952,6 +952,9 @@ class ListingControl extends MainControl {
 		$cur_url = dev_log::get_cur_url();
 		$parsed_cur_url = parse_url($cur_url);
 		
+		$referer_has_query = (isset($parsed_referer['query']))?true:false;
+		$referer_search_query = '';
+		
 		
 		//die($cur_url);
 		//var_dump($parsed_referer);
@@ -961,7 +964,7 @@ class ListingControl extends MainControl {
 		$keyword = '';
 		$search_type = '';
 		//$google_search_query = '[empty]';
-		$search_query = $parsed_referer['query'];
+		$referer_search_query = ($referer_has_query)?$parsed_referer['query']:'';
 		$google_parsed_keyword = '[empty]';
 		if (!$referer) {
 			$keyword = $classification_name;
@@ -970,10 +973,8 @@ class ListingControl extends MainControl {
 			$keyword = $classification_name;
 			$search_type = 'internal';
 		} elseif (strpos($referer,"google")) {
-				
-			if (isset($parsed_referer['query'])) {
-				
-				parse_str($parsed_q, $search_query);
+			if ($referer_has_query) {
+				parse_str($parsed_q, $referer_search_query);
 				$google_parsed_keyword = $parsed_q['q'];
 				if (!isset($parsed_q['q'])) {
 					$keyword = $classification_name;
@@ -996,9 +997,10 @@ class ListingControl extends MainControl {
 		dev_log::write("cur url = $cur_url");
 		dev_log::write("parsed cur url = ".var_export($parsed_cur_url,true));
 		dev_log::write("referer = $referer");
+		dev_log::write("has query = $has_query");
 		dev_log::write("parsed referer = ".var_export($parsed_referer,true));
 		dev_log::write("parsed referer host = {$parsed_referer['host']}");
-		dev_log::write("search query = ".var_export($search_query,true));
+		dev_log::write("referer search query = ".var_export($referer_search_query,true));
 		dev_log::write("google parsed keyword = $google_parsed_keyword");
 		dev_log::write("search_type = $search_type");
 		dev_log::write("keyword = $keyword");
