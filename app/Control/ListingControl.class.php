@@ -984,7 +984,7 @@ class ListingControl extends MainControl {
 				//parse_str($parsed_q, $referer_search_query);
 				//$google_parsed_keyword = $parsed_q['q'];
 				if ($google_query_param) {
-					$keyword = $google_query_param;
+					$keyword = urldecode($google_query_param);
 				} else {
 					$keyword = $classification_name;
 				}
