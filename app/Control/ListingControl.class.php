@@ -951,14 +951,13 @@ class ListingControl extends MainControl {
 		$parsed_referer = parse_url($referer);
 		$cur_url = dev_log::get_cur_url();
 		$parsed_cur_url = parse_url($cur_url);
-		$parsed_cur_url_dump = var_export($parsed_cur_url);
-		echo "parsed_cur_url_dump = ".$parsed_cur_url_dump;
+		
 		
 		//die($cur_url);
 		//var_dump($parsed_referer);
 		//die();
 		//var_dump($parsed_referer);
-		die();
+		//die();
 		$keyword = '';
 		$search_type = '';
 		//$google_search_query = '[empty]';
@@ -995,11 +994,11 @@ class ListingControl extends MainControl {
         
 		
 		dev_log::write("cur url = $cur_url");
-		dev_log::write("parsed cur url = ".var_export($parsed_cur_url));
+		dev_log::write("parsed cur url = ".var_export($parsed_cur_url,true));
 		dev_log::write("referer = $referer");
-		dev_log::write("parsed referer = ".var_export($parsed_referer));
+		dev_log::write("parsed referer = ".var_export($parsed_referer,true));
 		dev_log::write("parsed referer host = {$parsed_referer['host']}");
-		dev_log::write("search query = ".var_export($search_query));
+		dev_log::write("search query = ".var_export($search_query,true));
 		dev_log::write("google parsed keyword = $google_parsed_keyword");
 		dev_log::write("search_type = $search_type");
 		dev_log::write("keyword = $keyword");
