@@ -952,7 +952,7 @@ class ListingControl extends MainControl {
 		$cur_url = dev_log::get_cur_url();
 		$parsed_cur_url = parse_url($cur_url);
 		
-		$referer_has_query = (isset($parsed_referer['query']))?true:false;
+		$referer_has_query = (isset($parsed_referer['query']))?1:0;
 		$referer_search_query = '';
 		
 		
