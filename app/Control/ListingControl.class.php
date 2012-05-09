@@ -950,6 +950,7 @@ class ListingControl extends MainControl {
 		$referer = (isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
 		$parsed_referer = parse_url($referer);
 		$cur_url = dev_log::get_cur_url();
+		$parsed_cur_url = parse_url($cur_url);
 		die($cur_url);
 		//var_dump($parsed_referer);
 		//die();
@@ -989,7 +990,9 @@ class ListingControl extends MainControl {
 		//print "keyword = [$keyword]";
 		//die();
         
-		dev_log::cur_url("ListingControl::resolve_keyword");
+		
+		dev_log::write("cur url = $cur_url");
+		dev_log::write("parsed cur url = ".var_export($parsed_cur_url));
 		dev_log::write("referer = $referer");
 		dev_log::write("parsed referer = ".var_export($parsed_referer));
 		dev_log::write("parsed referer host = {$parsed_referer['host']}");
