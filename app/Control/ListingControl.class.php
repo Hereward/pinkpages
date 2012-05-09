@@ -953,7 +953,8 @@ class ListingControl extends MainControl {
 		//die();
 		$keyword = '';
 		$search_type = '';
-		$google_search_query = '[empty]';
+		//$google_search_query = '[empty]';
+		$search_query = $parsed_referer['query'];
 		$google_parsed_keyword = '[empty]';
 		if (!$referer) {
 			$keyword = $classification_name;
@@ -964,8 +965,8 @@ class ListingControl extends MainControl {
 		} elseif (strpos($referer,"google")) {
 				
 			if (isset($parsed_referer['query'])) {
-				$google_search_query = $parsed_referer['query'];
-				parse_str($parsed_q, $google_search_query);
+				
+				parse_str($parsed_q, $search_query);
 				$google_parsed_keyword = $parsed_q['q'];
 				if (!isset($parsed_q['q'])) {
 					$keyword = $classification_name;
@@ -987,7 +988,7 @@ class ListingControl extends MainControl {
 		dev_log::cur_url("ListingControl::resolve_keyword");
 		dev_log::write("referer = $referer");
 		dev_log::write("parsed referer host = {$parsed_referer['host']}");
-		dev_log::write("google search query = $google_search_query");
+		dev_log::write("search query = ".var_export($search_query));
 		dev_log::write("google parsed keyword = $google_parsed_keyword");
 		dev_log::write("search_type = $search_type");
 		dev_log::write("keyword = $keyword");
