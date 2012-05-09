@@ -951,7 +951,7 @@ class ListingControl extends MainControl {
 		$parsed_referer = parse_url($referer);
 		$cur_url = dev_log::get_cur_url();
 		$parsed_cur_url = parse_url($cur_url);
-		die($cur_url);
+		//die($cur_url);
 		//var_dump($parsed_referer);
 		//die();
 		//var_dump($parsed_referer);
