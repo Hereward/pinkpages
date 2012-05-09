@@ -957,8 +957,9 @@ class ListingControl extends MainControl {
 		$dummy_ref = 'http://www.google.com.au/url?sa=t&rct=j&q=pinkpages%20hairdresser&source=web&cd=1&ved=0CFgQFjAA&url=http%3A%2F%2Fwww.pinkpages.com.au%2FHAIRDRESSERS%2FNSW%2F1898&ei=XNKpT9bJFaq1iQeBlvmsAw&usg=AFQjCNGpBctJPJ_VVChdPfO5WfwlopFmxQ&cad=rja';
 		$gpp_match = preg_match('/.*q=(.+)&.*/', $dummy_ref, $matches);
 		if ($gpp_match) {
-			die("MATCH");
+			
 			$google_query_param = $matches[1];
+			die("MATCH [$google_query_param]");
 		}
 		//$referer_search_query = '';
 		
