@@ -953,6 +953,12 @@ class ListingControl extends MainControl {
 		$parsed_cur_url = parse_url($cur_url);
 		
 		$referer_has_query = (isset($parsed_referer['query']))?1:0;
+		$google_query_param = '[empty]';
+		
+		$gpp_match = preg_match('/q=(.+)&/', $referer);
+		if ($gpp_match) {
+			$google_query_param = $matches[1];
+		}
 		//$referer_search_query = '';
 		
 		
