@@ -955,12 +955,7 @@ class ListingControl extends MainControl {
 		$referer_has_query = (isset($parsed_referer['query']))?1:0;
 		$google_query_param = '[empty]';
 		$dummy_ref = 'http://www.google.com.au/url?sa=t&rct=j&q=pinkpages%20hairdresser&source=web&cd=1&ved=0CFgQFjAA&url=http%3A%2F%2Fwww.pinkpages.com.au%2FHAIRDRESSERS%2FNSW%2F1898&ei=XNKpT9bJFaq1iQeBlvmsAw&usg=AFQjCNGpBctJPJ_VVChdPfO5WfwlopFmxQ&cad=rja';
-		$gpp_match = preg_match('/.*q=([^&]+).*/', $referer, $matches);
-		if ($gpp_match) {
-			
-			$google_query_param = $matches[1];
-			//die("MATCH [$google_query_param]");
-		}
+		
 		//$referer_search_query = '';
 		
 		
@@ -972,8 +967,8 @@ class ListingControl extends MainControl {
 		$keyword = '';
 		$search_type = '';
 		//$google_search_query = '[empty]';
-		$referer_search_query = ($referer_has_query)?$parsed_referer['query']:'[empty]';
-		$google_parsed_keyword = '[empty]';
+		//$referer_search_query = ($referer_has_query)?$parsed_referer['query']:'[empty]';
+		//$google_parsed_keyword = '[empty]';
 		if (!$referer) {
 			$keyword = $classification_name;
 			$search_type = 'direct';
@@ -982,12 +977,16 @@ class ListingControl extends MainControl {
 			$search_type = 'internal';
 		} elseif (strpos($referer,"google")) {
 			if ($referer_has_query) {
-				parse_str($parsed_q, $referer_search_query);
-				$google_parsed_keyword = $parsed_q['q'];
-				if (!isset($parsed_q['q'])) {
-					$keyword = $classification_name;
+			$gpp_match = preg_match('/.*q=([^&]+).*/', $referer, $matches);
+			if ($gpp_match) {
+				$google_query_param = $matches[1];
+			}
+				//parse_str($parsed_q, $referer_search_query);
+				//$google_parsed_keyword = $parsed_q['q'];
+				if ($google_query_param) {
+					$keyword = $google_query_param;
 				} else {
-					$keyword = urldecode($parsed_q['q']);
+					$keyword = $classification_name;
 				}
 			} else {
 				$keyword = $classification_name;
@@ -1003,14 +1002,13 @@ class ListingControl extends MainControl {
         
 		
 		dev_log::write("cur url = $cur_url");
-		dev_log::write("parsed cur url = ".var_export($parsed_cur_url,true));
+		//dev_log::write("parsed cur url = ".var_export($parsed_cur_url,true));
 		dev_log::write("referer = $referer");
 		dev_log::write("referer has query = $referer_has_query");
-		dev_log::write("parsed referer = ".var_export($parsed_referer,true));
+		//dev_log::write("parsed referer = ".var_export($parsed_referer,true));
 		dev_log::write("parsed referer host = {$parsed_referer['host']}");
-		dev_log::write("referer search query = ".var_export($referer_search_query,true));
+		//dev_log::write("referer search query = ".var_export($referer_search_query,true));
 		dev_log::write("google query param = $google_query_param");
-		dev_log::write("google parsed keyword = $google_parsed_keyword");
 		dev_log::write("search_type = $search_type");
 		dev_log::write("keyword = $keyword");
 		dev_log::write("--------------------------------");
