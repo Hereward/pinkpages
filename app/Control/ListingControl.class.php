@@ -985,7 +985,7 @@ class ListingControl extends MainControl {
 		dev_log::write("google search query = $google_search_query");
 		dev_log::write("search_type = $search_type");
 		dev_log::write("keyword = $keyword");
-		
+		dev_log::write("--------------------------------");
 		return $keyword;
 
 	}
