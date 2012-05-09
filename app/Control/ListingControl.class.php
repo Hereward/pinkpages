@@ -953,7 +953,7 @@ class ListingControl extends MainControl {
 		$parsed_cur_url = parse_url($cur_url);
 		
 		$referer_has_query = (isset($parsed_referer['query']))?1:0;
-		$referer_search_query = '';
+		//$referer_search_query = '';
 		
 		
 		//die($cur_url);
@@ -964,7 +964,7 @@ class ListingControl extends MainControl {
 		$keyword = '';
 		$search_type = '';
 		//$google_search_query = '[empty]';
-		$referer_search_query = ($referer_has_query)?$parsed_referer['query']:'';
+		$referer_search_query = ($referer_has_query)?$parsed_referer['query']:'[empty]';
 		$google_parsed_keyword = '[empty]';
 		if (!$referer) {
 			$keyword = $classification_name;
