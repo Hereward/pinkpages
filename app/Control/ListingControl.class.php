@@ -949,9 +949,10 @@ class ListingControl extends MainControl {
 
 		$referer = (isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
 		$parsed_referer = parse_url($referer);
-		
-		var_dump($parsed_referer);
-		die();
+		$cur_url = dev_log::get_cur_url();
+		die($cur_url);
+		//var_dump($parsed_referer);
+		//die();
 		//var_dump($parsed_referer);
 		//die();
 		$keyword = '';

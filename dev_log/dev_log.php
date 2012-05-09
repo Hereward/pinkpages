@@ -59,6 +59,17 @@ class dev_log {
 	}
 	
 	
+     public static function get_cur_url() {
+		$ts = date("y/m/d : H:i:s", time());
+		$protocol = strpos(strtolower($_SERVER['SERVER_PROTOCOL']),'https')=== FALSE ? 'http' : 'https';
+		$host     = $_SERVER['HTTP_HOST'];
+		$script   = $_SERVER['SCRIPT_NAME'];
+		$params   = $_SERVER['QUERY_STRING'];
+		$currentUrl = $protocol . '://' . $host . $script . '?' . $params;
+		$remote_addr = $_SERVER['REMOTE_ADDR'];
+		return $currentUrl;
+	}
+	
 	public function timer($func) {
 		static $start_time;
 		$ts = date("y/m/d : H:i:s", time());
