@@ -1036,7 +1036,7 @@ class ListingControl extends MainControl {
 		$shire_name							= (!empty($_GET['shire_name']))?$_GET['shire_name']:NULL;
 		$shire_town							= (!empty($_GET['shire_town']))?$_GET['shire_town']:NULL;
 		$state                              = (!empty($_GET['state']))?$_GET['state']:NULL;
-		
+		$location = '';
 
 		if($state == ''){
 			$state = ($this->listingFacade->isStateExistsBySuburb($shire_town)) ? $this->listingFacade->isStateExistsBySuburb($shire_town) : $this->listingFacade->isStateExistsByRegion($shire_name);
@@ -1085,9 +1085,11 @@ class ListingControl extends MainControl {
 				if ($state == 'NSW') {
 					$location = 'All Sydney';
 				} elseif ($state == 'VIC') {
-					$location = 'Victoria Region';
+					$location = 'All Melbourne';
 				} elseif ($state == 'ACT') {
 					$location = 'Canberra Region';
+				} else {
+					$location = 'All States';
 				}
 				
 			} else {
