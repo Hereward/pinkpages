@@ -940,7 +940,7 @@ class ListingControl extends MainControl {
 
 	}
 	
-	public function resolve_keyword($location='', $return_default='') {
+	public function resolve_keyword($location='', $return_default='') { 
 		$class_id = $_GET['search'];
 
 		$classification_array = $this->listingFacade->getOneClassification($class_id);
