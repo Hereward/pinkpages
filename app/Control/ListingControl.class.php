@@ -940,7 +940,7 @@ class ListingControl extends MainControl {
 
 	}
 	
-	public function resolve_keyword($location='', $default_keyword='') {
+	public function resolve_keyword($location='', $return_default='') {
 		$class_id = $_GET['search'];
 
 		$classification_array = $this->listingFacade->getOneClassification($class_id);
@@ -948,6 +948,7 @@ class ListingControl extends MainControl {
 		$classification_name = trim($classification_name);
         $classification_name = ucwords(strtolower($classification_name));
         
+        $default_keyword = $classification_name;
 		$referer = (isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
 		$parsed_referer = parse_url($referer);
 		$cur_url = dev_log::get_cur_url();
@@ -970,7 +971,9 @@ class ListingControl extends MainControl {
 		//$google_search_query = '[empty]';
 		//$referer_search_query = ($referer_has_query)?$parsed_referer['query']:'[empty]';
 		//$google_parsed_keyword = '[empty]';
-		if (!$referer) {
+		if ($return_default) {
+			$keyword = $default_keyword;
+		} elseif (!$referer) {
 			$keyword = $classification_name. ' ' .$location;
 			$search_type = 'direct';
 		} elseif ($parsed_referer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referer['host'] == 'www.pinkpages.com.au') {
