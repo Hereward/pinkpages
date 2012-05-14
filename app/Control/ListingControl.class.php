@@ -741,7 +741,7 @@ class ListingControl extends MainControl {
 	public function boldListing()
 	{
 		$referer = (isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
-        dev_log::cur_url('boldListing | referer = $referer');
+        dev_log::cur_url("boldListing | referer = $referer");
 		
 		$do            	= $_GET['do'];
 		$action			= $_GET['action'];
