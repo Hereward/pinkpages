@@ -1162,12 +1162,12 @@ class ListingControl extends MainControl {
 		$this->page->addCssStyle("autosuggest_inquisitor.css");
 
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
-		$default_keyword  = urldecode(ucwords(strtolower($_GET['category'])));
-		
+		//$default_keyword  = urldecode(ucwords(strtolower($_GET['category'])));
+		$default_keyword  = $this->resolve_keyword($location,true);
 		
 		
 		$location = ucwords(strtolower($location));
-		$keyword = $this->resolve_keyword($location,$default_keyword);
+		$keyword = $this->resolve_keyword($location);
 
 		$this->page->assign("category", $category);
 		$this->page->assign("keyword" , $keyword);
@@ -1367,15 +1367,15 @@ class ListingControl extends MainControl {
 		$this->page->addCssStyle("autosuggest_inquisitor.css");
 
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
-		$default_keyword  = urldecode(ucwords(strtolower($_GET['category'])));
-		
+		//$default_keyword  = urldecode(ucwords(strtolower($_GET['category'])));
+		$default_keyword  = $this->resolve_keyword($location,true);
 		
 		
 
 	    //$classification_name = urlencode($classification_name);
 		
 		$location = ucwords(strtolower($location));
-        $keyword = $this->resolve_keyword($location,$default_keyword);
+        $keyword = $this->resolve_keyword($location);
 		$this->page->assign("category", $category);
 		$this->page->assign("keyword" , $keyword);
 		$this->page->assign("default_keyword" , $default_keyword);
