@@ -971,10 +971,10 @@ class ListingControl extends MainControl {
 		//$referer_search_query = ($referer_has_query)?$parsed_referer['query']:'[empty]';
 		//$google_parsed_keyword = '[empty]';
 		if (!$referer) {
-			$keyword = $classification_name;
+			$keyword = $classification_name. ' ' .$location;
 			$search_type = 'direct';
 		} elseif ($parsed_referer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referer['host'] == 'www.pinkpages.com.au') {
-			$keyword = $classification_name;
+			$keyword = $classification_name. ' ' .$location;
 			$search_type = 'internal';
 		} elseif (strpos($referer,"google")) {
 			if ($referer_has_query) {
@@ -990,11 +990,11 @@ class ListingControl extends MainControl {
 					$keyword = $classification_name. ' ' .$location;
 				}
 			} else {
-				$keyword = $classification_name;
+				$keyword = $classification_name. ' ' .$location;
 			}
 			$search_type = 'google';
 		} else {
-			$keyword = $classification_name;
+			$keyword = $classification_name. ' ' .$location;
 			$search_type = 'other';
 		}
 		//print "HOST = {$parsed_referer['host']} <br/>";
@@ -1011,7 +1011,7 @@ class ListingControl extends MainControl {
 		//dev_log::write("referer search query = ".var_export($referer_search_query,true));
 		dev_log::write("google query param = $google_query_param");
 		dev_log::write("search_type = $search_type");
-		dev_log::write("keyword = $keyword");
+		dev_log::write("keyword passed to Google = $keyword");
 		dev_log::write("default_keyword = $default_keyword");
 		dev_log::write("--------------------------------");
 		return $keyword;
