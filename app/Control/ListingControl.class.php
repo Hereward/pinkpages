@@ -734,7 +734,7 @@ class ListingControl extends MainControl {
 	function pull_keyword_from_referer_pp() {
 		$referer = (isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
         dev_log::cur_url("pull_keyword_from_referer_pp | referer = $referer");
-        $parsed = parse_url($url);
+        $parsed = parse_url($url, PHP_URL_PATH);
         dev_log::cur_url("path = {$parsed['path']}");
         return '';
 	}
