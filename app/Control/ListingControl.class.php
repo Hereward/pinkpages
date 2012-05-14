@@ -740,9 +740,14 @@ class ListingControl extends MainControl {
 	 */
 	public function boldListing()
 	{
+		
+        dev_log::cur_url('boldListing');
+		
 		$do            	= $_GET['do'];
 		$action			= $_GET['action'];
 		$this->listingFacade->addDetails($_GET);
+		
+		
 
 		$this->listingFacade->popularPageCount("5");
 		$this->listingFacade->businessStats($_GET);
