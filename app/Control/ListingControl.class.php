@@ -736,6 +736,8 @@ class ListingControl extends MainControl {
         dev_log::cur_url("pull_keyword_from_referer_pp | referer = $referer");
         $parsed = parse_url($referer);
         $segments = implode('/', $parsed['path']);
+        var_dump($segments);
+        die();
         dev_log::cur_url("path = {$parsed['path']} | count = ".count($segments));
         
         return '';
