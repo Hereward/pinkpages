@@ -940,7 +940,7 @@ class ListingControl extends MainControl {
 
 	}
 	
-	public function resolve_keyword() {
+	public function resolve_keyword($location='', $default_keyword='') {
 		$class_id = $_GET['search'];
 
 		$classification_array = $this->listingFacade->getOneClassification($class_id);
@@ -984,7 +984,7 @@ class ListingControl extends MainControl {
 				//parse_str($parsed_q, $referer_search_query);
 				//$google_parsed_keyword = $parsed_q['q'];
 				if ($google_query_param) {
-					$keyword = urldecode($google_query_param);
+					$keyword = urldecode($google_query_param). ' ' .$location;
 				} else {
 					$keyword = $classification_name;
 				}
@@ -1157,14 +1157,17 @@ class ListingControl extends MainControl {
 		$this->page->addCssStyle("autosuggest_inquisitor.css");
 
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
-		//$keyword  = urldecode(ucwords(strtolower($_GET['category'])));
+		$default_keyword  = urldecode(ucwords(strtolower($_GET['category'])));
 		
-		$keyword = $this->resolve_keyword();
+		
 		
 		$location = ucwords(strtolower($location));
+		$keyword = $this->resolve_keyword($location,$default_keyword);
 
 		$this->page->assign("category", $category);
 		$this->page->assign("keyword" , $keyword);
+		$this->page->assign("default_keyword" , $default_keyword);
+		
 		
 		$this->page->assign("location", $location);
 
@@ -1359,17 +1362,18 @@ class ListingControl extends MainControl {
 		$this->page->addCssStyle("autosuggest_inquisitor.css");
 
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
-		//$keyword  = urldecode(ucwords(strtolower($_GET['category'])));
+		$default_keyword  = urldecode(ucwords(strtolower($_GET['category'])));
 		
-		$keyword = $this->resolve_keyword();
+		
 		
 
 	    //$classification_name = urlencode($classification_name);
 		
 		$location = ucwords(strtolower($location));
-
+        $keyword = $this->resolve_keyword($location,$default_keyword);
 		$this->page->assign("category", $category);
 		$this->page->assign("keyword" , $keyword);
+		$this->page->assign("default_keyword" , $default_keyword);
 		$this->page->assign("location", $location);
 
 		$sortby			= (!empty($_GET['sortby']))?$_GET['sortby']:NULL;
