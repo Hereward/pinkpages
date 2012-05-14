@@ -740,8 +740,8 @@ class ListingControl extends MainControl {
 	 */
 	public function boldListing()
 	{
-		
-        dev_log::cur_url('boldListing');
+		$referer = (isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
+        dev_log::cur_url('boldListing | referer = $referer');
 		
 		$do            	= $_GET['do'];
 		$action			= $_GET['action'];
@@ -945,13 +945,18 @@ class ListingControl extends MainControl {
 
 	}
 	
-	public function resolve_keyword($location='', $return_default='') { 
+	public function resolve_keyword($location='', $return_default='', $class='') { 
 		$class_id = $_GET['search'];
 
 		$classification_array = $this->listingFacade->getOneClassification($class_id);
-		$classification_name = $classification_array[0]['localclassification_name'];
-		$classification_name = trim($classification_name);
-        $classification_name = ucwords(strtolower($classification_name));
+		$classification_name = '';
+		if (!$class) {
+		    $classification_name = $classification_array[0]['localclassification_name'];
+		    $classification_name = trim($classification_name);
+            $classification_name = ucwords(strtolower($classification_name));
+		} else {
+			$classification_name = $class;
+		}
         
         $default_keyword = $classification_name;
 		$referer = (isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
@@ -979,10 +984,10 @@ class ListingControl extends MainControl {
 		if ($return_default) {
 			$keyword = $default_keyword;
 		} elseif (!$referer) {
-			$keyword = $classification_name. ' ' .$location;
+			$keyword = trim($classification_name. ' ' .$location);
 			$search_type = 'direct';
 		} elseif ($parsed_referer['host'] == 'dev.sydneypinkpagesonline.com.au' || $parsed_referer['host'] == 'www.pinkpages.com.au') {
-			$keyword = $classification_name. ' ' .$location;
+			$keyword = trim($classification_name. ' ' .$location);
 			$search_type = 'internal';
 		} elseif (strpos($referer,"google")) {
 			if ($referer_has_query) {
@@ -995,14 +1000,14 @@ class ListingControl extends MainControl {
 				if ($google_query_param) {
 					$keyword = urldecode($google_query_param);
 				} else {
-					$keyword = $classification_name. ' ' .$location;
+					$keyword = trim($classification_name. ' ' .$location);
 				}
 			} else {
-				$keyword = $classification_name. ' ' .$location;
+				$keyword = trim($classification_name. ' ' .$location);
 			}
 			$search_type = 'google';
 		} else {
-			$keyword = $classification_name. ' ' .$location;
+			$keyword = trim($classification_name. ' ' .$location);
 			$search_type = 'other';
 		}
 		//print "HOST = {$parsed_referer['host']} <br/>";
@@ -1174,7 +1179,7 @@ class ListingControl extends MainControl {
 		
 		
 		$location = ucwords(strtolower($location));
-		$keyword = $this->resolve_keyword($location);
+		$keyword = $this->resolve_keyword($location,false);
 
 		$this->page->assign("category", $category);
 		$this->page->assign("keyword" , $keyword);
@@ -1382,7 +1387,7 @@ class ListingControl extends MainControl {
 	    //$classification_name = urlencode($classification_name);
 		
 		$location = ucwords(strtolower($location));
-        $keyword = $this->resolve_keyword($location);
+        $keyword = $this->resolve_keyword($location,false);
 		$this->page->assign("category", $category);
 		$this->page->assign("keyword" , $keyword);
 		$this->page->assign("default_keyword" , $default_keyword);
