@@ -11,7 +11,7 @@
 			<input type="hidden" name="SearchOption" id="SearchOption" type="radio" value="0" checked="checked" /> <h2>Keyword</h2> 
 	
 		</li>
-		<li><p class="sideinput"><input type="text" name="Search1" id="Search1" value="{$default_keyword|stripslashes}" size="20" class="largeinputbox"/></p><br /><li>
+		<li><p class="sideinput"><input type="text" name="Search1" id="Search1" value="{if ($default_keyword)}$default_keyword|stripslashes{else}{$keyword|stripslashes}{/if}" size="20" class="largeinputbox"/></p><br /><li>
 	
 		<li><h2>Location</h2></li>
 		<li>
