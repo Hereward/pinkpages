@@ -737,7 +737,7 @@ class ListingControl extends MainControl {
         $parsed = parse_url($referer);
         $segments = explode('/', $parsed['path']);
 
-        dev_log::cur_url("path = {$parsed['path']} | [count($segments)] count = ".count($segments));
+        dev_log::cur_url("path = {$parsed['path']} | count = ".count($segments));
         
         return '';
 	}
