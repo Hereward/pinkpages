@@ -731,7 +731,13 @@ class ListingControl extends MainControl {
 	}/* END search */
 
 
-
+	function pull_keyword_from_referer_pp() {
+		$referer = (isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
+        dev_log::cur_url("pull_keyword_from_referer_pp | referer = $referer");
+        $parsed = parse_url($url);
+        dev_log::cur_url("path = {$parsed['path']}");
+        return '';
+	}
 
 	/**
 	 *  boldListing
@@ -740,8 +746,8 @@ class ListingControl extends MainControl {
 	 */
 	public function boldListing()
 	{
-		$referer = (isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
-        dev_log::cur_url("boldListing | referer = $referer");
+		$referer_keyword =  $this->pull_keyword_from_referer_pp();
+		
 		
 		$do            	= $_GET['do'];
 		$action			= $_GET['action'];
@@ -945,6 +951,8 @@ class ListingControl extends MainControl {
 
 	}
 	
+
+	
 	public function resolve_keyword($location='', $return_default='', $class='') { 
 		$class_id = $_GET['search'];
 
@@ -968,19 +976,9 @@ class ListingControl extends MainControl {
 		$google_query_param = '[empty]';
 		$dummy_ref = 'http://www.google.com.au/url?sa=t&rct=j&q=pinkpages%20hairdresser&source=web&cd=1&ved=0CFgQFjAA&url=http%3A%2F%2Fwww.pinkpages.com.au%2FHAIRDRESSERS%2FNSW%2F1898&ei=XNKpT9bJFaq1iQeBlvmsAw&usg=AFQjCNGpBctJPJ_VVChdPfO5WfwlopFmxQ&cad=rja';
 		
-		//$referer_search_query = '';
-		
-		
-		//die($cur_url);
-		//var_dump($parsed_referer);
-		//die();
-		//var_dump($parsed_referer);
-		//die();
 		$keyword = '';
 		$search_type = '';
-		//$google_search_query = '[empty]';
-		//$referer_search_query = ($referer_has_query)?$parsed_referer['query']:'[empty]';
-		//$google_parsed_keyword = '[empty]';
+
 		if ($return_default) {
 			$keyword = $default_keyword;
 		} elseif (!$referer) {
