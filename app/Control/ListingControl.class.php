@@ -968,11 +968,11 @@ class ListingControl extends MainControl {
 
 	
 	public function resolve_keyword($location='', $return_default='', $class='') { 
-		$class_id = $_GET['search'];
 
-		$classification_array = $this->listingFacade->getOneClassification($class_id);
 		$classification_name = '';
 		if (!$class) {
+			$class_id = $_GET['search'];
+			$classification_array = $this->listingFacade->getOneClassification($class_id);
 		    $classification_name = $classification_array[0]['localclassification_name'];
 		    $classification_name = trim($classification_name);
             $classification_name = ucwords(strtolower($classification_name));
