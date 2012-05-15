@@ -979,11 +979,13 @@ class ListingControl extends MainControl {
 
 		$classification_name = '';
 		if (!$class) {
-			$class_id = $_GET['search'];
-			$classification_array = $this->listingFacade->getOneClassification($class_id);
-		    $classification_name = $classification_array[0]['localclassification_name'];
-		    $classification_name = trim($classification_name);
-            $classification_name = ucwords(strtolower($classification_name));
+			if (isset($_GET['search'])) {
+				$class_id = $_GET['search'];
+				$classification_array = $this->listingFacade->getOneClassification($class_id);
+			    $classification_name = $classification_array[0]['localclassification_name'];
+			    $classification_name = trim($classification_name);
+	            $classification_name = ucwords(strtolower($classification_name));
+			}
 		} else {
 			$classification_name = $class;
 		}
