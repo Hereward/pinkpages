@@ -41,7 +41,7 @@ new google.ads.search.Ads(pageOptions, adblock1, adblock2);
 </script>
 {/literal}
 <script type="text/javascript" charset="utf-8"> 
-var ads_per_block = "{$ads_per_block}";
+var ads_per_block = '{$ads_per_block}';
 alert("A ads_per_block = "+ads_per_block);
 init_gcs('{$keyword}',ads_per_block);
 </script>
