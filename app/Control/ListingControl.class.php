@@ -739,7 +739,7 @@ class ListingControl extends MainControl {
         $seg_count = count($segments);
         $keyword = '';
 
-        dev_log::cur_url("path = {$parsed['path']} | count = $seg_count");
+       // dev_log::cur_url("path = {$parsed['path']} | count = $seg_count");
         
         if ($seg_count == 4) {
         	$keyword = $segments[2];
@@ -764,8 +764,12 @@ class ListingControl extends MainControl {
 		$action			= $_GET['action'];
 		$this->listingFacade->addDetails($_GET);
 		
+		$rank_count = $this->listingFacade->BusinessRankedCount();
 		
 
+		dev_log::write("rank count = $rank_count");
+		
+		
 		$this->listingFacade->popularPageCount("5");
 		$this->listingFacade->businessStats($_GET);
 		$this->page->assign("contactUs",$this->request->createURL("Listing", "contactUs","ID=".$_GET['ID']."&act=".$_GET['action']));
@@ -1043,6 +1047,8 @@ class ListingControl extends MainControl {
 		return $keyword;
 
 	}
+	
+	
 
 	/**
 	 *  categorySearch

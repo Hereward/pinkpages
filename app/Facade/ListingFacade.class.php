@@ -4914,6 +4914,15 @@ else{
 		$result						=$this->myDB->query($fetchBusinessBrand);
 		return $result;
 	}
+	
+   public function BusinessRankedCount() // Hereward 20120515
+	{
+		$BusinessID				= $_GET['ID'];
+		$fetchBusinessRank		= "SELECT * FROM `business_ranks` WHERE `business_id`='{$BusinessID}'";
+		$result					= $this->myDB->query($fetchBusinessRank);
+		$count = count($result);
+		return $count;
+	}
 
 	public function businessStats($get)
 	{
