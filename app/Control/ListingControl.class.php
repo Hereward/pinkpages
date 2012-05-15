@@ -736,10 +736,18 @@ class ListingControl extends MainControl {
         dev_log::cur_url("pull_keyword_from_referer_pp | referer = $referer");
         $parsed = parse_url($referer);
         $segments = explode('/', $parsed['path']);
+        $seg_count = count($segments);
+        $keyword = '';
 
-        dev_log::cur_url("path = {$parsed['path']} | count = ".count($segments));
+        dev_log::cur_url("path = {$parsed['path']} | count = $seg_count");
         
-        return '';
+        if ($seg_count == 4) {
+        	$keyword = $segments[2];
+        } elseif ($seg_count == 7) {
+        	$keyword = $segments[7];
+        }
+
+        return $keyword;
 	}
 
 	/**
@@ -749,7 +757,7 @@ class ListingControl extends MainControl {
 	 */
 	public function boldListing()
 	{
-		$referer_keyword =  $this->pull_keyword_from_referer_pp();
+		//$referer_keyword =  $this->pull_keyword_from_referer_pp();
 		
 		
 		$do            	= $_GET['do'];
@@ -800,7 +808,10 @@ class ListingControl extends MainControl {
 
 		$classi   = ucwords(strtolower($res[5][0]['localclassification_name']));
 		$location = ucwords(strtolower($res[0][0]['business_suburb']));
-
+		
+		$keyword = $this->resolve_keyword($classi,false,$location);
+        $this->page->assign('keyword',$keyword);
+        
 		$this->page->assign("classi", $classi);
 		$class_count= count($classifications_array);
 		$this->page->assign("classifications", $classifications_array);

@@ -242,8 +242,10 @@
 
 
 
-{include file="footer.tpl"}
+{include file="footer.tpl" google_ads='1'}
 
 <script type="text/javascript" language="javascript">
   /*window.onload = setOption("c");*/
 </script>
+
+ {include file="google_custom_search.tpl"}
