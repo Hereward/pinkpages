@@ -816,6 +816,7 @@ class ListingControl extends MainControl {
 		$keyword = $this->resolve_keyword($classi,false,$location);
         $this->page->assign('keyword',$keyword);
         $this->page->assign('ads_per_block',2);
+        $this->page->assign('ad_lines',2);
         $this->page->assign('rank_count',$rank_count);
         
         
