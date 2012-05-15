@@ -242,7 +242,7 @@
 
 
 
-{include file="footer.tpl" google_ads='1'}
+{include file="footer.tpl" google_ads='1' ads_per_block='2'}
 
 <script type="text/javascript" language="javascript">
   /*window.onload = setOption("c");*/
