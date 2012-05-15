@@ -10,7 +10,7 @@
 					&nbsp;&nbsp;
 				</li>
 				{if ($google_ads)}
-				  {include ad_container_id="adcontainer1" gab=1 file="google_ad.tpl"}
+				  {include ad_container_id='adcontainer1' gab=1 file='google_ad.tpl' ads_per_block=2}
 				{/if}
 				<li style="float:center;">
 					Copyright &copy 2012 Dawson Media Pty Ltd. &nbsp;&nbsp; <a href="{$SITE_PATH}terms_conditions">Terms and Conditions</a>&nbsp;&nbsp; <a href="{$SITE_PATH}privacy">Privacy Policy</a>&nbsp;&nbsp; <a href="{$SITE_PATH}disclaimer">Disclaimer</a>
