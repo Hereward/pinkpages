@@ -1042,7 +1042,7 @@ class ListingControl extends MainControl {
 		if ($referer) {
 			dev_log::write("referer = $referer");
 			dev_log::write("referer has query = $referer_has_query");
-			//dev_log::write("parsed referer = ".var_export($parsed_referer,true));
+			//dev_log::write("parsed referer = ".var_export($parsed_referer,true)); 
 			dev_log::write("parsed referer host = {$parsed_referer['host']}");
 		} else {
 			dev_log::write("No referer");
