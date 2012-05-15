@@ -1122,6 +1122,12 @@ class ListingControl extends MainControl {
 					$location = 'All Melbourne';
 				} elseif ($state == 'ACT') {
 					$location = 'Canberra Region';
+				} elseif ($state == 'NT') {
+					$location = 'All Darwin';
+				} elseif ($state == 'WA') {
+					$location = 'All Perth';
+				} elseif ($state == 'SA') {
+					$location = 'All Adelaide';
 				} else {
 					$location = 'All States';
 				}
