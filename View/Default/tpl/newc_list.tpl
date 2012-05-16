@@ -13,117 +13,124 @@
 				<td valign="top">
 					<table cellpadding="0" cellspacing="0">
 						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Accountants&Search2=Newcastle+Region">Accountants</a>
-							</td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Counselling&Search2=Newcastle+Region">Counselling</a>
-							</td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=FURNITURE+REMOVALS+%26+STORAGE&Search2=Newcastle+Region">Furniture
-									Removals &amp; Storage</a></td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=MASSAGE+THERAPEUTIC&Search2=Newcastle+Region">Massage
-									Therapeutic</a></td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Restaurants&Search2=Newcastle+Region">Restaurants</a>
-							</td>
-						</tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/ACCOUNTANTS/NSW/newcastle-region/608">Accountants</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/COUNSELLING/NSW/newcastle-region/1356">Counselling</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/FURNITURE+REMOVALS+%26+STORAGE/NSW/newcastle-region/1793">Furniture
+								Removals &amp; Storage</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/MASSAGE+THERAPEUTIC/NSW/newcastle-region/2307">Massage
+								Therapeutic</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/RESTAURANTS/NSW/newcastle-region/2830">Restaurants</a>
+						</td>
+					</tr>
 					</table></td>
 
 				<td valign="top">
 					<table cellpadding="0" cellspacing="0">
 						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Carpenters&Search2=Newcastle+Region">Carpenters</a>
-							</td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=FOOD+%26+GENERAL+STORES&Search2=Newcastle+Region">Food
-									&amp; General Stores</a></td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Conveyancing&Search2=Newcastle+Region">Conveyancing</a>
-							</td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Waterproofing&Search2=Newcastle+Region">Waterproofing</a>
-							</td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Bricklayers&Search2=Newcastle+Region">Bricklayers</a>
-							</td>
-						</tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/CARPENTERS/NSW/newcastle-region/1023">Carpenters</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/FOOD+%26+GENERAL+STORES/NSW/newcastle-region/1728">Food
+								&amp; General Stores</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/CONVEYANCING/NSW/newcastle-region/1335">Conveyancing</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/WATERPROOFING/NSW/newcastle-region/3463">Waterproofing</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/BRICKLAYERS/NSW/newcastle-region/900">Bricklayers</a>
+						</td>
+					</tr>
 					</table></td>
 
 				<td valign="top">
 					<table cellpadding="0" cellspacing="0">
 						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Chiropractors&Search2=Newcastle+Region">Chiropractors</a>
-							</td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Dentists&Search2=Newcastle+Region">Dentists</a>
-							</td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=SCHOOLS+-+PUBLIC&Search2=Newcastle+Region">School
-									- Public</a></td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=WINDSCREENS+%26+REPAIRS&Search2=Newcastle+Region">Windscreens
-									&amp; Repairs</a></td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Chemists&Search2=Newcastle+Region">Chemists</a>
-							</td>
-						</tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/CHIROPRACTORS/NSW/newcastle-region/1102">Chiropractors</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/DENTISTS/NSW/newcastle-region/1417">Dentists</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/SCHOOLS+-+PUBLIC/NSW/newcastle-region/2906">School
+								- Public</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/WINDSCREENS+%26+REPAIRS/NSW/newcastle-region/3518">Windscreens
+								&amp; Repairs</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/CHEMISTS/NSW/newcastle-region/1082">Chemists</a>
+						</td>
+					</tr>
 					</table></td>
 
 				<td valign="top">
 					<table cellpadding="0" cellspacing="0">
 						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=DEPARTMENT+STORES&Search2=Newcastle+Region">Department
-									Stores</a></td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Printers&Search2=Newcastle+Region">Printers</a>
-							</td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=MOTOR+ENGINEERS+%26+REPAIRERS&Search2=Newcastle+Region">Motor
-									Engineers &amp; Repairers</a></td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Vets&Search2=Newcastle+Region">Vets</a>
-							</td>
-						</tr>
-						<tr>
-							<td bgcolor="#e5e5e5" valign="top"><a
-								href="{$SITE_PATH}main.php?do=Listing&action=searchKeyword&Search1=Plasterers&Search2=Newcastle+Region">Plasterers</a>
-							</td>
-						</tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/DEPARTMENT+STORES/NSW/newcastle-region/1428">Department
+								Stores</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/PRINTERS/NSW/newcastle-region/2726">Printers</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/MOTOR+ENGINEERS+%26+REPAIRERS/NSW/newcastle-region/2233">Motor
+								Engineers &amp; Repairers</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/VETS/NSW/newcastle-region/3405">Vets</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="http://dev.sydneypinkpagesonline.com.au/PLASTERERS/NSW/newcastle-region/2668">Plasterers</a>
+						</td>
+					</tr>
 					</table></td>
 			</tr>
 		</tbody>
