@@ -2900,6 +2900,22 @@ class ListingFacade extends MainFacade {
 	    $marketID = $this->getMarketFromRegion($_GET['shire_name']);
 	  } else if(isset($_GET['search2'])){
 	    $marketID = $this->getMarketFromLocation($_GET['search2']);
+	  } else if(isset($_GET['state'])){
+	  	$state = $_GET['state'];
+	  	if ($state == 'VIC') {
+	  		$marketID = 4;
+	  	} elseif ($state == 'NSW') {
+	  		$marketID = 1;
+	  	} elseif ($state == 'QLD') {
+	  		$marketID = 5;
+	  	} elseif ($state == 'NT') {
+	  		$marketID = 6;
+	  	} elseif ($state == 'WA') {
+	  		$marketID = 7;
+	  	} elseif ($state == 'SA') {
+	  		$marketID = 8;
+	  	}
+	  	
 	  }
 	  
       $marketID = (isset($marketID[0]['market_id'])) ? $marketID[0]['market_id'] : 1;
