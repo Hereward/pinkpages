@@ -9,9 +9,14 @@
 				<li style="float:center;">
 					&nbsp;&nbsp;
 				</li>
+				{if ($rank_count<1)}
+	              {include file='google_ads_bl_footer.tpl'}
+                {/if}
+                {*
 				{if ($google_ads && $rank_count)}
 				  {include file='google_ads_bl_footer.tpl'}
 				{/if}
+				*}
 				
 					
 		</ul>

@@ -226,9 +226,12 @@
  {/section} 
  <div class="breaker"></div>
 {include file="social_networking_footer.tpl" }
+{*
 {if ($rank_count<1)}
 	{include file='google_ads_bl_footer.tpl'}
 {/if}
+*}
+
      <div class="mapbottom">
    <table align="center" width="98%">
    <tr><td height="6px" colspan="2"></td></tr>
