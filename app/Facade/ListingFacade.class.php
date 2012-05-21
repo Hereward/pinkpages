@@ -2900,8 +2900,18 @@ class ListingFacade extends MainFacade {
 	    $marketID = $this->getMarketFromRegion($_GET['shire_name']);
 	  } else if(isset($_GET['search2'])){
 	    $marketID = $this->getMarketFromLocation($_GET['search2']);
-	  } else if(isset($_GET['state'])){
+	  }
+	  
+      $marketID = (isset($marketID[0]['market_id'])) ? $marketID[0]['market_id'] : $this->resolve_market_id();
+	  
+      dev_log::write("getMarket: marketID = $marketID");
+	  return $marketID;  
+	}
+	
+	public function resolve_market_id() {
+	
 	  	$state = $_GET['state'];
+	  	
 	  	if ($state == 'VIC') {
 	  		$marketID = 4;
 	  	} elseif ($state == 'NSW') {
@@ -2914,14 +2924,10 @@ class ListingFacade extends MainFacade {
 	  		$marketID = 7;
 	  	} elseif ($state == 'SA') {
 	  		$marketID = 8;
+	  	} else {
+	  		$marketID = 1;
 	  	}
-	  	
-	  }
-	  
-      $marketID = (isset($marketID[0]['market_id'])) ? $marketID[0]['market_id'] : 1;
-	  
-	  return $marketID;
-	  
+	  	return $marketID;
 	}
 	
     public function getMarketFromSuburb($shire_town){
