@@ -182,6 +182,7 @@ class ListingFacade extends MainFacade {
 	
     public function get_url_alias($business_id) {
     	//die("hello");
+    	$output = '';
 		$classifications = '';
 		$sql = "SELECT
 					url_alias
@@ -191,16 +192,18 @@ class ListingFacade extends MainFacade {
 				WHERE
 					business_id=$business_id
 				";
-		dev_log::write("get_url_alias:SQL QUERY = $sql");	
+		
 		$result = $this->myDB->query($sql);
-		dev_log::write("QUERY COMPLETE");	
+		
         if(isset($result[0])){	
-        	return $result[0]['url_alias'];
-        	dev_log::write("FOUND url_alias in local_businesses table for ID = $business_id");	
+        	dev_log::write("FOUND url_alias in local_businesses table for ID = $business_id");
+        	$output = $result[0]['url_alias'];	
         } else {
         	dev_log::write("SQL SELECT url_alias in local_businesses table (ID = $business_id) = ZERO RESULTS");
-        	return $business_id;
+        	$output = $business_id;
         }
+        
+        return $output;
 	}
 	
      public function getClassificationsByBusinessComplete($business_id) {
