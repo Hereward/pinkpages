@@ -35,7 +35,7 @@
        
 			<tr>
 
-			<td> &nbsp;&nbsp;&nbsp;&nbsp;  <a style="font-size: 16px; font-weight: bold" href="{$values[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$values[i].localclassification_name}&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: normal;"> {$values[i].cnt} business results </span></a></td>
+			<td> &nbsp;&nbsp;&nbsp;&nbsp;  <a style="font-size: 16px; font-weight: normal" href="{$values[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$values[i].localclassification_name}&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;"> {$values[i].cnt} business results </span></a></td>
 			</tr>
         
 		{/section}
