@@ -181,6 +181,7 @@ class ListingFacade extends MainFacade {
 	}
 	
     public function get_url_alias($business_id) {
+    	die("hello");
 		$classifications = '';
 		$sql = "SELECT
 					url_alias
