@@ -755,6 +755,7 @@ class ListingControl extends MainControl {
    public function redirect_free_listing() {
 		$new_url = '';
 		//$cur_url = dev_log::get_cur_url();
+		dev_log::write("---------------------------------");
 		dev_log::cur_url("Listing::redirect_free_listing");
 		if (isset($_GET['url_alias'])) {
 			$url_alias = $_GET['url_alias'];
