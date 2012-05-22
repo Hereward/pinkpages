@@ -749,6 +749,20 @@ class ListingControl extends MainControl {
 
         return $keyword;
 	}
+	
+	
+	
+   public function redirect_free_listing() {
+		$new_url = '';
+		$cur_url = dev_log::get_cur_url();
+		dev_log::write("URL = $cur_url"); 
+		$parsed_cur_url = parse_url($cur_url);
+		//$path = $parsed_cur_url['path'];
+		//dev_log::write("PATH = $path");
+		//$bits = explode('/', $path);
+		
+		//header("Location: $new_url");
+	}
 
 	/**
 	 *  boldListing
@@ -759,6 +773,7 @@ class ListingControl extends MainControl {
 	{
 		//$referer_keyword =  $this->pull_keyword_from_referer_pp();
 		
+		$this->redirect_free_listing();
 		
 		$do            	= $_GET['do'];
 		$action			= $_GET['action'];

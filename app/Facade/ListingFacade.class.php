@@ -2890,6 +2890,8 @@ class ListingFacade extends MainFacade {
 		}
 	}
 	
+
+	
 	public function getMarket() {
 	
 	  $marketID = null;

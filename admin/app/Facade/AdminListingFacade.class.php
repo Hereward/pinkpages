@@ -1156,10 +1156,11 @@ class AdminListingFacade extends MainFacade {
 							`archived` ,
 							`account_id` ,
 							`business_logo` ,
-							`business_description`
+							`business_description`,
+							`url_alias`
 							)
 							VALUES (
-							'', 'Free', '{$name}', '{$street1}', '{$street2}', 0, 0, '{$suburb}', '{$state}', '{$row[5]}', '{$row[6]}', '{$row[7]}', '{$faxSTD}', '{$fax}', '{$email}', '{$url}', '{$origin}', '{$shireID}', '{$shireName}', '{$shireTown}', '{$mobile}', '{$contact}', {$boldListing}, {$archived}, '{$accountID}', '{$logo}', '{$description}');";						 
+							'', 'Free', '{$name}', '{$street1}', '{$street2}', 0, 0, '{$suburb}', '{$state}', '{$row[5]}', '{$row[6]}', '{$row[7]}', '{$faxSTD}', '{$fax}', '{$email}', '{$url}', '{$origin}', '{$shireID}', '{$shireName}', '{$shireTown}', '{$mobile}', '{$contact}', {$boldListing}, {$archived}, '{$accountID}', '{$logo}', '{$description}', '{$row[13]}');";						 
 
 			//$res1	=   mysql_query($sql);
 
