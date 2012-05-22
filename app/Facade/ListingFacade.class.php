@@ -2906,7 +2906,7 @@ class ListingFacade extends MainFacade {
 	  
       $marketID = (isset($marketID[0]['market_id'])) ? $marketID[0]['market_id'] : $this->resolve_market_id();
 	  
-      dev_log::write("getMarket: marketID = $marketID");
+      //dev_log::write("getMarket: marketID = $marketID");
 	  return $marketID;  
 	}
 	
