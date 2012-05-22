@@ -2924,6 +2924,8 @@ class ListingFacade extends MainFacade {
 	  		$marketID = 7;
 	  	} elseif ($state == 'SA') {
 	  		$marketID = 8;
+	  	} elseif ($state == 'TAS') {
+	  		$marketID = 9;
 	  	} else {
 	  		$marketID = 1;
 	  	}
@@ -3549,7 +3551,7 @@ class ListingFacade extends MainFacade {
 			if($location) {
 				$shire_id = $this->isRegionExists($location);
 				if($shire_id) {
-					if($shire_id!=59 && $shire_id!=314 && $shire_id!=315 && $shire_id!=316 && $shire_id!=317 && $shire_id!=318 && $shire_id!=319) { //  && $shire_id!=314 VICTORIA HACK ADDED 20120206
+					if($shire_id!=59 && $shire_id!=314 && $shire_id!=315 && $shire_id!=316 && $shire_id!=317 && $shire_id!=318 && $shire_id!=319 && $shire_id!=320) { //  && $shire_id!=314 VICTORIA HACK ADDED 20120206
 						$location_cond = " AND lb.shire_name='".$this->myDb->quote($location)."'";
 						$regionURLAlias = $this->getRegionAlias($location);
 						$param = "&shire_name=".urlencode($regionURLAlias);
