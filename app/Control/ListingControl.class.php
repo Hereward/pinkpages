@@ -754,14 +754,14 @@ class ListingControl extends MainControl {
 	
    public function redirect_free_listing() {
 		$new_url = '';
-		$cur_url = dev_log::get_cur_url();
-		dev_log::write("URL = $cur_url"); 
-		$parsed_cur_url = parse_url($cur_url);
-		//$path = $parsed_cur_url['path'];
-		//dev_log::write("PATH = $path");
-		//$bits = explode('/', $path);
-		
-		//header("Location: $new_url");
+		//$cur_url = dev_log::get_cur_url();
+		if (isset($_GET['url_alias'])) {
+			$url_alias = $_GET['url_alias'];
+			if (is_numeric($url_alias)) {
+				dev_log::write("url_alias = $url_alias | I AM NUMERIC - REDIRECT ME!");
+				//header("Location: $new_url");
+			}		
+		}
 	}
 
 	/**
