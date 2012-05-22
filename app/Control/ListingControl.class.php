@@ -762,7 +762,7 @@ class ListingControl extends MainControl {
 			if (is_numeric($url_alias)) {
 				dev_log::write("url_alias = $url_alias | I AM NUMERIC - REDIRECT ME!");
 				
-				$new_url_alias = get_url_alias($id);
+				$new_url_alias = $this->listingFacade->get_url_alias($id);
 				dev_log::write("new_url_alias = $new_url_alias"); 
 				
 				if ($new_url_alias == $url_alias) {
