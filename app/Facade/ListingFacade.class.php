@@ -180,6 +180,24 @@ class ListingFacade extends MainFacade {
 		return $result;
 	}
 	
+    public function get_url_alias($business_id) {
+		$classifications = '';
+		$sql = "SELECT
+					url_alias
+				FROM
+					local_businesses
+						
+				WHERE
+					business_id=$business_id
+				";
+		$result = $this->myDB->query($sql);
+        if(isset($result[0])){	
+        	return $result[0]['url_alias'];
+        } else {
+        	return $business_id;
+        }
+	}
+	
      public function getClassificationsByBusinessComplete($business_id) {
 		$classifications = array();
 		$sql = "SELECT

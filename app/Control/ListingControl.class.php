@@ -758,8 +758,17 @@ class ListingControl extends MainControl {
 		dev_log::cur_url("Listing::redirect_free_listing");
 		if (isset($_GET['url_alias'])) {
 			$url_alias = $_GET['url_alias'];
+			$id = $_GET['ID'];
 			if (is_numeric($url_alias)) {
 				dev_log::write("url_alias = $url_alias | I AM NUMERIC - REDIRECT ME!");
+				
+				$new_url_alias = get_url_alias($id);
+				dev_log::write("new_url_alias = $new_url_alias"); 
+				
+				if ($new_url_alias == $url_alias) {
+					dev_log::write("OOOPS - looks like we have no URL ALIAS for this listing!");
+				}
+				
 				//header("Location: $new_url");
 			}		
 		}
