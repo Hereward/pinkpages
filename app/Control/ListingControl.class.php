@@ -755,6 +755,7 @@ class ListingControl extends MainControl {
    public function redirect_free_listing() {
 		$new_url = '';
 		//$cur_url = dev_log::get_cur_url();
+		dev_log::cur_url("Listing::redirect_free_listing");
 		if (isset($_GET['url_alias'])) {
 			$url_alias = $_GET['url_alias'];
 			if (is_numeric($url_alias)) {
@@ -782,7 +783,7 @@ class ListingControl extends MainControl {
 		$rank_count = $this->listingFacade->BusinessRankedCount();
 		
 
-		dev_log::write("rank count = $rank_count");
+		//dev_log::write("rank count = $rank_count");
 		
 		
 		$this->listingFacade->popularPageCount("5");
@@ -1052,23 +1053,23 @@ class ListingControl extends MainControl {
 		//die();
         
 		
-		dev_log::write("cur url = $cur_url");
+		//dev_log::write("cur url = $cur_url");
 		//dev_log::write("parsed cur url = ".var_export($parsed_cur_url,true));
 		if ($referer) {
-			dev_log::write("referer = $referer");
-			dev_log::write("referer has query = $referer_has_query");
+			//dev_log::write("referer = $referer");
+			//dev_log::write("referer has query = $referer_has_query");
 			//dev_log::write("parsed referer = ".var_export($parsed_referer,true)); 
-			dev_log::write("parsed referer host = {$parsed_referer['host']}");
-			dev_log::write("google query param = $google_query_param");
+			//dev_log::write("parsed referer host = {$parsed_referer['host']}");
+			//dev_log::write("google query param = $google_query_param");
 		} else {
 			dev_log::write("No referer");
 		}
 		//dev_log::write("referer search query = ".var_export($referer_search_query,true));
 		
-		dev_log::write("search_type = $search_type");
-		dev_log::write("keyword passed to Google = $keyword");
-		dev_log::write("default_keyword = $default_keyword");
-		dev_log::write("--------------------------------");
+		//dev_log::write("search_type = $search_type");
+		//dev_log::write("keyword passed to Google = $keyword");
+		//dev_log::write("default_keyword = $default_keyword");
+		//dev_log::write("--------------------------------");
 		return $keyword;
 
 	}
