@@ -754,6 +754,7 @@ class ListingControl extends MainControl {
 	
    public function redirect_free_listing() {
 		$new_url = '';
+		$host = $_SERVER['HTTP_HOST'];
 		//$cur_url = dev_log::get_cur_url();
 		dev_log::write("---------------------------------");
 		dev_log::cur_url("Listing::redirect_free_listing");
@@ -761,10 +762,12 @@ class ListingControl extends MainControl {
 			$url_alias = $_GET['url_alias'];
 			$id = $_GET['ID'];
 			if (is_numeric($url_alias)) {
-				dev_log::write("url_alias = $url_alias | I AM NUMERIC - REDIRECT ME!");
-				
+				dev_log::write("url_alias = $url_alias | I AM NUMERIC - REDIRECT ME!");				
 				$new_url_alias = $this->listingFacade->get_url_alias($id);
 				dev_log::write("new_url_alias = $new_url_alias"); 
+				
+				$new_url = "http://www.$host/$url_alias/$id/listing/";
+				dev_log::write("NEW URL = $new_url");
 				
 				if ($new_url_alias == $url_alias) {
 					dev_log::write("OOOPS - looks like we have no URL ALIAS for this listing!");
