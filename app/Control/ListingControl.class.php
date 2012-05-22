@@ -767,13 +767,15 @@ class ListingControl extends MainControl {
 				dev_log::write("new_url_alias = $new_url_alias"); 
 				
 				$new_url = "http://www.$host/$url_alias/$id/listing/";
-				dev_log::write("NEW URL = $new_url");
+				dev_log::write("REDIRECT URL = $new_url");
 				
 				if ($new_url_alias == $url_alias) {
-					dev_log::write("OOOPS - looks like we have no URL ALIAS for this listing!");
+					dev_log::write("OOOPS - looks like we have no URL ALIAS for this listing. DO NOT RE-DIRECT!");
+				} else {
+					header("Location: $new_url");
 				}
 				
-				//header("Location: $new_url");
+				
 			}		
 		}
 	}
