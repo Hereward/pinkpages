@@ -193,6 +193,7 @@ class ListingFacade extends MainFacade {
 				";
 		dev_log::write("get_url_alias:SQL QUERY = $sql");	
 		$result = $this->myDB->query($sql);
+		dev_log::write("QUERY COMPLETE");	
         if(isset($result[0])){	
         	return $result[0]['url_alias'];
         	dev_log::write("FOUND url_alias in local_businesses table for ID = $business_id");	
