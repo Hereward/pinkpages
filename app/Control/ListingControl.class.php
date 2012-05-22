@@ -764,7 +764,7 @@ class ListingControl extends MainControl {
 			if (is_numeric($url_alias)) {
 				dev_log::write("url_alias = $url_alias | I AM NUMERIC - REDIRECT ME!");				
 				$new_url_alias = $this->listingFacade->get_url_alias($id);
-				dev_log::write("new_url_alias = $new_url_alias"); 
+				//dev_log::write("new_url_alias = $new_url_alias"); 
 				
 				$new_url = "http://www.$host/$url_alias/$id/listing/";
 				dev_log::write("REDIRECT URL = $new_url");
@@ -772,7 +772,8 @@ class ListingControl extends MainControl {
 				if ($new_url_alias == $url_alias) {
 					dev_log::write("OOOPS - looks like we have no URL ALIAS for this listing. DO NOT RE-DIRECT!");
 				} else {
-					header("Location: $new_url");
+					dev_log::write("Redirecting NOW!");
+					header("Location: $new_url",TRUE,301);
 				}
 				
 				
