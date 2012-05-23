@@ -243,7 +243,7 @@ class ListingFacade extends MainFacade {
 		$failed_searches=0;
 		$sql="SELECT * FROM site_stats";
 		$res=$this->myDB->query($sql);
-		var_dump($res[0]['failed_searches']);
+		var_dump($res);
 		die();
 		if($res[0]['failed_searches']=='')
 		{
