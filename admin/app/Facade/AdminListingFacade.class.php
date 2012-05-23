@@ -1044,6 +1044,8 @@ class AdminListingFacade extends MainFacade {
 	public function url_alias_upload($file)
 	{
 		//$query_1 = "TRUNCATE `url_alias`";
+		dev_log::timer('set');
+		dev_log::write("--------------------------------------------------");
 		dev_log::write("url_alias_upload - init");
 		//$rows = $this->MyDB->query($query_1);
 		try {
@@ -1082,6 +1084,10 @@ class AdminListingFacade extends MainFacade {
 					$row = 1;
 					if (($handle = fopen("$uploadDir$file", "r")) !== FALSE) {
 						while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+							if ($row==1) {
+								 dev_log::timer('get');
+								 dev_log::write("BEGIN extraction");
+							}
 							$num = count($data);
 							//dev_log::write("url_alias_upload  -  ".var_export($data, true));
 							//echo "<p> $num fields in line $row: <br /></p>\n";
@@ -1102,14 +1108,16 @@ class AdminListingFacade extends MainFacade {
 							$cleaned_alias = mysql_real_escape_string($cleaned_alias);
 
 							$query = "UPDATE local_businesses SET url_alias = '$cleaned_alias' WHERE business_id = $business_id";
-							dev_log::write("url_alias_upload - $query");
+                            
+							dev_log::write("ROW = $row | QUERY = $query");
 							//$rows = $this->MyDB->query($query);
 						
 							
 						}
 						fclose($handle);
 					}
-
+                    dev_log::timer('get');
+                    dev_log::write("END extraction (ROW = $row)");
 
 					//$values = $this->gz_read($file, $uploadDir);
 					//$report[] = count($values);
