@@ -1087,10 +1087,10 @@ class AdminListingFacade extends MainFacade {
 
 							
 
-							$business_id = $arr[0];
+							$business_id = $data[0];
 							//dev_log::write("url_alias_upload -  ARR[0] = ".var_export($arr[0], true));
 							
-							$raw_alias = $arr[1];
+							$raw_alias = $data[1];
 							
 							$cleaned_alias = str_replace("*", '', $raw_alias);
 							$cleaned_alias = str_replace("?", '', $cleaned_alias);
