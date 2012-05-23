@@ -243,9 +243,7 @@ class ListingFacade extends MainFacade {
 		$failed_searches=0;
 		$sql="SELECT * FROM site_stats";
 		$res=$this->myDB->query($sql);
-		die('hello');
-		var_dump($res);
-		die();
+
 		if($res[0]['failed_searches']=='')
 		{
 			$sql="INSERT INTO site_stats('failed_searches') VALUES('0') WHERE id=1";

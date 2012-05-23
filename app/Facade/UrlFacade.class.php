@@ -243,7 +243,7 @@ class UrlFacade extends MainFacade {
 	  if($get['shire_town']){
 	    $shireTown   =  GeneralUtils::handle_input($get['shire_town']);
 	    $shireTownDB =  $this->validateSuburbName($shireTown);
-		if(strcasecmp($shireTown, $shireTownDB) == 0){
+		if((!is_array($shireTownDB)) && (!is_array($shireTown)) && strcasecmp($shireTown, $shireTownDB) == 0){
 		  $suburb = $shireTownDB;
 		} else if(is_array($shireTownDB)){
 		  $suburb = (in_array($shireTown, $shireTownDB)) ? $shireTown : '';
