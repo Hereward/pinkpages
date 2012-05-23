@@ -1091,7 +1091,7 @@ class AdminListingFacade extends MainFacade {
 							//echo "<p> $num fields in line $row: <br /></p>\n";
 							//dev_log::write("url_alias_upload DATA[0] -  ".$data[0]);
 							$row++;
-							if ($row > 1000) { break;}
+							//if ($row > 1000) { break;}
 
 							
 
