@@ -3535,7 +3535,7 @@ class ListingFacade extends MainFacade {
 	
 	
 	public function relatedClassLinks($class_id) {
-		$output = array();
+		$output = array('classifications'=>'');
 		$query = "SELECT * from class_relationships WHERE class_id='$class_id'";
 		//dev_log::write("relatedClassLinks query = ".$query);
 		$res = $this->myDB->query($query);
