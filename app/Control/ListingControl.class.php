@@ -1078,7 +1078,7 @@ class ListingControl extends MainControl {
 			//dev_log::write("parsed referer host = {$parsed_referer['host']}");
 			//dev_log::write("google query param = $google_query_param");
 		} else {
-			dev_log::write("No referer");
+			//dev_log::write("No referer");
 		}
 		//dev_log::write("referer search query = ".var_export($referer_search_query,true));
 		
