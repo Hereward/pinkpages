@@ -2940,7 +2940,7 @@ class ListingFacade extends MainFacade {
 	
 	public function resolve_market_id() {
 	
-	  	$state = $_GET['state'];
+	  	$state = (isset($_GET['state']))?$_GET['state']:'NSW';
 	  	
 	  	if ($state == 'VIC') {
 	  		$marketID = 4;
