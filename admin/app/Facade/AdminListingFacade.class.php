@@ -1087,6 +1087,7 @@ class AdminListingFacade extends MainFacade {
 							if ($row==1) {
 								 dev_log::timer('get');
 								 dev_log::write("BEGIN extraction");
+								 die();
 							}
 							$num = count($data);
 							//dev_log::write("url_alias_upload  -  ".var_export($data, true));
