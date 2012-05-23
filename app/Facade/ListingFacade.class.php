@@ -3726,8 +3726,8 @@ class ListingFacade extends MainFacade {
 			$amb_c = (isset($_GET['c']) && $_GET['c'] == "r")?"r":"s";
 
 			$shire_id = 0;
-
-			$ids = implode(",", $classification_ids);
+            
+			$ids = ($classification_ids)?implode(",", $classification_ids):'';
 
 			$i=0;
 			$classificationFacade = new ClassificationFacade($this->myDb);
