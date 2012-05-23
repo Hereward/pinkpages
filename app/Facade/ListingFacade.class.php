@@ -3727,10 +3727,11 @@ class ListingFacade extends MainFacade {
 
 			$shire_id = 0;
             
-			$ids = ($classification_ids)?implode(",", $classification_ids):'';
+			//$ids = ($classification_ids)?implode(",", $classification_ids):'';
 
 			$i=0;
 			$classificationFacade = new ClassificationFacade($this->myDb);
+			if (!$classification_ids) { $classification_ids = array(); }
 			foreach ($classification_ids as $classification_id) {
 
 				$main_cond	= " bc.localclassification_id=".$this->myDB->quote($classification_id)." AND lb.expired=0 ";
