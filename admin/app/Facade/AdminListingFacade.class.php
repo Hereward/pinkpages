@@ -1085,7 +1085,6 @@ class AdminListingFacade extends MainFacade {
 							if ($row==1) {
 								 dev_log::timer('get');
 								 dev_log::write("BEGIN extraction");
-								 die();
 							}
 							$num = count($data);
 							//dev_log::write("url_alias_upload  -  ".var_export($data, true));
@@ -1109,7 +1108,7 @@ class AdminListingFacade extends MainFacade {
 							$query = "UPDATE local_businesses SET url_alias = '$cleaned_alias' WHERE business_id = $business_id";
                             
 							dev_log::write("ROW = $row | QUERY = $query");
-							//$rows = $this->MyDB->query($query);
+							$rows = $this->MyDB->query($query);
 						
 							
 						}
