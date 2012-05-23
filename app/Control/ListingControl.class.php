@@ -773,7 +773,7 @@ class ListingControl extends MainControl {
 					dev_log::write("OOOPS - looks like the URL ALIAS has not been updated. DO NOT RE-DIRECT!");
 				} else {
 					dev_log::write("Redirecting NOW!");
-					header("Location: $new_url",TRUE,301);
+					//header("Location: $new_url",TRUE,301);
 				}
 				
 				
