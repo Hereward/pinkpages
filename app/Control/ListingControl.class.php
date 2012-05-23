@@ -766,7 +766,7 @@ class ListingControl extends MainControl {
 				$new_url_alias = $this->listingFacade->get_url_alias($id);
 				//dev_log::write("new_url_alias = $new_url_alias"); 
 				
-				$new_url = "http://$host/$new_url_alias/$id/listing/";
+				$new_url = "http://$host/$new_url_alias/$id/listing";
 				dev_log::write("REDIRECT URL = $new_url");
 				
 				if ($new_url_alias == $url_alias) {
