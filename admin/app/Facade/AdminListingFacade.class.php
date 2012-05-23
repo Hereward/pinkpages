@@ -1074,7 +1074,11 @@ class AdminListingFacade extends MainFacade {
 					// display success message
 					echo "File successfully uploaded to " . $uploadDir . $file;
 					echo "<br />Now attempt to extract file to " .$uploadDir . $file ." <br />";
-
+                    //$values = $this->gz_read($file, $uploadDir);
+                    //$viewlog = $this->viewlog($uploadDir . $file);
+				    //$report[] = count($viewlog);
+				    //$report[] = $this->insertCSV($viewlog);
+				
 					$row = 1;
 					if (($handle = fopen("$uploadDir$file", "r")) !== FALSE) {
 						while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
