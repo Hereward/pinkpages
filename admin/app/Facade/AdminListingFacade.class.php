@@ -1044,9 +1044,7 @@ class AdminListingFacade extends MainFacade {
 	public function url_alias_upload($file)
 	{
 		//$query_1 = "TRUNCATE `url_alias`";
-		dev_log::timer('set');
-		dev_log::write("--------------------------------------------------");
-		dev_log::write("url_alias_upload - init");
+
 		//$rows = $this->MyDB->query($query_1);
 		try {
 			//print("Debug inside csvFileUpload<br />");

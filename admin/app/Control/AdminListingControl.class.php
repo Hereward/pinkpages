@@ -496,6 +496,10 @@ public function import_class_relationships()
 	
 public function import_url_alias()
 	{   
+		dev_log::timer('set');
+		dev_log::write("--------------------------------------------------");
+		dev_log::write("url_alias_upload - init");
+		
 	    $this->page->pageTitle = "Import Listings";
 	    $this->page->assign("do",$_GET['do']);
 		$this->page->assign("action1",$_GET['action']);
