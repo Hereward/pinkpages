@@ -625,6 +625,7 @@ public function url_alias_import_page()
 	    $this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
 	    $this->page->assign("class_relationships",$this->request->createURL("AdminListing","class_relationships"));
 	    $this->page->assign("import_class_relationships",$this->request->createURL("AdminListing","class_relationships_import_page"));
+	    $this->page->assign("import_url_alias",$this->request->createURL("AdminListing","url_alias_import_page"));
 		$this->page->getPage("csv_upload_form.tpl");
 	}
 	
