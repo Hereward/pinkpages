@@ -730,8 +730,12 @@ class ClassificationFacade extends MainFacade {
 
 	  //Go back 12 months and get first day of the month
 	  $dateArray =  getDate();
+	  $start_raw = strtotime("-1 months");
+	  $new_start_date = date("Y-n-j",$start_raw);
 	  $startDate = $dateArray['year'] - 1 . "-" . $dateArray['mon'] . "-" . "01";	 
-      
+      dev_log::write("getCompleteCtrReport: startDate = $startDate");
+      dev_log::write("getCompleteCtrReport: new_start_date = $new_start_date");
+      die();
 	  $fromDateItr = new DateIterator('month', $startDate, $endDate);	  
 	  
 	  $report = Array();
