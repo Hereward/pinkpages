@@ -1183,7 +1183,7 @@ class AdminListingFacade extends MainFacade {
 		//dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
 		print("<br />STATE = $state | CLASSIFICATIONS = $class_id_str<br />");
 		//die();
-		$this->deleteFreeListingsClassification($class_id_str,$state);
+		//$this->deleteFreeListingsClassification($class_id_str,$state); // Removed on 25 May 2012 - Hereward
         $failed_sqls = array();
 
 		//Get all the ShireIDs
