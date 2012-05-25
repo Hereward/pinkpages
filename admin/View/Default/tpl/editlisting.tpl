@@ -40,7 +40,8 @@
 
 <li>
 		<label>Business Listing page</label>
-		<a href='http://www.pinkpages.com.au/main.php?do=Listing&action=boldListing&ID={$smarty.get.ID}'>Visit {$values12.business_name|upper} Listing Page<a/></td>
+		<a href='http://www.pinkpages.com.au/{$smarty.get.ID}/{$smarty.get.ID}/listing'>Visit {$values12.business_name|upper} Listing Page<a/></td>
+		{* <a href='http://www.pinkpages.com.au/main.php?do=Listing&action=boldListing&ID={$smarty.get.ID}'>Visit {$values12.business_name|upper} Listing Page<a/></td> *}
 	</li>
 
 <li>
