@@ -41,8 +41,24 @@ $j(function() {
 <table class="datatable" width="100" border="0" cellpadding="0" cellspacing="0" align="center">
      <tr>
 	   <td align="center">
-         <label>CTR Report:</label><input type="submit" value="Generate Report" class="controlgrey">
+         <label><strong>FULL CTR Report: </strong></label><input type="submit" value="Generate Report" class="controlgrey">
+         
        </td>
+       
+       <td align="center">
+         <label>Total Months: </label>
+         <select id="full_ctr_months" name="full_ctr_months">
+  	       <option value="1">1</option>
+  	       <option value="2">2</option>
+  	       <option value="3">3</option>
+  	       <option value="4">4</option>
+  	       <option value="5">5</option>
+  	       <option value="6">6</option>
+		   		
+	     </select>
+         
+       </td>
+       
      </tr>							 
 </table>
 </form>
