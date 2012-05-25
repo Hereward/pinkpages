@@ -40,12 +40,12 @@ $j(function() {
 <form action="{$action2}" name="completeCTRReport" method="post">
 <table class="datatable" width="100" border="0" cellpadding="0" cellspacing="0" align="center">
      <tr>
-	   <td align="center">
+	   <td align="right">
          <label><strong>FULL CTR Report: </strong></label><input type="submit" value="Generate Report" class="controlgrey">
          
        </td>
        
-       <td align="center">
+       <td align="left">
          <label>Total Months: </label>
          <select id="full_ctr_months" name="full_ctr_months">
   	       <option value="1">1</option>
@@ -54,6 +54,12 @@ $j(function() {
   	       <option value="4">4</option>
   	       <option value="5">5</option>
   	       <option value="6">6</option>
+  	       <option value="7">7</option>
+  	       <option value="8">8</option>
+  	       <option value="9">9</option>
+  	       <option value="10">10</option>
+  	       <option value="11">11</option>
+  	       <option value="12">12</option>
 		   		
 	     </select>
          

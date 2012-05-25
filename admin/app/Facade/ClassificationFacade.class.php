@@ -723,6 +723,7 @@ class ClassificationFacade extends MainFacade {
 	
     public function getCompleteCtrReport(){
 	  dev_log::timer('set');
+	  dev_log::write("getCompleteCtrReport --------------------------");
 	  $this->setini();	
 	
 	  //Get Today's date
@@ -730,15 +731,16 @@ class ClassificationFacade extends MainFacade {
 
 	  //Go back 12 months and get first day of the month
 	  $dateArray =  getDate();
-	 
+	  $full_ctr_months = $_POST['full_ctr_months'];
+	 dev_log::write("full_ctr_months = $full_ctr_months");
 	  $start_raw = strtotime("-1 months");
 	  $new_start_date = date("Y-n-d",$start_raw);
 	  $startDate = $dateArray['year'] - 1 . "-" . $dateArray['mon'] . "-" . "01";	 
 	  dev_log::timer('get');
-      dev_log::write("getCompleteCtrReport: OLD startDate = $startDate");
-      dev_log::write("getCompleteCtrReport: new_start_date = $new_start_date");
+      dev_log::write("OLD startDate = $startDate");
+      dev_log::write("new_start_date = $new_start_date");
 
-      //die();
+      die();
 	  $fromDateItr = new DateIterator('month', $new_start_date, $endDate);	  
 	  
 	  $report = Array();
