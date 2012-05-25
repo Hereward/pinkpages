@@ -737,9 +737,8 @@ class ClassificationFacade extends MainFacade {
 	  dev_log::timer('get');
       dev_log::write("getCompleteCtrReport: OLD startDate = $startDate");
       dev_log::write("getCompleteCtrReport: new_start_date = $new_start_date");
-      
-      
-      die();
+
+      //die();
 	  $fromDateItr = new DateIterator('month', $new_start_date, $endDate);	  
 	  
 	  $report = Array();
