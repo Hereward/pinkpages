@@ -722,7 +722,7 @@ class ClassificationFacade extends MainFacade {
     }	
 	
     public function getCompleteCtrReport(){
-	
+	  dev_log::timer('set');
 	  $this->setini();	
 	
 	  //Get Today's date
@@ -734,14 +734,17 @@ class ClassificationFacade extends MainFacade {
 	  $start_raw = strtotime("-1 months");
 	  $new_start_date = date("Y-n-d",$start_raw);
 	  $startDate = $dateArray['year'] - 1 . "-" . $dateArray['mon'] . "-" . "01";	 
-      dev_log::write("getCompleteCtrReport: startDate = $startDate");
+	  dev_log::timer('get');
+      dev_log::write("getCompleteCtrReport: OLD startDate = $startDate");
       dev_log::write("getCompleteCtrReport: new_start_date = $new_start_date");
       
+      
       die();
-	  $fromDateItr = new DateIterator('month', $startDate, $endDate);	  
+	  $fromDateItr = new DateIterator('month', $new_start_date, $endDate);	  
 	  
 	  $report = Array();
 	  $i=1;
+	  
 	  while($fromDateItr->valid()){
 	    $from = $fromDateItr->current();
 		
@@ -758,7 +761,8 @@ class ClassificationFacade extends MainFacade {
 		$fromDateItr->next();
 		dev_log::write("getCompleteCtrReport: i = $i");
 		$i++;
-      }	  	  	  
+      }	  	  	 
+      dev_log::timer('get');
 	  dev_log::write("getCompleteCtrReport: END");
 	  return $report;	  
 	}
