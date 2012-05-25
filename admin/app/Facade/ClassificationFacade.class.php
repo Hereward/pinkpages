@@ -814,7 +814,7 @@ class ClassificationFacade extends MainFacade {
 							ON reg.business_id = clicks.business_id
                       ORDER BY localclassification_name, Company";
               
-              die($sql);
+              //die($sql);
             
 					  					  
 	  return $this->MyDB->query($sql);
