@@ -248,10 +248,10 @@
 
 
 
-{include file="footer.tpl" google_ads='1'}
+{include file="footer.tpl" google_ads='0'}
 
 <script type="text/javascript" language="javascript">
   /*window.onload = setOption("c");*/
 </script>
 
- {include file="google_custom_search.tpl"}
+ {* include file="google_custom_search.tpl" *}
