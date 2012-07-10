@@ -798,8 +798,8 @@ class ListingControl extends MainControl {
 		
 		$rank_count = $this->listingFacade->BusinessRankedCount();
 		
-
-		//dev_log::write("rank count = $rank_count");
+        dev_log::write("rank count = $rank_count");
+		
 		
 		
 		$this->listingFacade->popularPageCount("5");
