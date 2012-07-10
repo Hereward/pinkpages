@@ -1,15 +1,19 @@
 {* class="googleadds" width="590px"  *}
-<table  width="800" align="center"  >
+<table style="margin-top:-40px;" width="800" align="center"  >
 	<tr>
-		<td align="center">
+		<td valign="top" align="center">
            {include file='180X500_ad.tpl'}
 		</td>
 		
-		<td align="center">
+		<td valign="top" align="center">
 		   {include file='180X500_ad.tpl'}
 		</td>
 		
-		<td align="center">
+		<td valign="top" align="center">
+		   {include file='180X500_ad.tpl'}
+		</td>
+		
+		<td valign="top" align="center">
 		   {include file='180X500_ad.tpl'}
 		</td>
 	</tr>
