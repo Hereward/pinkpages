@@ -1,4 +1,5 @@
-<table align="center"  width="590px" class="googleadds" >
+{* class="googleadds"  *}
+<table align="center"  width="590px" >
 		<tr><td align="center">
 		
 		{literal}
