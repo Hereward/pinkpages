@@ -14,7 +14,11 @@
 		<script type="text/javascript"
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
+		{/literal}
+		</td>
 		
+		<td align="center">
+		{literal}
 		<script type="text/javascript"><!--
 		google_ad_client = "pub-3947502494298555";
 		/* 468x60, created 3/17/09 */
@@ -26,7 +30,11 @@
 		<script type="text/javascript"
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
+		{/literal}
+		</td>
 		
+		<td align="center">
+		{literal}
 		<script type="text/javascript"><!--
 		google_ad_client = "pub-3947502494298555";
 		/* 468x60, created 3/17/09 */
@@ -38,7 +46,6 @@
 		<script type="text/javascript"
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
-		
 		{/literal}
 		</td>
 		</tr>
