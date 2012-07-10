@@ -7,7 +7,7 @@
 		google_ad_client = "pub-3947502494298555";
 		/* 468x60, created 3/17/09 */
 		google_ad_slot = "5386581257";
-		google_ad_width = 300;
+		google_ad_width = 350;
 		google_ad_height = 70;
 		//-->
 		</script>
@@ -23,7 +23,7 @@
 		google_ad_client = "pub-3947502494298555";
 		/* 468x60, created 3/17/09 */
 		google_ad_slot = "5386581257";
-		google_ad_width = 300;
+		google_ad_width = 350;
 		google_ad_height = 70;
 		//-->
 		</script>
@@ -39,7 +39,7 @@
 		google_ad_client = "pub-3947502494298555";
 		/* 468x60, created 3/17/09 */
 		google_ad_slot = "5386581257";
-		google_ad_width = 300;
+		google_ad_width = 350;
 		google_ad_height = 70;
 		//-->
 		</script>
