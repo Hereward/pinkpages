@@ -1,5 +1,5 @@
 {* class="googleadds" width="590px"  *}
-<table cellpadding="40" width="590" align="center"  >
+<table  width="800" align="center"  >
 	<tr>
 		<td align="center">
            {include file='180X500_ad.tpl'}
