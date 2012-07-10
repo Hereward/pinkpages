@@ -1,7 +1,7 @@
 {* class="googleadds" width="590px"  *}
 <table style="margin-top:0px;" width="1000" align="center"  >
 	<tr>
-		<td valign="top" align="center">
+		<td valign="top" align="center"> BOO
            {include file='234X60_ad.tpl'}
 		</td>
 		
