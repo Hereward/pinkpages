@@ -255,3 +255,8 @@
 </script>
 
  {* include file="google_custom_search.tpl" *}
+ 
+
+{if ($rank_count<1)}
+	{include file='google_free_listing_ad.tpl'}
+{/if}
