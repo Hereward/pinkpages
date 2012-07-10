@@ -256,7 +256,7 @@
 
  {* include file="google_custom_search.tpl" *}
  
-
+<div> HELLO</div>
 {if ($rank_count<1)}
 	{include file='google_free_listing_ad.tpl'}
 {/if}
