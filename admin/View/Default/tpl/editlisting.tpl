@@ -157,6 +157,12 @@
 </li>
 
 <li>
+  <label>Reporting Email</label>
+    
+   	 <input  id="field1" type="text" name="reporting_email" {if $values12.reporting_email eq ''} value="{$reporting_email}"{else} value="{$values12.reporting_email}" {/if} class="textfieldshort"/>
+</li>
+
+<li>
     <label>Business URL</label>
     
    	 <input  id="field1" type="text" name="url" {if $values12.business_url eq ''} value="{$url}" {else} value="{$values12.business_url}" {/if} class="textfieldshort"/>
