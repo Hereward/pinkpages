@@ -1365,6 +1365,7 @@ class SalesAccountManagerControl extends MainControl {
 	*/  
 	public function Edit()
     {
+    	die("HELLO");
 	    $this->page->pageTitle 	= "Edit Listing";
 		$classification			= (!empty($_POST['classification']))?$_POST['classification']:NULL;
 		$Add1					= (!empty($_POST['Add1']))?$_POST['Add1']:NULL;
