@@ -1837,6 +1837,7 @@ class SalesAccountManagerFacade extends MainFacade {
 						business_faxstd='{$post['faxstd']}',
 						business_fax='{$post['fax']}',
 						business_email='{$post['email']}',
+						reporting_email='{$post['reporting_email']}',
 						business_url='{$post['url']}',
 						shiretown_id='{$rec[0]['shiretown_id']}',
 						business_mobile='{$post['mobile']}',
