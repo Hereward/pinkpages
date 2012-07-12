@@ -2145,6 +2145,12 @@ class SalesAccountManagerFacade extends MainFacade {
 			$newValue['business_email']		=$post['email'];
 			$oldValue['business_email']		=$oldValueArray[0]['business_email'];
 		}
+		
+	    if($oldValueArray[0]['reporting_email'] != $post['reporting_email'])
+		{
+			$newValue['reporting_email']		=$post['email'];
+			$oldValue['reporting_email']		=$oldValueArray[0]['reporting_email'];
+		}
 
 		if($oldValueArray[0]['business_url'] != $post['url'])
 		{
