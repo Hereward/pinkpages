@@ -1282,7 +1282,7 @@ class AdminListingFacade extends MainFacade {
 						//print("<br /> $sql <br />");
 						$failed_sqls[] = mysql_error() . "      " . $sql;
 						$failure++;
-						//dev_log::write("FAILED SQL: $sql");
+						dev_log::write("FAILED SQL:". mysql_error() ." SQL= [$sql]");
 					}
 
 					//Insert into business_classification
@@ -1299,7 +1299,7 @@ class AdminListingFacade extends MainFacade {
 						
 						$failed_sqls[] = mysql_error() . "      " . $sql2;
 						$failure++;
-						dev_log::write("FAILED SQL: $sql2"); 
+						//dev_log::write("FAILED SQL:". mysql_error() ." SQL= [$sql2]"); 
 					}
 
 				}
