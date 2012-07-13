@@ -1299,7 +1299,7 @@ class AdminListingFacade extends MainFacade {
 						
 						$failed_sqls[] = mysql_error() . "      " . $sql2;
 						$failure++;
-						//dev_log::write("FAILED SQL: $sql2"); 
+						dev_log::write("FAILED SQL: $sql2"); 
 					}
 
 				}
