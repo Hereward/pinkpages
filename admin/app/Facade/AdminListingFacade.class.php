@@ -1225,8 +1225,11 @@ class AdminListingFacade extends MainFacade {
 			$street1                       = mysql_real_escape_string($row[2]);
 			$street2                       = mysql_real_escape_string($row[3]);
 			$suburb                        = mysql_real_escape_string($row[4]);
+			
+			$business_id = $row[0];
 
 			$sql="INSERT INTO `local_businesses` (
+			                `business_id` ,
 							`business_initials` ,
 							`business_name` ,
 							`business_street1` ,
@@ -1256,7 +1259,7 @@ class AdminListingFacade extends MainFacade {
 							`url_alias`
 							)
 							VALUES (
-							'Free', '{$name}', '{$street1}', '{$street2}', 0, 0, '{$suburb}', '{$state}', '{$row[5]}', '{$row[6]}', '{$row[7]}', '{$faxSTD}', '{$fax}', '{$email}', '{$url}', '{$origin}', '{$shireID}', '{$shireName}', '{$shireTown}', '{$mobile}', '{$contact}', {$boldListing}, {$archived}, '{$accountID}', '{$logo}', '{$description}', '{$row[13]}');";						 
+							$business_id, 'Free', '{$name}', '{$street1}', '{$street2}', 0, 0, '{$suburb}', '{$state}', '{$row[5]}', '{$row[6]}', '{$row[7]}', '{$faxSTD}', '{$fax}', '{$email}', '{$url}', '{$origin}', '{$shireID}', '{$shireName}', '{$shireTown}', '{$mobile}', '{$contact}', {$boldListing}, {$archived}, '{$accountID}', '{$logo}', '{$description}', '{$row[13]}');";						 
 
 			//$res1	=   mysql_query($sql);
 
