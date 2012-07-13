@@ -1194,7 +1194,7 @@ class AdminListingFacade extends MainFacade {
 		//$fp2     = fopen('classification_queries.sql', "ab+") or die ("Cannot open file");
         dev_log::timer('get');
 		dev_log::write("Inserting NEW free listings");
-		
+		$current_line = 0;
 		foreach($post as $row)
 		{
 			//Find ShireID
@@ -1284,7 +1284,7 @@ class AdminListingFacade extends MainFacade {
 						//print("<br /> $sql <br />");
 						$failed_sqls[] = mysql_error() . "      " . $sql;
 						$failure++;
-						$msg = "FAILED SQL:". mysql_error() ." SQL= [$sql]";
+						$msg = "FAILED SQL: current line = [$current_line] ". mysql_error() ." SQL= [$sql]";
 						dev_log::write($msg);
 						die($msg);
 					}
@@ -1303,7 +1303,7 @@ class AdminListingFacade extends MainFacade {
 						
 						$failed_sqls[] = mysql_error() . "      " . $sql2;
 						$failure++;
-						$msg = "FAILED SQL:". mysql_error() ." SQL= [$sql2]";
+						$msg = "FAILED SQL: current line = [$current_line] ". mysql_error() ." SQL= [$sql2]";
 						dev_log::write($msg); 
 						die($msg);
 						
@@ -1314,6 +1314,7 @@ class AdminListingFacade extends MainFacade {
 
 
 			$Array = array("result"=>true,"message"=>"Business inserted successfully");
+			$current_line++;
 		}
 		if($failure)
 		print("<br />$failure rows failed to be inserted into the database<br />");
