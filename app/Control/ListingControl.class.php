@@ -404,9 +404,6 @@ class ListingControl extends MainControl {
 				} else {
 					$classifications = $this->listingFacade->getClassificationCountByAlpha($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 				}
-				
-				dev_log::write(var_export($classifications));
-			
 
 				//Perform an All Sydney Region search if an exact region match cannot be found
 				if(!$classifications && !$exact) {
@@ -417,6 +414,9 @@ class ListingControl extends MainControl {
 						exit();
 					}
 				}
+				
+				dev_log::write("Classifications = " . var_export($classifications));
+				
 				if($classifications) {
 					//dev_log::write("Listing::searchKeyword classifications = ".var_export($classifications, true));
 					$total_recs = $classifications['total_recs'];
