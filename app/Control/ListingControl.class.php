@@ -415,7 +415,7 @@ class ListingControl extends MainControl {
 					}
 				}
 				
-				dev_log::write("Classifications = " . var_export($classifications));
+				dev_log::write("Classifications = " . var_export($classifications,true));
 				
 				if($classifications) {
 					//dev_log::write("Listing::searchKeyword classifications = ".var_export($classifications, true));
