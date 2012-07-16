@@ -400,7 +400,7 @@ class ListingControl extends MainControl {
 				$this->listingFacade->successfulSearch($_GET,"keyword");
 				//Gather all the individual listings based on the information gathered
 				if($location != $defaultLocation){
-					//dev_log::write("Getting classies for [$location]");
+					dev_log::write("Getting classies for [$location]");
 					$classifications = $this->listingFacade->getClassificationCountByLocation($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 				} else {
 					//dev_log::write("Getting classies for [$location]");
