@@ -402,6 +402,7 @@ class ListingControl extends MainControl {
 				if($location != $defaultLocation){
 					$classifications = $this->listingFacade->getClassificationCountByLocation($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 				} else {
+					dev_log::write("Getting classies for [$location]");
 					$classifications = $this->listingFacade->getClassificationCountByAlpha($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 				}
 
