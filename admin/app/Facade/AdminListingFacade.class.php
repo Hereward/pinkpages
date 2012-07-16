@@ -1225,6 +1225,7 @@ class AdminListingFacade extends MainFacade {
 			$street1                       = mysql_real_escape_string($row[2]);
 			$street2                       = mysql_real_escape_string($row[3]);
 			$suburb                        = mysql_real_escape_string($row[4]);
+			$url_alias                     = mysql_real_escape_string($row[13]);
 			
 			$business_id = $row[0];
 
@@ -1255,11 +1256,10 @@ class AdminListingFacade extends MainFacade {
 							`archived` ,
 							`account_id` ,
 							`business_logo` ,
-							`business_description`,
-							`url_alias`
+							`business_description`
 							)
 							VALUES (
-							'$business_id', 'Free', '{$name}', '{$street1}', '{$street2}', 0, 0, '{$suburb}', '{$state}', '{$row[5]}', '{$row[6]}', '{$row[7]}', '{$faxSTD}', '{$fax}', '{$email}', '{$url}', '{$origin}', '{$shireID}', '{$shireName}', '{$shireTown}', '{$mobile}', '{$contact}', {$boldListing}, {$archived}, '{$accountID}', '{$logo}', '{$description}', '{$row[13]}');";						 
+							'$business_id', 'Free', '{$name}', '{$street1}', '{$street2}', 0, 0, '{$suburb}', '{$state}', '{$row[5]}', '{$row[6]}', '{$row[7]}', '{$faxSTD}', '{$fax}', '{$email}', '{$url}', '{$origin}', '{$shireID}', '{$shireName}', '{$shireTown}', '{$mobile}', '{$contact}', {$boldListing}, {$archived}, '{$accountID}', '{$logo}', '{$description}');";						 
 
 			//$res1	=   mysql_query($sql);
 
@@ -1278,6 +1278,18 @@ class AdminListingFacade extends MainFacade {
                     //dev_log::write("INSERT ID = $last_insert_id");
 					if($res1){
 						$success++;
+						
+						if ($last_insert_id) {
+							$url_alias .= "-$last_insert_id";
+							$update_url_sql = "UPDATE local_businesses SET url_alias = '$url_alias'";
+							$res_update_url	=   mysql_query($update_url_sql);
+							if (!$res_update_url) {
+								$msg = "FAILED SQL: current line = [$current_line] ". mysql_error() ." SQL= [$update_url_sql]";
+						        dev_log::write($msg);
+						        die($msg);
+							}
+							
+						}
 						 //$row[0] = $last_insert_id;
 					} else {
 						//print("<br /> SQL Insert Error " . mysql_error());
