@@ -393,8 +393,7 @@ class ListingControl extends MainControl {
 				
 			//resolve classification
 			$classification_ids = $this->listingFacade->resolveClassification($keyword);
-			print_r($classification_ids);
-			die();
+			
 			if($classification_ids) {
 				
 				//Create a database entry of the search parameters. This may be a temporary fixture;
@@ -405,6 +404,9 @@ class ListingControl extends MainControl {
 				} else {
 					$classifications = $this->listingFacade->getClassificationCountByAlpha($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 				}
+				
+				dev_log::write(var_export($classifications));
+			
 
 				//Perform an All Sydney Region search if an exact region match cannot be found
 				if(!$classifications && !$exact) {
