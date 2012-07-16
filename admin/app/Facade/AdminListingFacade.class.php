@@ -1281,7 +1281,7 @@ class AdminListingFacade extends MainFacade {
 						
 						if ($last_insert_id) {
 							$url_alias .= "-$last_insert_id";
-							$update_url_sql = "UPDATE local_businesses SET url_alias = '$url_alias'";
+							$update_url_sql = "UPDATE local_businesses SET url_alias = '$url_alias' WHERE business_id = '$last_insert_id'";
 							$res_update_url	=   mysql_query($update_url_sql);
 							if (!$res_update_url) {
 								$msg = "FAILED SQL: current line = [$current_line] ". mysql_error() ." SQL= [$update_url_sql]";
