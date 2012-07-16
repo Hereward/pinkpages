@@ -351,7 +351,7 @@ class ListingControl extends MainControl {
 	 */
 	function searchKeyword()
 	{
-
+        dev_log::cur_url();
 		$defaultLocation = $this->defaultLocation;
 
 		$Search2							= (!empty($_GET['Search2'])) ? $_GET['Search2'] : $defaultLocation;
@@ -393,7 +393,10 @@ class ListingControl extends MainControl {
 				
 			//resolve classification
 			$classification_ids = $this->listingFacade->resolveClassification($keyword);
+			print_r($classification_ids);
+			die();
 			if($classification_ids) {
+				
 				//Create a database entry of the search parameters. This may be a temporary fixture;
 				$this->listingFacade->successfulSearch($_GET,"keyword");
 				//Gather all the individual listings based on the information gathered
@@ -1099,6 +1102,7 @@ class ListingControl extends MainControl {
 	 */
 	public function categorySearch()
 	{
+		dev_log::cur_url();
 		if(isset($_GET['shire_name'])  &&  !empty($_GET['shire_name'])){
 			$regionAlias        = $_GET['shire_name'];
 			$_GET['shire_name'] = $this->listingFacade->getShireNameFromAlias($_GET['shire_name']);

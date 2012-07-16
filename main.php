@@ -2,7 +2,7 @@
 include("System/Config/config.php");
 include("app_config.php");
 include("app_boot.php");
-dev_log::cur_url();
+
 
 // Check Session
 /*if ( !isValidSession() ) {
