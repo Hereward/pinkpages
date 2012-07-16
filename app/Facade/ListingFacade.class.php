@@ -3571,7 +3571,7 @@ class ListingFacade extends MainFacade {
 			
 		$classifications = array();
 		if(count($classification_ids)>0) {
-
+  
 			$location_cond = '';
 			$param = '';
 			$recs = $temp_for_sorting = $temp_recs = array();

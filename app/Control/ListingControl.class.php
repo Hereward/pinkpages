@@ -395,8 +395,8 @@ class ListingControl extends MainControl {
 			$classification_ids = $this->listingFacade->resolveClassification($keyword);
 			
 			if($classification_ids) {
-				print_r($classification_ids);
-				die();
+				//print_r($classification_ids);
+				//die();
 				//Create a database entry of the search parameters. This may be a temporary fixture;
 				$this->listingFacade->successfulSearch($_GET,"keyword");
 				//Gather all the individual listings based on the information gathered
