@@ -3,7 +3,6 @@
 include("System/Config/config.php");
 include("app_config.php");
 include("app_boot.php");
-dev_log::cur_url();
 
 if ( isValidSession() ) {
 	$do = DEFAULT_CONTROL_VS;
