@@ -201,7 +201,7 @@
 					</ul>
 				<br /><br />
 					</div>
-					
+					{*
 					{if $values[0].map_status eq '0'}
 					<ul class="map-detail-right">						
 							<li style="border:solid; border-color:#103c91;">
@@ -211,7 +211,8 @@
 							{$onload_js}
 						    </li>												                        
 					</ul>
-  {/if}
+                  {/if}
+                  *}
 
   {if $values[i].business_image neq ''}
     <ul class="image-detail-right">
