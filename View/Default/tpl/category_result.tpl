@@ -281,6 +281,7 @@
 			</div>
 	
 *}
+{*
 <div class="sitebanner" align="center" width="468" height="60">
 {literal}
     <script type="text/javascript"><!--
@@ -295,6 +296,7 @@ google_ad_height = 60;
 </script>
 {/literal}
 </div>
+*}
 
 {if $description}
 <div class="description">
