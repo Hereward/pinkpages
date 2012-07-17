@@ -351,7 +351,7 @@ class ListingControl extends MainControl {
 	 */
 	function searchKeyword()
 	{
-        dev_log::cur_url();
+        //dev_log::cur_url();
 		$defaultLocation = $this->defaultLocation;
 
 		$Search2							= (!empty($_GET['Search2'])) ? $_GET['Search2'] : $defaultLocation;

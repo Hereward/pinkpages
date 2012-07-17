@@ -55,6 +55,7 @@
 
 		
 		    {else}
+{*
 		    <div class="sitebanner" align="center" width="468" height="60">
 		{literal}
 		    <script type="text/javascript"><!--
@@ -69,6 +70,7 @@
 		</script>
 		{/literal}
 		</div>
+*}
 	{/if}
       
 </div>
