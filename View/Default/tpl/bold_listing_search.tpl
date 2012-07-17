@@ -201,18 +201,14 @@
 					</ul>
 				<br /><br />
 					</div>
-					{*
-					{if $values[0].map_status eq '0'}
-					<ul class="map-detail-right">						
-							<li style="border:solid; border-color:#103c91;">
-							{$map_header_js}
-							{$map_js}
-							{$map_view_js}
-							{$onload_js}
-						    </li>												                        
-					</ul>
-                  {/if}
-                  *}
+					
+					{if $values[0].map_status eq '0' && $rank_count>0}
+					   {include file='google_map.tpl'}
+					   
+					{else}
+					   {include file='free_listing_ads.tpl'}
+                    {/if}
+                  
 
   {if $values[i].business_image neq ''}
     <ul class="image-detail-right">
