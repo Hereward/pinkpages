@@ -1,6 +1,6 @@
 <div style="margin:30px;" >
 
-<table>
+<table cellpadding="10" align="right">
 	<tr>
 		<td valign="top" align="center">
            {include file='234X60_ad.tpl'} 
