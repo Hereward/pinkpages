@@ -106,9 +106,8 @@ class ListingFacade extends MainFacade {
 		$launch_date = strtotime($san_data['to_date']);
 		$business_id = $san_data['business_id'];
 		//getting business title from business_id
-		$sql = "SELECT business_name FROM ".$this->MyDB->sequenceName." WHERE business_id=".$this->MyDB->quote($business_id);
-		die($sql);
-		dev_log::write("Report SQL = [$sql]");
+		//$sql = "SELECT business_name FROM ".$this->MyDB->sequenceName." WHERE business_id=".$this->MyDB->quote($business_id);
+
 		$rs = $this->MyDB->query($sql);
 		$business_name = $rs[0]['business_name'];
 
