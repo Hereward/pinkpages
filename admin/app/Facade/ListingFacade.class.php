@@ -200,7 +200,7 @@ class ListingFacade extends MainFacade {
 			$sql = "SELECT $col[date_col] as period, sum($col[count_col]) as $col[res_col_name] FROM $col[table] WHERE $duration<='$u_limit' AND $duration>='$l_limit' $col[cond] GROUP BY $duration ORDER BY $col[date_col] DESC";
 				
 		    dev_log::write("Report SQL = [$sql]");
-		    die($sql);
+		    //die($sql);
 			$reg_rs = $this->MyDB->query($sql);
 			$arr_name = "$col[data_arr_name]";
 
