@@ -17,7 +17,7 @@ $j(function() {
         <tr>
 		 <td><p>From Date: <input type="text" name="from_date" id="from_date" readonly="true"></p></td>
 		 <td><p>To Date: <input type="text" id="to_date" name="to_date" readonly="true"></p></td>
-		 <td><p>Filter Google & Bing Searches: <input type="Checkbox" name="filter_google" value="google"></p></td>
+		 <td><p>Filter Google & Bing Searches: <input type="Checkbox" name="filter_google" value="google" checked="checked"></p></td>
 		</tr>
 		<tr>
 		 <td colspan="2" align="center"><input type="submit" value="Generate Report" class="controlgrey" ></td>
