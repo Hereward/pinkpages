@@ -97,6 +97,7 @@ public function fetchKeywordFromClassification($classificationID) {
 				   local_classification
 			 WHERE
 			       localclassification_name='".$post['name']."'"; 
+      die("[$sql2]");
 			      
             $rec=$this->MyDB->query($sql2);
             
