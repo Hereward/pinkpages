@@ -98,8 +98,7 @@ public function fetchKeywordFromClassification($classificationID) {
 				   local_classification
 			 WHERE
 			       localclassification_name='".$name."'"; 
-      die("[$sql2]");
-			      
+   
             $rec=$this->MyDB->query($sql2);
             $keyword = mysql_real_escape_string($post['keyword']);
             $sql="INSERT
