@@ -205,7 +205,7 @@
 					{if $values[0].map_status eq '0' && $rank_count>0}
 					   {include file='google_map.tpl'}
 					   
-					{else}
+					{elseif $rank_count<1}
 					   {include file='free_listing_ads.tpl'}
                     {/if}
                   
