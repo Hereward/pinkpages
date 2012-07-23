@@ -91,21 +91,22 @@ public function fetchKeywordFromClassification($classificationID) {
         }
          else
          {
+      $name = mysql_real_escape_string($post['name']);
       $sql2="SELECT 
 			       localclassification_id 
 			 FROM 
 				   local_classification
 			 WHERE
-			       localclassification_name='".$post['name']."'"; 
+			       localclassification_name='".$name."'"; 
       die("[$sql2]");
 			      
             $rec=$this->MyDB->query($sql2);
-            
+            $keyword = mysql_real_escape_string($post['keyword']);
             $sql="INSERT
 			      INTO 
 				      keywords(localclassification_id,keyword)
 				  VALUES
-				      ({$rec[0]['localclassification_id']},'{$post['keyword']}')";	  
+				      ({$rec[0]['localclassification_id']},'$keyword')";	  
 					      
             $this->MyDB->query($sql);
             $rec=array("result"=>true, "message"=>'Added Successfully');
