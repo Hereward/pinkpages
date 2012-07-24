@@ -27,7 +27,7 @@ class AdminPage extends Smarty {
 		
 		if(getSession('userid')) {
 			
-			$this->assign("namespace", NAMESPACE);
+			$this->assign("namespace", USERNAMESPACE);
 			$this->assign("SITE_PATH", SITE_PATH); 
 		    $this->assign("JS_PATH", JS_PATH);
 			$this->assign("CLIENT_IMAGES_PATH", CLIENT_IMAGES_PATH);

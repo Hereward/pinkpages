@@ -113,7 +113,7 @@ class MainPage extends Smarty {
 	function getPage($midPage) {
 
 		global $request, $do, $action;
-		$this->assign("NAMESPACE", NAMESPACE);
+		$this->assign("USERNAMESPACE", NAMESPACE);
 		$this->assign("IMAGES_PATH", IMAGES_PATH);
 		$this->assign("BANNER_PATH", BANNER_PATH);
 		$this->assign("ADMIN_EMAIL_ADDR", ADMIN_EMAIL_ADDR);

@@ -410,7 +410,7 @@ class UrlFacade extends MainFacade {
 	
       if(count($details) >  0){
 	    foreach($details as $value){
-          unset($_SESSION[NAMESPACE]["$value"]);
+          unset($_SESSION[USERNAMESPACE]["$value"]);
 		}
 	  }		
 	}

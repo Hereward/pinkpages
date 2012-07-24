@@ -90,7 +90,7 @@ class BusinessFacade extends MainFacade {
 	*/
     public function userLogout()
     {
-        unset($_SESSION[NAMESPACE]);
+        unset($_SESSION[USERNAMESPACE]);
         return $res = array("result"=>true, "message"=>'You have successfully logged out!!');
     }
 

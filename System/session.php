@@ -1,7 +1,7 @@
 <?php
 function isValidSession() {
     global $do, $action, $ignoreSessionCheck;
-    if(isset($_SESSION[NAMESPACE]['userid'])) {
+    if(isset($_SESSION[USERNAMESPACE]['userid'])) {
         return true;
     }
     elseif(isset($ignoreSessionCheck[$do]) && is_array($ignoreSessionCheck[$do])) {
@@ -13,17 +13,17 @@ function isValidSession() {
 }
 
 function getSession($key) {
-    if(isset($_SESSION[NAMESPACE][$key])) {
-        return $_SESSION[NAMESPACE][$key];
+    if(isset($_SESSION[USERNAMESPACE][$key])) {
+        return $_SESSION[USERNAMESPACE][$key];
     }
     return "";
 }
 
 function setSession($key, $val) {
-    $_SESSION[NAMESPACE][$key] = $val;
+    $_SESSION[USERNAMESPACE][$key] = $val;
 }
 
 function unset_session() {
-    unset($_SESSION[NAMESPACE]);
+    unset($_SESSION[USERNAMESPACE]);
 }
 ?>

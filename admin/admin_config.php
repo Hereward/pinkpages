@@ -32,6 +32,6 @@ define("ADMIN_DEFAULT_ACTION", "login");
 define("ADMIN_DEFAULT_CONTROL_VS", "Admin");
 define("ADMIN_DEFAULT_ACTION_VS", "showhomePageAdmin");
 
-define("NAMESPACE", "admin_namespace");
+define("USERNAMESPACE", "admin_namespace");
 /* OTHER SETTINGS */
 ?>

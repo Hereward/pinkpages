@@ -29,6 +29,6 @@ define("DEFAULT_ACTION_VS", "home");//VS-Varified session
 define("APP_PATH", APP_ROOT_ABS_PATH."app/");
 define("APP_CONTROL_PATH", APP_PATH."Control/");
 define("APP_FACADE_PATH", APP_PATH."Facade/");
-define("NAMESPACE", "user_namespace");
+define("USERNAMESPACE", "user_namespace");
 /* APP SETTINGS */
 ?>

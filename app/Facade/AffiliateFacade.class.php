@@ -698,7 +698,7 @@ class AffiliateFacade extends MainFacade {
 
     public function affiliateLogout()
     {
-        unset($_SESSION[NAMESPACE]);
+        unset($_SESSION[USERNAMESPACE]);
         return $res = array("result"=>true, "message"=>'You have been successfully logged out!!');
     }
 	
