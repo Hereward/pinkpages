@@ -35,7 +35,7 @@
 				<tr><td align="center"><font color="#CC66CC"><strong>Copy and Paste your code of the Image from here.</strong></font></td><td align="center"><a href="#" onclick="getCode('CloseNew', '{$key.banner_id}');">Close</a></td></tr>
 				
 				<tr>
-				<td colspan="2"><textarea rows="20" cols="90" id="test" readonly="readonly"><script src="{$PATH}show_banner.php?affiliate_id={$smarty.session.$NAMESPACE.affiliate_id}&banner_id={$key.banner_id}"></script></textarea></td>
+				<td colspan="2"><textarea rows="20" cols="90" id="test" readonly="readonly"><script src="{$PATH}show_banner.php?affiliate_id={$smarty.session.$USERNAMESPACE.affiliate_id}&banner_id={$key.banner_id}"></script></textarea></td>
 				</tr>
 				
 				</table>	
@@ -65,7 +65,7 @@ function getCode(Val,ID){
 		if(Val=="OpenNew"){
 			document.getElementById("getCode").style.display="block";		
 //			document.getElementById("test").value =	"\<script\ language='javascript'>sfdjsdlfj\</script\>";
-			document.getElementById("test").value =	'\<script\ src="{/literal}{$PATH}{literal}show_banner.php?affiliate_id={/literal}{$smarty.session.$NAMESPACE.affiliate_id}{literal}&banner_id='+ID+'"></script\>';
+			document.getElementById("test").value =	'\<script\ src="{/literal}{$PATH}{literal}show_banner.php?affiliate_id={/literal}{$smarty.session.$USERNAMESPACE.affiliate_id}{literal}&banner_id='+ID+'"></script\>';
 		}
 		if(Val=="CloseNew"){
 			document.getElementById("getCode").style.display="none";
