@@ -36,7 +36,7 @@ class MainFacade {
      *  @param  String  func    Function name
      *  @param  Array   args    array of arguments
      */
-    protected function __call($func, $args) {
+    public function __call($func, $args) {
         
         echo "Called undefined function <b>$func</b>";
     }/* END __call */     
