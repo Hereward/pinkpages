@@ -1239,6 +1239,7 @@ class AdminListingFacade extends MainFacade {
 			$business_id = $row[0];
 			
 			dev_log::write("processing line $current_line of $total_lines | name=[$name]");
+			die("FORCED TERMINATION");
 
 			$sql="INSERT INTO `local_businesses` (
 			                `business_id` ,
@@ -1458,7 +1459,7 @@ class AdminListingFacade extends MainFacade {
 		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
 		$sql_02 = "delete from local_businesses where business_initials = 'Free' AND business_id IN ($in_string)";
 		
-		die("KILL LIST = $sql_02");
+		//die("KILL LIST = $sql_02");
 		//dev_log::write($sql_02);
 		
 		//die('deleteFreeListingsClassification');
