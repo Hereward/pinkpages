@@ -1141,7 +1141,7 @@ class AdminListingFacade extends MainFacade {
 
         dev_log::timer('get');
         dev_log::write("Insert new listings - BEGIN");
-        $classiIDs = array();
+        //$classiIDs = array();
         
         $this->shireIDs    = $this->fetchTownDetails();
 		$this->classificationIDs = $this->fetchClassificationDetails();
@@ -1155,8 +1155,9 @@ class AdminListingFacade extends MainFacade {
 		$class_id = '2677';
 		$state = '';
 		dev_log::timer('get');
-		dev_log::write("Identifying Classifications and State from CSV data");
+		//dev_log::write("Identifying Classifications and State from CSV data");
 		//$i = 1;
+		/*
 		foreach($post as $row){
 			if((isset($row[8])) || (isset($row[9])) || (isset($row[10])) || (isset($row[11])) || (isset($row[12]))){
 				$classiIDs = array_merge($classiIDs,$this->getClassificationIDs(array($row[8], $row[9], $row[10], $row[11], $row[12])));
@@ -1168,22 +1169,25 @@ class AdminListingFacade extends MainFacade {
 				$state        = $shireDetails['shireState'];
 				
 			}
-			/*
+			
 			$i++;
 			
 			if ($i > 20000) {
 				break;
 			}
-			*/
+			
 		}
-		$class_id_str = implode(',', $classiIDs);
+		*/
+		//$class_id_str = implode(',', $classiIDs);
 		//$state = 'NSW';
 		dev_log::timer('get');
-		dev_log::write("Deleting OLD free listings");
-		dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
+		dev_log::write("Deleting OLD free listings for VICTORIA");
+		//dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
 		//print("<br />STATE = $state | CLASSIFICATIONS = $class_id_str<br />");
 		//die();
 		//$this->deleteFreeListingsClassification($class_id_str,$state); // Removed on 25 May 2012 - Hereward
+		$this->purge_regions_victoria();
+		
         $failed_sqls = array();
 
 		//Get all the ShireIDs
@@ -1196,6 +1200,7 @@ class AdminListingFacade extends MainFacade {
 		dev_log::write("Inserting NEW free listings");
 		$current_line = 0;
 		foreach($post as $row)
+		
 		{
 			//Find ShireID
 			if($row[5]){
@@ -1228,6 +1233,8 @@ class AdminListingFacade extends MainFacade {
 			$url_alias                     = mysql_real_escape_string($row[13]);
 			
 			$business_id = $row[0];
+			
+			dev_log::write("current_line=[$current_line] name=[$name]");
 
 			$sql="INSERT INTO `local_businesses` (
 			                `business_id` ,
@@ -1419,6 +1426,42 @@ class AdminListingFacade extends MainFacade {
 		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
 		$sql = "delete from class_relationships";
 		$result  = $this->MyDB->query($sql);
+	}
+	
+	private function purge_regions_victoria() {
+		//print("Deleting Free Listings");
+		//dev_log::write("Deleting Free Listings");
+		$shirename_ids = '300,301,302,303,304,305,306,307,308,309,310,311,312,314,315';
+		$sql_01 = "SELECT DISTINCT business_id from business_ranks WHERE shirename_id IN ($shirename_ids)";
+		//dev_log::write($sql_01);
+		$rows =$this->MyDB->query($sql_01);
+
+		//$deleteQuery	="DELETE FROM business_ranks WHERE `business_id` ='{$BusinessID}'";
+		//$this->MyDB->query($deleteQuery);
+		$id_list = array();
+		
+		foreach($rows as $row) {
+			$id = $row['business_id'];
+			if (!in_array($id, $id_list)) {
+				array_push($id_list, $id);
+			}
+		}
+
+		$in_string = implode(',', $id_list);
+		
+		$kill_count = count($id_list);
+
+		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
+		$sql_02 = "delete from local_businesses where business_initials = 'Free' AND business_id IN ($in_string)";
+		
+		die("KILL LIST = $sql_02");
+		//dev_log::write($sql_02);
+		
+		//die('deleteFreeListingsClassification');
+		$result  = $this->MyDB->query($sql_02);
+		//dev_log::write("KILL COUNT = $kill_count");
+		
+		
 	}
 
 	private function deleteFreeListingsClassification($class_ids, $state){
