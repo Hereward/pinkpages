@@ -1139,8 +1139,9 @@ class AdminListingFacade extends MainFacade {
 	public function insertCSV($post)
 	{
 
-        dev_log::timer('get');
+        dev_log::write("-----------------------------");
         dev_log::write("Insert new listings - BEGIN");
+        dev_log::timer('get');
         //$classiIDs = array();
         
         $this->shireIDs    = $this->fetchTownDetails();
@@ -1197,7 +1198,10 @@ class AdminListingFacade extends MainFacade {
 		//$fp1     = fopen('local_business_queries.sql', "ab+") or die ("Cannot open file");
 		//$fp2     = fopen('classification_queries.sql', "ab+") or die ("Cannot open file");
         dev_log::timer('get');
-		dev_log::write("Inserting NEW free listings");
+        $total_lines = count($post);
+		dev_log::write("Inserting NEW free listings [$total_lines]");
+		
+		
 		$current_line = 0;
 		foreach($post as $row)
 		
@@ -1234,7 +1238,7 @@ class AdminListingFacade extends MainFacade {
 			
 			$business_id = $row[0];
 			
-			dev_log::write("current_line=[$current_line] name=[$name]");
+			dev_log::write("processing line $current_line of $total_lines | name=[$name]");
 
 			$sql="INSERT INTO `local_businesses` (
 			                `business_id` ,
