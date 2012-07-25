@@ -879,9 +879,9 @@ class AdminListingFacade extends MainFacade {
 		//Modify php ini vars to cater for large uploads
 		ini_set('upload_max_filesize', '10M');
 		//Increase execution time to 2 minutes
-		ini_set('max_execution_time' , '3000');
+		ini_set('max_execution_time' , '200000');
 		//Maximum time to allow parsing
-		ini_set('max_input_time', '60');
+		ini_set('max_input_time', '180');
 		//Increase the size of possible post requests. Should be >= upload_max_filesize
 		ini_set('post_max_size', '10M');
 		//Increase the amount of Memory at PHPs disposal
@@ -1147,7 +1147,7 @@ class AdminListingFacade extends MainFacade {
         $this->shireIDs    = $this->fetchTownDetails();
 		$this->classificationIDs = $this->fetchClassificationDetails();
         
-		set_time_limit(3000);
+		set_time_limit(200000);
 		
 		$success = 0;
 		$failure = 0;
