@@ -1428,7 +1428,7 @@ class AdminListingFacade extends MainFacade {
 		$result  = $this->MyDB->query($sql);
 	}
 	
-	private function purge_regions_victoria() {
+	private function purge_regions_victoria() { 
 		//print("Deleting Free Listings");
 		//dev_log::write("Deleting Free Listings");
 		$shirename_ids = '300,301,302,303,304,305,306,307,308,309,310,311,312,314,315';
