@@ -1155,7 +1155,7 @@ class AdminListingFacade extends MainFacade {
 		//$this->deleteExistingFreeListings();
 		$class_id = '2677';
 		$state = '';
-		dev_log::timer('get');
+		
 		//dev_log::write("Identifying Classifications and State from CSV data");
 		//$i = 1;
 		/*
@@ -1181,8 +1181,9 @@ class AdminListingFacade extends MainFacade {
 		*/
 		//$class_id_str = implode(',', $classiIDs);
 		//$state = 'NSW';
-		dev_log::timer('get');
+		
 		dev_log::write("Deleting OLD free listings for VICTORIA");
+		dev_log::timer('get');
 		//dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
 		//print("<br />STATE = $state | CLASSIFICATIONS = $class_id_str<br />");
 		//die();
@@ -1197,9 +1198,10 @@ class AdminListingFacade extends MainFacade {
 		//Uncomment references to these file if you want the SQL to be output to files also
 		//$fp1     = fopen('local_business_queries.sql', "ab+") or die ("Cannot open file");
 		//$fp2     = fopen('classification_queries.sql', "ab+") or die ("Cannot open file");
-        dev_log::timer('get');
+        
         $total_lines = count($post);
 		dev_log::write("Inserting NEW free listings [$total_lines]");
+		dev_log::timer('get');
 		
 		
 		$current_line = 0;
@@ -1239,7 +1241,7 @@ class AdminListingFacade extends MainFacade {
 			$business_id = $row[0];
 			
 			dev_log::write("processing line $current_line of $total_lines | name=[$name]");
-			die("FORCED TERMINATION");
+			//die("FORCED TERMINATION");
 
 			$sql="INSERT INTO `local_businesses` (
 			                `business_id` ,
@@ -1351,8 +1353,9 @@ class AdminListingFacade extends MainFacade {
 
 		//return array('success'=>$success, 'failure'=>$failure);
 		
-		dev_log::timer('get');
+		
 		dev_log::write("Insert new listings - END");
+		dev_log::timer('get');
 		
 		return array('success'=>$success, 'failure'=>$failure, 'failed_sqls'=>$failed_sqls);
 	}
