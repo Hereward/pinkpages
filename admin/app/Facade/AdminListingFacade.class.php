@@ -1330,7 +1330,7 @@ class AdminListingFacade extends MainFacade {
 						
 						$failed_sqls[] = mysql_error() . "      " . $sql2;
 						$failure++;
-						$msg = "FAILED SQL: current line = [$current_line] ". mysql_error() ." SQL= [$sql2]";
+						$msg = "FAILED SQL: (INSERT CLASS ID) current line = [$current_line] ". mysql_error() ." SQL= [$sql2]";
 						dev_log::write($msg); 
 						die($msg);
 						
