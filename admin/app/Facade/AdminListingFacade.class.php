@@ -1141,6 +1141,7 @@ class AdminListingFacade extends MainFacade {
 
         dev_log::write("-----------------------------");
         dev_log::write("Insert new listings - BEGIN");
+        die("FORCED TERMINATION");
         dev_log::timer('get');
         //$classiIDs = array();
         
