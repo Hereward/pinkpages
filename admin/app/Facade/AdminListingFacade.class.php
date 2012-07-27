@@ -1299,7 +1299,7 @@ class AdminListingFacade extends MainFacade {
 							$update_url_sql = "UPDATE local_businesses SET url_alias = '$url_alias' WHERE business_id = '$last_insert_id'";
 							$res_update_url	=   mysql_query($update_url_sql);
 							if (!$res_update_url) {
-								$msg = "FAILED SQL: current line = [$current_line] ". mysql_error() ." SQL= [$update_url_sql]";
+								$msg = "FAILED SQL: (UPDATE URL ALIAS) current line = [$current_line] ". mysql_error() ." SQL= [$update_url_sql]";
 						        dev_log::write($msg);
 						        die($msg);
 							}
@@ -1311,7 +1311,7 @@ class AdminListingFacade extends MainFacade {
 						//print("<br /> $sql <br />");
 						$failed_sqls[] = mysql_error() . "      " . $sql;
 						$failure++;
-						$msg = "FAILED SQL: current line = [$current_line] ". mysql_error() ." SQL= [$sql]";
+						$msg = "FAILED SQL: (MAIN INSERT) current line = [$current_line] ". mysql_error() ." SQL= [$sql]";
 						dev_log::write($msg);
 						die($msg);
 					}
