@@ -1000,6 +1000,7 @@ class ListingControl extends MainControl {
        // return $str;
 
 		if($location != $defaultLocation){
+			die("A");
 			$classifications = $this->listingFacade->getClassificationCountByLocation($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 		} else {
 			$classifications = $this->listingFacade->getClassificationCountByAlpha($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
