@@ -3568,7 +3568,7 @@ class ListingFacade extends MainFacade {
 		    $state = ($this->isStateExistsBySuburb($location)) ? $this->isStateExistsBySuburb($location) : $this->isStateExistsByRegion($location);
 		  }	
 		}		
-			
+		die("getClassificationCountByLocation");
 		$classifications = array();
 		if(count($classification_ids)>0) {
   
