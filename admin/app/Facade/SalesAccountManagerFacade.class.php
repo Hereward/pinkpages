@@ -2224,8 +2224,9 @@ class SalesAccountManagerFacade extends MainFacade {
 		$finalArray['oldValue']		=$oldValue;
 		$finalArray['newValue']		=$newValue;
 		
-		var_dump($finalArray);
-		die();
+		$dump_str = var_export($finalArray,true);
+		dev_log::write($dump_str);
+		//die();
 
 		return $finalArray;
 	}
