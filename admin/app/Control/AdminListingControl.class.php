@@ -750,7 +750,8 @@ public function url_alias_import_page()
 		$this->page->assign("edit_classification",$this->request->createURL("SalesAccountManager", "addClassification"));
 		$this->page->assign("edit_rank",$this->request->createURL("SalesAccountManager", "rankBusiness"));		
 		 $this->page->assign("searchlists",$this->request->createURL("AdminListing","search"));    
-		$this->page->assign("action",$this->request->createURL("AdminListing","import"));
+		//$this->page->assign("action",$this->request->createURL("AdminListing","import"));
+		$this->page->assign("action",$this->request->createURL("AdminListing","csvFileUpload"));
         $this->page->assign("logout_url",$this->request->createURL("Admin", "doLogout"));
 		$this->page->assign("TeamManager_url",$this->request->createURL("Admin", "adminManager"));
         $this->page->assign("back",$this->request->createURL("Admin", "showhomePageAdmin"));
@@ -772,8 +773,9 @@ public function url_alias_import_page()
 	    //$res = $this->adminlistingFacade->insertCSV($viewlog);
 		
 		
-	    $this->page->assign("values",$res);
-	    $this->page->getPage("csv_report.tpl");
+	    //$this->page->assign("values",$res);
+	    //$this->page->getPage("csv_report.tpl");
+	    $this->page->getPage("csv_upload_form.tpl");
 	}
 
 	public function import()

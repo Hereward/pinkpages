@@ -790,8 +790,9 @@ class AdminListingFacade extends MainFacade {
 
 	function viewlog($File)
 	{
-		set_time_limit(1000);
+		//set_time_limit(1000);
 		$fp = gzopen($File,"r");
+		dev_log::write("gzopen -File $File has been opened.");
 		while($var=fgetcsv($fp)){
 			$values[]=$var;
 			/*
@@ -803,7 +804,7 @@ class AdminListingFacade extends MainFacade {
 
 		}
 		gzclose($fp);
-
+        dev_log::write("gzopen -File $File has been closed.");
 		return $values;
 	}
 
@@ -826,13 +827,13 @@ class AdminListingFacade extends MainFacade {
 
 	private function gz_read($file, $path) {
 		//print("<br /> <strong>outPUT Start</strong><br />");
-		$rows = gzfile("$path$file");
+		$rows = gzfile("$path/$file");
 		/*
 		 foreach($rows as $row) {
 		 echo "<br />$row<br />";
 		 }
 		 */
-		//print("<br /> <strong>File has ". count($rows) . " rows that have been read into an Array</strong><br />");
+		dev_log::write("gz_read -File $path/$file has ". count($rows) . " rows that have been read into an Array");
 		return $rows;
 	}
 
@@ -909,25 +910,26 @@ class AdminListingFacade extends MainFacade {
 				$tmp       = $_FILES['csvfile']['tmp_name'];
 				$uploadDir = $this->sys_get_temp_dir();
 				$file      = $_FILES['csvfile']['name'];
-				setSession("file",$uploadDir.$file);
+				setSession("file",$uploadDir.'/'.$file);
+				$values = array();
 					
-				//print("<br />Attempting to upload file $tmp to $uploadDir$file <br />");
-				if (move_uploaded_file($tmp, $uploadDir . $file) or die("Cannot copy uploaded file")) {
+				//die("Attempting to upload file $tmp to $uploadDir/$file");
+				if (move_uploaded_file($tmp, $uploadDir .'/'. $file) or die("Cannot copy uploaded file [$uploadDir/$file]")) {
 					// display success message
-					echo "File successfully uploaded to " . $uploadDir . $file;
-					echo "<br />Now attempt to extract file to " .$uploadDir . $file ." <br />";
-					$values = $this->gz_read($file, $uploadDir);
-			        $report[] = count($values);
-				} else {
-					echo "File was <strong>NOT</strong> successfully uploaded to " . $uploadDir . $_FILES['data']['name'];
+					//die()
+					//die( "File successfully uploaded to " . $uploadDir .'/'. $file . " [{$_FILES['data']['name']}]");
+					echo "File successfully uploaded to " . $uploadDir .'/'. $file;
+					echo "<br />Now attempt to extract file to " .$uploadDir .'/'. $file ." <br />";
+					//$values = $this->gz_read($file, $uploadDir);
+			        //$report[] = count($values);
 				}
 				
 				//dev_log::timer('get');
 				//dev_log::write("csvFileUpload = ".$uploadDir . $file);
 				
-				$viewlog = $this->viewlog($uploadDir . $file);
-				$report[] = count($viewlog);
-				$report[] = $this->insertCSV($viewlog);
+				//$viewlog = $this->viewlog($uploadDir .'/'. $file);
+				//$report[] = count($viewlog);
+				$report = $this->insertCSV("$uploadDir/$file"); //$viewlog
 
 				return $report;
 			}
@@ -1136,7 +1138,7 @@ class AdminListingFacade extends MainFacade {
 
 
 
-	public function insertCSV($post)
+	public function insertCSV($csv_file_path)
 	{
 
         dev_log::write("-----------------------------");
@@ -1189,7 +1191,7 @@ class AdminListingFacade extends MainFacade {
 		//print("<br />STATE = $state | CLASSIFICATIONS = $class_id_str<br />");
 		//die();
 		//$this->deleteFreeListingsClassification($class_id_str,$state); // Removed on 25 May 2012 - Hereward
-		$this->purge_regions_victoria();
+		//$this->purge_regions_victoria();
 		
         $failed_sqls = array();
 
@@ -1200,15 +1202,20 @@ class AdminListingFacade extends MainFacade {
 		//$fp1     = fopen('local_business_queries.sql', "ab+") or die ("Cannot open file");
 		//$fp2     = fopen('classification_queries.sql', "ab+") or die ("Cannot open file");
         
-        $total_lines = count($post);
-		dev_log::write("Inserting NEW free listings [$total_lines]");
+        $total_lines = '?'; //count($post);
+        $handle = gzopen($csv_file_path, 'r');
+		dev_log::write("Inserting NEW free listings");
 		dev_log::timer('get');
 		
 		
 		$current_line = 0;
-		foreach($post as $row)
+		//foreach($post as $row) {
+		 while (($row = fgetcsv($handle, 10000, ",")) !== FALSE) {
+			// $row = gzgets($handle, 10000);
+		  //print_r($row);
+		  //die();
 		
-		{
+		
 			//Find ShireID
 			if($row[5]){
 
@@ -1241,7 +1248,7 @@ class AdminListingFacade extends MainFacade {
 			
 			$business_id = $row[0];
 			
-			dev_log::write("processing line $current_line of $total_lines | name=[$name]");
+			dev_log::write("processing line $current_line | name=[$name]");
 			//die("FORCED TERMINATION");
 
 			$sql="INSERT INTO `local_businesses` (
@@ -1342,7 +1349,10 @@ class AdminListingFacade extends MainFacade {
 
 			$Array = array("result"=>true,"message"=>"Business inserted successfully");
 			$current_line++;
+			if ($current_line > 1000) { die("FORCED TERMINATION");}
 		}
+		gzclose($handle);
+		
 		if($failure)
 		print("<br />$failure rows failed to be inserted into the database<br />");
 
@@ -1358,7 +1368,7 @@ class AdminListingFacade extends MainFacade {
 		dev_log::write("Insert new listings - END");
 		dev_log::timer('get');
 		
-		return array('success'=>$success, 'failure'=>$failure, 'failed_sqls'=>$failed_sqls);
+		return 1; //array('success'=>$success, 'failure'=>$failure, 'failed_sqls'=>$failed_sqls);
 	}
 
 	private function __Validation(&$data)
