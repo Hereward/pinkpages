@@ -973,7 +973,7 @@ class ListingControl extends MainControl {
 
 
 
-	public function relatedClassLinks($class_id='',$shire_name='', $shire_town='', $state='') {
+	public function relatedClassLinks($class_id='',$shire_name='', $shire_town='', $state='', $passed_location='') {
 		$defaultLocation = $this->defaultLocation;
 		//$location = GeneralUtils::handle_input($_GET['Search2']);
 		$location = '';
@@ -982,6 +982,8 @@ class ListingControl extends MainControl {
 			$location = $_GET['shire_town'];
 		} elseif (isset($_GET['shire_name'])) {
 			$location = $_GET['shire_name'];
+		} elseif ($passed_location) {
+			$location = $passed_location;
 		}
 		
 		//$location = (isset($_GET['shire_town']))?$_GET['shire_town']:'';
@@ -1000,10 +1002,10 @@ class ListingControl extends MainControl {
        // return $str;
 
 		if($location != $defaultLocation){
-			die("A");
+		
 			$classifications = $this->listingFacade->getClassificationCountByLocation($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 		} else {
-			die("B");
+		
 			$classifications = $this->listingFacade->getClassificationCountByAlpha($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 		}
 		
@@ -1381,7 +1383,7 @@ class ListingControl extends MainControl {
 
 		$this->page->assign("contactUs",$this->request->createURL("Listing", "contactUs","ID"));
 		$_GET['pnum'] = (isset($_GET['pnum']) && $_GET['pnum'])?$_GET['pnum']:1;
-		$relatedClassLinks = $this->relatedClassLinks($classificationID);
+		$relatedClassLinks = $this->relatedClassLinks($classificationID,'','','',$location);
 		$related_class_count = 0;
 		$related_classifications = '';
 		if ($relatedClassLinks) {
