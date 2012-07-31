@@ -1809,7 +1809,7 @@ class SalesAccountManagerControl extends MainControl {
 		$this->page->assign("search",$this->request->createURL("SalesAccountManager","searchBusiness"));
 		
 		
-		
+		die("Hello");
 //Maintain the change in the value after the updation in the business listing details.
 		
 		$this->SalesAccountManagerFacade->changeValue($_POST,$_FILES);
