@@ -1296,7 +1296,23 @@ class GoogleMapAPI {
      */
     function fetchURL($url) {
 
-        return file_get_contents($url);
+        //return file_get_contents($url);
+        
+        $ch = curl_init();
+
+        // set url
+        curl_setopt($ch, CURLOPT_URL, $url);
+
+        //return the transfer as a string
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        // $output contains the output string
+        $output = curl_exec($ch);
+
+        // close curl resource to free up system resources
+        curl_close($ch);   
+
+        return $output;
 
     }
 
