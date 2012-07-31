@@ -2207,7 +2207,9 @@ class SalesAccountManagerControl extends MainControl {
 		foreach ($result as $value)
 		{
 		
-		echo "<option value='".$value['shiretown_postcode'].",".$value['shiretown_id']."'>".$value['shiretown_townname']."</option>";
+		//echo "<option value='".$value['shiretown_postcode'].",".$value['shiretown_id']."'>".$value['shiretown_townname']."</option>";
+		// Hereward 20120731
+		echo "<option value='".$value['shiretown_postcode'].",".$value['shiretown_townname']."'>".$value['shiretown_townname']."</option>";
 		}
 	
 	}
