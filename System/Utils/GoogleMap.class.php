@@ -17,8 +17,10 @@ class GoogleMap extends GoogleMapAPI {
     "www.pinkpages.com.au"             =>"ABQIAAAAeXyMnbvf1DZhueaUljtBOxRrYdsMBxWMtFL0a2YqnjQB_pOsoRRtIi492f0dXzB0Qsuq7NFHijxnWA",	
     "sydneypinkpagesonline.com.au"     =>"ABQIAAAAS_dsDzQZ0P_zSybiJny9kBQvhUNbdNK0cfXbDE_WGMkZzhTrUBTh_SIrMsT83lthk1Cfu9flIHe7fw",
 	"dev.sydneypinkpagesonline.com.au" =>"ABQIAAAAiz4fq9Mzrzh3LjK5n6ce_hQffXHY9Ef4gkemAV-achfgMZbCCBQGlXNHqKY9opGivC48R-LziJ2Pcg",
-    "192.168.60.112" =>"ABQIAAAAiz4fq9Mzrzh3LjK5n6ce_hQffXHY9Ef4gkemAV-achfgMZbCCBQGlXNHqKY9opGivC48R-LziJ2Pcg"
+    "192.168.60.112" =>"AIzaSyDJo4nfqsaYHQN5DBKAQiX0De5w3OMe658"
     );
+    
+    //AIzaSyDJo4nfqsaYHQN5DBKAQiX0De5w3OMe658
 
     /**
      * __construct

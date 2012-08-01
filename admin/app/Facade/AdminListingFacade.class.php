@@ -1349,7 +1349,7 @@ class AdminListingFacade extends MainFacade {
 
 			$Array = array("result"=>true,"message"=>"Business inserted successfully");
 			$current_line++;
-			if ($current_line > 1000) { die("FORCED TERMINATION");}
+			//if ($current_line > 1000) { die("FORCED TERMINATION");}
 		}
 		gzclose($handle);
 		

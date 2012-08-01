@@ -3665,7 +3665,7 @@ class ListingFacade extends MainFacade {
 										AND br.localclassification_id=".$this->myDB->quote($classification_id).")
 							WHERE 
 								$condition ";
-				dev_log::write("getClassificationCountByLocation: shire_id = $shire_id | shire_sql = $shire_sql");
+				//dev_log::write("getClassificationCountByLocation: shire_id = $shire_id | shire_sql = $shire_sql");
 								
 				$count = $this->myDB->exec($shire_sql);
 				if($count) {
