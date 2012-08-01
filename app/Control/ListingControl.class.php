@@ -353,7 +353,7 @@ class ListingControl extends MainControl {
 	{
         //dev_log::cur_url();
 		$defaultLocation = $this->defaultLocation;
-
+         
 		$Search2							= (!empty($_GET['Search2'])) ? $_GET['Search2'] : $defaultLocation;
 			
 		if($Search2 != '')
@@ -395,7 +395,7 @@ class ListingControl extends MainControl {
 			$classification_ids = $this->listingFacade->resolveClassification($keyword);
 			
 			if($classification_ids) {
-				dev_log::write("FLAG A");
+				
 				//print_r($classification_ids);
 				//die();
 				//Create a database entry of the search parameters. This may be a temporary fixture;
@@ -1136,6 +1136,7 @@ class ListingControl extends MainControl {
 
 		if(isset($_GET['shire_name']) && $_GET['shire_name'] !='') {
 			$location = $_GET['shire_name'];
+			dev_log::write("categorySearch: LOCATION = $location");
 			$searchSuburbs    = $this->searchRefineFacade->getSuburbsByRegion($location);
 			$suburbURLs       = array();
 			foreach($searchSuburbs as $searchSuburb){
