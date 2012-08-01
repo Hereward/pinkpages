@@ -395,6 +395,7 @@ class ListingControl extends MainControl {
 			$classification_ids = $this->listingFacade->resolveClassification($keyword);
 			
 			if($classification_ids) {
+				dev_log::write("FLAG A");
 				//print_r($classification_ids);
 				//die();
 				//Create a database entry of the search parameters. This may be a temporary fixture;
