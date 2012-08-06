@@ -7,6 +7,7 @@
 					Browse by City: &nbsp;&nbsp; 
 					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=s">Sydney</a>&nbsp;&nbsp;|&nbsp;
 					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=n">Newcastle</a>&nbsp;&nbsp;|&nbsp;
+					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=central-coast-region">Central Coast</a>&nbsp;&nbsp;|&nbsp;
 					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=c">Canberra</a>&nbsp;&nbsp;|&nbsp;
 					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=m">Melbourne</a>&nbsp;&nbsp;|&nbsp;
 					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=all-brisbane">Brisbane</a>
