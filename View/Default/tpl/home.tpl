@@ -53,7 +53,15 @@
 
 <div class="breaker"></div>
 
-<!--Body End-->{if $smarty.get.p eq 's'} {include file="syd_list.tpl" } {elseif $smarty.get.p eq 'n'} {include file="newc_list.tpl" } {elseif $smarty.get.p eq 'c'} {include file="can_list.tpl" } {elseif $smarty.get.p eq 'm'} {include file="mel_list.tpl" } {else} {include file="city_list.tpl" } {/if}
+<!--Body End-->{if $smarty.get.p eq 's'} 
+{include file="syd_list.tpl" } 
+{elseif $smarty.get.p eq 'n'} {include file="newc_list.tpl" } 
+{elseif $smarty.get.p eq 'c'} {include file="can_list.tpl" } 
+{elseif $smarty.get.p eq 'm'} {include file="mel_list.tpl" } 
+{elseif $smarty.get.p eq 'all-brisbane'} {include file="bris_list.tpl" } 
+{elseif $smarty.get.p eq 'central-coast-region'} {include file="central_coast_list.tpl" }
+{elseif $smarty.get.p eq 'all-adelaide'} {include file="adelaide_list.tpl" }
+{else} {include file="city_list.tpl" } {/if}
 {* include file="news.tpl" *}
 
 <div style="margin-top:10px;"></div>{include facebook_url="http://www.facebook.com/pages/Pink-Pages/260077437340993" file="social_networking_footer.tpl" }</div>

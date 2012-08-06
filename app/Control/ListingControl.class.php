@@ -765,8 +765,8 @@ class ListingControl extends MainControl {
 		$new_url = '';
 		$host = $_SERVER['HTTP_HOST'];
 		//$cur_url = dev_log::get_cur_url();
-		dev_log::write("---------------------------------");
-		dev_log::cur_url("Listing::redirect_free_listing");
+		//dev_log::write("---------------------------------");
+		//dev_log::cur_url("Listing::redirect_free_listing");
 		if (isset($_GET['url_alias'])) {
 			$url_alias = $_GET['url_alias'];
 			$id = $_GET['ID'];
@@ -798,6 +798,8 @@ class ListingControl extends MainControl {
 	public function boldListing()
 	{
 		//$referer_keyword =  $this->pull_keyword_from_referer_pp();
+		
+		dev_log::cur_url("Listing::boldListing");
 		
 		$this->redirect_free_listing();
 		
@@ -876,6 +878,8 @@ class ListingControl extends MainControl {
 		//$this->page->addMetaKeywords($res[0][0]['business_name'] . $metaSyns);
 
 		//Add Page Title
+		
+		/*
 		if(getSession('suburb'))
 		$this->page->pageTitle = $res[0][0]['business_name'] . "&#58; ".getSession('category')." in " . getSession('suburb') . ", " . getSession('region') . ", " . getSession('state') . "&#58; Pink Pages Australia";
 		else if(getSession('region'))
@@ -884,7 +888,14 @@ class ListingControl extends MainControl {
 		$this->page->pageTitle = $res[0][0]['business_name'] . "&#58; ". $classi . " in " . $location . "&#58; Pink Pages Australia";
 		else
 		$this->page->pageTitle = $res[0][0]['business_name'] . "&#58; Pink Pages Australia";
-
+        */
+		
+		if($location) {
+		    $this->page->pageTitle = $res[0][0]['business_name'] . "&#58; ". $classi . " in " . $location . "&#58; Pink Pages Australia";
+		} else {
+		    $this->page->pageTitle = $res[0][0]['business_name'] . "&#58; Pink Pages Australia";
+		}
+		
 		$canonicalType = 'listing';
 		$canonicalUrl  = $this->url->getCanonical($canonicalType, $_GET);
 		if($canonicalUrl){
@@ -1172,6 +1183,8 @@ class ListingControl extends MainControl {
 					$location = 'All Sydney';
 				} elseif ($state == 'VIC') {
 					$location = 'All Melbourne';
+				} elseif ($state == 'QLD') {
+					$location = 'All Brisbane';
 				} elseif ($state == 'ACT') {
 					$location = 'Canberra Region';
 				} elseif ($state == 'NT') {

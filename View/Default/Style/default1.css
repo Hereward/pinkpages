@@ -2004,7 +2004,8 @@ div#cityListFooter {
 
 #cityListFooter th {
 	font-size:11px;
-	line-height:20px;
+	line-height:15px;
+	height:25px;
 
 }
 

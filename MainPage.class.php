@@ -60,8 +60,9 @@ class MainPage extends Smarty {
 		//setting page titles
 		$do = (isset($_GET['do']))?$_GET['do']:"Index";
 		$action = (isset($_GET['action']))?$_GET['action']:"home";
-		include(APP_ROOT_ABS_PATH."page_titles.php");
+		//include(APP_ROOT_ABS_PATH."page_titles.php");
 		if(isset($titles[$do][$action])) {
+			
 			$this->addPageTitle($titles[$do][$action]);
 		}
 		//setting page titles		
@@ -99,7 +100,7 @@ class MainPage extends Smarty {
     }	
 	
 	function addPageTitle($title) {
-		
+		dev_log::write("addPageTitle");
 		$this->pageTitle = $title;
 	}
 
@@ -134,16 +135,20 @@ class MainPage extends Smarty {
 
 		if($do == "ListingControl" && $action == "boldListing") {
 			/*$this->display("no-header.tpl");*/
+			//dev_log::write("getPage: A");
 		}elseif($do == "ListingControl" && $action == "demoBoldListing") {
 			$this->display("no-header.tpl");
+			//dev_log::write("getPage: B");
 		}
 		
 		elseif(($do == DEFAULT_CONTROL."Control" && $action == DEFAULT_ACTION) || ($do == 'ListingControl' && $action == 'mapSearch') || ($do == 'ListingControl' && $action == 'searchStreetForm')|| ($do == 'ListingControl' && $action == 'businessNameSearch'))
 		{
 			$this->display("header.tpl");
+			//dev_log::write("getPage: C");
 		}
 		else {
 			$this->display("header_inner.tpl");
+			//dev_log::write("getPage: D");
 		}
 
 		//{

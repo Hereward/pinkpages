@@ -20,7 +20,10 @@ else
 	$action = DEFAULT_ACTION;
 }
 
+
+
 $do .= "Control";
+dev_log::write("Index [$do] [$action]");
 $obj = new $do($request);
 $obj->$action();
 ?>
