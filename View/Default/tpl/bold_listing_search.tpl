@@ -27,7 +27,7 @@
 
   </table>
 </div>
-
+<!-- google_ad_section_start -->
 {section name=i loop=$values}
 
 	
@@ -221,6 +221,9 @@
 
 
  {/section} 
+ 
+<!-- google_ad_section_end -->
+ 
  <div class="breaker"></div>
 {include file="social_networking_footer.tpl" }
 {*
