@@ -847,7 +847,6 @@ class ListingFacade extends MainFacade {
 
 	function categorySearchResult($fr=0, $perPage=DEFAULT_PAGING_SIZE, $get)
 	{	
-		dev_log::write("---------------------------");
 		$result = $brands = $services = $hours = $payments = array();
 		$search 		= (!empty($get['search']))?$get['search']:NULL;
 		$main_cond	= $main_refine_cond = " bc.localclassification_id=".$this->myDB->quote($search)." AND lb.expired=0 ";
@@ -955,13 +954,12 @@ class ListingFacade extends MainFacade {
 		$rank_col = " br.businessrank_rank ";
 		$time_stamp_col = "br.businessrank_timestamp,";
 		
-		if(!$shire_id || $shire_id==59 || $shire_id==315) {
+		if(!$shire_id || $shire_id==59) {
 			//$rank_col = " 9999 ";
 			//$OrderBy ="ORDER BY (CASE WHEN lb.business_name = 'Strike First Pest Management Systems' THEN 1  WHEN lb.business_name = 'MENASH & TECHNOSAT' THEN 1 WHEN lb.business_name = 'BIG BOB REMOVALS' THEN 2 WHEN lb.business_name = 'JUMBUCK POOL & HOME FENCING' THEN 3 WHEN lb.business_name = 'STREAMLINE ELECTRICAL AND SECURITY PTY LTD' THEN 4 WHEN lb.business_name = 'PHOENIX BATHROOM RENOVATIONS' THEN 5 WHEN lb.business_name = 'A SOUTH EAST KITCHEN MAKEOVER' THEN 6 ELSE 7 END), rank ASC, lb.business_name";
             $OrderBy ="ORDER BY rank ASC, lb.business_name";			
 			$time_stamp_col = "";
-			if ($shire_id) { $sh_id = $shire_id;}
-			dev_log::write("shire_id = $shire_id | sh_id = $sh_id");
+			$sh_id = 59;
 		}
 		
 		
@@ -981,7 +979,6 @@ class ListingFacade extends MainFacade {
 								AND br.localclassification_id=".$this->myDB->quote($search).")
 					WHERE 
 						$exclude_result_condition";
-						dev_log::write("categorySearchResult: query 1 >> $sql");
 			$count_result = $this->myDB->query($sql);
 			$results_within_location = count($count_result);
 		}
@@ -1008,7 +1005,6 @@ class ListingFacade extends MainFacade {
 					  AND br.localclassification_id=".$this->myDB->quote($search).")
 					WHERE $condition ";				  
  					
-	     dev_log::write("categorySearchResult: query 2 >> $sql");
 		//prexit($sql);
 		$count_result = $this->myDB->query($sql);
 		$count = count($count_result);
@@ -1099,7 +1095,6 @@ class ListingFacade extends MainFacade {
 			$hours_sql 			= "SELECT DISTINCT `hour_id`, `hour_name` FROM `business_hours` WHERE business_id IN ($business_ids_sql)";
 			$hours 				= $this->myDB->query($hours_sql);
             //dev_log::write("ListingFacade::categorySearchResult sql = ".$sql);
-            dev_log::write("categorySearchResult: query 3 >> $sql");
 			$result = $this->myDB->query($sql);
 
 			foreach ($result as $k=>$category) {
@@ -3670,7 +3665,7 @@ class ListingFacade extends MainFacade {
 										AND br.localclassification_id=".$this->myDB->quote($classification_id).")
 							WHERE 
 								$condition ";
-				//dev_log::write("getClassificationCountByLocation: shire_id = $shire_id | shire_sql = $shire_sql");
+				dev_log::write("getClassificationCountByLocation: shire_id = $shire_id | shire_sql = $shire_sql");
 								
 				$count = $this->myDB->exec($shire_sql);
 				if($count) {
