@@ -483,7 +483,7 @@
 			<td width="220" valign="top">
 				<table cellpadding="0" cellspacing="0">
 					<tr>
-						<th valign="top">Top 20 Searched in <br/> Central Coast</th>
+						<th valign="top">Top 20 Searched in <br/>Central Coast</th>
 					</tr>
 					<tr>
 						<td><a
@@ -715,248 +715,208 @@
 				
 				
 			
-          {*
-			<td valign="top">
+          
+			<td width="220" valign="top">
 				<table cellpadding="0" cellspacing="0">
 					<tr>
-						<th valign="top">Top 20 Searched in Perth</th>
+						<th valign="top">Top 20 Searched in <br/>Gold Coast</th>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}RESTAURANTS/ACT/canberra-region/2830">Restaurants</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Restaurants
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}CLEANING+CONTRACTORS/ACT/canberra-region/1160">Cleaning
-								- Domestic</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Cleaning
+								- Domestic
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PLUMBERS/ACT/canberra-region/2677">Plumbers</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Plumbers
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}CHEMISTS/ACT/canberra-region/1082">Chemists</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Chemists
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}SOLICITORS/ACT/canberra-region/3045">Solicitors</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Solicitors
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}WEDDING+RECEPTION+VENUES/ACT/canberra-region/3477">Wedding
-								Reception Venues</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Wedding
+								Reception Venues
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}MOTOR+ENGINEERS+%26+REPAIRERS/ACT/canberra-region/2233">Motor
-								Engineers &amp; Repairers</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Motor
+								Engineers &amp; Repairers
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}MASSAGE+THERAPEUTIC/ACT/canberra-region/2307">Massage
-								Therapeutic</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Massage
+								Therapeutic
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PANEL+BEATERS/ACT/canberra-region/2536">Panel
-								Beaters</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Panel
+								Beaters
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}BEAUTY+SALONS/ACT/canberra-region/802">Beauty
-								Salons</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Beauty
+								Salons
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}DENTISTS/ACT/canberra-region/1417">Dentists</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Dentists
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ACCOUNTANTS/ACT/canberra-region/608">Accountants</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Accountants
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}VETS/ACT/canberra-region/3405">Vets</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Vets
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}CLEANING+CONTRACTORS/ACT/canberra-region/1160">Cleaning
-								Contractors</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Cleaning
+								Contractors
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}MARTIAL+ARTS/ACT/canberra-region/2303">Martial
-								Arts</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Martial
+								Arts
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}MEDICAL+PRACTITIONERS/ACT/canberra-region/2331">Medical
-								Practitioners</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Medical
+								Practitioners
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PARTY+HIRE/ACT/canberra-region/1961">Party
-								Hire</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Party
+								Hire
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}CATERERS/ACT/canberra-region/1039">Caterers</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Caterers
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}BUILDING+CONTRACTORS+-+ALTERATIONS+%26+REPAIRS/ACT/canberra-region/927">Building
-								Contractors</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Building
+								Contractors
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}BUILDING+CONSULTANTS/ACT/canberra-region/914">Building
-								Consultants</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Building
+								Consultants
 						</td>
 					</tr>
 				</table>
 			</td>
 
-			<td valign="top">
+			<td width="220" valign="top">
 				<table cellpadding="0" cellspacing="0">
 					<tr>
-						<th valign="top">Top 20 Searched in Adelaide</th>
+						<th valign="top">Top 20 Searched in Perth</th>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}SOLICITORS/VIC/3045">Solicitors</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Solicitors
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}MEDICAL+PRACTITIONERS/VIC/2331">Medical
-								Practitioners</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Medical
+								Practitioners
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}TREE+FELLING+%26+STUMP+REMOVAL/VIC/3323">Tree
-								Felling &amp; Stump Removal</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Tree
+								Felling &amp; Stump Removal
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}LANDSCAPE+CONTRACTORS/VIC/2143">Landscape
-								Contractors</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Landscape
+								Contractors
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}BEAUTY+SALONS/VIC/802">Beauty
-								Salons</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Beauty
+								Salons
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}TILES+-+WALL+%26+FLOOR/VIC/3255">Tiles
-								- Wall &amp; Floor</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Tiles
+								- Wall &amp; Floor
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}CHEMISTS/VIC/1082">Chemists</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Chemists
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ACCOUNTANTS/VIC/608">Accountants</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Accountants
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}DENTISTS/VIC/1417">Dentists</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Dentists
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}BATHROOM+RENOVATIONS/VIC/793">Bathroom
-								Renovations</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Bathroom
+								Renovations
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}CONCRETE+CONTRACTORS/VIC/1304">Concrete
-								Contractors</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Concrete
+								Contractors
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}MASSAGE+THERAPEUTIC/VIC/2307">Massage
-								Therapeutic</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Massage
+								Therapeutic
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}CHIROPRACTORS/VIC/1102">Chiropractors</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Chiropractors
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PAINTERS/VIC/2525">Painters</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Painters
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PLUMBERS/VIC/2677">Plumbers</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Plumbers
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}CLEANING+CONTRACTORS/VIC/1160">Cleaning
-								Contractors</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Cleaning
+								Contractors
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}FURNITURE+REMOVALS+%26+STORAGE/VIC/1793">Furniture
-								Removals &amp; Storage</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Furniture
+								Removals &amp; Storage
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}RESTAURANTS/VIC/2830">Restaurants</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Restaurants
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}TOWING+-+VEHICULAR/VIC/3285">Towing
-								- Vehicular</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Towing
+								- Vehicular
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}FURNITURE+REPAIRS/VIC/1794">Furniture
-								Repairs</a>
+						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Furniture
+								Repairs
 						</td>
 					</tr>
 				
 				</table>
 			</td>
-			*}
+			
 
 		</tr>
 	</table>
