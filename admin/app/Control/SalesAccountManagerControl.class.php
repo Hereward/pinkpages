@@ -338,6 +338,7 @@ class SalesAccountManagerControl extends MainControl {
 		$faxstd			= (!empty($_POST['faxstd']))?$_POST['faxstd']:NULL;
 		$fax			= (!empty($_POST['fax']))?$_POST['fax']:NULL;
 		$email			= (!empty($_POST['email']))?$_POST['email']:NULL;
+		$reporting_email = (!empty($_POST['reporting_email']))?$_POST['reporting_email']:NULL;
 		$url			= (!empty($_POST['url']))?$_POST['url']:NULL;
 		$description	= (!empty($_POST['description']))?$_POST['description']:NULL;
 		$origin			= (!empty($_POST['origin']))?$_POST['origin']:NULL;
@@ -359,6 +360,7 @@ class SalesAccountManagerControl extends MainControl {
 		$this->page->assign("fax",$fax);
 		$this->page->assign("faxstd",$faxstd);
 		$this->page->assign("email",$email);
+		$this->page->assign("reporting_email",$reporting_email);
 		$this->page->assign("url",$url);
 		$this->page->assign("description",$description);
 		$this->page->assign("origin",$origin);
@@ -851,7 +853,7 @@ class SalesAccountManagerControl extends MainControl {
 	{
 		set_time_limit(600); 
 		ini_set('memory_limit', '512M');
-		$ranked_state_options = array(1 => 'NSW',2 => 'ACT',3 => 'VIC');
+		$ranked_state_options = array(1 => 'NSW',2 => 'ACT',3 => 'VIC',4 => 'QLD',5 => 'NT',6 => 'WA',7 => 'SA',8 => 'TAS');
 		$ranked_state_name = 'NSW';
 		$ranked_region_selected = 1;
 	    if (array_key_exists('ranked_region_option', $_POST)) {

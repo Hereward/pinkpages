@@ -314,6 +314,8 @@ class SalesAccountManagerFacade extends MainFacade {
 		$faxstd 		= (!empty($post['faxstd']))?$post['faxstd']:NULL;
 		$fax 			= (!empty($post['fax']))?$post['fax']:NULL;
 		$email 			= (!empty($post['email']))?$post['email']:NULL;
+		$reporting_email 			= (!empty($post['reporting_email']))?$post['reporting_email']:NULL;
+	
 		$url 			= (!empty($post['url']))?$post['url']:NULL;
 		//$origin 		= (!empty($post['origin']))?$post['origin']:NULL;
 		$mobile 		= (!empty($post['mobile']))?$post['mobile']:NULL;
@@ -364,6 +366,7 @@ class SalesAccountManagerFacade extends MainFacade {
 														`business_faxstd` ,
 														`business_fax` ,
 														`business_email` ,
+														`reporting_email` ,
 														`business_url` ,
 														`business_mobile` ,
 														`business_contact` ,
@@ -393,6 +396,7 @@ class SalesAccountManagerFacade extends MainFacade {
 														'{$faxstd}',
 														'{$fax}',
 														'{$email}',
+														'{$reporting_email}',
 														'{$url}',
 														'{$mobile}',
 														'{$contact}',
@@ -424,6 +428,7 @@ class SalesAccountManagerFacade extends MainFacade {
 														`business_faxstd` ,
 														`business_fax` ,
 														`business_email` ,
+														`reporting_email` ,
 														`business_url` ,
 														`business_mobile` ,
 														`business_contact` ,
@@ -450,6 +455,7 @@ class SalesAccountManagerFacade extends MainFacade {
 														'{$faxstd}',
 														'{$fax}',
 														'{$email}',
+														'{$reporting_email}',
 														'{$url}',
 														'{$mobile}',
 														'{$contact}',

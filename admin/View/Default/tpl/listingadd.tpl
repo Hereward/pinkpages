@@ -128,6 +128,12 @@
 </li>
 
 <li>
+  <label>Reporting Email</label>
+    
+   	 <input  id="field1" type="text" name="reporting_email" value="{$reporting_email}" class="textfieldshort"/>
+</li>
+
+<li>
    <label>Business URL</label>
     
    	 <input  id="field11" type="text" name="url" value="{$url}" class="textfieldshort"/>
