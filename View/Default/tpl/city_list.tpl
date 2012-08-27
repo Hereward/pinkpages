@@ -11,8 +11,7 @@
 					</tr>
 					<tr>
 						<td><a
-							href="{$SITE_PATH}TYRES+RETAIL/NSW/3366">Tyres
-								Retail</a>
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/NSW/621">Adult Entertainment</a>
 						</td>
 					</tr>
 					<tr>
@@ -77,7 +76,7 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PRINTERS/NSW/2726">Printers</a>
+							href="{$SITE_PATH}ESCORTS/NSW/1604">Escorts</a>
 						</td>
 					</tr>
 					<tr>
@@ -176,7 +175,7 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}BRICKLAYERS/NSW/newcastle-region/900">Bricklayers</a>
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/NSW/newcastle-region/621">Adult Entertainment</a>
 						</td>
 					</tr>
 					<tr>
@@ -214,7 +213,7 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PRINTERS/NSW/newcastle-region/2726">Printers</a>
+							href="{$SITE_PATH}ESCORTS/NSW/newcastle-region/1604">Escorts</a>
 						</td>
 					</tr>
 					<tr>
@@ -233,7 +232,8 @@
 							href="{$SITE_PATH}PLASTERERS/NSW/newcastle-region/2668">Plasterers</a>
 						</td>
 					</tr>
-				</table></td>
+				</table>
+			</td>
 
 			<td width="220" valign="top">
 				<table cellpadding="0" cellspacing="0">
@@ -268,8 +268,7 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}WEDDING+RECEPTION+VENUES/ACT/canberra-region/3477">Wedding
-								Reception Venues</a>
+							href="{$SITE_PATH}ESCORTS/ACT/canberra-region/1604">Escorts</a>
 						</td>
 					</tr>
 					<tr>
@@ -348,11 +347,11 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}BUILDING+CONSULTANTS/ACT/canberra-region/914">Building
-								Consultants</a>
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/ACT/canberra-region/621">Adult Entertainment</a>
 						</td>
 					</tr>
-				</table></td>
+				</table>
+			</td>
 
 			<td width="220" valign="top">
 				<table cellpadding="0" cellspacing="0">
@@ -390,8 +389,7 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}TILES+-+WALL+%26+FLOOR/VIC/3255">Tiles
-								- Wall &amp; Floor</a>
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/VIC/621">Adult Entertainment</a>
 						</td>
 					</tr>
 					<tr>
@@ -467,11 +465,11 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}FURNITURE+REPAIRS/VIC/1794">Furniture
-								Repairs</a>
+							href="{$SITE_PATH}ESCORTS/VIC/1604">Escorts</a>
 						</td>
 					</tr>
-				</table></td>
+				</table>
+				</td>
 
 		</tr>
 	</table>
@@ -487,8 +485,7 @@
 					</tr>
 					<tr>
 						<td><a
-							href="{$SITE_PATH}TYRES+RETAIL/NSW/central-coast-region/3366">Tyres
-								Retail</a>
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/NSW/central-coast-region/621">Adult Entertainment</a>
 						</td>
 					</tr>
 					<tr>
@@ -553,7 +550,7 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PRINTERS/NSW/central-coast-region/2726">Printers</a>
+							href="{$SITE_PATH}ESCORTS/NSW/central-coast-region/1604">Escorts</a>
 						</td>
 					</tr>
 					<tr>
@@ -653,7 +650,7 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}BRICKLAYERS/QLD/900">Bricklayers</a>
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/QLD/621">Adult Entertainment</a>
 						</td>
 					</tr>
 					<tr>
@@ -691,7 +688,7 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PRINTERS/QLD/2726">Printers</a>
+							href="{$SITE_PATH}ESCORTS/QLD/1604">Escorts</a>
 						</td>
 					</tr>
 					<tr>
@@ -717,100 +714,118 @@
 			
           
 			<td width="220" valign="top">
-				<table cellpadding="0" cellspacing="0">
+					<table cellpadding="0" cellspacing="0">
 					<tr>
-						<th valign="top">Top 20 Searched in <br/>Gold Coast</th>
+						<th valign="top">Top 20 Searched in Gold Coast</th>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Restaurants
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}RESTAURANTS/QLD/gold-coast-qld-region/2830">Restaurants</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Cleaning
-								- Domestic
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CLEANING+CONTRACTORS/QLD/gold-coast-qld-region/1160">Cleaning
+								- Domestic</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Plumbers
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}PLUMBERS/QLD/gold-coast-qld-region/2677">Plumbers</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Chemists
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CHEMISTS/QLD/gold-coast-qld-region/1082">Chemists</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Solicitors
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}SOLICITORS/QLD/gold-coast-qld-region/3045">Solicitors</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Wedding
-								Reception Venues
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ESCORTS/QLD/gold-coast-qld-region/1604">Escorts</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Motor
-								Engineers &amp; Repairers
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MOTOR+ENGINEERS+%26+REPAIRERS/QLD/gold-coast-qld-region/2233">Motor
+								Engineers &amp; Repairers</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Massage
-								Therapeutic
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MASSAGE+THERAPEUTIC/QLD/gold-coast-qld-region/2307">Massage
+								Therapeutic</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Panel
-								Beaters
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}PANEL+BEATERS/QLD/gold-coast-qld-region/2536">Panel
+								Beaters</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Beauty
-								Salons
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}BEAUTY+SALONS/QLD/gold-coast-qld-region/802">Beauty
+								Salons</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Dentists
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}DENTISTS/QLD/gold-coast-qld-region/1417">Dentists</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Accountants
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ACCOUNTANTS/QLD/gold-coast-qld-region/608">Accountants</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Vets
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}VETS/QLD/gold-coast-qld-region/3405">Vets</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Cleaning
-								Contractors
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CLEANING+CONTRACTORS/QLD/gold-coast-qld-region/1160">Cleaning
+								Contractors</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Martial
-								Arts
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MARTIAL+ARTS/QLD/gold-coast-qld-region/2303">Martial
+								Arts</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Medical
-								Practitioners
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MEDICAL+PRACTITIONERS/QLD/gold-coast-qld-region/2331">Medical
+								Practitioners</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Party
-								Hire
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}PARTY+HIRE/QLD/gold-coast-qld-region/1961">Party
+								Hire</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Caterers
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CATERERS/QLD/gold-coast-qld-region/1039">Caterers</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Building
-								Contractors
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}BUILDING+CONTRACTORS+-+ALTERATIONS+%26+REPAIRS/QLD/gold-coast-qld-region/927">Building
+								Contractors</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Building
-								Consultants
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/QLD/gold-coast-qld-region/621">Adult Entertainment</a>
 						</td>
 					</tr>
 				</table>
@@ -822,98 +837,115 @@
 						<th valign="top">Top 20 Searched in Perth</th>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Solicitors
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}SOLICITORS/WA/3045">Solicitors</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Medical
-								Practitioners
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MEDICAL+PRACTITIONERS/WA/2331">Medical
+								Practitioners</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Tree
-								Felling &amp; Stump Removal
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}TREE+FELLING+%26+STUMP+REMOVAL/WA/3323">Tree
+								Felling &amp; Stump Removal</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Landscape
-								Contractors
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}LANDSCAPE+CONTRACTORS/WA/2143">Landscape
+								Contractors</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Beauty
-								Salons
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}BEAUTY+SALONS/WA/802">Beauty
+								Salons</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Tiles
-								- Wall &amp; Floor
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/WA/621">Adult Entertainment</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Chemists
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CHEMISTS/WA/1082">Chemists</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Accountants
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ACCOUNTANTS/WA/608">Accountants</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Dentists
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}DENTISTS/WA/1417">Dentists</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Bathroom
-								Renovations
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}BATHROOM+RENOVATIONS/WA/793">Bathroom
+								Renovations</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Concrete
-								Contractors
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CONCRETE+CONTRACTORS/WA/1304">Concrete
+								Contractors</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Massage
-								Therapeutic
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MASSAGE+THERAPEUTIC/WA/2307">Massage
+								Therapeutic</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Chiropractors
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CHIROPRACTORS/WA/1102">Chiropractors</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Painters
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}PAINTERS/WA/2525">Painters</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Plumbers
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}PLUMBERS/WA/2677">Plumbers</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Cleaning
-								Contractors
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CLEANING+CONTRACTORS/WA/1160">Cleaning
+								Contractors</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Furniture
-								Removals &amp; Storage
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}FURNITURE+REMOVALS+%26+STORAGE/WA/1793">Furniture
+								Removals &amp; Storage</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Restaurants
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}RESTAURANTS/WA/2830">Restaurants</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Towing
-								- Vehicular
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}TOWING+-+VEHICULAR/WA/3285">Towing
+								- Vehicular</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="color:gray;" bgcolor="#e5e5e5" valign="top">Furniture
-								Repairs
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ESCORTS/WA/1604">Escorts</a>
 						</td>
 					</tr>
-				
 				</table>
 			</td>
 			
