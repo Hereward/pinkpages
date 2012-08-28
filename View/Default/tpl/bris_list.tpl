@@ -14,103 +14,12 @@
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}SOLICITORS/QLD/3045">Solicitors</a>
-						</td>
-					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}MEDICAL+PRACTITIONERS/QLD/2331">Medical
-								Practitioners</a>
-						</td>
-					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}TREE+FELLING+%26+STUMP+REMOVAL/QLD/3323">Tree
-								Felling &amp; Stump Removal</a>
-						</td>
-					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}LANDSCAPE+CONTRACTORS/QLD/2143">Landscape
-								Contractors</a>
-						</td>
-					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}BEAUTY+SALONS/QLD/802">Beauty
-								Salons</a>
-						</td>
-					</tr>
-					</table></td>
-
-				<td valign="top">
-					<table cellpadding="0" cellspacing="0">
-						<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}TILES+-+WALL+%26+FLOOR/QLD/3255">Tiles
-								- Wall &amp; Floor</a>
-						</td>
-					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}CHEMISTS/QLD/1082">Chemists</a>
-						</td>
-					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}ACCOUNTANTS/QLD/608">Accountants</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}DENTISTS/QLD/1417">Dentists</a>
-						</td>
-					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}BATHROOM+RENOVATIONS/QLD/793">Bathroom
-								Renovations</a>
-						</td>
-					</tr>
-					</table></td>
-
-				<td valign="top">
-					<table cellpadding="0" cellspacing="0">
-						<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}CONCRETE+CONTRACTORS/QLD/1304">Concrete
-								Contractors</a>
-						</td>
-					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}MASSAGE+THERAPEUTIC/QLD/2307">Massage
-								Therapeutic</a>
-						</td>
-					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}CHIROPRACTORS/QLD/1102">Chiropractors</a>
-						</td>
-					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PAINTERS/QLD/2525">Painters</a>
-						</td>
-					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PLUMBERS/QLD/2677">Plumbers</a>
-						</td>
-					</tr>
-					</table></td>
-
-				<td valign="top">
-					<table cellpadding="0" cellspacing="0">
-						<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}CLEANING+CONTRACTORS/QLD/1160">Cleaning
-								Contractors</a>
+							href="{$SITE_PATH}COUNSELLING/QLD/1356">Counselling</a>
 						</td>
 					</tr>
 					<tr>
@@ -121,19 +30,105 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MASSAGE+THERAPEUTIC/QLD/2307">Massage
+								Therapeutic</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}RESTAURANTS/QLD/2830">Restaurants</a>
 						</td>
 					</tr>
+					</table></td>
+
+				<td valign="top">
+					<table cellpadding="0" cellspacing="0">
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}TOWING+-+VEHICULAR/QLD/3285">Towing
-								- Vehicular</a>
+							href="{$SITE_PATH}CARPENTERS/QLD/1023">Carpenters</a>
 						</td>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}FURNITURE+REPAIRS/QLD/1794">Furniture
-								Repairs</a>
+							href="{$SITE_PATH}FOOD+%26+GENERAL+STORES/QLD/1728">Food
+								&amp; General Stores</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CONVEYANCING/QLD/1335">Conveyancing</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}WATERPROOFING/QLD/3463">Waterproofing</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/QLD/621">Adult Entertainment</a>
+						</td>
+					</tr>
+					</table></td>
+
+				<td valign="top">
+					<table cellpadding="0" cellspacing="0">
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CHIROPRACTORS/QLD/1102">Chiropractors</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}DENTISTS/QLD/1417">Dentists</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}SCHOOLS+-+PUBLIC/QLD/2906">School
+								- Public</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}WINDSCREENS+%26+REPAIRS/QLD/3518">Windscreens
+								&amp; Repairs</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CHEMISTS/QLD/1082">Chemists</a>
+						</td>
+					</tr>
+					</table></td>
+
+				<td valign="top">
+					<table cellpadding="0" cellspacing="0">
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}DEPARTMENT+STORES/QLD/1428">Department
+								Stores</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ESCORTS/QLD/1604">Escorts</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MOTOR+ENGINEERS+%26+REPAIRERS/QLD/2233">Motor
+								Engineers &amp; Repairers</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}VETS/QLD/3405">Vets</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}PLASTERERS/QLD/2668">Plasterers</a>
 						</td>
 					</tr>
 					</table>

@@ -47,8 +47,7 @@
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}TILES+-+WALL+%26+FLOOR/VIC/3255">Tiles
-								- Wall &amp; Floor</a>
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/VIC/621">Adult Entertainment</a>
 						</td>
 					</tr>
 					<tr>
@@ -131,9 +130,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}FURNITURE+REPAIRS/VIC/1794">Furniture
-								Repairs</a>
+                        <td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ESCORTS/VIC/1604">Escorts</a>
 						</td>
 					</tr>
 					</table>

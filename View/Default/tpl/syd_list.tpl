@@ -14,8 +14,7 @@
 					<table cellpadding="0" cellspacing="0">
 						<tr>
 						<td><a
-							href="{$SITE_PATH}TYRES+RETAIL/NSW/3366">Tyres
-								Retail</a>
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/NSW/621">Adult Entertainment</a>
 						</td>
 					</tr>
 					<tr>
@@ -89,8 +88,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PRINTERS/NSW/2726">Printers</a>
+					    <td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ESCORTS/NSW/1604">Escorts</a>
 						</td>
 					</tr>
 					<tr>

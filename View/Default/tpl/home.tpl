@@ -26,7 +26,17 @@
              <tr>
            <td ><p class="inputbox"><input type="text" name="Search1" id="Search1" value="" /></p>
            </td>
-           <td><p class="inputbox"><input type="text" name="Search2" id="Search2" value="{if $smarty.get.p eq 's'}All Sydney{elseif $smarty.get.p eq 'n'}Newcastle Region{elseif $smarty.get.p eq 'c'}Canberra Region{elseif $smarty.get.p eq 'm'}Melbourne{else}All States{/if}" /></p>
+           <td><p class="inputbox"><input type="text" name="Search2" id="Search2" value="{if $smarty.get.p eq 's'}All Sydney
+           {elseif $smarty.get.p eq 'n'}Newcastle Region
+           {elseif $smarty.get.p eq 'c'}Canberra Region
+           {elseif $smarty.get.p eq 'm'}All Melbourne
+           {elseif $smarty.get.p eq 'all-brisbane'}All Brisbane
+           {elseif $smarty.get.p eq 'gold-coast'}Gold Coast Region
+           {elseif $smarty.get.p eq 'all-darwin'}All Darwin
+           {elseif $smarty.get.p eq 'all-perth'}All Perth
+           {elseif $smarty.get.p eq 'all-adelaide'}All Adelaide
+           {elseif $smarty.get.p eq 'all-hobart'}All Hobart
+           {else}All States{/if}" /></p>
            </td>
          
            <td ><input class="btn" src="{$IMAGES_PATH}btn-search.gif" type="image" name="Submit" id="Submit" value="Search" />
@@ -59,8 +69,12 @@
 {elseif $smarty.get.p eq 'c'} {include file="can_list.tpl" } 
 {elseif $smarty.get.p eq 'm'} {include file="mel_list.tpl" } 
 {elseif $smarty.get.p eq 'all-brisbane'} {include file="bris_list.tpl" } 
+{elseif $smarty.get.p eq 'gold-coast'} {include file="gold_list.tpl" } 
 {elseif $smarty.get.p eq 'central-coast-region'} {include file="central_coast_list.tpl" }
+{elseif $smarty.get.p eq 'all-darwin'} {include file="darwin_list.tpl" }
+{elseif $smarty.get.p eq 'all-perth'} {include file="perth_list.tpl" }
 {elseif $smarty.get.p eq 'all-adelaide'} {include file="adelaide_list.tpl" }
+{elseif $smarty.get.p eq 'all-hobart'} {include file="hobart_list.tpl" }
 {else} {include file="city_list.tpl" } {/if}
 {* include file="news.tpl" *}
 

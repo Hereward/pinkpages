@@ -66,7 +66,7 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}BRICKLAYERS/NSW/newcastle-region/900">Bricklayers</a>
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/NSW/newcastle-region/621">Adult Entertainment</a>
 						</td>
 					</tr>
 					</table></td>
@@ -111,9 +111,11 @@
 						</td>
 					</tr>
 					<tr>
+					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}PRINTERS/NSW/newcastle-region/2726">Printers</a>
+							href="{$SITE_PATH}ESCORTS/NSW/newcastle-region/1604">Escorts</a>
 						</td>
+					</tr>
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a

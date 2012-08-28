@@ -10,11 +10,13 @@
 					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=central-coast-region">Central Coast</a>&nbsp;&nbsp;|&nbsp;
 					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=c">Canberra</a>&nbsp;&nbsp;|&nbsp;
 					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=m">Melbourne</a>&nbsp;&nbsp;|&nbsp;
-					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=all-brisbane">Brisbane</a>
-					{*
-					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=central-coast-region">Perth</a>&nbsp;&nbsp;|&nbsp;
-					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=all-adelaide">Adelaide</a>
-					*}
+					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=all-brisbane">Brisbane</a>&nbsp;&nbsp;|&nbsp;
+					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=gold-coast">Gold Coast</a>&nbsp;&nbsp;|&nbsp;
+                    <a href="{$SITE_PATH}main.php?do=Index&action=home&p=all-darwin">Darwin</a>&nbsp;&nbsp;|&nbsp;
+					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=all-perth">Perth</a>&nbsp;&nbsp;|&nbsp;
+					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=all-adelaide">Adelaide</a>&nbsp;&nbsp;|&nbsp;
+					<a href="{$SITE_PATH}main.php?do=Index&action=home&p=all-hobart">Hobart</a>
+	
 				</li>
 				<li style="float:center;">
 					&nbsp;&nbsp;

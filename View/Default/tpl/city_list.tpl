@@ -17,7 +17,7 @@
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MEDICAL+PRACTITIONERS/NSW/2331">Medical
-								Practitionars</a>
+								Practitioners</a>
 						</td>
 					</tr>
 					<tr>
@@ -491,7 +491,7 @@
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MEDICAL+PRACTITIONERS/NSW/central-coast-region/2331">Medical
-								Practitionars</a>
+								Practitioners</a>
 						</td>
 					</tr>
 					<tr>
@@ -947,6 +947,474 @@
 						</td>
 					</tr>
 				</table>
+			</td>
+			
+
+		</tr>
+	</table>
+	
+	
+		<table style="margin-top:30px;">
+		<tr>
+
+			<td width="220" valign="top">
+				<table cellpadding="0" cellspacing="0">
+					<tr>
+						<th valign="top">Top 20 Searched in Darwin</th>
+					</tr>
+					<tr>
+						<td><a
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/NT/621">Adult Entertainment</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MEDICAL+PRACTITIONERS/NT/2331">Medical
+								Practitioners</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}TURF/NT/2161">Turf</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}BUILDING+CONTRACTORS+-+GENERAL/NT/912">Building
+								Contractors - General</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}DENTISTS/NT/1417">Dentists</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}HAIRDRESSERS/NT/1898">Hairdressers</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}RESTAURANTS/NT/2830">Restaurants</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ACCOUNTANTS/NT/608">Accountants</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}DOG+%26+CAT+GROOMING/NT/1471">Dog
+								&amp; Cat Grooming</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}BEAUTY+SALONS/NT/802">Beauty
+								Salons</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ELECTRICIANS/NT/1523">Electricians</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}DRIVING+SCHOOLS/NT/1497">Driving
+								Schools</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ESCORTS/NT/1604">Escorts</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MECHANICS+-+MOBILE/NT/2383">Mechanics
+								- Mobile</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}SOLICITORS/NT/3045">Solicitors</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}PAINTERS/NT/2525">Painters</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}SCHOOLS+-+PUBLIC/NT/2906">Schools
+								- Public</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}PLUMBERS/NT/2677">Plumbers</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CAR+%26+TRUCK+DETAILING/NT/2231">Car
+								&amp; Truck Detailing</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CLEANING+CONTRACTORS/NT/1160">Cleaning
+								Contractors</a>
+						</td>
+					</tr>
+				</table>
+			</td>
+
+			<td width="220" valign="top">
+				<table cellpadding="0" cellspacing="0">
+					<tr>
+						<th valign="top">Top 20 Searched in Hobart</th>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ACCOUNTANTS/TAS/608">Accountants</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}COUNSELLING/TAS/1356">Counselling</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}FURNITURE+REMOVALS+%26+STORAGE/TAS/1793">Furniture
+								Removals &amp; Storage</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MASSAGE+THERAPEUTIC/TAS/2307">Massage
+								Therapeutic</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}RESTAURANTS/TAS/2830">Restaurants</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CARPENTERS/TAS/1023">Carpenters</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}FOOD+%26+GENERAL+STORES/TAS/1728">Food
+								&amp; General Stores</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CONVEYANCING/TAS/1335">Conveyancing</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}WATERPROOFING/TAS/3463">Waterproofing</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/TAS/621">Adult Entertainment</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CHIROPRACTORS/TAS/1102">Chiropractors</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}DENTISTS/TAS/1417">Dentists</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}SCHOOLS+-+PUBLIC/TAS/2906">School
+								- Public</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}WINDSCREENS+%26+REPAIRS/TAS/3518">Windscreens
+								&amp; Repairs</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CHEMISTS/TAS/1082">Chemists</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}DEPARTMENT+STORES/TAS/1428">Department
+								Stores</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ESCORTS/TAS/1604">Escorts</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MOTOR+ENGINEERS+%26+REPAIRERS/TAS/2233">Motor
+								Engineers &amp; Repairers</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}VETS/TAS/3405">Vets</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}PLASTERERS/TAS/2668">Plasterers</a>
+						</td>
+					</tr>
+				</table>
+			</td>
+				
+				
+			
+          
+			<td width="220" valign="top">
+			   <table cellpadding="0" cellspacing="0">
+					<tr>
+						<th valign="top">Top 20 Searched in Adelaide</th>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ACCOUNTANTS/SA/608">Accountants</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}COUNSELLING/SA/1356">Counselling</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}FURNITURE+REMOVALS+%26+STORAGE/SA/1793">Furniture
+								Removals &amp; Storage</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MASSAGE+THERAPEUTIC/SA/2307">Massage
+								Therapeutic</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}RESTAURANTS/SA/2830">Restaurants</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CARPENTERS/SA/1023">Carpenters</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}FOOD+%26+GENERAL+STORES/SA/1728">Food
+								&amp; General Stores</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CONVEYANCING/SA/1335">Conveyancing</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}WATERPROOFING/SA/3463">Waterproofing</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/SA/621">Adult Entertainment</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CHIROPRACTORS/SA/1102">Chiropractors</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}DENTISTS/SA/1417">Dentists</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}SCHOOLS+-+PUBLIC/SA/2906">School
+								- Public</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}WINDSCREENS+%26+REPAIRS/SA/3518">Windscreens
+								&amp; Repairs</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}CHEMISTS/SA/1082">Chemists</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}DEPARTMENT+STORES/SA/1428">Department
+								Stores</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}ESCORTS/SA/1604">Escorts</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}MOTOR+ENGINEERS+%26+REPAIRERS/SA/2233">Motor
+								Engineers &amp; Repairers</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}VETS/SA/3405">Vets</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}PLASTERERS/SA/2668">Plasterers</a>
+						</td>
+					</tr>
+				</table>
+
+			</td>
+
+			<td width="220" valign="top">
+			    <table cellpadding="0" cellspacing="0">
+				<tr>
+				
+						<th valign="top">Top 20 Searched in All States</th>
+					</tr>
+					<tr>
+						<td><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/621/category/ADULT+ENTERTAINMENT">Adult Entertainment</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/2331/category/MEDICAL+PRACTITIONERS">Medical Practitioners</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/2161/category/LAWN+%26+TURF">Turf</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/912/category/BUILDING+CONTRACTORS+-+GENERAL">Building Contractors - General</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="Listing/categorySearchAlpha/search/1417/category/DENTISTS">Dentists</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/1898/category/HAIRDRESSERS">Hairdressers</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/2830/category/RESTAURANTS">Restaurants</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/608/category/ACCOUNTANTS">Accountants</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/1471/category/DOG+%26+CAT+GROOMING">Dog &amp; Cat Grooming</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/802/category/BEAUTY+SALONS">Beauty Salons</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/1523/category/ELECTRICIANS">Electricians</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/1497/category/DRIVING+SCHOOLS">Driving Schools</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/1604/category/ESCORTS">Escorts</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/2383/category/MECHANICS+-+MOBILE">Mechanics - Mobile</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/3045/category/SOLICITORS">Solicitors</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="Listing/categorySearchAlpha/search/2525/category/PAINTERS">Painters</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/2906/category/SCHOOLS+-+PUBLIC">Schools - Public</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/2677/category/PLUMBERS">Plumbers</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/2231/category/CAR+%26+TRUCK+DETAILING">Car &amp; Truck Detailing</a>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#e5e5e5" valign="top"><a
+							href="{$SITE_PATH}Listing/categorySearchAlpha/search/1160/category/CLEANING+CONTRACTORS">Cleaning Contractors</a>
+						</td>
+					</tr>
+					</table>
 			</td>
 			
 

@@ -43,10 +43,9 @@
 
 				<td valign="top">
 					<table cellpadding="0" cellspacing="0">
-						<tr>
+					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}WEDDING+RECEPTION+VENUES/ACT/canberra-region/3477">Wedding
-								Reception Venues</a>
+							href="{$SITE_PATH}ESCORTS/ACT/canberra-region/1604">Escorts</a>
 						</td>
 					</tr>
 					<tr>
@@ -69,8 +68,7 @@
 					</tr>
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}BEAUTY+SALONS/ACT/canberra-region/802">Beauty
-								Salons</a>
+							href="{$SITE_PATH}ADULT+ENTERTAINMENT/ACT/canberra-region/621">Adult Entertainment</a>
 						</td>
 					</tr>
 					</table>
