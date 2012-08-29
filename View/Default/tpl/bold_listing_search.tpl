@@ -205,7 +205,7 @@
 					{if $values[0].map_status eq '0' && $rank_count>0}
 					   {include file='google_map.tpl'}
 					   
-					{elseif $rank_count<1}
+					{elseif $rank_count<1 && !$adult}
 					   {include file='free_listing_ads.tpl'}
                     {/if}
                   

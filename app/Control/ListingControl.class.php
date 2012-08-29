@@ -822,9 +822,10 @@ class ListingControl extends MainControl {
 
 		$classifications = explode(',', $this->listingFacade->getClassificationsByBusiness($_GET['ID']));
 		$classifications_array = $this->listingFacade->getClassificationsByBusinessComplete($_GET['ID']); //getClassificationsByBusinessComplete
-		
+		$adult = 0;
 		for ($i = 0; $i < count($classifications_array); $i++) {
 			$raw = $classifications_array[$i]['localclassification_name'];
+			if ($raw == 'ADULT ENTERTAINMENT') { $adult = 1; }
 			$conv = trim($raw);
 			$conv = urlencode($conv);
             $classifications_array[$i]['localclassification_url_encode'] = $conv;
@@ -851,6 +852,7 @@ class ListingControl extends MainControl {
 		$this->page->assign("values8",$res[7]);
 		$this->page->assign("values9",$res[8]);
 		$this->page->assign("values10",$res[9]);
+		$this->page->assign("adult",$adult); 
 
 
 		$classi   = ucwords(strtolower($res[5][0]['localclassification_name']));
