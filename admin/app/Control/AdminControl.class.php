@@ -638,8 +638,8 @@ class AdminControl extends MainControl
 			$finalArray[$region['region_code']] = $row;			
 		}
 		
-		var_dump($finalArray);
-		die();
+		//var_dump($finalArray);
+		//die();
 		
 		$ranks 					= array(1,2,3,4,5,6,7,8,9,10,11);
 
