@@ -1347,6 +1347,9 @@ class AdminFacade extends MainFacade {
 			$rec[$k]['client_id']=@$result[0]['client_id'];
 
 		}
+		
+		var_dump($rec);
+		die();
 
 		return $rec;
 	}
