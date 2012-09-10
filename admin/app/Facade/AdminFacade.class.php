@@ -1348,8 +1348,8 @@ class AdminFacade extends MainFacade {
 
 		}
 		
-		//var_dump($rec);
-		//die();
+		var_dump($rec);
+		die();
 
 		return $rec;
 	}
