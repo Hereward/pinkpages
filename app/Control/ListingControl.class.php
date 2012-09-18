@@ -1279,7 +1279,7 @@ class ListingControl extends MainControl {
 		$default_keyword  = $this->resolve_keyword($location,true);
 		$adult = 0;
 		
-		if ($category == 'ADULT ENTERTAINMENT' || $category == 'ESCORTS') {
+		if ($category == 'Adult Entertainment' || $category == 'Escorts') {
 			$adult = 1;
 			die("ADULT!!!! [$category]");
 		} else {
