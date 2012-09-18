@@ -1278,7 +1278,7 @@ class ListingControl extends MainControl {
 		//$default_keyword  = urldecode(ucwords(strtolower($_GET['category'])));
 		$default_keyword  = $this->resolve_keyword($location,true);
 		$adult = 0;
-		die("BOOO");
+		
 		if ($category == 'ADULT ENTERTAINMENT' || $category == 'ESCORTS') {
 			$adult = 1;
 			die("ADULT!!!! [$category]");
