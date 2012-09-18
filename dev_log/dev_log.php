@@ -39,7 +39,7 @@ class dev_log {
 			$xtra = " | agent = [$agent] remote_addr = [$remote_addr] referer = [$referer] trace = $trace";
 		}
        
-		if (strstr($remote_addr, '60.240.39') || strstr($remote_addr, '192.168.60') || strstr($remote_addr, '192.168.1') || strstr($remote_addr, '60.240.92')) {
+		if (strstr($remote_addr, '60.240.39') || strstr($remote_addr, '192.168.60') || strstr($remote_addr, '27.55.0') || strstr($remote_addr, '60.240.92')) {
 			error_log("$ts | $msg $xtra\n", 3, self::$log_path);
 		}
 		
@@ -54,7 +54,7 @@ class dev_log {
 		$params   = $_SERVER['QUERY_STRING'];
 		$currentUrl = $protocol . '://' . $host . $script . '?' . $params;
 		$remote_addr = $_SERVER['REMOTE_ADDR'];
-		if (strstr($remote_addr, '60.240.39') || strstr($remote_addr, '192.168.60') || strstr($remote_addr, '192.168.1') || strstr($remote_addr, '60.240.92')) {
+		if (strstr($remote_addr, '60.240.39') || strstr($remote_addr, '192.168.60') || strstr($remote_addr, '27.55.0') || strstr($remote_addr, '60.240.92')) {
 			error_log("$ts | $currentUrl | $msg\n", 3, self::$log_path);
 		}
 		return $currentUrl;
