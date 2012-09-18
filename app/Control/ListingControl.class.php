@@ -1125,7 +1125,7 @@ class ListingControl extends MainControl {
 	 */
 	public function categorySearch()
 	{
-		die("HELLLLLLO");
+		
 		dev_log::cur_url();
 		if(isset($_GET['shire_name'])  &&  !empty($_GET['shire_name'])){
 			$regionAlias        = $_GET['shire_name'];
@@ -1278,6 +1278,7 @@ class ListingControl extends MainControl {
 		//$default_keyword  = urldecode(ucwords(strtolower($_GET['category'])));
 		$default_keyword  = $this->resolve_keyword($location,true);
 		$adult = 0;
+		die("BOOO");
 		if ($category == 'ADULT ENTERTAINMENT' || $category == 'ESCORTS') {
 			$adult = 1;
 			die("ADULT!!!! [$category]");
