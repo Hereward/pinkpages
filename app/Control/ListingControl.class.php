@@ -1125,6 +1125,7 @@ class ListingControl extends MainControl {
 	 */
 	public function categorySearch()
 	{
+		die("HELLLLLLO");
 		dev_log::cur_url();
 		if(isset($_GET['shire_name'])  &&  !empty($_GET['shire_name'])){
 			$regionAlias        = $_GET['shire_name'];
