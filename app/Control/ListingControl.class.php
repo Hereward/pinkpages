@@ -1130,6 +1130,7 @@ class ListingControl extends MainControl {
 			$regionAlias        = $_GET['shire_name'];
 			$_GET['shire_name'] = $this->listingFacade->getShireNameFromAlias($_GET['shire_name']);
 		}
+		
 
 		$shire_name							= (!empty($_GET['shire_name']))?$_GET['shire_name']:NULL;
 		$shire_town							= (!empty($_GET['shire_town']))?$_GET['shire_town']:NULL;
@@ -1275,6 +1276,11 @@ class ListingControl extends MainControl {
 		$category = urldecode(ucwords(strtolower($_GET['category'])));
 		//$default_keyword  = urldecode(ucwords(strtolower($_GET['category'])));
 		$default_keyword  = $this->resolve_keyword($location,true);
+		$adult = 0;
+		if ($category == 'ADULT ENTERTAINMENT' || $category == 'ESCORTS') {
+			$adult = 1;
+			die("ADULT!!!! [$category]");
+		}
 		
 		
 		$location = ucwords(strtolower($location));
