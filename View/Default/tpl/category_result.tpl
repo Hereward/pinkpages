@@ -67,7 +67,7 @@
                           	<tr>
                           		<td width="8px"></td>
                           		<td>
-								     {if !$row}
+								     {if !$row && !$adult}
 								      {include ad_container_id="adcontainer1" gab=1 file="google_ad.tpl"}
 
 									   {assign var="row" value="1"}
@@ -223,7 +223,9 @@
 				  {/section}
                 </table>
                 
-              {include ad_container_id="adcontainer2" gab=2 file="google_ad.tpl"}
+              {if !$adult}
+                 {include ad_container_id="adcontainer2" gab=2 file="google_ad.tpl"}
+              {/if}
 				
             <div align="center">{include file="pagination.tpl"}</div>
           

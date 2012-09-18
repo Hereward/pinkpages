@@ -1281,9 +1281,7 @@ class ListingControl extends MainControl {
 		
 		if ($category == 'Adult Entertainment' || $category == 'Escorts') {
 			$adult = 1;
-			die("ADULT!!!! [$category]");
-		} else {
-			die("OOPS!!!! [$category]");
+			//die("ADULT!!!! [$category]");
 		}
 		
 		
@@ -1293,6 +1291,8 @@ class ListingControl extends MainControl {
 		$this->page->assign("category", $category);
 		$this->page->assign("keyword" , $keyword);
 		$this->page->assign("default_keyword" , $default_keyword);
+		
+		$this->page->assign("adult" , $adult);
 		
 		
 		$this->page->assign("location", $location);
