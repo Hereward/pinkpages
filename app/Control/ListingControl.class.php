@@ -825,7 +825,7 @@ class ListingControl extends MainControl {
 		$adult = 0;
 		for ($i = 0; $i < count($classifications_array); $i++) {
 			$raw = $classifications_array[$i]['localclassification_name'];
-			if ($raw == 'ADULT ENTERTAINMENT') { $adult = 1; }
+			if ($raw == 'ADULT ENTERTAINMENT' || $raw == 'ESCORTS') { $adult = 1; }
 			$conv = trim($raw);
 			$conv = urlencode($conv);
             $classifications_array[$i]['localclassification_url_encode'] = $conv;
