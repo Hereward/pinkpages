@@ -1280,6 +1280,8 @@ class ListingControl extends MainControl {
 		if ($category == 'ADULT ENTERTAINMENT' || $category == 'ESCORTS') {
 			$adult = 1;
 			die("ADULT!!!! [$category]");
+		} else {
+			die("OOPS!!!! [$category]");
 		}
 		
 		
