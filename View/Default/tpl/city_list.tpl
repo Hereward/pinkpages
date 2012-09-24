@@ -9,11 +9,7 @@
 					<tr>
 						<th valign="top">Top 20 Searched in Sydney</th>
 					</tr>
-					<tr>
-						<td><a
-							href="{$SITE_PATH}ADULT+ENTERTAINMENT/NSW/621">Adult Entertainment</a>
-						</td>
-					</tr>
+					
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MEDICAL+PRACTITIONERS/NSW/2331">Medical
@@ -74,11 +70,7 @@
 								Schools</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ESCORTS/NSW/1604">Escorts</a>
-						</td>
-					</tr>
+					
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MECHANICS+-+MOBILE/NSW/2383">Mechanics
@@ -173,11 +165,7 @@
 							href="{$SITE_PATH}WATERPROOFING/NSW/newcastle-region/3463">Waterproofing</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ADULT+ENTERTAINMENT/NSW/newcastle-region/621">Adult Entertainment</a>
-						</td>
-					</tr>
+					
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}CHIROPRACTORS/NSW/newcastle-region/1102">Chiropractors</a>
@@ -211,11 +199,7 @@
 								Stores</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ESCORTS/NSW/newcastle-region/1604">Escorts</a>
-						</td>
-					</tr>
+			
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MOTOR+ENGINEERS+%26+REPAIRERS/NSW/newcastle-region/2233">Motor
@@ -266,11 +250,7 @@
 							href="{$SITE_PATH}SOLICITORS/ACT/canberra-region/3045">Solicitors</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ESCORTS/ACT/canberra-region/1604">Escorts</a>
-						</td>
-					</tr>
+		
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MOTOR+ENGINEERS+%26+REPAIRERS/ACT/canberra-region/2233">Motor
@@ -345,11 +325,7 @@
 								Contractors</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ADULT+ENTERTAINMENT/ACT/canberra-region/621">Adult Entertainment</a>
-						</td>
-					</tr>
+					
 				</table>
 			</td>
 
@@ -387,11 +363,7 @@
 								Salons</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ADULT+ENTERTAINMENT/VIC/621">Adult Entertainment</a>
-						</td>
-					</tr>
+					
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}CHEMISTS/VIC/1082">Chemists</a>
@@ -463,11 +435,7 @@
 								- Vehicular</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ESCORTS/VIC/1604">Escorts</a>
-						</td>
-					</tr>
+
 				</table>
 				</td>
 
@@ -483,11 +451,7 @@
 					<tr>
 						<th valign="top">Top 20 Searched in <br/>Central Coast</th>
 					</tr>
-					<tr>
-						<td><a
-							href="{$SITE_PATH}ADULT+ENTERTAINMENT/NSW/central-coast-region/621">Adult Entertainment</a>
-						</td>
-					</tr>
+					
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MEDICAL+PRACTITIONERS/NSW/central-coast-region/2331">Medical
@@ -548,11 +512,7 @@
 								Schools</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ESCORTS/NSW/central-coast-region/1604">Escorts</a>
-						</td>
-					</tr>
+		
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MECHANICS+-+MOBILE/NSW/central-coast-region/2383">Mechanics
@@ -648,11 +608,7 @@
 							href="{$SITE_PATH}WATERPROOFING/QLD/3463">Waterproofing</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ADULT+ENTERTAINMENT/QLD/621">Adult Entertainment</a>
-						</td>
-					</tr>
+					
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}CHIROPRACTORS/QLD/1102">Chiropractors</a>
@@ -686,11 +642,7 @@
 								Stores</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ESCORTS/QLD/1604">Escorts</a>
-						</td>
-					</tr>
+	
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MOTOR+ENGINEERS+%26+REPAIRERS/QLD/2233">Motor
@@ -744,11 +696,7 @@
 							href="{$SITE_PATH}SOLICITORS/QLD/gold-coast-qld-region/3045">Solicitors</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ESCORTS/QLD/gold-coast-qld-region/1604">Escorts</a>
-						</td>
-					</tr>
+
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MOTOR+ENGINEERS+%26+REPAIRERS/QLD/gold-coast-qld-region/2233">Motor
@@ -823,11 +771,7 @@
 								Contractors</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ADULT+ENTERTAINMENT/QLD/gold-coast-qld-region/621">Adult Entertainment</a>
-						</td>
-					</tr>
+					
 				</table>
 			</td>
 
@@ -865,11 +809,7 @@
 								Salons</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ADULT+ENTERTAINMENT/WA/621">Adult Entertainment</a>
-						</td>
-					</tr>
+					
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}CHEMISTS/WA/1082">Chemists</a>
@@ -941,11 +881,7 @@
 								- Vehicular</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ESCORTS/WA/1604">Escorts</a>
-						</td>
-					</tr>
+
 				</table>
 			</td>
 			
@@ -962,11 +898,7 @@
 					<tr>
 						<th valign="top">Top 20 Searched in Darwin</th>
 					</tr>
-					<tr>
-						<td><a
-							href="{$SITE_PATH}ADULT+ENTERTAINMENT/NT/621">Adult Entertainment</a>
-						</td>
-					</tr>
+					
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MEDICAL+PRACTITIONERS/NT/2331">Medical
@@ -1027,11 +959,7 @@
 								Schools</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ESCORTS/NT/1604">Escorts</a>
-						</td>
-					</tr>
+
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MECHANICS+-+MOBILE/NT/2383">Mechanics
@@ -1127,11 +1055,7 @@
 							href="{$SITE_PATH}WATERPROOFING/TAS/3463">Waterproofing</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ADULT+ENTERTAINMENT/TAS/621">Adult Entertainment</a>
-						</td>
-					</tr>
+					
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}CHIROPRACTORS/TAS/1102">Chiropractors</a>
@@ -1165,11 +1089,7 @@
 								Stores</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ESCORTS/TAS/1604">Escorts</a>
-						</td>
-					</tr>
+		
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MOTOR+ENGINEERS+%26+REPAIRERS/TAS/2233">Motor
@@ -1245,11 +1165,7 @@
 							href="{$SITE_PATH}WATERPROOFING/SA/3463">Waterproofing</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ADULT+ENTERTAINMENT/SA/621">Adult Entertainment</a>
-						</td>
-					</tr>
+					
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}CHIROPRACTORS/SA/1102">Chiropractors</a>
@@ -1283,11 +1199,7 @@
 								Stores</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}ESCORTS/SA/1604">Escorts</a>
-						</td>
-					</tr>
+
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}MOTOR+ENGINEERS+%26+REPAIRERS/SA/2233">Motor
@@ -1314,11 +1226,7 @@
 				
 						<th valign="top">Top 20 Searched in All States</th>
 					</tr>
-					<tr>
-						<td><a
-							href="{$SITE_PATH}Listing/categorySearchAlpha/search/621/category/ADULT+ENTERTAINMENT">Adult Entertainment</a>
-						</td>
-					</tr>
+					
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}Listing/categorySearchAlpha/search/2331/category/MEDICAL+PRACTITIONERS">Medical Practitioners</a>
@@ -1374,11 +1282,7 @@
 							href="{$SITE_PATH}Listing/categorySearchAlpha/search/1497/category/DRIVING+SCHOOLS">Driving Schools</a>
 						</td>
 					</tr>
-					<tr>
-						<td bgcolor="#e5e5e5" valign="top"><a
-							href="{$SITE_PATH}Listing/categorySearchAlpha/search/1604/category/ESCORTS">Escorts</a>
-						</td>
-					</tr>
+
 					<tr>
 						<td bgcolor="#e5e5e5" valign="top"><a
 							href="{$SITE_PATH}Listing/categorySearchAlpha/search/2383/category/MECHANICS+-+MOBILE">Mechanics - Mobile</a>
