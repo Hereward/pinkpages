@@ -408,9 +408,10 @@ class ListingControl extends MainControl {
 					//dev_log::write("Getting classies for [$location]");
 					$classifications = $this->listingFacade->getClassificationCountByAlpha($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 				}
-
+                 dev_log::write("Classifications = " . var_export($classifications,true));
 				//Perform an All Sydney Region search if an exact region match cannot be found
 				if(!$classifications && !$exact) {
+					dev_log::write("Performing an All Sydney Region search because an exact region match cannot be found");
 					$regions = $this->listingFacade->suburbAndRegionList($keyword, $location);
 					if($regions) {
 						$this->page->assign('all_regions', $regions);
@@ -419,7 +420,7 @@ class ListingControl extends MainControl {
 					}
 				}
 				
-				dev_log::write("Classifications = " . var_export($classifications,true));
+				
 				
 				if($classifications) {
 					//dev_log::write("Listing::searchKeyword classifications = ".var_export($classifications, true));

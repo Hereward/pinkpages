@@ -3555,6 +3555,8 @@ class ListingFacade extends MainFacade {
 
 	public function getClassificationCountByLocation($location, $classification_ids, $fr=0, $paging_size = DEFAULT_PAGING_SIZE)
 	{
+		
+		//dev_log::write("getClassificationCountByLocation: BEGIN");
 		$locationParams = explode(' - ', $location);		
 		$location = $locationParams[0];	
 		$location_hack = FALSE;
@@ -3583,6 +3585,7 @@ class ListingFacade extends MainFacade {
 			//looking for exact region
 			if($location) {
 				$shire_id = $this->isRegionExists($location);
+				dev_log::write("getClassificationCountByLocation: shire_id = [$shire_id]");
 				if($shire_id) {
 					if($shire_id!=59 && $shire_id!=314 && $shire_id!=315 && $shire_id!=316 && $shire_id!=317 && $shire_id!=318 && $shire_id!=319 && $shire_id!=320) { //  && $shire_id!=314 VICTORIA HACK ADDED 20120206
 						$location_cond = " AND lb.shire_name='".$this->myDb->quote($location)."'";
