@@ -132,6 +132,7 @@ class IndexControl extends MainControl {
         $this->page->addJsFile("default_values.js");		
         $this->page->addCssStyle("autosuggest_inquisitor.css");
 		$bannerArray=$this->CommonFacade->getBanner("0");
+		dev_log::write("home() F2");
 		$this->page->assign("viewdemo",$this->request->createURL("Listing", "demoAddListing"));
 		$this->page->assign("bannerArray",$bannerArray);
 		$resip=$this->CommonFacade->addIp();
