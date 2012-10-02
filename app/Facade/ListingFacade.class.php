@@ -1204,7 +1204,7 @@ class ListingFacade extends MainFacade {
 	}
 	
 	private function addBusinessClassificationViews($classification_id, $business_id) {
-		
+		return ''; // Hereward 20121003 - remove redundant code
 		$sql = "UPDATE
 					business_classification_stats
 				SET
