@@ -1251,7 +1251,7 @@ class ListingControl extends MainControl {
 		$this->page->assign("bannerArrayE",$bannerArrayE);
 
 		$this->page->assign("home",$this->request->createURL("Affiliate", "showhomePageAffiliate"));
-		$this->listingFacade->categorySearchCount($_GET);
+		//$this->listingFacade->categorySearchCount($_GET); // Hereward 20121003 - remove redundant code
 		$res = $this->listingFacade->categorySearchResult($this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"), $_GET);
 
 		if($res['is_exclude']) {
@@ -1471,7 +1471,7 @@ class ListingControl extends MainControl {
 		$this->page->assign("bannerArrayE",$bannerArrayE);
 
 		$this->page->assign("home",$this->request->createURL("Affiliate", "showhomePageAffiliate"));
-		$this->listingFacade->categorySearchCount($_GET);
+		// $this->listingFacade->categorySearchCount($_GET); // Hereward 20121003 - remove redundant code
 		$res = $this->listingFacade->categorySearchResultAlpha($this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"), $_GET);
 		if($res['is_exclude']) {
 			$this->page->assign("is_exclude",1);
