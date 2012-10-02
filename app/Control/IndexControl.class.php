@@ -136,6 +136,7 @@ class IndexControl extends MainControl {
 		$this->page->assign("viewdemo",$this->request->createURL("Listing", "demoAddListing"));
 		$this->page->assign("bannerArray",$bannerArray);
 		$resip=$this->CommonFacade->addIp();
+		dev_log::write("home() F2.5");
 		$this->CommonFacade->popularPageCount("1");
 		dev_log::write("home() F3");
         $this->page->getPage('home.tpl');
