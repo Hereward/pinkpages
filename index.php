@@ -1,8 +1,11 @@
 <?php
 
 include("System/Config/config.php");
+dev_log::write("index.php"); 
 include("app_config.php");
 include("app_boot.php");
+
+
 
 if ( isValidSession() ) {
 	$do = DEFAULT_CONTROL_VS;
