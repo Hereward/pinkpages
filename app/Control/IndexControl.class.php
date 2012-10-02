@@ -121,7 +121,7 @@ class IndexControl extends MainControl {
         $this->page->assign("action", "search");
 		$this->page->assign("home",$this->request->createURL("Affiliate", "showhomePageAffiliate"));
         $this->page->assign("SearchAction",$this->request->createURL("Listing", "search"));
-		dev_log::write("home() F1");
+		//dev_log::write("home() F1");
 		$this->page->assign("browse_by_category",$this->request->createURL("Listing", "browseCategory"));
 		$this->page->assign("searchStreetAction",$this->request->createURL("Listing", "searchStreet"));
 		$this->page->assign("searchStreetForm",$this->request->createURL("Listing", "searchStreetForm"));
@@ -132,15 +132,15 @@ class IndexControl extends MainControl {
         $this->page->addJsFile("default_values.js");		
         $this->page->addCssStyle("autosuggest_inquisitor.css");
 		$bannerArray=$this->CommonFacade->getBanner("0");
-		dev_log::write("home() F2");
+		//dev_log::write("home() F2");
 		$this->page->assign("viewdemo",$this->request->createURL("Listing", "demoAddListing"));
-		dev_log::write("home() F2.1");
+		//dev_log::write("home() F2.1");
 		$this->page->assign("bannerArray",$bannerArray);
-		dev_log::write("home() F2.2");
-		$resip=$this->CommonFacade->addIp();
-		dev_log::write("home() F2.5");
-		$this->CommonFacade->popularPageCount("1");
-		dev_log::write("home() F3");
+		//dev_log::write("home() F2.2");
+		//$resip=$this->CommonFacade->addIp(); // Hereward 20121003 - remove redundant code
+		//dev_log::write("home() F2.5");
+		//$this->CommonFacade->popularPageCount("1"); // Hereward 20121003 - remove redundant code
+		//dev_log::write("home() F3");
         $this->page->getPage('home.tpl');
     }/* END home */
     
