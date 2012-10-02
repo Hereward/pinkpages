@@ -2710,6 +2710,7 @@ class ListingFacade extends MainFacade {
 
 	public function popularPageCount($page_id)
 	{
+		return ''; // Hereward 20121003 - remove redundant code
 		$PAGE_DETAIL_QUERY	="SELECT * FROM page_details WHERE page_id='$page_id'";
 		$PAGE_DETAIL_RESULT	=$this->myDB->query($PAGE_DETAIL_QUERY);
 
