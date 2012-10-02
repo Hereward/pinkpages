@@ -121,7 +121,7 @@ class IndexControl extends MainControl {
         $this->page->assign("action", "search");
 		$this->page->assign("home",$this->request->createURL("Affiliate", "showhomePageAffiliate"));
         $this->page->assign("SearchAction",$this->request->createURL("Listing", "search"));
-		
+		dev_log::write("home() F1");
 		$this->page->assign("browse_by_category",$this->request->createURL("Listing", "browseCategory"));
 		$this->page->assign("searchStreetAction",$this->request->createURL("Listing", "searchStreet"));
 		$this->page->assign("searchStreetForm",$this->request->createURL("Listing", "searchStreetForm"));
