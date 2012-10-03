@@ -1,7 +1,18 @@
 <div class="content">
 <h3  ><center><b> Site Performance Report</b></center></h3><br />
 <table class="datatable" width="100" border="0" cellpadding="0" cellspacing="0" align="center">
-<tr><td>You can run the "Classification - Region - Report" This will download an Excel spreadsheet which tells you how many people performed a search for a specific classifcation (Keyword Search) in a particular region. The totals at the bottom of the page are a tally of how many times a region was looked at. The totals on the right hand side are how many times a specific classifcation has been looked at. More reports will be added over the coming weeeks. If you have a particular report request please speak with Graham Cattley. </td></tr></table>
+<tr><td>
+{*
+You can run the "Classification - Region - Report" This will download an Excel spreadsheet which tells 
+you how many people performed a search for a specific classifcation (Keyword Search) in a particular region. 
+The totals at the bottom of the page are a tally of how many times a region was looked at. 
+The totals on the right hand side are how many times a specific classifcation has been looked at. More 
+reports will be added over the coming weeeks. If you have a particular report request please speak with Graham Cattley. 
+*}
+Please use the links on the right to perform report functions.
+</td></tr></table>
+ 
+ {*
  <form action="{$sitePerformanceReport}" id="" name="" method="post" >
 <div align="center">
 						
@@ -64,7 +75,7 @@
 </table> 
 </form> 
 <div align="center"> {include file="pagination.tpl"}</div>
-
+*}
 </div>
 {literal}
 <script language="javascript">
