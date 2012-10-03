@@ -14,8 +14,9 @@ reports will be added over the coming weeeks. If you have a particular report re
 Please use the links on the right to perform report functions.
 </td></tr></table>
 *}
-
-<h3 style="color:red;">Please use the links on the right to perform report functions.</h3>
+<div style="height:400px;">
+<h3 style="margin:20px; color:red;">Please use the links on the right to perform report functions.</h3>
+</div>
  
  {*
  <form action="{$sitePerformanceReport}" id="" name="" method="post" >
