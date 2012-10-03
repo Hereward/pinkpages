@@ -1466,6 +1466,9 @@ class AdminControl extends MainControl
 		$this->page->assign("count_listing",$this->request->createURL("Admin","count_listing"));
 		$this->page->assign("search_within_a_locality_count",$this->request->createURL("Admin","search_within_a_locality_count","FDate={$this->request->getAttribute("FDate")}&FMonth={$this->request->getAttribute("FMonth")}&FYear={$this->request->getAttribute("FYear")}&ToDate={$this->request->getAttribute("ToDate")}&ToMonth={$this->request->getAttribute("ToMonth")}&ToYear={$this->request->getAttribute("ToYear")}"));
 		$this->page->assign("act",$_GET['action']);
+		
+		// Hereward 20121003 - remove redundant code
+		/*
 		$resip			= $this->adminFacade->viewReport($_POST);
 		$this->page->assign("values",$resip);
 		$result			= $this->adminFacade->searchStats();
@@ -1492,9 +1495,11 @@ class AdminControl extends MainControl
 			$AvgDateWiseCount		= round($totalCount/$searchStatsDateWise_count);
 			$this->page->assign("AvgDateWiseCount",$AvgDateWiseCount);
 		}
+		
+		
 
 		$this->page->assign("totalCount1",$totalCount);
-
+        */
 
 		$this->page->getPage("site_performance_report.tpl");
 	}
