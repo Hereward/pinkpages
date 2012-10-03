@@ -1,17 +1,21 @@
 <div class="content">
 <h3  ><center><b> Site Statistics</b></center></h3><br />
 <table class="datatable" width="100" border="0" cellpadding="10" cellspacing="0" align="center">
-<tr><td style="font-size: 12px; font-weight:bold;" >
 {*
+<tr><td style="font-size: 12px; font-weight:bold;" >
+
 You can run the "Classification - Region - Report" This will download an Excel spreadsheet which tells 
 you how many people performed a search for a specific classifcation (Keyword Search) in a particular region. 
 The totals at the bottom of the page are a tally of how many times a region was looked at. 
 The totals on the right hand side are how many times a specific classifcation has been looked at. More 
 reports will be added over the coming weeeks. If you have a particular report request please speak with Graham Cattley. 
-*}
+
 
 Please use the links on the right to perform report functions.
 </td></tr></table>
+*}
+
+<h3 style="color:red;">Please use the links on the right to perform report functions.</h3>
  
  {*
  <form action="{$sitePerformanceReport}" id="" name="" method="post" >
