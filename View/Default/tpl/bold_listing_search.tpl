@@ -201,10 +201,10 @@
 					</ul>
 				<br /><br />
 					</div>
-					
-					<iframe style="float:right;" src="http://mapq.st/embed?q={$values[i].business_street1} {if  $values[i].street2_status eq '1'}{else}{$values[i].business_street2}{/if} {if $values[i].business_suburb eq ''}{else}{$values[i].business_suburb}{if $values[i].business_state neq ''} {/if}{/if} {if $values[i].business_state eq ''}{else}{$values[i].business_state}{if $values[i].business_postcode neq ''}{/if}{/if} {if $values[i].business_postcode eq ''}{else}{$values[i].business_postcode}{/if}" width="400" height="350"></iframe>
-					
 					{*
+					<iframe style="float:right;" src="http://mapq.st/embed?q={$values[i].business_street1} {if  $values[i].street2_status eq '1'}{else}{$values[i].business_street2}{/if} {if $values[i].business_suburb eq ''}{else}{$values[i].business_suburb}{if $values[i].business_state neq ''} {/if}{/if} {if $values[i].business_state eq ''}{else}{$values[i].business_state}{if $values[i].business_postcode neq ''}{/if}{/if} {if $values[i].business_postcode eq ''}{else}{$values[i].business_postcode}{/if}" width="400" height="350"></iframe>
+					*}
+					
 					
 					{if $values[0].map_status eq '0' && $rank_count>0}
 					   {include file='google_map.tpl'}
@@ -213,7 +213,7 @@
 					   {include file='free_listing_ads.tpl'}
                     {/if}
                     
-                    *}
+                    
                   
 
   {if $values[i].business_image neq ''}
