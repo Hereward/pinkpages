@@ -157,7 +157,7 @@ class ListingControl extends MainControl {
 		$action							= $_GET['action'];
 		$this->page->assign("do",$do);
 		$this->page->assign("action",$action);
-		$this->listingFacade->searchConut();
+		//$this->listingFacade->searchConut();
 		$this->listingFacade->popularPageCount("4");
 		$this->page->assign("home",$this->request->createURL("Affiliate", "showhomePageAffiliate"));
 		$action		= $_GET['action'];
@@ -251,7 +251,7 @@ class ListingControl extends MainControl {
 
 
 		$this->page->assign("SearchAction",$this->request->createURL("Listing", "search"));
-		$this->listingFacade->searchConut();
+		//$this->listingFacade->searchConut();
 		$this->listingFacade->popularPageCount("2");
 			
 		$this->page->addJsFile("bsn.AutoSuggest_2.1.3.js");
@@ -608,7 +608,7 @@ class ListingControl extends MainControl {
 		$bannerArray1			= $this->listingFacade->getBanner("3");
 		$this->page->assign("bannerArray1",$bannerArray1);
 
-		$this->listingFacade->searchConut();
+		//$this->listingFacade->searchConut();
 		$this->listingFacade->popularPageCount("2");
 			
 		$tempSearchResult 		= $this->listingFacade->tempSearchKeyword($_GET);

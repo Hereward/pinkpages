@@ -150,6 +150,7 @@ VALUES (
 
 	public function popularPageCount($page_id)
 	{
+		return ''; // Hereward 20121030 - remove redundant code
 		$PAGE_DETAIL_QUERY	="SELECT * FROM page_details WHERE page_id='$page_id'";
 		$PAGE_DETAIL_RESULT	=$this->MyDB->query($PAGE_DETAIL_QUERY);
 

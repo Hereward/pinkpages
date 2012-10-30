@@ -405,6 +405,7 @@ class BusinessFacade extends MainFacade {
 	 */	
 	public function popularPageCount($page_id)
 	{
+		return ''; // Hereward 20121003 - remove redundant code
 		$PAGE_DETAIL_QUERY			= "SELECT * FROM page_details WHERE page_id='$page_id'";
 		$PAGE_DETAIL_RESULT			= $this->MyDB->query($PAGE_DETAIL_QUERY);
 		$homePageCount				= $PAGE_DETAIL_RESULT['0']['count']+1;
