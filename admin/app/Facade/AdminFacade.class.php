@@ -1463,6 +1463,7 @@ class AdminFacade extends MainFacade {
 						$rank=$this->MyDB->query($sql);
 						
 						//fetching business view count
+						/*
 						$sql = "SELECT 
 									views 
 								FROM 
@@ -1475,6 +1476,8 @@ class AdminFacade extends MainFacade {
 						$rs=$this->MyDB->query($sql);
 //						prexit($rs);
 						$view_count = ($rs)?$rs[0]['views']:0;
+						*/
+						$view_count = 0;
 						$classifications[$k]['view_count'] = $view_count;
 						$classifications[$k]['rank'] = $rank;
 					}
