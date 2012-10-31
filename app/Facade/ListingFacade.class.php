@@ -2783,7 +2783,7 @@ class ListingFacade extends MainFacade {
 
 		/*sanjeewa - 1609 temporary*/
 		$sql = "INSERT INTO user_agents (iduser_agents) VALUES ('$agent_user')";
-		$this->myDB->exec($sql);
+		//$this->myDB->exec($sql); -- Hereward remove redundant code 20121031
 	}
 
 	public function categorySearchCount($get)
