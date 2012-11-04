@@ -4,11 +4,11 @@
 		<td valign="top" align="center">
            {include file='468X60_ad.tpl'} 
 		</td>
-		
+	{*	
 		<td valign="top" align="center">
 		   {include file='468X60_ad.tpl'}
 		</td>
-	{*		
+			
 		<td valign="top" align="center">
 		   {include file='234X60_ad.tpl'}
 		</td>
