@@ -4415,7 +4415,7 @@ else{
 
 		$fetch_business_classification		="SELECT * FROM business_classification WHERE business_id={$Business_ID}";
 		$business_classificationArray		=$this->myDB->query($fetch_business_classification);
-
+/* Remove redundant code -- Hereward 20120611
 		foreach($business_classificationArray as $value)
 		{
 
@@ -4436,7 +4436,7 @@ else{
 			$business_pageviews					= $this->myDB->query($insert_business_pageviews);
 		}
 
-
+*/
 		$fetchBusinessCount					= "SELECT count FROM business_preview_count WHERE business_id={$Business_ID}";
 		$result								= $this->myDB->query($fetchBusinessCount);
 		if(isset($result['0']['count'])){
