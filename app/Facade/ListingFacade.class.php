@@ -3556,7 +3556,7 @@ class ListingFacade extends MainFacade {
 
 	public function getClassificationCountByLocation($location, $classification_ids, $fr=0, $paging_size = DEFAULT_PAGING_SIZE)
 	{
-		
+		$location_raw = $location;
 		//dev_log::write("getClassificationCountByLocation: BEGIN");
 		$locationParams = explode(' - ', $location);		
 		$location = $locationParams[0];	
@@ -3609,11 +3609,12 @@ class ListingFacade extends MainFacade {
 
 					//checking ambiguity in Region & Suburb name
 					if( $region = $this->isRegionLikeExists($location)) {
+						//die($location);
 						$location_cond = " AND lb.business_suburb='".$this->myDb->quote($location)."'";
 						$param = "&shire_town=".urlencode($location);
 						$ambiguous = true;
 						$ambg_region_name = $region['shirename_shirename'];
-						$ambg_suburb_name = $location;
+						$ambg_suburb_name = $location_raw;
 					}
 
 					/*if($amb_c == "s") {
@@ -3720,6 +3721,7 @@ class ListingFacade extends MainFacade {
 	
 	public function getClassificationCountByAlpha($location, $classification_ids, $fr=0, $paging_size = DEFAULT_PAGING_SIZE)
 	{
+		
 		$classifications = array();		
 		
 		if(count($classification_ids)>0) {
@@ -3803,7 +3805,10 @@ class ListingFacade extends MainFacade {
 			if(isset($_GET['ambg_suburb'])) {
 				$ambiguous = true;
 				$ambg_suburb_name = $_GET['ambg_suburb'];
+				
 			}
+			
+			
 			$classifications['total_recs'] = $i;
 			$classifications['classifications'] = $recs;
 			$classifications['ambiguous'] = $ambiguous;

@@ -351,6 +351,7 @@ class ListingControl extends MainControl {
 	 */
 	function searchKeyword()
 	{
+		
         //dev_log::cur_url();
 		$defaultLocation = $this->defaultLocation;
          
@@ -402,9 +403,11 @@ class ListingControl extends MainControl {
 				$this->listingFacade->successfulSearch($_GET,"keyword");
 				//Gather all the individual listings based on the information gathered
 				if($location != $defaultLocation){
+					
 					dev_log::write("Getting classies for [$location] [".var_export($classification_ids,true). "]");
 					$classifications = $this->listingFacade->getClassificationCountByLocation($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 				} else {
+					
 					//dev_log::write("Getting classies for [$location]");
 					$classifications = $this->listingFacade->getClassificationCountByAlpha($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 				}
@@ -430,10 +433,13 @@ class ListingControl extends MainControl {
 						$this->page->assign("ambiguous",1);
 						$this->page->assign("ambg_region_name",$classifications['ambg_region_name']);
 						$this->page->assign("ambg_suburb_name",$classifications['ambg_suburb_name']);
+						//die($_GET['Search2']);
+						//die(urlencode($classifications['ambg_suburb_name']));
+						//die($classifications['ambg_suburb_name']);
 						$this->page->assign("suburb_link",$this->request->createNaturalURL("Listing", "searchKeyword", "Search1=$keyword&Search2=".urlencode($classifications['ambg_suburb_name'])."&c=s"));
 						$region_link = $this->request->createNaturalURL("Listing", "searchKeyword", "Search1=$keyword&Search2=".urlencode($classifications['ambg_region_name'])."&ambg_suburb=".urlencode($classifications['ambg_suburb_name'])."&c=r");
 						$this->page->assign("region_link",$region_link);
-					
+					    //die($region_link);
 					    if (!isset($_GET['c'])) { // 20120427 HACK FIX FOR REGION/SUBURB SWAP ON RESULTS PAGE - HEREWARD
 					    	header("Location: $region_link");
 					    }
