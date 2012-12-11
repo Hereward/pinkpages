@@ -45,7 +45,7 @@
                                   <tr>
                                   <td class="smallrextlowtitle" colspan="2">
                                   {if $values[i].is_ranked eq 0}
-        								<b>{$values[i].business_name|upper}</b>
+        								<b><a href="{$values[i].link}" >{$values[i].business_name}</a>{* {$values[i].business_name|upper} *}</b>
         								{else}
         								
         								<b><a href="{$values[i].link}" >{$values[i].business_name}</a> </b> 
@@ -53,7 +53,7 @@
         							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         					{if $values[i].classification_name neq ''}		   
 
-  	<font color="#ffffff">[{$values[i].classification_name}]</font>
+  	<span style="color:dimgray;">[{$values[i].classification_name}]</span>
  
         					{/if}		    
 		        							  

@@ -894,6 +894,7 @@ class AdminListingFacade extends MainFacade {
 	public function csvFileUpload($file)
 	{
 		dev_log::timer('set');
+		//dev_log::write("csvFileUpload = ".$uploadDir . $file);
 		try {
 			//print("Debug inside csvFileUpload<br />");
 			//print_r($_FILES);
@@ -912,6 +913,7 @@ class AdminListingFacade extends MainFacade {
 				$file      = $_FILES['csvfile']['name'];
 				setSession("file",$uploadDir.'/'.$file);
 				$values = array();
+				dev_log::write("Attempting csvFileUpload : ".$uploadDir .'/'. $file);
 					
 				//die("Attempting to upload file $tmp to $uploadDir/$file");
 				if (move_uploaded_file($tmp, $uploadDir .'/'. $file) or die("Cannot copy uploaded file [$uploadDir/$file]")) {
@@ -1144,8 +1146,8 @@ class AdminListingFacade extends MainFacade {
         dev_log::write("-----------------------------");
         dev_log::write("Insert new listings - BEGIN");
         //die("FORCED TERMINATION");
-        dev_log::timer('get');
-        //$classiIDs = array();
+        //dev_log::timer('get');
+        $classiIDs = array();
         
         $this->shireIDs    = $this->fetchTownDetails();
 		$this->classificationIDs = $this->fetchClassificationDetails();
@@ -1158,9 +1160,15 @@ class AdminListingFacade extends MainFacade {
 		//$this->deleteExistingFreeListings();
 		$class_id = '2677';
 		$state = '';
+		$shireDetails = '';
+		$shireID      = '';
+		$shireName    = '';
+		
 		
 		//dev_log::write("Identifying Classifications and State from CSV data");
 		//$i = 1;
+		
+		$business_listing_insert_total = 0;
 		/*
 		foreach($post as $row){
 			if((isset($row[8])) || (isset($row[9])) || (isset($row[10])) || (isset($row[11])) || (isset($row[12]))){
@@ -1182,10 +1190,11 @@ class AdminListingFacade extends MainFacade {
 			
 		}
 		*/
+		
 		//$class_id_str = implode(',', $classiIDs);
 		//$state = 'NSW';
 		
-		dev_log::write("Deleting OLD free listings for VICTORIA");
+		//dev_log::write("Deleting OLD free listings");
 		dev_log::timer('get');
 		//dev_log::write("STATE = $state | CLASSIFICATIONS = $class_id_str");
 		//print("<br />STATE = $state | CLASSIFICATIONS = $class_id_str<br />");
@@ -1299,8 +1308,9 @@ class AdminListingFacade extends MainFacade {
                     $last_insert_id = mysql_insert_id();
                     //dev_log::write("INSERT ID = $last_insert_id");
 					if($res1){
+						$business_listing_insert_total++;
 						$success++;
-						
+						dev_log::write("Business Listing Insert Total = $business_listing_insert_total");
 						if ($last_insert_id) {
 							$url_alias .= "-$last_insert_id";
 							$update_url_sql = "UPDATE local_businesses SET url_alias = '$url_alias' WHERE business_id = '$last_insert_id'";
@@ -1353,11 +1363,15 @@ class AdminListingFacade extends MainFacade {
 		}
 		gzclose($handle);
 		
-		if($failure)
+		if($failure) {
 		print("<br />$failure rows failed to be inserted into the database<br />");
-
-		if($success)
-		print("<br />$success rows were successfully inserted into the database<br />");
+        //dev_log::write("$failure rows failed to be inserted into the database");
+		}
+        
+		if($success) {
+		print("<br />$business_listing_insert_total listings were successfully inserted into the database<br />");
+		 //dev_log::write("$success rows were successfully inserted into the database");
+		}
 
 		//fclose($fp1) or die ("Cannot close file");
 		//fclose($fp2) or die ("Cannot close file");
@@ -1390,11 +1404,14 @@ class AdminListingFacade extends MainFacade {
 
 	private function getShireID($suburb, $postcode = ''){
 		foreach($this->shireIDs as $shireID) {
+			/*
 			if(strtolower($shireID['shiretown_townname']) == strtolower(trim($suburb))){
 				$shireDetails = array('shireID' => $shireID['shiretown_id'], 'shireRegion' => $shireID['shirename_shirename'], 'shireState' => $shireID['localstate_name']);
 				return $shireDetails;
 				break;
-			}  else if(trim($shireID['shiretown_postcode']) == trim($postcode)) {
+			}  else 
+			*/
+			if (trim($shireID['shiretown_postcode']) == trim($postcode)) {
 				$shireDetails = array('shireID' => $shireID['shiretown_id'], 'shireRegion' => $shireID['shirename_shirename'], 'shireState' => $shireID['localstate_name']);
 				return $shireDetails;
 				break;
@@ -1507,11 +1524,11 @@ class AdminListingFacade extends MainFacade {
 
 		//Delete all Entries from the FREE_BUSINESSES TABLE. DATABASE WILL ENFORCE REFERENTIAL INTEGRITY with FREEBUSINESS_CLASSIFICATION table
 		$sql_02 = "delete from local_businesses where business_initials = 'Free' AND business_id IN ($in_string) AND business_state='$state'";
-		//dev_log::write($sql_02);
+		dev_log::write($sql_02);
 		
-		//die('deleteFreeListingsClassification');
+		die('deleteFreeListingsClassification');
 		$result  = $this->MyDB->query($sql_02);
-		//dev_log::write("KILL COUNT = $kill_count");
+		dev_log::write("KILL COUNT = $kill_count");
 	}
 
 	public function importCSV($post)
