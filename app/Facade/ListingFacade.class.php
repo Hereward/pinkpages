@@ -2740,23 +2740,99 @@ class ListingFacade extends MainFacade {
 		}
 
 	}
+	
+	public function filter_bot($agent) {
+		//$agent = "BoxSeaBot/0.5 (http://boxsea.com/crawler)";
+		//$path =  "{$_SERVER['DOCUMENT_ROOT']}/System/Config/filter.txt";
+		
+		$src_path =  "{$_SERVER['DOCUMENT_ROOT']}/System/Config/filter.txt";
+		$serialised_path =  "{$_SERVER['DOCUMENT_ROOT']}/System/Config/filter_serialised.txt";
+		$final = '';
+
+		if (file_exists($serialised_path)) {
+			dev_log::write("filter_bot | FILE EXISTS: [$serialised_path]");
+			$data = file_get_contents($serialised_path);
+			$final = unserialize($data);
+
+		} else {
+			dev_log::write("filter_bot | FILE NOT EXIST!: $serialised_path");
+			$data = file_get_contents($src_path);
+
+			$parsed  = array();
+			$blocks  = preg_split('/\n\n/', $data);
+			$lines   = array();
+			$matches = array();
+			foreach ($blocks as $i => $block) {
+				$parsed[$i] = array();
+				$lines = preg_split('/\n(([\w.-]+)\: *((.*\n\s+.+)+|(.*(?:\n))|(.*))?)/',
+				$block, -1, PREG_SPLIT_DELIM_CAPTURE);
+				foreach ($lines as $line) {
+					if(preg_match('/^\n?([\w.-]+)\: *((.*\n\s+.+)+|(.*(?:\n))|(.*))?$/',
+					$line, $matches)) {
+						$parsed[$i][$matches[1]] = preg_replace('/\n +/', ' ',
+						trim($matches[2]));
+					}
+				}
+			}
+
+			$final = array();
+			foreach ($parsed as $bot) {
+				$exclusion_string = isset($bot['robot-exclusion-useragent'])?$bot['robot-exclusion-useragent']:'';
+				if (strlen($exclusion_string)>2) {
+		           array_push($final, $exclusion_string);
+				}
+			}
+			$count = count($final);
+			dev_log::write("filter_bot | SERIALISING DATA AND WRITING exclusion_string TO: [$serialised_path] count=[$count]");
+			$serialised = serialize($final);
+			$file=fopen($serialised_path,'w');
+			fwrite($file, $serialised);
+			fclose($file);
+		}
+		
+		$isbot = 0;
+		$found_bot = '';
+		foreach ($final as $bot) {
+			if (stristr($agent, $bot)) {
+				$found_bot = $bot;
+				$isbot = 1;
+				break;
+			}
+		}
+		
+		if ($isbot) {
+			dev_log::write("filter_bot | A BOT WAS FOUND! agent = [$agent] bot = [$found_bot]");
+			return 1;
+		} else {
+			dev_log::write("filter_bot | NOT A BOT: [$agent]");
+			
+			return 0;
+		}
+
+		//print_r($final);
+	}
 
 	public function addRegionClassificationViews($region_id, $classification_id) {
 		
 		$region_id = ($region_id)?$region_id:59;//taking region All Sydney in case of NULL region_id
 		$agent_user = $_SERVER['HTTP_USER_AGENT'];
 		$date=date('Y-m-d');
-
+        $google=0;
+        
+        /* Hereward 20130115 remove old filter
 		$cut_word=null;$cut_word2=null;
 		$cut_word  = strstr($agent_user, 'google');
 		$cut_word2 = strstr($agent_user, 'bing');
 
-		/*sanjeewa 14/09/2011/ & 15/09/2011 - store google & bing views seperate field */
-		$google=0; 
+		sanjeewa 14/09/2011/ & 15/09/2011 - store google & bing views seperate field 
+		 
 
 		if ($cut_word != null || $cut_word2 != null) {
 		    $google=1;
 		} 
+		*/
+		
+		$google = $this->filter_bot($agent_user);
 		
 		$sql = "UPDATE
 				region_classification_stats
