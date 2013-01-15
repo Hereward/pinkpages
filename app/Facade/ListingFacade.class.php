@@ -2746,7 +2746,7 @@ class ListingFacade extends MainFacade {
 		//$path =  "{$_SERVER['DOCUMENT_ROOT']}/System/Config/filter.txt";
 		
 		$src_path =  "{$_SERVER['DOCUMENT_ROOT']}/System/Config/filter.txt";
-		$serialised_path =  "{$_SERVER['DOCUMENT_ROOT']}/System/Config/filter_serialised.txt";
+		$serialised_path =  "{$_SERVER['DOCUMENT_ROOT']}/dev_log/filter_serialised.txt";
 		$final = '';
 
 		if (file_exists($serialised_path)) {
