@@ -2750,12 +2750,12 @@ class ListingFacade extends MainFacade {
 		$final = '';
 
 		if (file_exists($serialised_path)) {
-			dev_log::write("filter_bot | FILE EXISTS: [$serialised_path]");
+			//dev_log::write("filter_bot | FILE EXISTS: [$serialised_path]");
 			$data = file_get_contents($serialised_path);
 			$final = unserialize($data);
 
 		} else {
-			dev_log::write("filter_bot | FILE NOT EXIST!: $serialised_path");
+			//dev_log::write("filter_bot | FILE NOT EXIST!: $serialised_path");
 			$data = file_get_contents($src_path);
 
 			$parsed  = array();
@@ -2783,7 +2783,7 @@ class ListingFacade extends MainFacade {
 				}
 			}
 			$count = count($final);
-			dev_log::write("filter_bot | SERIALISING DATA AND WRITING exclusion_string TO: [$serialised_path] count=[$count]");
+			//dev_log::write("filter_bot | SERIALISING DATA AND WRITING exclusion_string TO: [$serialised_path] count=[$count]");
 			$serialised = serialize($final);
 			$file=fopen($serialised_path,'w');
 			fwrite($file, $serialised);
@@ -3662,7 +3662,7 @@ class ListingFacade extends MainFacade {
 			//looking for exact region
 			if($location) {
 				$shire_id = $this->isRegionExists($location);
-				dev_log::write("getClassificationCountByLocation: shire_id = [$shire_id]");
+				//dev_log::write("getClassificationCountByLocation: shire_id = [$shire_id]");
 				if($shire_id) {
 					if($shire_id!=59 && $shire_id!=314 && $shire_id!=315 && $shire_id!=316 && $shire_id!=317 && $shire_id!=318 && $shire_id!=319 && $shire_id!=320) { //  && $shire_id!=314 VICTORIA HACK ADDED 20120206
 						$location_cond = " AND lb.shire_name='".$this->myDb->quote($location)."'";
@@ -3721,7 +3721,7 @@ class ListingFacade extends MainFacade {
 				if($shire) {
 					$shire_cond .= " AND lb.shire_name='".$this->myDB->quote(trim($location))."' ";
 				}
-
+ 
 				$condition = "( $main_cond $condition ) OR ( $shire_cond $location_cond )";
 
 				//exception handle for All-Sydney results
@@ -3746,7 +3746,7 @@ class ListingFacade extends MainFacade {
 										AND br.localclassification_id=".$this->myDB->quote($classification_id).")
 							WHERE 
 								$condition ";
-				dev_log::write("getClassificationCountByLocation: shire_id = $shire_id | shire_sql = $shire_sql");
+				//dev_log::write("getClassificationCountByLocation: shire_id = $shire_id | shire_sql = $shire_sql");
 								
 				$count = $this->myDB->exec($shire_sql);
 				if($count) {
