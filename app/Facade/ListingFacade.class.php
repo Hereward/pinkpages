@@ -2745,6 +2745,8 @@ class ListingFacade extends MainFacade {
 		//$agent = "BoxSeaBot/0.5 (http://boxsea.com/crawler)";
 		//$path =  "{$_SERVER['DOCUMENT_ROOT']}/System/Config/filter.txt";
 		
+		$custom_bot_array = array('google','bing','bot');
+		
 		$src_path =  "{$_SERVER['DOCUMENT_ROOT']}/System/Config/filter.txt";
 		$serialised_path =  "{$_SERVER['DOCUMENT_ROOT']}/dev_log/filter_serialised.txt";
 		$final = '';
@@ -2779,7 +2781,8 @@ class ListingFacade extends MainFacade {
 			foreach ($parsed as $bot) {
 				$exclusion_string = isset($bot['robot-exclusion-useragent'])?$bot['robot-exclusion-useragent']:'';
 				if (strlen($exclusion_string)>2) {
-		           array_push($final, $exclusion_string);
+		           //array_push($final, $exclusion_string);
+		           $final[] = $exclusion_string;
 				}
 			}
 			$count = count($final);
@@ -2789,7 +2792,13 @@ class ListingFacade extends MainFacade {
 			fwrite($file, $serialised);
 			fclose($file);
 		}
+		//$final[] = $exclusion_string;
+		//array_push($final, $exclusion_string);
+		$final = array_merge($final,$custom_bot_array);
 		
+		//die();
+		$final_str = var_export($final,true);
+		//dev_log::write("FINAL BOT EXCLUSION STRING = $final_str");
 		$isbot = 0;
 		$found_bot = '';
 		foreach ($final as $bot) {
@@ -2799,6 +2808,8 @@ class ListingFacade extends MainFacade {
 				break;
 			}
 		}
+		
+		
 		
 		if ($isbot) {
 			dev_log::write("filter_bot | A BOT WAS FOUND! agent = [$agent] bot = [$found_bot]");
