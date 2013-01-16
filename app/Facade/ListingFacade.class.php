@@ -2745,7 +2745,11 @@ class ListingFacade extends MainFacade {
 		//$agent = "BoxSeaBot/0.5 (http://boxsea.com/crawler)";
 		//$path =  "{$_SERVER['DOCUMENT_ROOT']}/System/Config/filter.txt";
 		
-		$custom_bot_array = array('google','bing','bot');
+		//$agent = "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)";
+		
+		//$agent = "Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)";
+		
+		$custom_bot_array = array('google','bing','bot','spider');
 		
 		$src_path =  "{$_SERVER['DOCUMENT_ROOT']}/System/Config/filter.txt";
 		$serialised_path =  "{$_SERVER['DOCUMENT_ROOT']}/dev_log/filter_serialised.txt";
@@ -2797,7 +2801,7 @@ class ListingFacade extends MainFacade {
 		$final = array_merge($final,$custom_bot_array);
 		
 		//die();
-		$final_str = var_export($final,true);
+		//$final_str = var_export($final,true);
 		//dev_log::write("FINAL BOT EXCLUSION STRING = $final_str");
 		$isbot = 0;
 		$found_bot = '';
