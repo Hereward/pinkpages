@@ -14,7 +14,7 @@
 	
      <tr class="{if $j % 2==0}{else}odd{/if}">
 			<td>{$key.localclassification_name}</td>
-			 <td><a href="{$supressClassification}={$key.localclassification_id}">suppress</a></td>
+			 <td>suppress (DISABLED) {* <a href="{$supressClassification}={$key.localclassification_id}"> *}</td>
     </tr>
 	 {assign var="j" value=$j+1}
     {/foreach}
