@@ -826,8 +826,13 @@ class ListingControl extends MainControl {
 		$map = $this->listingFacade->googleMapBusinessResult($_GET);
 
 		$res = $this->listingFacade->boldListingResult($_GET);
+		
+		//var_dump($res);
+		//die();
 
 		$classifications = explode(',', $this->listingFacade->getClassificationsByBusiness($_GET['ID']));
+		
+		
 		$classifications_array = $this->listingFacade->getClassificationsByBusinessComplete($_GET['ID']); //getClassificationsByBusinessComplete
 		$adult = 0;
 		for ($i = 0; $i < count($classifications_array); $i++) {
@@ -863,6 +868,7 @@ class ListingControl extends MainControl {
 
 
 		$classi   = ucwords(strtolower($res[5][0]['localclassification_name']));
+		//$classy = $classifications_array[0]['localclassification_name'];
 		$location = ucwords(strtolower($res[0][0]['business_suburb']));
 		
 		$keyword = $this->resolve_keyword($classi,false,$location);
@@ -875,6 +881,21 @@ class ListingControl extends MainControl {
 		$this->page->assign("classi", $classi);
 		$class_count= count($classifications_array);
 		$this->page->assign("classifications", $classifications_array);
+		
+		
+		//die($classy);
+		
+		$mbn = (isset($res[0][0]['business_name']))?$res[0][0]['business_name']. ', ':'';
+		$mbs = (isset($res[0][0]['business_state']))?$res[0][0]['business_state']. ', ':'';
+		$mbp = (isset($res[0][0]['business_postcode']))?$res[0][0]['business_postcode']:'';
+		
+		
+		$meta_loc_bits = ($location)?$mbn . $location . ', ' . $mbs . $mbp:$mbn . $mbs . $mbp;
+
+		$keywords = $meta_loc_bits . ', ' . $this->cf->loadAjax('', $classi);
+		//die($boo_keywords);
+		//$this->page->assign("boo_keywords", $boo_keywords);
+		//die("KW = [$keyword_string]");
 		$this->page->assign("class_count", $class_count);
 
 		$this->page->assign("location", $location);
@@ -883,7 +904,10 @@ class ListingControl extends MainControl {
 		$syns = $this->getSynonyms($res[8]);
 		$metaSyns     = (isset($syns)) ? ", " . implode(", ", $syns) : "";
 		$metaLocation = (!empty($location)) ? ", " . $location : "";
-		$this->page->addMetaDescription($res[0][0]['business_name'] . $metaLocation . ", " .implode(", ", $classifications));
+		
+		//$this->page->addMetaDescription($res[0][0]['business_name'] . $metaLocation . ", " .implode(", ", $classifications));
+		//die($meta_loc_bits);
+		$this->page->addMetaDescription($meta_loc_bits . ', ' . $classi);
 		//$this->page->addMetaKeywords($res[0][0]['business_name'] . $metaSyns);
 
 		//Add Page Title
@@ -899,11 +923,15 @@ class ListingControl extends MainControl {
 		$this->page->pageTitle = $res[0][0]['business_name'] . "&#58; Pink Pages Australia";
         */
 		
+		//$this->page->pageTitle = $meta_loc_bits . "&#58; ". $classi . " in " . $location . "&#58; Pink Pages Australia";
+		
+		
 		if($location) {
-		    $this->page->pageTitle = $res[0][0]['business_name'] . "&#58; ". $classi . " in " . $location . "&#58; Pink Pages Australia";
+		    $this->page->pageTitle = $meta_loc_bits . "&#58; ". $classi . " in " . $location . "&#58; Pink Pages Australia";
 		} else {
-		    $this->page->pageTitle = $res[0][0]['business_name'] . "&#58; Pink Pages Australia";
+		    $this->page->pageTitle = $meta_loc_bits . "&#58; Pink Pages Australia";
 		}
+		
 		
 		$canonicalType = 'listing';
 		$canonicalUrl  = $this->url->getCanonical($canonicalType, $_GET);
@@ -912,6 +940,8 @@ class ListingControl extends MainControl {
 		}
 
 		$this->page->addMetaTags("robots", "noodp,noydir");
+		
+		$this->page->addMetaKeywords($keywords);
 			
 		$this->page->assign("map_header_js", $map->getHeaderJS());
 		$this->page->assign("map_js", $map->getMapJS());

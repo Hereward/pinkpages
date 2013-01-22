@@ -112,7 +112,7 @@ class MainPage extends Smarty {
 	}
 
 	function getPage($midPage) {
-
+        
 		global $request, $do, $action;
 		$this->assign("USERNAMESPACE", USERNAMESPACE);
 		$this->assign("IMAGES_PATH", IMAGES_PATH);
@@ -135,20 +135,20 @@ class MainPage extends Smarty {
 
 		if($do == "ListingControl" && $action == "boldListing") {
 			/*$this->display("no-header.tpl");*/
-			//dev_log::write("getPage: A");
+			dev_log::write("getPage: A");
 		}elseif($do == "ListingControl" && $action == "demoBoldListing") {
 			$this->display("no-header.tpl");
-			//dev_log::write("getPage: B");
+			dev_log::write("getPage: B");
 		}
 		
 		elseif(($do == DEFAULT_CONTROL."Control" && $action == DEFAULT_ACTION) || ($do == 'ListingControl' && $action == 'mapSearch') || ($do == 'ListingControl' && $action == 'searchStreetForm')|| ($do == 'ListingControl' && $action == 'businessNameSearch'))
 		{
 			$this->display("header.tpl");
-			//dev_log::write("getPage: C");
+			dev_log::write("getPage: C");
 		}
 		else {
 			$this->display("header_inner.tpl");
-			//dev_log::write("getPage: D");
+			dev_log::write("getPage: D");
 		}
 
 		//{

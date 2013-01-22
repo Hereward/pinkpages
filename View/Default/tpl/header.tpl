@@ -6,6 +6,7 @@
 <link rel="shortcut icon" href="http://www.pinkpages.com.au/View/Default/Images/favicon.ico"  /> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="description" content="{$meta_description}" />
+
 {if $meta_keywords}<meta name="keywords" content="{$meta_keywords}" />{/if}  
 {if $meta_tags}{foreach from=$meta_tags key=name item=content}<meta name="{$name}" content="{$content}" />{/foreach}
 {/if}

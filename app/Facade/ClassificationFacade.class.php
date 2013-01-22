@@ -92,9 +92,15 @@ class ClassificationFacade extends MainFacade {
 		}
 	}
 
-	public function loadAjax($get) {
+	public function loadAjax($get,$keyword='') {
+		$return_string = FALSE;
+		if ($keyword) {
+			$return_string = TRUE;
+		} else {
+			$keyword = GeneralUtils::handle_input($get['kw']);
+		}
 
-		$keyword = GeneralUtils::handle_input($get['kw']);
+		
 		$keyword = $this->myDB->quote($keyword);
 		$suggest_arr = array();
 		$all_groups = array();
@@ -168,6 +174,28 @@ class ClassificationFacade extends MainFacade {
 				$classifications[] = $clf;
 			}
 		}
+		
+		if ($return_string) {
+			$ret_array = array();
+			//$ret_string = '';
+			//var_dump($classifications);
+			$i = 0;
+			foreach ($classifications as $classy) {
+				$string = $classy['localclassification_name'];
+				$current = htmlspecialchars($string,ENT_QUOTES);
+				if (!in_array($current,$ret_array)) {
+					$ret_array[] = $current;
+				}
+				$i++;
+				if ($i>9) {
+					break;
+				}
+			}
+			$ret_string = implode(', ', $ret_array);
+			return $ret_string;
+			//die($ret_string);
+		}
+		
 //		pre($classifications);
 //		prexit($this->nodes);
 		foreach ($classifications as $clf) {
