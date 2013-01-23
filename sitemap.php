@@ -1,9 +1,16 @@
 <?php 
 
+/*
 $db_name = "ppo_dev";
 $db_host = "localhost";
 $db_user = "root";
 $db_pass = "pullit911";
+*/
+
+$db_name = "ppo_prd";
+$db_host = "localhost";
+$db_user = "root";
+$db_pass = "H1virJ2a";
 
 $url_stem = 'http://www.pinkpages.com.au';
 header("Content-type: text/xml");
