@@ -1,16 +1,20 @@
 <?php 
 
-/*
-$db_name = "ppo_dev";
-$db_host = "localhost";
-$db_user = "root";
-$db_pass = "pullit911";
-*/
+$test = TRUE;
 
-$db_name = "ppo_prd";
-$db_host = "localhost";
-$db_user = "root";
-$db_pass = "H1virJ2a";
+if ($test) {
+	$db_name = "ppo_dev";
+	$db_host = "localhost";
+	$db_user = "root";
+	$db_pass = "pullit911";
+} else {
+	$db_name = "ppo_prd";
+	$db_host = "localhost";
+	$db_user = "root";
+	$db_pass = "H1virJ2a";
+}
+
+
 
 $url_stem = 'http://www.pinkpages.com.au';
 header("Content-type: text/xml");
@@ -50,14 +54,14 @@ $top_list = implode(',', $top_list_str);
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         
   <url> 
-    <loc>$url_stem</loc> 
+    <loc><?php echo $url_stem ?></loc> 
     <lastmod>2013-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
   
   <url> 
-    <loc><?php echo htmlspecialchars('$url_stem/main.php?do=Content&action=contactUs'); ?></loc> 
+    <loc><?php echo htmlspecialchars("$url_stem/main.php?do=Content&action=contactUs"); ?></loc> 
     <lastmod>2013-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
@@ -86,8 +90,11 @@ $top_list = implode(',', $top_list_str);
    while ($line = mysql_fetch_array($query_result, MYSQL_ASSOC)) {
     
         $last_mod = ($line['date_modified']=='0000-00-00 00:00:00')?'2013-01-23':$line['date_modified'];
+        
+        $time = strtotime($last_mod);
+        $formatted_time = date("Y-m-d",$time);
         $loc = htmlspecialchars("$url_stem/{$line['url_alias']}/{$line['business_id']}/listing");
-        $output = sprintf($url_tpl,$loc,$last_mod,'daily','1.00');
+        $output = sprintf($url_tpl,$loc,$formatted_time,'daily','1.00');
         echo "$output\n";
    }
    
