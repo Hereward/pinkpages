@@ -1,5 +1,8 @@
 <?php 
-
+$db_name = "ppo_prd";
+$db_host = "localhost";
+$db_user = "root";
+$db_pass = "H1virJ2a";
 $test = FALSE;
 
 if ($test) {
@@ -7,11 +10,6 @@ if ($test) {
 	$db_host = "localhost";
 	$db_user = "root";
 	$db_pass = "pullit911";
-} else {
-	$db_name = "ppo_prd";
-	$db_host = "localhost";
-	$db_user = "root";
-	$db_pass = "H1virJ2a";
 }
 
 
