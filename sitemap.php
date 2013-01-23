@@ -1,6 +1,6 @@
 <?php 
 
-$test = TRUE;
+$test = FALSE;
 
 if ($test) {
 	$db_name = "ppo_dev";

@@ -1,6 +1,8 @@
 Options +FollowSymlinks
 RewriteEngine on
 
+RewriteRule ^sitemap\.xml$ sitemap.php
+
 #Domain Rewrite to change sydneypinkpagesonline to pinkpages
 RewriteCond %{HTTP_HOST}   !^www\.pinkpages\.com.au [NC]
 RewriteRule (.*) http://www.pinkpages.com.au/$1 [R=301] 
