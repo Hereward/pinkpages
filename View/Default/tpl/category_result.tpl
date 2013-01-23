@@ -77,7 +77,7 @@
                           					<td class="task" width="100%" colspan="2">
                                  		 <tr>
                                  			 <td class="smallrextlowtitle" colspan="2">
-        								<b><a class="smallrextlowtitle" href="{$values[i].url}" >{$values[i].business_name|upper}<span class="grey"> - {$category|stripslashes}</span></a></b>{$values[i].archived}
+        								<b><a class="smallrextlowtitle" href="{$values[i].url}" >{$values[i].business_name|upper}{*<span class="grey"> - {$category|stripslashes}</span>*}</a></b>{$values[i].archived}
         									</td>
                                  		 </tr>
                                  		 <tr>
@@ -94,7 +94,7 @@
 						  {if $values[i].business_mobile eq ''}{else} <b>Mob:</b>&nbsp;{$values[i].business_mobile} {/if}</a> </td>
                                       {if $values[i].map_status eq '0'}
                                    
-                                      	 <td class="smallrextlowMap" align="right" > <a  href="{$values[i].url}" >Map</a>
+                                      	 <td class="smallrextlowMap" align="right" > <a  href="{$values[i].url}" >View</a>
                                     
                                    		 </td>
                                     {/if}
@@ -110,21 +110,21 @@
                    {elseif $values[i].rank neq '999999'}
 					
 					 <tr>
-					 <td colspan="3" class="category-result" style="cursor: pointer;" onmouseover="this.style.backgroundColor='#f831a6';" onmouseout="this.style.backgroundColor='#ffffff';" onClick="location.href='{$values[i].link}'";>
+					 <td colspan="3" class="category-result" style="cursor: pointer;" onmouseover="this.style.backgroundColor='#FCEDF6';" onmouseout="this.style.backgroundColor='#ffffff';" onClick="location.href='{$values[i].link}'";>
 				       <table class="mainheadingbg" width="100%">
                          <tr>
                            {if ($values[i].rank <= 5)}						 
                              <td  class="mainheadingtop5">
                              <a href="{$values[i].link}" >{$values[i].business_name}</a>
-        					 <span style="color:#f831a6;">[{$values[i].rank}]</span>
+        					 {* <span style="color:#f831a6;">[{$values[i].rank}]</span> *}
                            </td>  							 							 
 						   {else}
                              <td  class="mainheading">
                              <a href="{$values[i].link}" >{$values[i].business_name}</a>
-        					 <span style="color:#ea6ab5;">[{$values[i].rank}]</span>
+        					{*  <span style="color:#ea6ab5;">[{$values[i].rank}]</span> *}
                            </td>  							 
 						   {/if}	 
-						   
+						   {*
                            {if $values[i].business_email neq ''}	
 						     <td class="mainheadingmap" width="53px"  >
 						       <a href="{$values[i].link}" >Email</a></td>
@@ -138,7 +138,8 @@
                             <td class="mainheadingmap" width="38px">
                               <a href="{$values[i].link}" >Map</a> 
                             </td>
-                          {/if}                       						 																                                                                                                            
+                          {/if}      
+                          *}                 						 																                                                                                                            
                          </tr>
                        </table>	 
 					   
@@ -182,11 +183,13 @@
 						    {if $values[i].business_mobile eq ''}{else}<b>Mob:</b>&nbsp;{$values[i].business_mobile} {/if}
 						  </td>
                         </tr>
+                        {*
 						<tr>
 						  <td class="classification-listing">							
     						<span class="classification-listing">{$category|stripslashes} in {$location|stripslashes}</span>
 						  </td>
                         </tr>
+                        *}
                       
                          {if ($values[i].add_word1 eq '') && ($values[i].add_word2 eq '')} 
                 
