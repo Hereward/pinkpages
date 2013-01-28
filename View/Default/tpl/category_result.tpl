@@ -94,7 +94,7 @@
 						  {if $values[i].business_mobile eq ''}{else} <b>Mob:</b>&nbsp;{$values[i].business_mobile} {/if}</a> </td>
                                       {if $values[i].map_status eq '0'}
                                    
-                                      	 <td class="smallrextlowMap" align="right" > <a  href="{$values[i].url}" >View</a>
+                                      	 {* <td class="smallrextlowMap" align="right" > <a  href="{$values[i].url}" >View</a> *}
                                     
                                    		 </td>
                                     {/if}
@@ -116,7 +116,7 @@
                            {if ($values[i].rank <= 5)}						 
                              <td  class="mainheadingtop5">
                              <a href="{$values[i].link}" >{$values[i].business_name}</a>
-        					 {* <span style="color:#f831a6;">[{$values[i].rank}]</span> *}
+        					  <span style="color:white;">[{$values[i].rank}]</span> 
                            </td>  							 							 
 						   {else}
                              <td  class="mainheading">
@@ -168,8 +168,7 @@
 						  <td  class="number-phone-td">
 						  		{if $values[i].street1_status eq '0'}{$values[i].business_street1} {/if}
 								{if $values[i].street2_status eq '0'}{$values[i].business_street2}{/if}						  </td>
-                        </tr>
-                        <tr valign="top">
+                        
                           <td class="number-phone-td"> {if $values[i].business_suburb neq ''}{$values[i].business_suburb}, {/if}
 								{if $values[i].business_state neq ''}{$values[i].business_state}{/if}
 						  {if $values[i].business_postcode neq ''}{$values[i].business_postcode}{/if}</td>

@@ -1040,8 +1040,29 @@ class AdminListingFacade extends MainFacade {
 		}
 	}
 	
-	
-	
+	/*
+	public function alias_fix($state='') {
+		
+		if (!$state) {
+			$state = 'ACT';
+		}
+		
+		$output = array();
+		$q1 = "business_id, business_name, business_suburb, url_alias * FROM `local_businesses` WHERE business_state =  'ACT'";
+		$rows = $this->MyDB->query($query);
+		while ($row = mysql_fetch_array($rows, MYSQL_ASSOC)) {
+			$str = "{$row['business_name']} {$row['business_suburb']} {$row['business_suburb']}";
+			$str = strtolower($str);
+			
+			
+		}
+		
+		
+		
+		
+		
+	}
+	*/
 	
 	
 /* url_alias_upload -- added by Hereward Fenton 21 march 2012 */
