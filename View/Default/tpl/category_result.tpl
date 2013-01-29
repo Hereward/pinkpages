@@ -121,7 +121,7 @@
 						   {else}
                              <td  class="mainheading">
                              <a href="{$values[i].link}" >{$values[i].business_name}</a>
-        					{*  <span style="color:#ea6ab5;">[{$values[i].rank}]</span> *}
+        					 <span style="color:white;">[{$values[i].rank}]</span>
                            </td>  							 
 						   {/if}	 
 						   {*
@@ -169,7 +169,7 @@
 						  		{if $values[i].street1_status eq '0'}{$values[i].business_street1} {/if}
 								{if $values[i].street2_status eq '0'}{$values[i].business_street2}{/if}						  </td>
                         
-                          <td class="number-phone-td"> {if $values[i].business_suburb neq ''}{$values[i].business_suburb}, {/if}
+                          <td class="number-phone-td">&nbsp;{if $values[i].business_suburb neq ''}{$values[i].business_suburb}, {/if}
 								{if $values[i].business_state neq ''}{$values[i].business_state}{/if}
 						  {if $values[i].business_postcode neq ''}{$values[i].business_postcode}{/if}</td>
                         </tr>
