@@ -1321,7 +1321,7 @@ font-size:14px;
 font-weight:bold;
 text-decoration:none;
 /*background-color:#ea6ab5;*/
-text-transform:uppercase;
+/* text-transform:uppercase; */
 /*border-bottom:1px solid #ea6ab5;
 border-top:1px solid #ea6ab5;
 border-left:1px solid #ea6ab5;
@@ -1334,7 +1334,7 @@ font-size:14px;
 font-weight:bold;
 text-decoration:none;
 /*background-color:#f831a6;*/
-text-transform:uppercase;
+/*text-transform:uppercase;*/
 /*border-bottom:1px solid #ea6ab5;
 border-top:1px solid #ea6ab5;
 border-left:1px solid #ea6ab5;
@@ -1516,7 +1516,7 @@ line-height:15px;
 display:block;
 color:#000000;
 font-size:11px;
-text-transform:uppercase;
+/* text-transform:uppercase; */
 line-height:16px;
 float:left;
 }
@@ -1541,7 +1541,7 @@ margin-left:3px;
 }
 .smallrextlow {
 font-size:11px;
-text-transform:uppercase;
+/* text-transform:uppercase; */
 line-height:14px;
 color:#000000;
 }
@@ -1571,7 +1571,7 @@ text-decoration:underline;
 
 .smallrextlowtitle {
 font-size:11px;
-text-transform:uppercase;
+/* text-transform:uppercase; */
 line-height:14px;
 /* color:#EA6AB5; */
 color:#0000FF;
@@ -1579,7 +1579,7 @@ color:#0000FF;
 
 .smallrextlowtitle  a{
 font-size:11px;
-text-transform:uppercase;
+/* text-transform:uppercase; */
 line-height:14px;
 /*
 margin-left:3px;

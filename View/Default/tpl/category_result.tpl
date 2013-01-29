@@ -77,14 +77,14 @@
                           					<td class="task" width="100%" colspan="2">
                                  		 <tr>
                                  			 <td class="smallrextlowtitle" colspan="2">
-        								<b><a class="smallrextlowtitle" href="{$values[i].url}" >{$values[i].business_name|upper}{*<span class="grey"> - {$category|stripslashes}</span>*}</a></b>{$values[i].archived}
+        								<b><a class="smallrextlowtitle" href="{$values[i].url}" >{$values[i].business_name|lower|capitalize}{*<span class="grey"> - {$category|stripslashes}</span>*}</a></b>{$values[i].archived}
         									</td>
                                  		 </tr>
                                  		 <tr>
                                   			<td class="smallrextlow" width="554px" >{strip}
-        									{if $values[i].street1_status eq '0' && $values[i].business_street1 neq ''}{$values[i].business_street1}{/if}
-        									{if $values[i].street2_status eq '0' && $values[i].business_street2 neq ''} {$values[i].business_street2}{/if}
-        									{if $values[i].business_suburb neq ''} {$values[i].business_suburb}{/if}
+        									{if $values[i].street1_status eq '0' && $values[i].business_street1 neq ''}{$values[i].business_street1|lower|capitalize}{/if}
+        									{if $values[i].street2_status eq '0' && $values[i].business_street2 neq ''} {$values[i].business_street2|lower|capitalize}{/if}
+        									{if $values[i].business_suburb neq ''} {$values[i].business_suburb|lower|capitalize}{/if}
         									{if $values[i].business_state neq ''} {$values[i].business_state}{/if}
         									{if $values[i].business_postcode neq ''} {$values[i].business_postcode}{/if}{/strip} 
         
@@ -115,12 +115,12 @@
                          <tr>
                            {if ($values[i].rank <= 5)}						 
                              <td  class="mainheadingtop5">
-                             <a href="{$values[i].link}" >{$values[i].business_name}</a>
+                             <a href="{$values[i].link}" >{$values[i].business_name|lower|capitalize}</a>
         					  <span style="color:white;">[{$values[i].rank}]</span> 
                            </td>  							 							 
 						   {else}
                              <td  class="mainheading">
-                             <a href="{$values[i].link}" >{$values[i].business_name}</a>
+                             <a href="{$values[i].link}" >{$values[i].business_name|lower|capitalize}</a>
         					 <span style="color:white;">[{$values[i].rank}]</span>
                            </td>  							 
 						   {/if}	 
@@ -166,10 +166,10 @@
                         <tr valign="top">
                           
 						  <td  class="number-phone-td">
-						  		{if $values[i].street1_status eq '0'}{$values[i].business_street1} {/if}
-								{if $values[i].street2_status eq '0'}{$values[i].business_street2}{/if}						  </td>
+						  		{if $values[i].street1_status eq '0'}{$values[i].business_street1|lower|capitalize}{/if}
+								{if $values[i].street2_status eq '0'}{$values[i].business_street2|lower|capitalize}{/if}						  </td>
                         
-                          <td class="number-phone-td">&nbsp;{if $values[i].business_suburb neq ''}{$values[i].business_suburb}, {/if}
+                          <td class="number-phone-td">&nbsp;{if $values[i].business_suburb neq ''}{$values[i].business_suburb|lower|capitalize}, {/if}
 								{if $values[i].business_state neq ''}{$values[i].business_state}{/if}
 						  {if $values[i].business_postcode neq ''}{$values[i].business_postcode}{/if}</td>
                         </tr>

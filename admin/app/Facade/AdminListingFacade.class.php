@@ -1042,24 +1042,29 @@ class AdminListingFacade extends MainFacade {
 	
 	/*
 	public function alias_fix($state='') {
-		
+		//die('hello');
 		if (!$state) {
 			$state = 'ACT';
 		}
 		
 		$output = array();
-		$q1 = "business_id, business_name, business_suburb, url_alias * FROM `local_businesses` WHERE business_state =  'ACT'";
-		$rows = $this->MyDB->query($query);
+		$q1 = "SELECT business_id, business_name, business_suburb, url_alias * FROM `local_businesses` WHERE business_state =  'ACT'";
+		$rows = $this->MyDB->query($q1);
+		
+		var_dump($rows);
+		die();
+		
 		while ($row = mysql_fetch_array($rows, MYSQL_ASSOC)) {
 			$str = "{$row['business_name']} {$row['business_suburb']} {$row['business_suburb']}";
 			$str = strtolower($str);
-			
-			
+			$str = preg_replace('/\s+/', '-', $str);
+			$str = preg_replace('/[^a-z0-9\-]+/', '', $str);
+			$str = trim($str, '-');
+			$output[] = $str;
 		}
 		
-		
-		
-		
+		var_dump($output);
+		die();
 		
 	}
 	*/

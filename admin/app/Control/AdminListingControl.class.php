@@ -563,6 +563,10 @@ public function import_class_relationships()
 		$this->page->getPage("import_class_relationships.tpl");
 	}
 	
+	public function alias_fix($state='') {
+		$res=$this->adminlistingFacade->alias_fix('ACT');
+	}
+	
 public function import_url_alias()
 	{   
 		dev_log::timer('set');
