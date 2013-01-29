@@ -1048,26 +1048,42 @@ class AdminListingFacade extends MainFacade {
 		}
 		
 		$output = array();
-		$q1 = "SELECT business_id, business_name, business_suburb, url_alias * FROM `local_businesses` WHERE business_state =  'ACT'";
-		$rows = $this->MyDB->query($q1);
+		$q1 = "SELECT business_id, business_name, business_suburb, url_alias FROM `local_businesses` WHERE business_state =  'ACT'";
+		$rows = $this->MyDB->query($q1) or die('Query 1 failed: ' . mysql_error());
 		
-		var_dump($rows);
-		die();
-		
-		while ($row = mysql_fetch_array($rows, MYSQL_ASSOC)) {
-			$str = "{$row['business_name']} {$row['business_suburb']} {$row['business_suburb']}";
+		//var_dump($res1);
+		//die();
+		$i = 0;
+		foreach ($rows as $row) {
+			$str = "{$row['business_name']} {$row['business_suburb']} {$row['business_id']}";
 			$str = strtolower($str);
-			$str = preg_replace('/\s+/', '-', $str);
-			$str = preg_replace('/[^a-z0-9\-]+/', '', $str);
+			//$str = preg_replace('/&/', '', $str);
+			//$str = preg_replace('/\s+/', '-', $str);
+			//$str = preg_replace('/[^a-z0-9\-]+/', '', $str);
+			$str = preg_replace('/[^a-z0-9]+/', '-', $str);
 			$str = trim($str, '-');
-			$output[] = $str;
+			
+			
+			$q2 = "UPDATE `local_businesses` SET url_alias = '$str' WHERE business_id = '{$row['business_id']}'";
+		    //$rows2 = $this->MyDB->query($q1) or die('Query 1 failed: ' . mysql_error());
+			$output[] = array('query'=> $q2, "business_id" => $row['business_id'], "name" => $row['business_name'], 'alias' => $str);
+			$i++;
+			if ($i>500) {
+				break;
+			}
+			
 		}
 		
 		var_dump($output);
 		die();
 		
+		
+		
+		
 	}
+	
 	*/
+	
 	
 	
 /* url_alias_upload -- added by Hereward Fenton 21 march 2012 */
