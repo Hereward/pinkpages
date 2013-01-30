@@ -108,9 +108,9 @@
                     
                     
                    {elseif $values[i].rank neq '999999'}
-					
+					{* onmouseover="this.style.backgroundColor='#FCEDF6';" onmouseout="this.style.backgroundColor='#ffffff';" *}
 					 <tr>
-					 <td colspan="3" class="category-result" style="cursor: pointer;" onmouseover="this.style.backgroundColor='#FCEDF6';" onmouseout="this.style.backgroundColor='#ffffff';" onClick="location.href='{$values[i].link}'";>
+					 <td colspan="3" class="category-result" style="cursor: pointer;" onClick="location.href='{$values[i].link}'";>
 				       <table class="mainheadingbg" width="100%">
                          <tr>
                            {if ($values[i].rank <= 5)}						 

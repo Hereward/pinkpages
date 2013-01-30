@@ -6,7 +6,8 @@
     <div class="searchbox-front-middle">
     <br />
     <span><a href="/main.php?do=Content&action=contactUs">Advertise with us</a></span>
-    <p>Find businesses and organisations</p>
+    <p>Find businesses and organisations
+    </p>
 		<div class="searchbox-index-left-key">
         
 		  <form id="test" action="main.php" name="Homepage" method="get" onsubmit="return check();">
