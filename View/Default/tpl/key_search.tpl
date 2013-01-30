@@ -6,36 +6,24 @@
   <table class="topnotice" width="99%"><tr><td>
   	{if $total_recs > 0}
     <center>
-      <h1>Results for <span>'{$smarty.get.Search1}'</span> category</h1></center>
-      </td></tr><tr><td>
-		{if $ambiguous}
-
-			{if $smarty.get.c == 'r'}<b>
-				Showing results under Region <span><b>{$location}</b></span></a></br>
-				<a href="{$suburb_link}"><b>Click to see all results from Suburb <span>{$ambg_suburb_name}</span></b></a><br />
-			{else}
-				<b>Showing results under Suburb <span><b>{$location}</b></span></a></br>
-				<a href="{$region_link}" ><b>Click to see all results from Region <span>{$ambg_region_name}</span></b></a><br />
-			{/if}
-
-		{/if}
-
-	{else}
-	Sorry, your search for <span><strong>{$keyword}</strong></span> in <span><strong>{$smarty.get.Search2}</strong></span> returned no results. <br />Please try again using a different keyword or location.<br />
-    <a href="{$business_name_search}">Not what you were looking for?<br /> Try searching for <span><strong>{$smarty.get.Search1}</strong></span> in a business name instead</a>
-	{/if}
-	
-    
-	
-  	</td></tr></table>
+      <h1 style="margin:0px; padding:0px; line-height:auto;">Please choose a Category for <span>'{$smarty.get.Search1|lower|capitalize}'</span> from the list below</h1></center>
+      </td></tr>
+  	</table>
+  	
+  	
 
         	<br />
-	<table class="datatable-classnew" >
+	<table style="margin-top:0px; padding-top:0px; border-top:2px solid gray;" class="datatable-classnew" >
 		{section name=i loop=$values}
        
 			<tr>
 
-			<td> &nbsp;&nbsp;&nbsp;&nbsp;  <a style="font-size: 16px; font-weight: normal" href="{$values[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$values[i].localclassification_name}&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;"> {$values[i].cnt} business results </span></a></td>
+			<td onmouseover="this.style.backgroundColor='#FCEDF6';" onmouseout="this.style.backgroundColor='#FFFFFF';" style="background-color:#FFFFFF; border-bottom:1px solid gray;"> &nbsp;&nbsp;&nbsp;&nbsp;  
+			<a style=" font-size: 16px; font-weight: normal" 
+			href="{$values[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> 
+			{$values[i].localclassification_name|lower|capitalize}&nbsp; <span style="color:gray; font-weight: bold;">
+			({$values[i].cnt})</span>
+			<span style="float:right;">View Listings</span></a></td>
 			</tr>
         
 		{/section}
@@ -72,6 +60,33 @@
 		</div>
 *}
 	{/if}
+	
+	
+	
+	<table class="topnotice" width="99%">
+      
+      <tr><td>
+		{if $ambiguous}
+
+			{if $smarty.get.c == 'r'}<b>
+				Showing results under Region <span><b>{$location}</b></span></a></br>
+				<a href="{$suburb_link}"><b>Click to see all results from Suburb <span>{$ambg_suburb_name}</span></b></a><br />
+			{else}
+				<b>Showing results under Suburb <span><b>{$location}</b></span></a></br>
+				<a href="{$region_link}" ><b>Click to see all results from Region <span>{$ambg_region_name}</span></b></a><br />
+			{/if}
+
+		{/if}
+
+	{else}
+	Sorry, your search for <span><strong>{$keyword}</strong></span> in <span><strong>{$smarty.get.Search2}</strong></span> returned no results. <br />Please try again using a different keyword or location.<br />
+    <a href="{$business_name_search}">Not what you were looking for?<br /> Try searching for <span><strong>{$smarty.get.Search1}</strong></span> in a business name instead</a>
+	{/if}
+	
+    
+	
+  	</td></tr>
+  	</table>
       
 </div>
 

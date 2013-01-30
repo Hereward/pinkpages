@@ -1644,8 +1644,8 @@ width:98%;
 }
 .datatable-classnew a {
 color:#000000;
-text-decoration:underline;
-text-transform: capitalize;
+/*text-decoration:underline;*/
+/*text-transform: capitalize;*/
 }
 .datatable-classnew a:hover {
 text-decoration:none;
