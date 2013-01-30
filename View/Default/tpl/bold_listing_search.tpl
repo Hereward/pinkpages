@@ -48,7 +48,7 @@
           </p>
 	 
           {if $values[i].business_logo neq ''}
-		    <img src="{$CLIENT_IMAGES_PATH}{$values[i].business_logo}" width="90px" height="60px" align="right"  />
+		    <img src="{$CLIENT_IMAGES_PATH}{$values[i].business_logo}" alt="{$values[i].business_name|lower|capitalize} - logo" width="90px" height="60px" align="right"  />
 		  {/if}     					 	 
 
 		 {if  $classi neq '' && $location neq ''}
@@ -59,7 +59,7 @@
 					 
 			<li>			
     		  {if $description[0] neq ''}
-			  <h2>Description</h2>
+			  <h2>About {$values[i].business_name|lower|capitalize}</h2>
 			<ul>
 				<li>{foreach from=$description item=key}
 					   {$key}
@@ -69,7 +69,7 @@
 			</li>					 
 			
 			<li>			
-			  <h2>Contact</h2>
+			  <h2>Contact {$values[i].business_name|lower|capitalize}</h2>
 			<ul>
 			  {if $values[i].business_phone neq ''}<li><span>Phone:</span> {$values[i].business_phone}</li>{/if}
 			  {if $values[i].business_mobile neq ''}<li><span>Mobile:</span> {$values[i].business_mobile}</li>{/if}
@@ -243,7 +243,7 @@
   {if $values[i].business_image neq ''}
     <ul class="image-detail-right">
       <li>
-        <img src="{$CLIENT_IMAGES_PATH}{$values[i].business_image}" width="405px" align="right"  /> 
+        <img src="{$CLIENT_IMAGES_PATH}{$values[i].business_image}" alt="{$values[i].business_name|lower|capitalize}" width="405px" align="right"  /> 
       </li>	  
     </ul>
   {/if}         
