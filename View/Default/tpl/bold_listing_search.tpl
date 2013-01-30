@@ -39,7 +39,7 @@
 		    {/foreach}
           </p>
 *}
-	 <h1 class="map-detail-left">{$values[i].business_name}</h1>	
+	 <h1 class="map-detail-left">{$values[i].business_name|lower|capitalize}</h1>	
 	 
 	 <p> 
 		    {foreach from=$values7 item=key} 
@@ -218,7 +218,17 @@
 					<iframe style="float:right;" src="http://mapq.st/embed?q={$values[i].business_street1} {if  $values[i].street2_status eq '1'}{else}{$values[i].business_street2}{/if} {if $values[i].business_suburb eq ''}{else}{$values[i].business_suburb}{if $values[i].business_state neq ''} {/if}{/if} {if $values[i].business_state eq ''}{else}{$values[i].business_state}{if $values[i].business_postcode neq ''}{/if}{/if} {if $values[i].business_postcode eq ''}{else}{$values[i].business_postcode}{/if}" width="400" height="350"></iframe>
 					*}
 					
-					
+					{if $class_count > 0}
+		                <div class='map-detail-left-rank' style="float:right; margin:20px; background-color:#E6E6E6; padding: 5px 10px 10px 10px;">
+		                   <h2 style="margin-left:10px; color:#E8138F;">More Listings in this Category</h2>
+			               <ul>
+			                  {section name=class loop=$classifications}
+			               <li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_url_encode}">{$classifications[class].localclassification_name}</a></li>
+                          {/section}	
+			              </ul>
+		               </div>	
+		            {/if}	
+		
 					{if $values[0].map_status eq '0' && $rank_count>0}
 					   {include file='google_map.tpl'}
 					   
