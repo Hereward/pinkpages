@@ -32,14 +32,20 @@
 
 	
    <div class="map-detail-left">
-
+{*
   		  <p class="pink"> 
 		    {foreach from=$values7 item=key} 
 			  {$key.adword_line1} {$key.adword_line2}
 		    {/foreach}
           </p>
-
+*}
 	 <h1 class="map-detail-left">{$values[i].business_name}</h1>	
+	 
+	 <p> 
+		    {foreach from=$values7 item=key} 
+			  {$key.adword_line1} {$key.adword_line2}
+		    {/foreach}
+          </p>
 	 
           {if $values[i].business_logo neq ''}
 		    <img src="{$CLIENT_IMAGES_PATH}{$values[i].business_logo}" width="90px" height="60px" align="right"  />
@@ -159,14 +165,7 @@
 		{/if}
 		*}
 		
-		{if $class_count > 0}
-		    <h2>Classifications</h2>
-			<ul>
-			  {section name=class loop=$classifications}
-			     <li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_url_encode}">{$classifications[class].localclassification_name}</a></li>
-               {/section}	
-			</ul>	
-		{/if}	
+		
 		
 		</li>	
 		
@@ -197,8 +196,22 @@
 	    {/if}
 				
 		</li>
+		
+		
+		{if $class_count > 0}
+		<div style="margin-top:20px; background-color:#E6E6E6; padding: 5px 10px 10px 10px;">
+		    <h2 style="margin-left:10px; color:#E8138F;">More Listings in this Category</h2>
+			<ul>
+			  {section name=class loop=$classifications}
+			     <li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_url_encode}">{$classifications[class].localclassification_name}</a></li>
+               {/section}	
+			</ul>
+		</div>	
+		{/if}	
 						
-					</ul>
+		</ul>
+					
+	   
 				<br /><br />
 					</div>
 					{*
