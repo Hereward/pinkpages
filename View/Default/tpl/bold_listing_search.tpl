@@ -202,12 +202,17 @@
 		<div style="margin-top:20px; background-color:#E6E6E6; padding: 5px 10px 10px 10px;">
 		    <h2 style="margin-left:10px; color:#E8138F;">More Listings in this Category</h2>
 			<ul>
-			  {section name=class loop=$classifications}
-			                     <li> <a href="{$SITE_PATH}{$classifications[class].localclassification_url_encode}/{$values[i].business_state}/{$region_alias}/{$classifications[class].localclassification_id}">{$classifications[class].localclassification_name}
-			                     </a></li>
+			  	{section name=class loop=$classifications}
+			                    {if $region_alias }
+			                        <li> <a href="{$SITE_PATH}{$classifications[class].localclassification_url_encode}/{$values[i].business_state}/{$region_alias}/{$classifications[class].localclassification_id}">{$classifications[class].localclassification_name}
+			                        </a></li>
+			                     {else}
+			                        <li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_url_encode}">{$classifications[class].localclassification_name}
+			                        </a></li>
+			                     {/if}
 			                     {* {$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_url_encode}
 			                      *}
-              {/section}
+                {/section}	
 			</ul>
 		</div>	
 		{/if}	
@@ -226,8 +231,13 @@
 		                   <h2 style="margin-left:10px; color:#E8138F;">More Listings in this Category</h2>
 			               <ul>
 			                  {section name=class loop=$classifications}
-			                     <li> <a href="{$SITE_PATH}{$classifications[class].localclassification_url_encode}/{$values[i].business_state}/{$region_alias}/{$classifications[class].localclassification_id}">{$classifications[class].localclassification_name}
-			                     </a></li>
+			                    {if $region_alias }
+			                        <li> <a href="{$SITE_PATH}{$classifications[class].localclassification_url_encode}/{$values[i].business_state}/{$region_alias}/{$classifications[class].localclassification_id}">{$classifications[class].localclassification_name}
+			                        </a></li>
+			                     {else}
+			                        <li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_url_encode}">{$classifications[class].localclassification_name}
+			                        </a></li>
+			                     {/if}
 			                     {* {$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_url_encode}
 			                      *}
                               {/section}		

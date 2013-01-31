@@ -895,8 +895,8 @@ class ListingControl extends MainControl {
 
 		$keywords = $meta_loc_bits . ', ' . $this->cf->loadAjax('', $classi);
 		//die("OI");
-		$region_alias = $this->listingFacade->getRegionAliasFromPostcode($mbp);
-		
+		$region_alias = ($mbp)?$this->listingFacade->getRegionAliasFromPostcode($mbp):'';
+		//$this->page->assign("postcode", $mbp);
 		$this->page->assign("region_alias", $region_alias);
 		dev_log::write("region_alias = [$region_alias]");
 		//die($boo_keywords);
