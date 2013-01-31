@@ -10,11 +10,22 @@
     <tr>
 	  <td>
       <center>
+       
         <h1>{if $CountResult eq ''}<span>{$normalcount}</span>{else}<span>{$CountResult}</span>{/if} {if $normalcount eq '1'}Result {else}Results{/if} found in <span>'{$category|stripslashes}'</span> in <span>'{$location|stripslashes}'</span></h1>
       </center>
       </td>
 	</tr>
   </table>
+  
+  {if ($related_class_count > 0)}
+             <h2 style="font-size:14px; font-weight:bold; padding:0; color:dimgray; margin: 10px 0 0 25px;">Related Classifications</h2>
+             <div style="margin:10px 0px 5px 25px; font-size:11px;">
+               {section name=i loop=$relatedClassLinks}
+			      <a href="{$relatedClassLinks[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$relatedClassLinks[i].localclassification_name|lower|capitalize}</a>{if !$smarty.section.i.last} &nbsp;|&nbsp; {/if}
+		       {/section}
+		       {* <span> {$relatedClassLinks[i].cnt} business results </span> *}
+             </div>
+  {/if}
 
 		{section name=i loop=$values} 
 		{if $values[i].rank neq '999999'}
@@ -231,15 +242,7 @@
 				
             <div align="center">{include file="pagination.tpl"}</div>
           
-             {if ($related_class_count > 0)}
-             <h2 style="font-size:14px; font-weight:bold; padding:0; color:black; margin: 10px 0 0 25px;">Related Classifications</h2>
-             <div style="margin:10px 0px 5px 25px; font-size:11px;">
-               {section name=i loop=$relatedClassLinks}
-			      <a href="{$relatedClassLinks[i].link}{if $smarty.get.Suburb}&Suburb={$smarty.get.Suburb}{/if}"> {$relatedClassLinks[i].localclassification_name|lower|capitalize}</a>{if !$smarty.section.i.last} &nbsp;|&nbsp; {/if}
-		       {/section}
-		       {* <span> {$relatedClassLinks[i].cnt} business results </span> *}
-             </div>
-            {/if}
+            
             
             
 

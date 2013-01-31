@@ -37,7 +37,7 @@
 		
 		<ul style="margin-top:10px; clear:both;">
 		   <li style="float:center;">
-					Copyright &copy 2012 Dawson Media Pty Ltd. &nbsp;&nbsp; <a href="{$SITE_PATH}terms_conditions">Terms and Conditions</a>&nbsp;&nbsp; <a href="{$SITE_PATH}privacy">Privacy Policy</a>&nbsp;&nbsp; <a href="{$SITE_PATH}disclaimer">Disclaimer</a>
+					Copyright &copy 2013 Dawson Media Pty Ltd. &nbsp;&nbsp; <a href="{$SITE_PATH}terms_conditions">Terms and Conditions</a>&nbsp;&nbsp; <a href="{$SITE_PATH}privacy">Privacy Policy</a>&nbsp;&nbsp; <a href="{$SITE_PATH}disclaimer">Disclaimer</a>
 		   </li>
 		</ul>
 	

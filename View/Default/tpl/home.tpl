@@ -25,9 +25,14 @@
            </tr>
            
              <tr>
-           <td ><p class="inputbox"><input type="text" name="Search1" id="Search1" value="" /></p>
+           <td ><p class="inputbox"><input type="text" name="Search1" id="Search1" value="What are you looking for?" /></p>
            </td>
-           <td><p class="inputbox"><input type="text" name="Search2" id="Search2" value="{if $smarty.get.p eq 's'}All Sydney
+           <td><p class="inputbox"><input type="text" name="Search2" id="Search2" value="Where?" />
+           
+           </p>
+           
+           {*
+           {if $smarty.get.p eq 's'}All Sydney
            {elseif $smarty.get.p eq 'n'}Newcastle Region
            {elseif $smarty.get.p eq 'c'}Canberra Region
            {elseif $smarty.get.p eq 'm'}All Melbourne
@@ -37,7 +42,8 @@
            {elseif $smarty.get.p eq 'all-perth'}All Perth
            {elseif $smarty.get.p eq 'all-adelaide'}All Adelaide
            {elseif $smarty.get.p eq 'all-hobart'}All Hobart
-           {else}All States{/if}" /></p>
+           {else}All States{/if}
+           *}
            </td>
          
            <td ><input class="btn" src="{$IMAGES_PATH}btn-search.gif" type="image" name="Submit" id="Submit" value="Search" />

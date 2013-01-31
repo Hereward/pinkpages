@@ -3,9 +3,9 @@ var active_color = '#000'; // Colour of user provided text
 var inactive_color = '#ccc'; // Colour of default text
 
 $(document).ready(function() {
-  $("input#Search2").css("color", inactive_color);
+  $("input#Search2,input#Search1").css("color", inactive_color);
   var default_values = new Array();
-  $("input#Search2").focus(function() {
+  $("input#Search2,input#Search1").focus(function() {
     if (!default_values[this.id]) {
       default_values[this.id] = this.value;
     }

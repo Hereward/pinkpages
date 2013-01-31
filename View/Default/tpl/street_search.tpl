@@ -36,7 +36,7 @@
 				
 				  <tr colspan="3">
 				    
-                      <td  valign="top"  >
+                      <td  valign="top"  ><a href="{$businessArray[i].link}">
                           <table  border="0" class="linebotom2"  cellpadding="0" cellspacing="0">
                           
                           <tr>
@@ -48,14 +48,14 @@
                                   <tr>
                                   <td class="smallrextlowtitle">
                                   {if $businessArray[i].rank eq '999999'}
-        								<b>{$businessArray[i].business_name|upper}</b>
+        								<b>{$businessArray[i].business_name|lower|capitalize}</b>
         								{else}
         								
-        								<b><a href="{$businessArray[i].link}" >{$businessArray[i].business_name}</a> </b>
+        								<b><a href="{$businessArray[i].link}" >{$businessArray[i].business_name|lower|capitalize}</a> </b>
         								{/if}
                                         {if $businessArray[i].classification_name neq ''}
-                                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                        	<font color="#ffffff">[{$businessArray[i].classification_name}]</font>
+                                          &nbsp;
+                                        	<span style="color:gray;">[{$businessArray[i].classification_name|lower|capitalize}]</span>
                                             {/if}	
         						</td>
                                   </tr>
@@ -65,9 +65,9 @@
                                   		{else}
                                   		<td class="smallrextlow" width="548px">
                                   		{/if}{strip}
-        									{if $businessArray[i].street1_status eq '0' && $businessArray[i].business_street1 neq ''}{$businessArray[i].business_street1}{/if}
-        									{if $businessArray[i].street2_status eq '0' && $businessArray[i].business_street2 neq ''} {$businessArray[i].business_street2}{/if}
-        									{if $businessArray[i].business_suburb neq ''} {$businessArray[i].business_suburb}{/if}
+        									{if $businessArray[i].street1_status eq '0' && $businessArray[i].business_street1 neq ''}{$businessArray[i].business_street1|lower|capitalize}{/if}
+        									{if $businessArray[i].street2_status eq '0' && $businessArray[i].business_street2 neq ''} {$businessArray[i].business_street2|lower|capitalize}{/if}
+        									{if $businessArray[i].business_suburb neq ''} {$businessArray[i].business_suburb|lower|capitalize}{/if}
         									{if $businessArray[i].business_state neq ''} {$businessArray[i].business_state}{/if}
         									{if $businessArray[i].business_postcode neq ''} {$businessArray[i].business_postcode}{/if}{/strip} 
         
@@ -76,7 +76,7 @@
         									
                                     {if  ($businessArray[i].business_phone != '') && ($businessArray[i].business_phone|SUBSTR:0:2 neq '04' && $businessArray[i].business_phone|SUBSTR:0:2 neq '13' && $businessArray[i].business_phone|SUBSTR:0:2 neq '18') && ($businessArray[i].business_state eq 'NSW')}   | PH: (02)&nbsp;{/if} {$businessArray[i].business_phone} </a> </td>
                                     
-                                 
+                                 {*
                                        <td class="smallrextlowMap" align="right"> 
                                    
 						
@@ -103,10 +103,11 @@
                                        
                                        {/if}
                                     </td>
+                                    *}
                                   </tr>
              </table>
              </td></tr>
-                      </table></td>
+                      </table></a></td>
                     </tr>
 					
 	
