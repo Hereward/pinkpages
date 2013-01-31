@@ -3605,7 +3605,7 @@ class ListingFacade extends MainFacade {
 	***/	
 	public function getRegionAliasFromPostcode($postcode) {
 	  $sql = "SELECT DISTINCT shire_towns.shiretown_postcode, shire_names.url_alias FROM shire_towns, shire_names WHERE shire_towns.shiretown_postcode = $postcode AND shire_names.shirename_id = shire_towns.shirename_id";   
-	  die($sql);
+	  //die($sql);
 	  $results = $this->myDB->query($sql);
 	  return (isset($results[0]['url_alias'])) ? $results[0]['url_alias'] : '';	
 	}
