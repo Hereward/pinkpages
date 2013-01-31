@@ -1,5 +1,5 @@
 <div class="navigation">
-						<form action="main.php" name="Homepage" method="get" onsubmit="return checkStreet();">
+						<form action="/main.php" name="Homepage" method="get" onsubmit="return checkStreet();">
 			<input type="hidden" id="testid" value="" disabled="disabled" />
 			<input type="hidden" id="do" name="do" value="Listing" />
 			<input type="hidden" id="action" name="action" value="searchStreet" />

@@ -806,7 +806,7 @@ class ListingControl extends MainControl {
 	{
 		//$referer_keyword =  $this->pull_keyword_from_referer_pp();
 		
-		dev_log::cur_url("Listing::boldListing");
+		//dev_log::cur_url("Listing::boldListing");
 		
 		$this->redirect_free_listing();
 		
@@ -882,7 +882,8 @@ class ListingControl extends MainControl {
 		$class_count= count($classifications_array);
 		$this->page->assign("classifications", $classifications_array);
 		
-		
+		//var_dump($classifications_array);
+		//die();
 		//die($classy);
 		
 		$mbn = (isset($res[0][0]['business_name']))?$res[0][0]['business_name']. ', ':'';
@@ -893,6 +894,11 @@ class ListingControl extends MainControl {
 		$meta_loc_bits = ($location)?$mbn . $location . ', ' . $mbs . $mbp:$mbn . $mbs . $mbp;
 
 		$keywords = $meta_loc_bits . ', ' . $this->cf->loadAjax('', $classi);
+		//die("OI");
+		$region_alias = $this->listingFacade->getRegionAliasFromPostcode($mbp);
+		
+		$this->page->assign("region_alias", $region_alias);
+		dev_log::write("region_alias = [$region_alias]");
 		//die($boo_keywords);
 		//$this->page->assign("boo_keywords", $boo_keywords);
 		//die("KW = [$keyword_string]");

@@ -203,8 +203,11 @@
 		    <h2 style="margin-left:10px; color:#E8138F;">More Listings in this Category</h2>
 			<ul>
 			  {section name=class loop=$classifications}
-			     <li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_url_encode}">{$classifications[class].localclassification_name}</a></li>
-               {/section}	
+			                     <li> <a href="{$SITE_PATH}{$classifications[class].localclassification_url_encode}/{$values[i].business_state}/{$region_alias}/{$classifications[class].localclassification_id}">{$classifications[class].localclassification_name}
+			                     </a></li>
+			                     {* {$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_url_encode}
+			                      *}
+              {/section}
 			</ul>
 		</div>	
 		{/if}	
@@ -223,8 +226,11 @@
 		                   <h2 style="margin-left:10px; color:#E8138F;">More Listings in this Category</h2>
 			               <ul>
 			                  {section name=class loop=$classifications}
-			               <li> <a href="{$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_url_encode}">{$classifications[class].localclassification_name}</a></li>
-                          {/section}	
+			                     <li> <a href="{$SITE_PATH}{$classifications[class].localclassification_url_encode}/{$values[i].business_state}/{$region_alias}/{$classifications[class].localclassification_id}">{$classifications[class].localclassification_name}
+			                     </a></li>
+			                     {* {$SITE_PATH}Listing/categorySearchAlpha/search/{$classifications[class].localclassification_id}/category/{$classifications[class].localclassification_url_encode}
+			                      *}
+                              {/section}		
 			              </ul>
 		               </div>	
 		            {/if}	
