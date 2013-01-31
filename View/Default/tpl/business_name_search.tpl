@@ -5,7 +5,7 @@
     </div>
     <div class="searchbox-front-middle">
     <br />
-       <P >Search for businesses by name</P>
+       <P> </P>
 		<div class="searchbox-index-left-bus">
      
 				<form id="test" action="main.php" method="get" onsubmit="return checkBusiness();">
@@ -17,7 +17,7 @@
 			 <table class="searchbox-index-left" >
            <tr>
            
-           <td width="420px" class="title">	<input type="hidden" name="SearchOption" id="SearchOption" checked="checked" type="radio" value="1" onchange="classChange(this.value);" />Business Name
+           <td width="420px" class="title">	<input type="hidden" name="SearchOption" id="SearchOption" checked="checked" type="radio" value="1" onchange="classChange(this.value);" />Business Name Search
            </td>
      
  			 <td class="title">&nbsp;
@@ -26,7 +26,7 @@
            
              <tr>
            <td >
-           <p class="inputbox-b"><input type="text" name="Search1" id="Search1" value="" /></p>
+           <p class="inputbox-b"><input type="text" name="Search1" id="Search1" value="Enter business name" /></p>
            </td>
         
            <td align="left"><input src="{$IMAGES_PATH}btn-search.gif" type="image" name="Submit" id="Submit" value="Search" />
@@ -80,3 +80,5 @@
 <script>
 window.onload = setOption("b");
 </script>
+
+<script src="http://192.168.60.107:8080/View/Default/Js/default_values.js" type="text/javascript" language="javascript"></script>

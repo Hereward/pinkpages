@@ -16,16 +16,16 @@
 			<input type="hidden" id="action" name="action" value="searchKeyword" />
 		   <table class="searchbox-index-left" >
            <tr>
-           <td class="title">Product or Service
+           <td class="title">
            </td>
-           <td class="title">Location
+           <td class="title">
            </td>
            <td>
            </td>
            </tr>
            
              <tr>
-           <td ><p class="inputbox"><input type="text" name="Search1" id="Search1" value="What are you looking for?" /></p>
+           <td ><p class="inputbox"><input type="text" name="Search1" id="Search1" value="What?" /></p>
            </td>
            <td><p class="inputbox"><input type="text" name="Search2" id="Search2" value="Where?" />
            

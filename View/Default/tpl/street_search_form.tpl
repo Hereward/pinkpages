@@ -14,9 +14,9 @@
 			<input type="hidden" id="action" name="action" value="searchStreet" />
 		   <table class="searchbox-index-left" >
            <tr>
-           <td class="title">Street
+           <td class="title">Street Name
            </td>
-           <td class="title">Suburb
+           <td class="title">Suburb Name
            </td>
            <td>
            </td>
@@ -33,7 +33,7 @@
            </tr>
            <tr>
            <td></td>
-           <td><img src="{$IMAGES_PATH}location.gif" alt="Search Sydney Pink Pages for Products or Services in a certain location, to search a location you nede to type it in for exmaple all sydney will search all sydney location and penrith will search penrith suburb" /></td>
+           <td>{* <img src="{$IMAGES_PATH}location.gif" alt="Search Sydney Pink Pages for Products or Services in a certain location, to search a location you nede to type it in for exmaple all sydney will search all sydney location and penrith will search penrith suburb" />*}</td>
            <td></td>
            </tr>
            
