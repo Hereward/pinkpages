@@ -9,8 +9,8 @@
     <p>Find businesses and organisations
     </p>
 		<div class="searchbox-index-left-key">
-        
-		  <form id="test" action="main.php" name="Homepage" method="get" onsubmit="return check();">
+         {* onsubmit="return check();" *}
+		  <form id="test" action="main.php" name="Homepage" method="get" >
 			<input type="hidden" id="testid" value="" disabled="disabled" />	
 			<input type="hidden" id="do" name="do" value="Listing" />
 			<input type="hidden" id="action" name="action" value="searchKeyword" />
@@ -25,7 +25,12 @@
            </tr>
            
              <tr>
-           <td ><p class="inputbox"><input type="text" name="Search1" id="Search1" title="What?" /></p>
+           <td >
+           
+           <p class="inputbox">
+           <input type="text" name="Search1" id="Search1" required  />
+           <label for="Search1" generated="true" class="error" style="background-color:#E9138F; font-weight:bold; color:black; padding:3px; border:1px solid #E9138F; top:-70px; position:relative; display: none;">Please enter a keyword or business name</label>
+           </p>
            </td>
            <td><p class="inputbox"><input type="text" name="Search2" id="Search2" />
            
@@ -161,6 +166,21 @@ $(function () {
 			$("#Search2")[0].focus();
 		}
 	);
+});
+
+$().ready(function() {
+   // $('#test').validate( {invalidHandler: $.watermark.showAll} );
+
+
+    $("#test").validate({
+		rules: {
+    	    Search1: "required"
+		},
+		messages: {
+			Search1: "Please enter a keyword or business name"
+		},
+		invalidHandler: $.watermark.showAll
+	});
 });
 
 </script>

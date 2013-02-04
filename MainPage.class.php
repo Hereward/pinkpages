@@ -14,7 +14,7 @@ class MainPage extends Smarty {
 
 	var $cssStyleFiles = array("pagination.css", "default1.css"); //Default Css
 	//    var $jsFiles = array(); //Default JS
-	var $jsFiles = array("contact_validation.js","jquery-1.9.0.min.js","tooltip.js","jquery.watermark.min.js"); //Default JS
+	var $jsFiles = array("contact_validation.js","jquery-1.9.0.min.js","tooltip.js","jquery.watermark.min.js","jquery.validate.min.js"); //Default JS
 
 	//Control=>Array of actions - to not to display menu on page, add corresponding action & control here
 	var $actions = array(
