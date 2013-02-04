@@ -25,9 +25,9 @@
            </tr>
            
              <tr>
-           <td ><p class="inputbox"><input type="text" name="Search1" id="Search1" placeholder="What?" value="" /></p>
+           <td ><p class="inputbox"><input type="text" name="Search1" id="Search1" title="What?" /></p>
            </td>
-           <td><p class="inputbox"><input type="text" name="Search2" id="Search2" placeholder="Where?" value="" />
+           <td><p class="inputbox"><input type="text" name="Search2" id="Search2" />
            
            </p>
            
@@ -141,5 +141,31 @@ Hassle Free Bookkeeping, BAS and Tax for  less than you are paying now. On-line 
 	
 <script language="javascript1.5" src="{$JS_PATH}search.js" type="text/javascript" >
 </script>
+
+{literal}
+<script type="text/javascript">
+// hello
+$(function () {
+		$("#Search1").watermark("What?");
+		$("#Search1Focus").click(
+			function () {
+				$("#Search1")[0].focus();
+			}
+		);
+});
+
+$(function () {
+	$("#Search2").watermark("Where?");
+	$("#Search2Focus").click(
+		function () {
+			$("#Search2")[0].focus();
+		}
+	);
+});
+
+</script>
+{/literal}
+
+
 
 	
