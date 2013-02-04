@@ -1040,9 +1040,9 @@ class AdminListingFacade extends MainFacade {
 		}
 	}
 	
-	/*
+	
 	public function alias_fix($state='') {
-		//die('hello');
+		die('hello');
 		if (!$state) {
 			$state = 'ACT';
 		}
@@ -1076,13 +1076,11 @@ class AdminListingFacade extends MainFacade {
 		
 		var_dump($output);
 		die();
-		
-		
-		
+
 		
 	}
 	
-	*/
+	
 	
 	
 	
