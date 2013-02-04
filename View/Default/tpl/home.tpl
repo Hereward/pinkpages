@@ -25,9 +25,9 @@
            </tr>
            
              <tr>
-           <td ><p class="inputbox"><input type="text" name="Search1" id="Search1" value="What?" /></p>
+           <td ><p class="inputbox"><input type="text" name="Search1" id="Search1" placeholder="What?" value="" /></p>
            </td>
-           <td><p class="inputbox"><input type="text" name="Search2" id="Search2" value="Where?" />
+           <td><p class="inputbox"><input type="text" name="Search2" id="Search2" placeholder="Where?" value="" />
            
            </p>
            

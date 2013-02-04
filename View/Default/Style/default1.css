@@ -569,7 +569,7 @@ p.inputbox input {
 width:295px;
 
 border:none;
-color:#000000;
+/*color:#000000;*/
 font-size:24px;
 }
 p.inputbox-b input {
@@ -2029,5 +2029,13 @@ li#browse_by_city {
 	font-weight:bold;
 	font-size:12px;
 }
+
+.watermark {
+   color: #ccc !important;
+}
+
+		
+		
+
 
 /********* contact end ********/

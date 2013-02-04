@@ -1,4 +1,4 @@
-
+/*
 var active_color = '#000'; // Colour of user provided text
 var inactive_color = '#ccc'; // Colour of default text
 
@@ -19,5 +19,39 @@ $(document).ready(function() {
         this.value = default_values[this.id];
       }
     });
-  });
+    
+
 });
+
+ */
+
+
+
+$(document).ready(function() {
+$(function() {
+	$("#Search1", "#Search2").watermark(this.value, {className: 'watermark'});
+	$("#Search1Focus").click(function() {
+		$("#Search1")[0].focus();
+	});
+
+	$("#Search2Focus").click(function() {
+		$("#Search2")[0].focus();
+	});
+});
+}
+
+
+
+/*
+$(document).ready(function() {
+  $(function() {
+	$("#Search1").watermark(this.value);
+	$("#Search1Focus").click(function() {
+		$("#Search1")[0].focus();
+	});
+  });
+}
+*/
+
+
+
