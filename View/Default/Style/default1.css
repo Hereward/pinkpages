@@ -575,7 +575,7 @@ font-size:24px;
 p.inputbox-b input {
 width:375px;
 border:none;
-color:#000000;
+/* color:#000000; */
 font-size:24px;
 }
 

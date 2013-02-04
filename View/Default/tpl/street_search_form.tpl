@@ -8,24 +8,34 @@
     <P >Search for businesses on your street</P>
 		<div class="searchbox-index-left-key">
             
-			<form action="main.php" name="Homepage" method="get" onsubmit="return checkStreet();">
+			<form action="main.php" id="Homepage" name="Homepage" method="get" onsubmit="">
 			<input type="hidden" id="testid" value="" disabled="disabled" />
 			<input type="hidden" id="do" name="do" value="Listing" />
 			<input type="hidden" id="action" name="action" value="searchStreet" />
 		   <table class="searchbox-index-left" >
            <tr>
-           <td class="title">Street Name
+           <td class="title">&nbsp;
            </td>
-           <td class="title">Suburb Name
+           <td class="title">&nbsp;
            </td>
            <td>
            </td>
            </tr>
            
+    
+           
+           
+           
              <tr>
-           <td ><p class="inputbox"><input type="text" name="Search1" id="Search1" value="" /></p>
+           <td ><p class="inputbox">
+           <input type="text" name="Search1" id="Search1" value="" />
+           <label for="Search1" generated="true" class="error" style="background-color:#E9138F; font-weight:bold; color:black; padding:3px; border:1px solid #E9138F; top:-70px; position:relative; display: none;"></label>
+           </p>
            </td>
-           <td><p class="inputbox"><input type="text" name="Search2" id="Search2" value="" /></p>
+           <td><p class="inputbox">
+           <input type="text" name="Search2" id="Search2" value="" />
+           <label for="Search2" generated="true" class="error" style="background-color:#E9138F; font-weight:bold; color:black; padding:3px; border:1px solid #E9138F; top:-70px; position:relative; display: none;"></label>
+           </p>
            </td>
          
            <td ><input class="btn" src="{$IMAGES_PATH}btn-search.gif" type="image" name="Submit" id="Submit" value="Search" />
@@ -68,4 +78,48 @@ var suburb_location = {
 var suburb_json = new bsn.AutoSuggest('Search2', suburb_location);
 </script>
 
+{/literal}
+
+
+{literal}
+<script type="text/javascript">
+// hello
+$(function () {
+		$("#Search1").watermark("Enter a street name");
+		$("#Search1Focus").click(
+			function () {
+				$("#Search1")[0].focus();
+			}
+		);
+});
+
+
+$(function () {
+	$("#Search2").watermark("Enter a suburb name");
+	$("#Search2Focus").click(
+		function () {
+			$("#Search2")[0].focus();
+		}
+	);
+});
+
+
+$().ready(function() {
+   // $('#test').validate( {invalidHandler: $.watermark.showAll} );
+
+
+    $("#Homepage").validate({
+		rules: {
+    	    Search1: "required",
+    	    Search2: "required"
+		},
+		messages: {
+			Search1: "Please enter a street name",
+			Search2: "Please enter a suburb name",
+		},
+		invalidHandler: $.watermark.showAll
+	});
+});
+
+</script>
 {/literal}

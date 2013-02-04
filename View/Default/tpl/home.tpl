@@ -178,8 +178,7 @@ $().ready(function() {
 		},
 		messages: {
 			Search1: "Please enter a keyword or business name"
-		},
-		invalidHandler: $.watermark.showAll
+		}
 	});
 });
 
