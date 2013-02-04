@@ -1065,7 +1065,7 @@ class AdminListingFacade extends MainFacade {
 			
 			
 			$q2 = "UPDATE `local_businesses` SET url_alias = '$str' WHERE business_id = '{$row['business_id']}'";
-		    //$rows2 = $this->MyDB->query($q1) or die('Query 1 failed: ' . mysql_error());
+		    $rows2 = $this->MyDB->query($q1) or die('Query 1 failed: ' . mysql_error());
 			$output[] = array('query'=> $q2, "business_id" => $row['business_id'], "name" => $row['business_name'], 'alias' => $str);
 			$i++;
 			if ($i>500) {
@@ -1074,8 +1074,9 @@ class AdminListingFacade extends MainFacade {
 			
 		}
 		
-		var_dump($output);
-		die('ALIAS FIX: OPERATION COMPLETED NORMALLY');
+		//var_dump($output);
+		$count = count($output);
+		die("ALIAS FIX: OPERATION COMPLETED NORMALLY. Update Count = [$count]");
 
 		
 	}
