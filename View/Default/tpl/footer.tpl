@@ -40,6 +40,11 @@
 					Copyright &copy 2013 Dawson Media Pty Ltd. &nbsp;&nbsp; <a href="{$SITE_PATH}terms_conditions">Terms and Conditions</a>&nbsp;&nbsp; <a href="{$SITE_PATH}privacy">Privacy Policy</a>&nbsp;&nbsp; <a href="{$SITE_PATH}disclaimer">Disclaimer</a>
 		   </li>
 		</ul>
+		
+		
+		<div style="margin-top:20px; text-align:center;">
+		    <img src="{$IMAGES_PATH}pinkie200x165.gif" alt="Pink Pages Australia - Truly Local"  />
+		</div>
 	
 		
 

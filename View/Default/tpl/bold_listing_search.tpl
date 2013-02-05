@@ -207,7 +207,7 @@
 		
 		{if $class_count > 0}
 		<div style="margin-top:20px; background-color:#E6E6E6; padding: 5px 10px 10px 10px;">
-		    <h2 style="margin-left:10px; color:#E8138F;">More Listings in this Category</h2>
+		    <h2 style="margin-left:10px; color:#E8138F;">More Related Listings</h2>
 			<ul>
 			  	{section name=class loop=$classifications}
 			                    {if $region_alias }
@@ -235,7 +235,7 @@
 					
 					{if $class_count > 0 && $rank_count==0}
 		                <div class='map-detail-left-rank' style="float:right; margin:20px; background-color:#E6E6E6; padding: 5px 10px 10px 10px;">
-		                   <h2 style="margin-left:10px; color:#E8138F;">More Listings in this Category</h2>
+		                   <h2 style="margin-left:10px; color:#E8138F;">More Related Listings</h2>
 			               <ul>
 			                  {section name=class loop=$classifications}
 			                    {if $region_alias }
