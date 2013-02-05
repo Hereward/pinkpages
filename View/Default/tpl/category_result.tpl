@@ -241,6 +241,10 @@
               {/if}
 				
             <div align="center">{include file="pagination.tpl"}</div>
+            
+            <div style="margin:20px 20px 0px 0px; text-align:right;">
+		       <img width="170" src="{$IMAGES_PATH}pinkie200x165.gif" alt="Pink Pages Australia - Truly Local"  />
+		    </div>
           
             
             
@@ -317,6 +321,8 @@ google_ad_height = 60;
 
 <!--Search box starts-->
 {include file="keyword_search_form.tpl"}
+
+		
 <!--Search box ends-->
 <div class="bottomseperator">
 </div>

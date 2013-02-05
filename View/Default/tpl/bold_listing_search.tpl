@@ -283,7 +283,9 @@
 	{include file='google_free_listing_ad.tpl'}
 {/if}
  
-
+            <div style="margin:20px 20px 0px 0px; text-align:right;">
+		       <img width="170" src="{$IMAGES_PATH}pinkie200x165.gif" alt="Pink Pages Australia - Truly Local"  />
+		    </div>
 {include file="social_networking_footer.tpl" }
 {*
 {if ($rank_count<1)}

@@ -42,9 +42,7 @@
 		</ul>
 		
 		
-		<div style="margin-top:20px; text-align:center;">
-		    <img src="{$IMAGES_PATH}pinkie200x165.gif" alt="Pink Pages Australia - Truly Local"  />
-		</div>
+
 	
 		
 
