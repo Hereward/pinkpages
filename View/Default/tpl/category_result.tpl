@@ -126,12 +126,12 @@
                          <tr>
                            {if ($values[i].rank <= 5)}						 
                              <td  class="mainheadingtop5">
-                             <a href="{$values[i].link}" >{$values[i].business_name|lower|capitalize}</a>
+                             <a href="{$values[i].link}" >{$values[i].business_name}</a>
         					  <span style="color:white;">[{$values[i].rank}]</span> 
                            </td>  							 							 
 						   {else}
                              <td  class="mainheading">
-                             <a href="{$values[i].link}" >{$values[i].business_name|lower|capitalize}</a>
+                             <a href="{$values[i].link}" >{$values[i].business_name}</a>
         					 <span style="color:white;">[{$values[i].rank}]</span>
                            </td>  							 
 						   {/if}	 
