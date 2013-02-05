@@ -1043,6 +1043,7 @@ class AdminListingFacade extends MainFacade {
 	
 	public function alias_fix($state='') {
 		//die('hello');
+		set_time_limit(200000);
 		if (!$state) {
 			$state = 'ACT';
 		}
