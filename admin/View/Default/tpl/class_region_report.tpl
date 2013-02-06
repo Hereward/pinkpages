@@ -1,28 +1,30 @@
 {literal}
 <script type="text/javascript">
+/*
 $j(function() {
 	$j("#from_date").datepicker();
 	$j('#from_date').datepicker('option', {dateFormat:'yy-mm-dd'});
 	$j("#to_date").datepicker();
 	$j('#to_date').datepicker('option', {dateFormat:'yy-mm-dd'});
 });
+*/
 </script>
 
 {/literal}
 <div class="content">
-<h3><center><b>Classification views statistics (Region wise)</b></center></h3>
+<h3><center><b>Classification views statistics (12 Months Region wise)</b></center></h3>
 <br />
 <form action="{$class_region_report_action}" id="" name="classificationReport" method="post" onsubmit="return validate();">
 <table class="datatable" width="100" border="0" cellpadding="0" cellspacing="0" align="center">
         <tr>
-		 <td><p>From Date: <input type="text" name="from_date" id="from_date" readonly="true"></p></td>
-		 <td><p>To Date: <input type="text" id="to_date" name="to_date" readonly="true"></p></td>
+		 <td><p>From Date: <input type="text" name="from_date" id="from_date" value="{$from_date}" readonly="true"></p></td>
+		 <td><p>To Date: <input type="text" id="to_date" name="to_date" readonly="true" value="{$to_date}"></p></td>
 		 {*
 		 <td><p>Filter Google & Bing Searches: <input type="Checkbox" name="filter_google" value="google"></p></td>
 		 *}
 		</tr>
 		<tr>
-		 <td colspan="2" align="center"><input type="submit" value="Generate Report" class="controlgrey" ></td>
+		 <td colspan="2" align="center"><input type="submit" value=" Generate 12 Month Report "  ></td>
 		</tr>
 </table>
 <input type="hidden" name="filter_google" value="google" >

@@ -654,6 +654,13 @@ class ClassificationControl extends MainControl
 		$this->page->assign("count_listing",$this->request->createURL("Admin","count_listing"));
 		$this->page->assign("class_region_report_action",$this->request->createURL("Classification","classRegionReport"));
 		
+		$this->page->assign("to_date",date("Y-m-d"));
+		
+		$from_date_raw = strtotime("-365 days");
+		
+		$from_date = date("Y-m-d",$from_date_raw);
+		//die("[$from_date_raw] | [$from_date]");
+		$this->page->assign("from_date",$from_date);
 		
 		$this->page->assign("act",$_GET['action']);
 		$this->page->addCssStyle("jquery-ui-1.7.1.custom.css");
