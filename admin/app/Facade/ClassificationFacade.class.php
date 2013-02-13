@@ -1188,6 +1188,91 @@ class ClassificationFacade extends MainFacade {
 	echo "\n";
 		exit;
 	}
+	
+	
+public function generate_failed_searches_report($from_date, $to_date, $filter_google) {
+	    //die("WHIZZZ!");
+		set_time_limit(0);
+		ini_set("memory_limit","80M");
+		header("Content-type: application/octet-stream");
+		header("Content-Disposition: attachment; filename=\"failed_searches_report.csv\"");
+		
+		echo "searchid,search_date,search_type,search_term,businessname,suburb,street,regionid \n";
+
+		//getting all regions
+		$sql = "SELECT * FROM 
+
+					`failed_searches` 
+			WHERE search_date BETWEEN '$from_date' AND '$to_date'
+				";
+		
+		
+		$rows = $this->MyDB->query($sql);
+//		prexit($rows);
+		$classifications = $stat = array();
+		foreach ($rows as $r) {
+		//	$street = $r['street'];
+		    
+			$str = "{$r['searchid']}\t{$r['search_date']}\t{$r['search_type']}\t{$r['search_term']}\t{$r['businessname']}\t{$r['suburb']}\t{$r['street']}\t{$r['regionid']}";
+			$str = str_replace(',', ' ', $str);
+			$str = str_replace("\t", ',', $str);
+			echo "$str \n";
+			
+		}
+		
+		
+		
+		exit;
+		
+		
+		
+		
+//		pre($classifications);
+
+		/*
+		$i=0;
+		foreach ($classifications as $classification) {
+			$temp = array();
+			$j=0;
+			$total_views = 0;
+			foreach ($regions as $region) {
+				$temp[$j]['views']=0;
+				foreach ($classification as $c) {
+					if($c['region_id']==$region['region_id']) {
+						$temp[$j]['views']=$c['views'];
+						break;
+					}
+				}
+				$temp[$j]['region_code'] = $region['region_code'];
+				$total_views += $temp[$j]['views'];
+				$j++;
+			}
+			$stat[$i]['classification_name'] = $classification[0]['localclassification_name'];
+			$stat[$i]['total_views'] = $total_views;
+			$stat[$i]['regions'] = $temp;
+			$i++;
+		}
+		$d = $i+1;
+		header("Content-type: application/octet-stream");
+		header("Content-Disposition: attachment; filename=\"faiiled_searches_report.csv\"");
+		echo "CLASSIFICATION_NAME,";
+		foreach ($regions as $region) {
+			echo $region['region_code'].",";
+		}
+		echo "TOTAL,STARTDATE,ENDDATE";
+		echo "\n";
+		foreach ($stat as $k=>$data) {
+			echo $data['classification_name'].",";
+			foreach ($data['regions'] as $reg) {
+				echo $reg['views'].",";
+			}
+			echo $data['total_views'].",$from_date,$to_date\n";
+		}
+		
+		*/
+	//echo "\n";
+	//	exit;
+	}
 
 }
 ?>

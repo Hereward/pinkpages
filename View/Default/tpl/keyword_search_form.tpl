@@ -8,12 +8,12 @@
 
 	<ul class="search">
 		<li>
-			<input type="hidden" name="SearchOption" id="SearchOption" type="radio" value="0" checked="checked" /> <h2>Product or Service</h2> 
+			<input type="hidden" name="SearchOption" id="SearchOption" type="radio" value="0" checked="checked" /> <h2>What?</h2> 
 	
 		</li>
 		<li><p class="sideinput"><input type="text" name="Search1" id="Search1" value="{if ($default_keyword)}{$default_keyword|stripslashes}{else}{$keyword|stripslashes}{/if}" size="20" class="largeinputbox"/></p><br /><li>
 	
-		<li><h2>Location</h2></li>
+		<li><h2>Where?</h2></li>
 		<li>
 			<p class="sideinput"><input type="text" name="Search2" id="Search2" value="{$location|stripslashes}"  size="17" class="largeinputbox" /></p>
 			{if $searchArea eq 'suburb' && $regionCount}

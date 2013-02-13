@@ -1465,6 +1465,7 @@ class AdminControl extends MainControl
 		$this->page->assign("addclient",$this->request->createURL("Admin","addclient"));
 		$this->page->assign("count_listing",$this->request->createURL("Admin","count_listing"));
 		$this->page->assign("search_within_a_locality_count",$this->request->createURL("Admin","search_within_a_locality_count","FDate={$this->request->getAttribute("FDate")}&FMonth={$this->request->getAttribute("FMonth")}&FYear={$this->request->getAttribute("FYear")}&ToDate={$this->request->getAttribute("ToDate")}&ToMonth={$this->request->getAttribute("ToMonth")}&ToYear={$this->request->getAttribute("ToYear")}"));
+		$this->page->assign("failed_searches_report",$this->request->createURL("Classification","failed_searches_report"));
 		$this->page->assign("act",$_GET['action']);
 		
 		// Hereward 20121003 - remove redundant code

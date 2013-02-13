@@ -197,7 +197,8 @@
 			<h2>Accepted Payment Types</h2>
 			<ul>
 			{foreach from=$values8 item=key}
-			<li> {$key.payment_name}</li>
+			{* <li><img src="{$IMAGES_PATH}payment/payment_{$key.payment_name|lower}.jpg" alt="{$key.payment_name} image"/>&nbsp;{$key.payment_name}</li> *}
+			<li><img src="{$IMAGES_PATH}payment/payment_{$key.payment_id}.jpg" alt="{$key.payment_name} image"/>&nbsp;&nbsp;{$key.payment_name}</li>
 			{/foreach}				
 			</ul>	
 	    {/if}

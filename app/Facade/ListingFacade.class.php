@@ -1414,7 +1414,7 @@ class ListingFacade extends MainFacade {
 				$sql="SELECT adword_line1,adword_line2 FROM local_pages WHERE $condition";
 				$res[6] = $this->myDB->query($sql);
 				
-				$sql="select payment_name from business_payment where business_id ='{$search}'";
+				$sql="select payment_id, payment_name from business_payment where business_id ='{$search}'";
 				$res[7]=$this->myDB->query($sql);
 				
 				$sql="select business_service_name from business_service where business_id ='{$search}'";

@@ -653,6 +653,7 @@ class ClassificationControl extends MainControl
 		$this->page->assign("addclient",$this->request->createURL("Admin","addclient"));
 		$this->page->assign("count_listing",$this->request->createURL("Admin","count_listing"));
 		$this->page->assign("class_region_report_action",$this->request->createURL("Classification","classRegionReport"));
+		$this->page->assign("failed_searches_report",$this->request->createURL("Classification","failed_searches_report"));
 		
 		$this->page->assign("to_date",date("Y-m-d"));
 		
@@ -671,6 +672,75 @@ class ClassificationControl extends MainControl
 		$this->page->addJsFile("ui.datepicker.js");
 		
 		$this->page->getPage("class_region_report.tpl");
+	}
+	
+	
+	
+public function failed_searches_report() {
+		
+		$this->page->pageTitle 	= "Classification-Region Report";
+		$do 					= (!empty($_GET['do']))?$_GET['do']:NULL;
+		$action 				= (!empty($_GET['action']))?$_GET['action']:NULL;
+		
+		$this->page->assign("do",$do);
+		$this->page->assign("action",$action);
+		
+		$this->page->assign("pagePopularityReport",$this->request->createURL("Admin","pagePopularityReport"));
+		$this->page->assign("failed_searches_report",$this->request->createURL("Classification","failed_searches_report"));
+		$this->page->assign("class_region_report",$this->request->createURL("Classification","regionReport"));
+		$this->page->assign("class_region_total_report",$this->request->createURL("Classification","class_region_total_report"));
+		$this->page->assign("ctr_report",$this->request->createURL("Classification","ctrReport"));		
+		$this->page->assign("sitePerformanceReport",$this->request->createURL("Admin","sitePerformanceReport"));
+		$this->page->assign("rankReport",$this->request->createURL("Admin","rankReport")); 
+		$this->page->assign("logout_url",$this->request->createURL("Admin", "doLogout"));
+		$this->page->assign("TeamManager_url",$this->request->createURL("Admin", "adminManager"));
+		$this->page->assign("classificationStats",$this->request->createURL("Admin","classificationStats"));
+		$this->page->assign("BusinessManager_url",$this->request->createURL("SalesAccountManager", "addListing"));
+		$this->page->assign("viewList",$this->request->createURL("SalesAccountManager", "viewList"));
+		$this->page->assign("searchFreeListing",$this->request->createURL("SalesAccountManager", "searchFreeListing"));
+		$this->page->assign("viewlisting",$this->request->createURL("AdminListing", "viewList"));
+		$this->page->assign("keyword",$this->request->createURL("Classification","viewKeyword"));
+		$this->page->assign("view",$this->request->createURL("Key", "viewList"));
+		$this->page->assign("bannerManager",$this->request->createURL("BannerManager","viewListing"));
+		$this->page->assign("viewLocation",$this->request->createURL("Location","viewLocation"));
+		$this->page->assign("viewPage",$this->request->createURL("Content","viewPage"));
+		
+        $this->page->assign("viewGroup",$this->request->createURL("Group","viewGroup"));     
+        $this->page->assign("viewGroup",$this->request->createURL("Group","viewGroup"));     
+		
+        $this->page->assign("privacyStatement",$this->request->createURL("Content","privacyStatement"));
+		$this->page->assign("termsAndConditions",$this->request->createURL("Content","termsAndConditions"));
+		$this->page->assign("contactUs",$this->request->createURL("Content","contactUs"));
+		$this->page->assign("footerStatement",$this->request->createURL("Content","footerStatement"));
+		$this->page->assign("fetchUniqueClients",$this->request->createURL("Admin","fetchUniqueClients"));
+		$this->page->assign("clients_in_specific_locality",$this->request->createURL("Admin","search_locality_based_clients_form"));
+		//$this->page->assign("clients_in_specific_locality",$this->request->createURL("Admin","clients_in_specific_locality"));
+		$this->page->assign("classificationStats",$this->request->createURL("Admin","classificationStats"));
+		$this->page->assign("failed_searches",$this->request->createURL("Admin","failed_searches"));
+		$this->page->assign("clientManager",$this->request->createURL("Admin","clientManager"));
+		$this->page->assign("addclient",$this->request->createURL("Admin","addclient"));
+		$this->page->assign("count_listing",$this->request->createURL("Admin","count_listing"));
+		$this->page->assign("class_region_report_action",$this->request->createURL("Classification","classRegionReport"));
+		$this->page->assign("failed_searches_report_action",$this->request->createURL("Classification","generate_failed_searches_report"));
+		$this->page->assign("classificationBannerReport",$this->request->createURL("BannerManager", "classificationBannerReport"));
+		
+		$this->page->assign("to_date",date("Y-m-d"));
+		
+		$from_date_raw = strtotime("-365 days");
+		
+		$from_date = date("Y-m-d",$from_date_raw);
+		//die("[$from_date_raw] | [$from_date]");
+		$this->page->assign("from_date",$from_date);
+		
+		$this->page->assign("act",$_GET['action']);
+		$this->page->addCssStyle("jquery-ui-1.7.1.custom.css");
+		
+		$this->page->removeJsFile("prototype.1.6.js");
+		$this->page->addJsFile("jquery-1.3.2.min.js");
+		$this->page->addJsFile("ui.core.js");
+		$this->page->addJsFile("ui.datepicker.js");
+		
+		$this->page->getPage("failed_searches_report.tpl");
 	}
 	
 /* Month Total Report */
@@ -718,7 +788,7 @@ public function class_region_total_report() {
 		$this->page->assign("addclient",$this->request->createURL("Admin","addclient"));
 		$this->page->assign("count_listing",$this->request->createURL("Admin","count_listing"));
 		$this->page->assign("class_region_report_action",$this->request->createURL("Classification","classRegionTotalsReport"));
-		
+		$this->page->assign("failed_searches_report",$this->request->createURL("Classification","failed_searches_report"));
 		
 		$this->page->assign("act",$_GET['action']);
 		$this->page->addCssStyle("jquery-ui-1.7.1.custom.css");
@@ -818,6 +888,17 @@ public function class_region_total_report() {
 		}
 
 		$this->classificationFacade->getClassificationRegionReport($from_date, $to_date, $filter_google);
+	}
+	
+	public function generate_failed_searches_report() {
+		$filter_google = FALSE;
+		$from_date = $_POST['from_date'];
+		$to_date = $_POST['to_date'];
+	    if (array_key_exists('filter_google', $_POST)) {
+			$filter_google = TRUE;
+		}
+
+		$this->classificationFacade->generate_failed_searches_report($from_date, $to_date, $filter_google);
 	}
 	
 	public function classRegionTotalsReport() {
