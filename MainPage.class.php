@@ -138,7 +138,7 @@ class MainPage extends Smarty {
 			//dev_log::write("getPage: A");
 		}elseif($do == "ListingControl" && $action == "demoBoldListing") {
 			$this->display("no-header.tpl");
-			//dev_log::write("getPage: B");
+		    //dev_log::write("getPage: B");
 		}
 		
 		elseif(($do == DEFAULT_CONTROL."Control" && $action == DEFAULT_ACTION) || ($do == 'ListingControl' && $action == 'mapSearch') || ($do == 'ListingControl' && $action == 'searchStreetForm')|| ($do == 'ListingControl' && $action == 'businessNameSearch'))

@@ -1261,6 +1261,7 @@ class ListingControl extends MainControl {
 		//Get the Classificiation Description
 		$classificationID = $this->request->getAttribute('search');
 		$page     = ($this->request->getAttribute('pnum')) ? $this->request->getAttribute('pnum') : 1;
+		
 		$description =  $this->cf->getClassificationDescription($classificationID);
 		$this->page->assign("description", $description);
 
@@ -1306,6 +1307,8 @@ class ListingControl extends MainControl {
 		$this->page->assign("fetch_service",$res['services']);
 		$this->page->assign("fetch_payment",$res['payments']);
 		$this->page->assign("fetch_hours",$res['hours']);
+		$this->page->assign("current_page",$page);
+		
 			
 		if(isset($_GET['service']))$selectArray['service'] 		= $_GET['service'];
 		if(isset($_GET['hours']))$selectArray['hours'] 		= $_GET['hours'];

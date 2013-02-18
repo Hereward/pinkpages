@@ -11,7 +11,7 @@
 {/if}	
 {if $canonical}{$canonical}
 {/if}	
-<title>{$page_title}</title>
+<title>{$page_title} {if $current_page > 1}- Page {$current_page} {/if}</title>
 {foreach from=$css_files item=css}
     {$css}
 {/foreach}
