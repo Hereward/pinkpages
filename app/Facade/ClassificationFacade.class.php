@@ -205,12 +205,11 @@ class ClassificationFacade extends MainFacade {
 			$this->createTree($grp, $suggest_arr);
 		}
 //		prexit($suggest_arr);
-		/*
+		
 		echo "{\"results\": [";
 		
 		echo implode(", ", array_unique($suggest_arr));
 		echo "]}";
-		*/
 
 	}/* END loadAjax */
 

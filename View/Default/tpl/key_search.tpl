@@ -81,6 +81,7 @@
 	{else}
 	Sorry, your search for <span><strong>{$keyword}</strong></span> in <span><strong>{$smarty.get.Search2}</strong></span> returned no results. <br />Please try again using a different keyword or location.<br />
     <a href="{$business_name_search}">Not what you were looking for?<br /> Try searching for <span><strong>{$smarty.get.Search1}</strong></span> in a business name instead</a>
+
 	{/if}
 	
     
@@ -96,3 +97,39 @@
 <!--Search box ends-->
 <div class="bottomseperator">
 </div></div>
+
+{literal}
+<script type="text/javascript">
+$(function () {
+		$("#Search1").watermark("What?");
+		$("#Search1Focus").click(
+			function () {
+				$("#Search1")[0].focus();
+			}
+		);
+});
+
+$(function () {
+	$("#Search2").watermark("Where?");
+	$("#Search2Focus").click(
+		function () {
+			$("#Search2")[0].focus();
+		}
+	);
+});
+
+$().ready(function() {
+	   // $('#test').validate( {invalidHandler: $.watermark.showAll} );
+
+
+	    $("#test").validate({
+			rules: {
+	    	    Search1: "required"
+			},
+			messages: {
+				Search1: "Please enter a keyword or business name"
+			}
+		});
+	});
+</script>
+{/literal}

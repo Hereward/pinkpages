@@ -874,6 +874,17 @@ class ListingControl extends MainControl {
 
 		$classi   = ucwords(strtolower($res[5][0]['localclassification_name']));
 		
+		if (!$classi) {
+			//die("BOOOO xxxxxxxxxxxxxxxxxxxxxx");
+			header("HTTP/1.0 404 Not Found");
+			include("404.html");
+			exit;
+			//exit;
+			//header("Location: 404.html",TRUE,301);
+			//die();
+			//exit();
+		}
+		
 		dev_log::write("classi = [$classi]");
 		
 		//$classy = $classifications_array[0]['localclassification_name'];
