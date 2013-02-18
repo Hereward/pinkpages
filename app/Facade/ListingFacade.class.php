@@ -1367,7 +1367,7 @@ class ListingFacade extends MainFacade {
 		$count_business_views=0;
 		$sql2="SELECT * FROM site_stats";
 		$res=$this->myDB->query($sql2);
-
+        
 		if($res[0]['count_business_views']=='')
 		{
 			$sql="INSERT INTO site_stats(count_business_views) VALUES('0') WHERE id=1";//prexit($sql);

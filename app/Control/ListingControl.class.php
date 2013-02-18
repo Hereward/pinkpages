@@ -769,6 +769,7 @@ class ListingControl extends MainControl {
 	
 	
    public function redirect_free_listing() {
+   	    //dev_log::write("redirect_free_listing");
 		$new_url = '';
 		$host = $_SERVER['HTTP_HOST'];
 		//$cur_url = dev_log::get_cur_url();
@@ -777,7 +778,9 @@ class ListingControl extends MainControl {
 		if (isset($_GET['url_alias'])) {
 			$url_alias = $_GET['url_alias'];
 			$id = $_GET['ID'];
+			//dev_log::write("url_alias is set");
 			if (is_numeric($url_alias)) {
+				
 				dev_log::write("url_alias = $url_alias | I AM NUMERIC - REDIRECT ME!");				
 				$new_url_alias = $this->listingFacade->get_url_alias($id);
 				//dev_log::write("new_url_alias = $new_url_alias"); 
@@ -827,13 +830,15 @@ class ListingControl extends MainControl {
 
 		$res = $this->listingFacade->boldListingResult($_GET);
 		
-		//var_dump($res);
+	    //var_dump($res[5]);
+	    //die();
 		//die();
 
 		$classifications = explode(',', $this->listingFacade->getClassificationsByBusiness($_GET['ID']));
 		
 		
 		$classifications_array = $this->listingFacade->getClassificationsByBusinessComplete($_GET['ID']); //getClassificationsByBusinessComplete
+		
 		$adult = 0;
 		for ($i = 0; $i < count($classifications_array); $i++) {
 			$raw = $classifications_array[$i]['localclassification_name'];
@@ -845,13 +850,13 @@ class ListingControl extends MainControl {
 		
 		
 		
-		//var_dump($classifications_array);
+        
 
 		//Added for drop downs
 		$this->page->addJsFile("bsn.AutoSuggest_2.1.3.js");
 		$this->page->addCssStyle("autosuggest_inquisitor.css");
 		$this->page->addJsFile("search.js");
-
+        
 		$description=str_split($res[0][0]['business_description'],450);
 		$this->page->assign("description",$description);
 		$this->page->assign("values",$res[0]);
@@ -865,9 +870,12 @@ class ListingControl extends MainControl {
 		$this->page->assign("values9",$res[8]);
 		$this->page->assign("values10",$res[9]);
 		$this->page->assign("adult",$adult); 
-
+       
 
 		$classi   = ucwords(strtolower($res[5][0]['localclassification_name']));
+		
+		dev_log::write("classi = [$classi]");
+		
 		//$classy = $classifications_array[0]['localclassification_name'];
 		$location = ucwords(strtolower($res[0][0]['business_suburb']));
 		
@@ -877,13 +885,13 @@ class ListingControl extends MainControl {
         $this->page->assign('ad_lines',3);
         $this->page->assign('rank_count',$rank_count);
         
-        
+         
 		$this->page->assign("classi", $classi);
 		$class_count= count($classifications_array);
 		$this->page->assign("classifications", $classifications_array);
 		
-		//var_dump($classifications_array);
-		//die();
+
+		
 		//die($classy);
 		
 		$mbn = (isset($res[0][0]['business_name']))?$res[0][0]['business_name']. ', ':'';
@@ -891,9 +899,12 @@ class ListingControl extends MainControl {
 		$mbp = (isset($res[0][0]['business_postcode']))?$res[0][0]['business_postcode']:'';
 		
 		
+		
 		$meta_loc_bits = ($location)?$mbn . $location . ', ' . $mbs . $mbp:$mbn . $mbs . $mbp;
 
 		$keywords = $meta_loc_bits . ', ' . $this->cf->loadAjax('', $classi);
+		
+		
 		//die("OI");
 		$region_alias = ($mbp)?$this->listingFacade->getRegionAliasFromPostcode($mbp):'';
 		//$this->page->assign("postcode", $mbp);
@@ -905,6 +916,9 @@ class ListingControl extends MainControl {
 		$this->page->assign("class_count", $class_count);
 
 		$this->page->assign("location", $location);
+		
+		
+		
 
 		//Adding Meta Tags
 		$syns = $this->getSynonyms($res[8]);
@@ -1066,7 +1080,7 @@ class ListingControl extends MainControl {
 			$classifications = $this->listingFacade->getClassificationCountByAlpha($location, $classification_ids, $this->request->getAttribute("fr"), $this->request->getAttribute("pg_size"));
 		}
 		
-		//var_dump($classifications);
+	
 		
 		//die($str);
 		
