@@ -132,6 +132,7 @@
         </li>
 	</ul>
    </div>
+   <div class="or-badge"></div>
  </form>
    
    {literal}
