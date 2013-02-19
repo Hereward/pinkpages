@@ -2139,7 +2139,7 @@ li#browse_by_city {
 	position:relative;
 	bottom:148px;
 	left:282px;
-	z-index:55;
+	z-index:0;
 	overflow:hidden;
 }
 
