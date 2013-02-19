@@ -2048,6 +2048,7 @@ li#browse_by_city {
 .product-search {
 	width: 530px;
 	height: 110px;
+	background-color: #114fa2;
 	background-image: linear-gradient(bottom, rgb(0,52,141) 0%, rgb(34,144,207) 100%);
 	background-image: -o-linear-gradient(bottom, rgb(0,52,141) 0%, rgb(34,144,207) 100%);
 	background-image: -moz-linear-gradient(bottom, rgb(0,52,141) 0%, rgb(34,144,207) 100%);
