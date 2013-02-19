@@ -105,7 +105,7 @@
 			<p class="sideinput"><input type="text" class="largeinputbox" size="17" id="Search2" name="Search2"></p>
         </li>
         <li>
-        {* <input type="image" hspace="10" value="Search" id="Submit" name="Submit" class="search-button" src="http://www.pinkpages.com.au/View/Default/Images/sidesearch.gif"> *}
+        {* <input type="image" hspace="10" value="Search" id="Submit" name="Submit" class="search-button" src="{$IMAGES_PATH}sidesearch.gif"> *}
         <input class="search-button" hspace="10" src="{$IMAGES_PATH}sidesearch.gif" type="image" name="Submit" id="Submit" value="Search" />
         </li>
 	</ul>
@@ -128,7 +128,7 @@
 		</li>
       	
         <li>
-        <input type="image" hspace="10" value="Search" id="Submit" name="Submit" class="search-button" src="http://www.pinkpages.com.au/View/Default/Images/sidesearch.gif">
+        <input type="image" hspace="10" value="Search" id="Submit" name="Submit" class="search-button" src="{$IMAGES_PATH}sidesearch.gif">
         </li>
 	</ul>
    </div>
