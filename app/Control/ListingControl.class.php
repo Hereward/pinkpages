@@ -481,9 +481,12 @@ class ListingControl extends MainControl {
 				$alpha_links[$i]["text"] = $v;
 				$i++;
 			}
-
+            $allow_sidebar = ($total_recs>0)?1:0;
 			$this->page->assign("alpha_links",$alpha_links);
 			$this->page->assign('total_recs', $total_recs);
+			
+			$this->page->assign('allow_sidebar', $allow_sidebar);
+			
 			$this->page->getPage('key_search.tpl');
 		}
 		else {
@@ -1493,6 +1496,8 @@ class ListingControl extends MainControl {
 		//$this->page->assign("relatedClassLinks", $relatedClassLinks);
 		$this->page->assign("relatedClassLinks", $related_classifications);
 		
+		$this->page->assign('allow_sidebar', 1);
+		
 		//dev_log::cur_url("Listing::categorySearch");
 		$this->page->getPage('category_result.tpl');
 	}/* END categorySearch */
@@ -1649,6 +1654,7 @@ class ListingControl extends MainControl {
 		$this->page->assign("relatedClassLinks", $relatedClassLinks['classifications']);
 		
 		$this->page->assign("classificationID", $classificationID);
+		$this->page->assign('allow_sidebar', 1);
 		//dev_log::cur_url("Listing::categorySearch");
 		$this->page->getPage('category_result.tpl');
 	}/* END categorySearchAlpha */

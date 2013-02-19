@@ -2039,3 +2039,118 @@ li#browse_by_city {
 
 
 /********* contact end ********/
+
+
+
+
+
+/********* No Results Page Start ********/
+.product-search {
+	width: 530px;
+	height: 110px;
+	background-image: linear-gradient(bottom, rgb(0,52,141) 0%, rgb(34,144,207) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(0,52,141) 0%, rgb(34,144,207) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(0,52,141) 0%, rgb(34,144,207) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(0,52,141) 0%, rgb(34,144,207) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(0,52,141) 0%, rgb(34,144,207) 100%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(0,52,141)), color-stop(1, rgb(34,144,207)));
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin: 20px 0 0 40px;
+
+}
+.product-search h2 {
+	color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.product-search .search {
+	list-style-type: none;
+	padding: 20px 15px;
+	margin:10px 5px 5px 5px; 
+	font-size:11px; 
+	font-weight:bold; 
+	color:#ffffff;
+}
+.product-search .search li {
+	padding: 0;
+	margin: 0 0 8px 4px;  
+	font-weight:bold; 
+	display:inline-block; 
+}
+.product-search .search li h2 {
+	font-size:16px;
+	font-weight: bold;
+	padding: 0 0 0 0;
+	margin: 0;
+	color:#ffffff;
+}
+.product-search .search li span {
+	padding:2px 2px 0 0px; 
+	float:left; 
+	color:#FFFFff;
+}
+.search-button {
+	position: relative;
+    top: 11px;
+}
+.product-search p.sideinput {
+	width:172px;
+	_width:160px;
+	height:26px;
+	background:url(../Images/side-input.gif);
+	background-repeat:no-repeat;
+	padding:2px 2px 0 0px;
+	margin:0;
+}
+.product-search p.sideinput input {
+	width:160px;
+	_width:150px;
+	border:none;
+	color:#999;
+	text-align:left;
+	margin-left:2px;
+}
+.product-search p.sideinput-long {
+	width:352px;
+	_width:340px;
+	height:26px;
+	background:url(../Images/side-input-long.gif);
+	background-repeat:no-repeat;
+	padding:2px 2px 0 0px;
+	margin:0;
+}
+.product-search p.sideinput-long input {
+	width:340px;
+	_width:330px;
+	border:none;
+	color:#999;
+	text-align:left;
+	margin-left:2px;
+}
+.or-badge {
+	background:url(../Images/or-badge.gif);
+	width:55px;
+	height:55px;
+	position:relative;
+	bottom:148px;
+	left:282px;
+	z-index:55;
+	overflow:hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+/********* No Results Page End ********/

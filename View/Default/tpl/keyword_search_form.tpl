@@ -1,3 +1,5 @@
+
+{if $allow_sidebar}
 <div class="navigation">
 							<form id="test" action="/main.php" name="Homepage" method="get" onsubmit="return check_inner();">
 	<input type="hidden" id="testid" value="" disabled="disabled" />
@@ -210,4 +212,4 @@ window.onload = setOption("c");
 </script>
 
 
-
+{/if}

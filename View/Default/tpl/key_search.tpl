@@ -77,31 +77,68 @@
 			{/if}
 
 		{/if}
-
+     </td></tr>
+  	</table>
 	{else}
 	Sorry, your search for <span><strong>{$keyword}</strong></span> in <span><strong>{$smarty.get.Search2}</strong></span> returned no results. <br />Please try again using a different keyword or location.<br />
     <a href="{$business_name_search}">Not what you were looking for?<br /> Try searching for <span><strong>{$smarty.get.Search1}</strong></span> in a business name instead</a>
-
-	{/if}
-	
-    
-	
-  	</td></tr>
+    </td></tr>
   	</table>
-      
-</div>
-
-
-<!--Search box starts-->
-{include file="keyword_search_form.tpl"}
-<!--Search box ends-->
-<div class="bottomseperator">
-</div></div>
-
-{literal}
+  	
+  	 <form id="test" action="main.php" name="Homepage" method="get" >
+			<input type="hidden" id="testid" value="" disabled="disabled" />	
+			<input type="hidden" id="do" name="do" value="Listing" />
+			<input type="hidden" id="action" name="action" value="searchKeyword" />
+  	
+  	
+  	<div class="product-search">
+	<ul class="search">
+      	<li>
+        	<h2>Product or Service</h2>
+            <br>
+			<p class="sideinput"><input type="text" value="{if ($default_keyword)}{$default_keyword|stripslashes}{else}{$keyword|stripslashes}{/if}"  class="largeinputbox" size="17"  id="Search1" name="Search1" required></p>	
+		
+		</li>
+      	<li>
+        	<h2>Location</h2>
+            <br>
+			<p class="sideinput"><input type="text" class="largeinputbox" size="17" id="Search2" name="Search2"></p>
+        </li>
+        <li>
+        {* <input type="image" hspace="10" value="Search" id="Submit" name="Submit" class="search-button" src="http://www.pinkpages.com.au/View/Default/Images/sidesearch.gif"> *}
+        <input class="search-button" hspace="10" src="{$IMAGES_PATH}sidesearch.gif" type="image" name="Submit" id="Submit" value="Search" />
+        </li>
+	</ul>
+				<label for="Search1" generated="true" class="error" style="background-color:#E9138F; font-weight:bold; color:black; padding:3px; border:1px solid #E9138F; left:25px; top:-30px; position:relative; display: none;">Please enter a keyword or business name</label>				  					
+	
+   </div>
+   </form>
+   
+   <form id="test2" onsubmit="" method="get" action="main.php" novalidate="novalidate">
+<input id="testid" type="hidden" disabled="disabled" value="">
+<input id="do" type="hidden" value="Listing" name="do">
+<input id="action" type="hidden" value="search" name="action">
+   
+   <div class="product-search">
+	<ul class="search">
+      	<li>
+        	<h2>Business Name</h2>
+            <br>
+			<p class="sideinput-long"><input type="text" class="largeinputbox" size="17"  id="Search1" name="Search1" autocomplete="off"></p>					  					
+		</li>
+      	
+        <li>
+        <input type="image" hspace="10" value="Search" id="Submit" name="Submit" class="search-button" src="http://www.pinkpages.com.au/View/Default/Images/sidesearch.gif">
+        </li>
+	</ul>
+   </div>
+ </form>
+   
+   {literal}
 <script type="text/javascript">
+// hello
 $(function () {
-		$("#Search1").watermark("What?");
+		//$("#Search1").watermark("What?");
 		$("#Search1Focus").click(
 			function () {
 				$("#Search1")[0].focus();
@@ -119,17 +156,36 @@ $(function () {
 });
 
 $().ready(function() {
-	   // $('#test').validate( {invalidHandler: $.watermark.showAll} );
+   // $('#test').validate( {invalidHandler: $.watermark.showAll} );
 
 
-	    $("#test").validate({
-			rules: {
-	    	    Search1: "required"
-			},
-			messages: {
-				Search1: "Please enter a keyword or business name"
-			}
-		});
+    $("#test").validate({
+		rules: {
+    	    Search1: "required"
+		},
+		messages: {
+			Search1: "Please enter a keyword or business name"
+		}
 	});
+});
+
 </script>
 {/literal}
+	
+	{/if}
+	
+    
+	
+  	
+      
+</div>
+
+
+<!--Search box starts-->
+{include file="keyword_search_form.tpl"}
+<!--Search box ends-->
+<div class="bottomseperator">
+</div></div>
+
+<script language="javascript1.5" src="{$JS_PATH}search.js" type="text/javascript" >
+</script>
