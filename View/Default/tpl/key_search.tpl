@@ -109,7 +109,7 @@
         <input class="search-button" hspace="10" src="{$IMAGES_PATH}sidesearch.gif" type="image" name="Submit" id="Submit" value="Search" />
         </li>
 	</ul>
-				<label for="Search1" generated="true" class="error" style="background-color:#E9138F; font-weight:bold; color:black; padding:3px; border:1px solid black; left:25px; top:-30px; z-index:10; position:relative; display: none;">Please enter a keyword or business name</label>				  					
+				<label for="Search1" generated="true" class="error" style="background-color:#E9138F; font-weight:bold; color:black; padding:3px; border:1px solid black; left:25px; top:-28px; z-index:10; position:relative; display: none;">Please enter a keyword or business name</label>				  					
 	
    </div>
    </form>
