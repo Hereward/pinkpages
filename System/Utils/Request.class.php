@@ -104,9 +104,15 @@ class Request {
 			  $paramsArr = array_merge($paramsArr, $values);
 			}
 		  }
-		  $url = $url.implode("/", $paramsArr);				  
+		  $url = $url.implode("/", $paramsArr);			
 
-		} else if(REWRITE_URL){	
+		} elseif(REWRITE_URL && $do == 'Listing' && $action == 'categorySearchByRegion' && isset($params)) {
+			  
+		    $url = ($do)?$url.CONTROLLER."?do=$do":$url;
+			$url = ($action)?$url."&action=$action":$url;
+			$url = ($params)?"$url&$params":$url;
+
+		} elseif(REWRITE_URL){	
 	
 		  $paramsArr = array();
 		  if($do) $paramsArr[] = $do;

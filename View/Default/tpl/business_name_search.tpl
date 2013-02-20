@@ -85,7 +85,9 @@
 </div>
 {include file="news.tpl"}
 
+{*
 <script language="javascript" src="{$JS_PATH}search.js"></script>
+*}
 
 <script>
 window.onload = setOption("b");

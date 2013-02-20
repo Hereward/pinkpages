@@ -180,6 +180,39 @@ class ListingFacade extends MainFacade {
 		return $result;
 	}
 	
+	
+    public function get_all_businesses_from_classi($classi) {
+    	$classi_sql = "SELECT * FROM local_businesses LEFT JOIN business_classification ON business_classification.business_id = local_businesses.business_id WHERE business_classification.localclassification_id = $classi";
+		$result = $this->myDB->query($classi_sql);
+		return $result;
+    }
+    
+   public function get_region_from_postcode($postcode) {
+   	    //if (!$postcode) { die("boo"); }
+    	$classi_sql = "SELECT * FROM shire_towns WHERE shire_towns.shiretown_postcode = $postcode";
+		$result = $this->myDB->query($classi_sql);
+		//var_dump($result);
+		$id = (isset($result[0]['shirename_id']))?$result[0]['shirename_id']:0;
+		$url_alias = '';
+		if ($id) {
+		    $sql = "SELECT * FROM shire_names WHERE shire_names.shirename_id = $id";
+		    $rec=$this->myDB->query($sql);
+		    $url_alias = $rec[0]['url_alias'];
+		}
+		//die("[$url_alias]");
+		return array('id'=>$id, 'alias'=>$url_alias);
+    }
+    
+    
+    public function get_real_regions($exclude_list) {
+    	
+    	$sql = "SELECT * FROM shire_names WHERE shire_names.shirename_id NOT IN ($exclude_list)";
+    	//die($sql);
+    	$rec=$this->myDB->query($sql);
+		return $rec;
+    }
+    
+	
     public function get_url_alias($business_id) {
     	//die("hello");
     	$output = '';
@@ -2666,7 +2699,7 @@ class ListingFacade extends MainFacade {
 
 		if(count($bcResult>0)) {
 			foreach ($bcResult as $k=>$category) {
-				$bcResult[$k]['link'] = $this->request->createURL("Listing", "categorySearch", "search={$category['localclassification_id']}&category=".urlencode($category['localclassification_name'])."&val={$this->request->getAttribute('Search2')}");
+				$bcResult[$k]['link'] = $this->request->createURL("Listing", "categorySearchByRegion", "search={$category['localclassification_id']}&category=".urlencode($category['localclassification_name'])."&val={$this->request->getAttribute('Search2')}");
 			}
 		}
 

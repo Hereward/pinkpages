@@ -85,6 +85,7 @@
                                     
                                    
                                        <td align="right" class="smallrextlowMap"> 
+                                       {*
                                         {if $values[i].business_email neq ''}						  
 						 <a href="{$values[i].link}" >Email</a>
 						  {/if}		
@@ -104,10 +105,10 @@
 						 |
 						  {/if}	
 
-<a href="{$values[i].link}" >Map</a> 
+ <a href="{$values[i].link}" >Map</a> 
                                        {else}
                                        
-                                       <a  href="{$values[i].url}" >Map</a>
+                                       <a  href="{$values[i].url}" >Map</a> 
 						
 						  
 						   
@@ -115,6 +116,7 @@
                                     
                                     
                                     {/if}
+                                    *}
                                     </td>
                                   </tr>
              </table>
