@@ -1520,6 +1520,8 @@ class ListingControl extends MainControl {
 		
 		$obj = $this->listingFacade->getOneClassification($classi);
 		$all_businesses = $this->listingFacade->get_all_businesses_from_classi($classi);
+		//var_dump($all_businesses);
+		//die();
 		$classi_name = $obj[0]['localclassification_name'];
 		//die("[$classi] [$classi_name]");
 		$this->page->assign("shire_names", $shire_names);
@@ -1536,13 +1538,15 @@ class ListingControl extends MainControl {
 			$pc = $business['business_postcode'];
 			if ($pc) {
 			   $region = $this->listingFacade->get_region_from_postcode($pc);
-			   
+			   $state = ($business['business_state'])?$business['business_state']:'';
 			   $id = $region['id'];
 			   $alias = $region['alias'];
+			   //$state = 'NSW';
 			   //die("[$alias]");
-			   if (!isset($region_count["r_$id"])) { $region_count["r_$id"] = array('id'=>'', 'alias'=>'', 'name'=>'', 'count'=>0);}
+			   if (!isset($region_count["r_$id"])) { $region_count["r_$id"] = array('id'=>'', 'alias'=>'', 'name'=>'', 'count'=>0, 'state'=>0 );}
 			     $region_count["r_$id"]['count']++;
 			     $region_count["r_$id"]['alias'] = $alias;
+			     $region_count["r_$id"]['state'] = $state;
 			   }
 			//die("[$pc]");
 		}

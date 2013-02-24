@@ -23,7 +23,7 @@
 			<td onmouseover="this.style.backgroundColor='#FCEDF6';" onmouseout="this.style.backgroundColor='#FFFFFF';" style="background-color:#FFFFFF; border-bottom:1px solid gray;"> &nbsp;&nbsp;&nbsp;&nbsp;  
 			
 			<a style="font-size: 16px; font-weight: normal" 
-			href="{$SITE_PATH}main.php?do=Listing&action=categorySearch&search={$classi}&category={$classi_enc}&shire_name={$region_count.$myIndex.alias}"> 
+			href="{$SITE_PATH}main.php?do=Listing&action=categorySearch&search={$classi}&category={$classi_enc}&state={$region_count.$myIndex.state}&shire_name={$region_count.$myIndex.alias}"> 
 			
 			{$shire_names[i].shirename_shirename|lower|capitalize}&nbsp; <span style="color:gray; font-weight: bold;">
 			 ({$region_count.$myIndex.count})</span>
