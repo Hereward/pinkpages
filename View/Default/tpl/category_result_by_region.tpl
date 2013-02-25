@@ -37,7 +37,7 @@
                       <div style="margin:0px 0px 0px 0px;">
                       <a class="region_filter"  
 			          href="{$SITE_PATH}main.php?do=Listing&action=categorySearch&search={$classi}&category={$classi_enc}&state={$state}&shire_name={$region_count.$myIndex.alias}"> 
-                      '{$classi_name|lower|capitalize}' In [{$shire_names[region].shirename_shirename|lower|capitalize}]&nbsp; <span style="color:gray; font-weight: bold;">
+                      {$classi_name|lower|capitalize} In {$shire_names[region].shirename_shirename|lower|capitalize}&nbsp; <span style="color:gray; font-weight: bold;">
 			          ({$region_count.$myIndex.count})</span></a>
                      </div>
                 {/if}
