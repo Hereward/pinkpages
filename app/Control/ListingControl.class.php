@@ -1514,7 +1514,7 @@ class ListingControl extends MainControl {
 	 */
 	public function categorySearchByRegion()
 	{
-		$exclude_list="59,55,301,315,317,318,319,320,800";
+		$exclude_list="59,55,301,315,317,318,319,320";
 		$shire_names = $this->listingFacade->get_real_regions($exclude_list);
 		$classi = $_GET['search'];
 		
@@ -1525,12 +1525,16 @@ class ListingControl extends MainControl {
 		$classi_name = $obj[0]['localclassification_name'];
 		//die("[$classi] [$classi_name]");
 		$this->page->assign("shire_names", $shire_names);
+		
+		//var_dump($shire_names);
+		//die();
+		
 		$this->page->assign("classi_name", $classi_name);
 		$this->page->assign("classi_enc", urlencode($classi_name));
 		$this->page->assign("classi", $classi);
-		
-		
-		
+		$meta_array = array();
+		$states = array(); //explode(',','NSW,TAS,QLD,SA,WA,NT');
+        
 		$region_count = array();
 		
 		
@@ -1543,13 +1547,33 @@ class ListingControl extends MainControl {
 			   $alias = $region['alias'];
 			   //$state = 'NSW';
 			   //die("[$alias]");
-			   if (!isset($region_count["r_$id"])) { $region_count["r_$id"] = array('id'=>'', 'alias'=>'', 'name'=>'', 'count'=>0, 'state'=>0 );}
+			   $flag = false;
+			   if (!isset($region_count["r_$id"])) {
+			   	$region_count["r_$id"] = array('id'=>'', 'alias'=>'', 'name'=>'', 'count'=>0, 'state'=>0 );
+			   	$flag = true;
+			   }
 			     $region_count["r_$id"]['count']++;
 			     $region_count["r_$id"]['alias'] = $alias;
 			     $region_count["r_$id"]['state'] = $state;
-			   }
+			     if (!in_array($state, $states)) { $states[] = $state;}
+			     $region_count["r_$id"]['id'] = $id;
+			     if ($flag && $id) {
+			     	$meta_array[$state][]=$region_count["r_$id"];
+			     }
+			 }
+			   
+			   
 			//die("[$pc]");
 		}
+		
+		$this->page->assign("states", $states);
+	    $this->page->assign("meta_array", $meta_array);
+	    
+	    //var_dump($states);
+		//die();
+		
+		//var_dump($meta_array);
+		//die();
 		$this->page->assign("region_count", $region_count);
 		
 		//var_dump($region_count);

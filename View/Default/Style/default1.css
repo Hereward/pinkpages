@@ -2148,6 +2148,14 @@ li#browse_by_city {
 
 
 
+a.region_filter, a.region_filter:link {
+	font-size: 14px; 
+	font-weight: normal
+}
+
+a.region_filter:hover {
+	color:red;
+}
 
 
 
