@@ -2849,10 +2849,10 @@ class ListingFacade extends MainFacade {
 		
 		
 		if ($isbot) {
-			dev_log::write("filter_bot | A BOT WAS FOUND! agent = [$agent] bot = [$found_bot]");
+			//dev_log::write("filter_bot | A BOT WAS FOUND! agent = [$agent] bot = [$found_bot]");
 			return 1;
 		} else {
-			dev_log::write("filter_bot | NOT A BOT: [$agent]");
+			//dev_log::write("filter_bot | NOT A BOT: [$agent]");
 			
 			return 0;
 		}

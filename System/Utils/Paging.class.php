@@ -6,8 +6,11 @@ class Paging {
 		$temp = explode("&", $queryString);
 		if(!$temp) return "";
 		
-		if($_GET['do'] == 'Listing' && ($_GET['action'] == 'categorySearch' || $_GET['action'] == 'categorySearchAlpha' || $_GET['action'] == 'searchStreetBusiness' || $_GET['action'] == 'search')){
-		  $params = '';
+		//!isset($_GET['class_region_filter']) &&
+		
+		if ($_GET['do'] == 'Listing' && ($_GET['action'] == 'categorySearch' || $_GET['action'] == 'categorySearchAlpha' || $_GET['action'] == 'searchStreetBusiness' || $_GET['action'] == 'search')){
+		  //die("hello");
+			$params = '';
 		  foreach ($temp as $str) {
   	        if((strpos($str, "do=") === FALSE) && (strpos($str, "action=") === FALSE) && (strpos($str, "fr=") === FALSE) && (strpos($str, "pnum=") === FALSE)){
 			  $params .= '&'.$str;
@@ -15,7 +18,10 @@ class Paging {
 		  }		
           
 		  $url = new Request();
-		  return $url->createURL($_GET['do'], $_GET['action'], str_replace("+&+", "+%26+", substr($params, 1, strlen($params))));
+		  $ret_url = $url->createURL($_GET['do'], $_GET['action'], str_replace("+&+", "+%26+", substr($params, 1, strlen($params))),'boo');
+		  //die("[{$_GET['do']}] [{$_GET['action']}] [$params] [$ret_url]");
+		  return $ret_url;
+		  //$url->createURL($_GET['do'], $_GET['action'], str_replace("+&+", "+%26+", substr($params, 1, strlen($params))));
 		}
 		
 		$output = array();

@@ -1204,6 +1204,8 @@ class ListingControl extends MainControl {
 			$_GET['shire_name'] = $this->listingFacade->getShireNameFromAlias($_GET['shire_name']);
 		}
 		
+		
+		
 
 		$shire_name							= (!empty($_GET['shire_name']))?$_GET['shire_name']:NULL;
 		$shire_town							= (!empty($_GET['shire_town']))?$_GET['shire_town']:NULL;
@@ -1223,7 +1225,7 @@ class ListingControl extends MainControl {
 
 		if(isset($_GET['shire_name']) && $_GET['shire_name'] !='') {
 			$location = $_GET['shire_name'];
-			dev_log::write("categorySearch: LOCATION = $location");
+			//dev_log::write("categorySearch: LOCATION = $location");
 			$searchSuburbs    = $this->searchRefineFacade->getSuburbsByRegion($location);
 			$suburbURLs       = array();
 			foreach($searchSuburbs as $searchSuburb){
@@ -1616,7 +1618,7 @@ class ListingControl extends MainControl {
 
 		if(isset($_GET['shire_name']) && $_GET['shire_name'] !='') {
 			$location = $_GET['shire_name'];
-			dev_log::write("categorySearch: LOCATION = $location");
+			//dev_log::write("categorySearch: LOCATION = $location");
 			$searchSuburbs    = $this->searchRefineFacade->getSuburbsByRegion($location);
 			$suburbURLs       = array();
 			foreach($searchSuburbs as $searchSuburb){

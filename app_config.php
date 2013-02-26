@@ -13,7 +13,20 @@ define("ADMIN_EMAIL_ADDR", "gcattley@dawsonmedia.com.au");
 define("CLIENT_IMAGES_PATH", ADMIN_SITE_PATH."View/Default/Images/client_image/");
 
 /* OTHER SETTINGS */
+
 define("REWRITE_URL", 1);
+
+/*
+$class_region_filter = $_GET['class_region_filter'];
+		//die("[$class_region_filter]");
+		
+		if ($class_region_filter) {
+			define("REWRITE_URL", 0);
+		} else {
+			define("REWRITE_URL", 1);
+		}
+*/
+
 define("DEFAULT_PAGING_SIZE", 20);
 define("DEFAULT_RANK_LIMIT", 5);
 define("CONTROLLER", "main.php");

@@ -10,7 +10,7 @@
     <tr>
 	  <td>
       <center>
-       
+       {* [{$paging.url}]  *}
         <h1>{if $CountResult eq ''}<span>{$normalcount}</span>{else}<span>{$CountResult}</span>{/if} {if $normalcount eq '1'}Result {else}Results{/if} found in <span>'{$category|stripslashes}'</span> in <span>'{$location|stripslashes}'</span></h1>
       </center>
       </td>

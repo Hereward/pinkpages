@@ -78,42 +78,99 @@ class Request {
 		header("Location:".$url);
 	}
 	
-	private function filterParams($params){	
+	private function filterParams($params,$boo=''){	
+		//dev_log::write("HELLO");
+	  if ($boo) {
+	      //var_dump($this->searchParams);
+	       //var_dump($params);
+	       //var_dump($params);
+	       //die("A");
+	   }
 	
 	  foreach($params as $i => $param){
-	   
-	    if(in_array(substr($param, 0, strpos($param, '=')), $this->searchParams)){
-		  $values[] = str_replace($this->filterURL, '', substr($param, strpos($param, '=')+1, strlen($param)));
-		} else $values = $params;
+	      //if ($boo) { die("B"); }
+	     $strpos = strpos($param, '=');
+	     $string_bit = substr($param, 0, $strpos);
+	     if ($boo) {
+	     	//dev_log::write("STRINGBIT=[$string_bit]");
+	     }
+	    if(in_array($string_bit, $this->searchParams)) {
+	    	//if ($boo) { die("C"); }
+	      $subject = substr($param, strpos($param, '=')+1, strlen($param));
+	      $new_val = str_replace($this->filterURL, '', $subject);
+		  $values[] = $new_val; //str_replace($this->filterURL, '', substr($param, strpos($param, '=')+1, strlen($param)));
+	      if ($boo) {
+	      	
+	      	//dev_log::write("XXX [$subject] [$new_val]");
+	      	//die("C");
+	      	//die("D[$subject]");
+	       //var_dump($values);
+	       //var_dump($params);
+	       //die("XXX[$subject]");
+	      }
+		} else {
+			
+		//	if ($boo) { die("E[$subject]"); }
+		  $values = $params;
+		}
 	  }
+	  
+	  
+	  //die();
+	 if ($boo) {
+	 	
+	       //var_dump($values);
+	       //var_dump($params);
+	       //var_dump($values);
+	       //die();
+	      // die("F");
+	   }
 	  return $values;
 	}
 
-	public function createURL($do='', $action='', $params='') {
+	public function createURL($do='', $action='', $params='', $boo='') {
 		
 		$url = $this->sitePath;		
-		
+		//die("[$do] [$action] [$params]");
 		if(REWRITE_URL && $do == 'Listing' && $action == 'categorySearch' && isset($params)) {
-			  
+			//if ($boo) { die("flag 1"); }
 		  $paramsArr = array();
-		  if($params!='') {		  
+		  if($params!='') {	
+		  
 			$temp = explode('&', $params);
 									
 			if($temp) {
-			  $values = $this->filterParams(array_values($temp));
+				//if ($boo) { die("[B]"); }	  
+			  $values = $this->filterParams(array_values($temp),$boo);
+			  
+			  if ($boo) {
+			  	//var_dump(array_values($temp));
+			  	//var_dump($temp);
+			  //var_dump($values);
+			  //die();
+			  }
+			  
 			  $paramsArr = array_merge($paramsArr, $values);
+			  
 			}
 		  }
+		  if ($boo) {  
+		  	//var_dump($paramsArr);
+		  	//die(implode("/", $paramsArr));
+		  }	 
 		  $url = $url.implode("/", $paramsArr);			
-
+		//if ($boo) { die("[$url]"); }
 		} elseif(REWRITE_URL && $do == 'Listing' && $action == 'categorySearchByRegion' && isset($params)) {
+			
+		//if ($boo) { die("flag 2"); }
 			  
 		    $url = ($do)?$url.CONTROLLER."?do=$do":$url;
 			$url = ($action)?$url."&action=$action":$url;
 			$url = ($params)?"$url&$params":$url;
+			
 
 		} elseif(REWRITE_URL){	
-	
+		//if ($boo) { die("flag 3"); }
 		  $paramsArr = array();
 		  if($do) $paramsArr[] = $do;
 		  if($action) $paramsArr[] = $action;
