@@ -1090,7 +1090,7 @@ class ClassificationFacade extends MainFacade {
 	
 	public function getClassificationRegionReport($from_date, $to_date, $filter_google) {
 		set_time_limit(0);
-		ini_set("memory_limit","80M");
+		ini_set("memory_limit","100M");
 
 		//getting all regions
 		$sql = "SELECT 

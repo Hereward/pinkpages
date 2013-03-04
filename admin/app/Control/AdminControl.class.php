@@ -1431,6 +1431,7 @@ class AdminControl extends MainControl
 
 		$this->page->assign("pagePopularityReport",$this->request->createURL("Admin","pagePopularityReport"));
 		$this->page->assign("class_region_report",$this->request->createURL("Classification","regionReport"));
+		$this->page->assign("class_region_report_flexible",$this->request->createURL("Classification","regionReport_flexible"));
 		$this->page->assign("class_region_total_report",$this->request->createURL("Classification","class_region_total_report"));
 		$this->page->assign("ctr_report",$this->request->createURL("Classification","ctrReport"));				
 		$this->page->assign("classificationBannerReport",$this->request->createURL("BannerManager", "classificationBannerReport"));						
