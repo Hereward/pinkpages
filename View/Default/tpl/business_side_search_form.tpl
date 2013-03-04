@@ -10,10 +10,13 @@
 	
 		</li>
 		<li><p class="sideinput"><input type="text" name="Search1" id="Search1" value="{$keyword|stripslashes}" size="15" class="largeinputbox"/></p><li>
+		<input type="hidden" name="Search2" id="Search2" value=""/>
+		{*
 	<li><h2>Location</h2></li>
 		<li >
 			<p class="sideinput"><input type="text" name="Search2" id="Search2" value="{$location|stripslashes}"  size="17" class="largeinputbox" /></p>
 		</li>
+		*}
 		
 	</ul>
     <br />
