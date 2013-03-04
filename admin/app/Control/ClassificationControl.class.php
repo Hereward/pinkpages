@@ -620,6 +620,7 @@ class ClassificationControl extends MainControl
 		
 		$this->page->assign("pagePopularityReport",$this->request->createURL("Admin","pagePopularityReport"));
 		$this->page->assign("class_region_report",$this->request->createURL("Classification","regionReport"));
+		$this->page->assign("class_region_report_flexible",$this->request->createURL("Classification","regionReport_flexible"));
 		$this->page->assign("class_region_total_report",$this->request->createURL("Classification","class_region_total_report"));
 		$this->page->assign("ctr_report",$this->request->createURL("Classification","ctrReport"));		
 		$this->page->assign("sitePerformanceReport",$this->request->createURL("Admin","sitePerformanceReport"));
@@ -654,6 +655,7 @@ class ClassificationControl extends MainControl
 		$this->page->assign("count_listing",$this->request->createURL("Admin","count_listing"));
 		$this->page->assign("class_region_report_action",$this->request->createURL("Classification","classRegionReport"));
 		$this->page->assign("failed_searches_report",$this->request->createURL("Classification","failed_searches_report"));
+		$this->page->assign("classificationBannerReport",$this->request->createURL("BannerManager", "classificationBannerReport"));
 		
 		$this->page->assign("to_date",date("Y-m-d"));
 		
@@ -720,7 +722,7 @@ public function regionReport_flexible() {
 		$this->page->assign("count_listing",$this->request->createURL("Admin","count_listing"));
 		$this->page->assign("class_region_report_action",$this->request->createURL("Classification","classregionReport"));
 		$this->page->assign("failed_searches_report",$this->request->createURL("Classification","failed_searches_report"));
-		
+        $this->page->assign("classificationBannerReport",$this->request->createURL("BannerManager", "classificationBannerReport"));		
 		$this->page->assign("to_date",date("Y-m-d"));
 		
 		$from_date_raw = strtotime("-365 days");
@@ -754,6 +756,7 @@ public function failed_searches_report() {
 		$this->page->assign("pagePopularityReport",$this->request->createURL("Admin","pagePopularityReport"));
 		$this->page->assign("failed_searches_report",$this->request->createURL("Classification","failed_searches_report"));
 		$this->page->assign("class_region_report",$this->request->createURL("Classification","regionReport"));
+		$this->page->assign("class_region_report_flexible",$this->request->createURL("Classification","regionReport_flexible"));
 		$this->page->assign("class_region_total_report",$this->request->createURL("Classification","class_region_total_report"));
 		$this->page->assign("ctr_report",$this->request->createURL("Classification","ctrReport"));		
 		$this->page->assign("sitePerformanceReport",$this->request->createURL("Admin","sitePerformanceReport"));
@@ -821,6 +824,7 @@ public function class_region_total_report() {
 		
 		$this->page->assign("pagePopularityReport",$this->request->createURL("Admin","pagePopularityReport"));
 		$this->page->assign("class_region_report",$this->request->createURL("Classification","regionReport"));
+		$this->page->assign("class_region_report_flexible",$this->request->createURL("Classification","regionReport_flexible"));
 		$this->page->assign("class_region_total_report",$this->request->createURL("Classification","class_region_total_report"));
 		$this->page->assign("ctr_report",$this->request->createURL("Classification","ctrReport"));		
 		$this->page->assign("sitePerformanceReport",$this->request->createURL("Admin","sitePerformanceReport"));
@@ -855,6 +859,7 @@ public function class_region_total_report() {
 		$this->page->assign("count_listing",$this->request->createURL("Admin","count_listing"));
 		$this->page->assign("class_region_report_action",$this->request->createURL("Classification","classRegionTotalsReport"));
 		$this->page->assign("failed_searches_report",$this->request->createURL("Classification","failed_searches_report"));
+		$this->page->assign("classificationBannerReport",$this->request->createURL("BannerManager", "classificationBannerReport"));
 		
 		$this->page->assign("act",$_GET['action']);
 		$this->page->addCssStyle("jquery-ui-1.7.1.custom.css");
@@ -881,6 +886,7 @@ public function class_region_total_report() {
 		$this->page->assign("classifications",$classifications);		
 		$this->page->assign("pagePopularityReport",$this->request->createURL("Admin","pagePopularityReport"));
 		$this->page->assign("class_region_report",$this->request->createURL("Classification","regionReport"));
+		$this->page->assign("class_region_report_flexible",$this->request->createURL("Classification","regionReport_flexible"));
 		$this->page->assign("ctr_report",$this->request->createURL("Classification","ctrReport"));		
 		$this->page->assign("sitePerformanceReport",$this->request->createURL("Admin","sitePerformanceReport"));
 		$this->page->assign("rankReport",$this->request->createURL("Admin","rankReport")); 
