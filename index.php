@@ -1,5 +1,5 @@
 <?php
-
+//test comment
 include("System/Config/config.php");
 dev_log::write("index.php"); 
 include("app_config.php");
