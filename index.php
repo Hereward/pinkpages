@@ -1,6 +1,7 @@
 <?php
 //test comment
 // another test comment (git dev branch)
+// another test comment (git dev branch - 2nd test!)
 include("System/Config/config.php");
 dev_log::write("index.php"); 
 include("app_config.php");
