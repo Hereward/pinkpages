@@ -1,4 +1,7 @@
 <?php
+//var_dump($_SERVER);
+//die();
+//die($_SERVER['PATH_INFO']);
 /**
  * ExpressionEngine - by EllisLab
  *
