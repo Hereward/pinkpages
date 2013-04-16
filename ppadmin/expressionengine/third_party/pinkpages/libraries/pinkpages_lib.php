@@ -18,6 +18,10 @@ class Pinkpages_lib
 		$this->EE->pinkpages = $this;
 	}
 	
+	public function library_test() {
+		return "Library test was successful";
+	}
+	
 	
 /*
 $this->EE->load->helper('form');

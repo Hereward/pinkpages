@@ -13,15 +13,23 @@ abstract class Base_Module {
 	public function __construct()
 	{
 		$this->EE =& get_instance();
-		$this->EE->load->add_package_path(PATH_THIRD.'/pinkpages' );
+		$this->EE->load->add_package_path(PATH_THIRD.'/pinkpages');
 		$this->EE->load->library('pinkpages_lib');
 	}
 	
 	
      public function test() {
      	$output = "this is a test function of the PP 2 module - YAY IT WORKS!";
+     	$lib_test = $this->EE->pinkpages_lib->library_test();
      	
-     	return $output;
+     	$ppo_db = $this->EE->load->database('ppo', TRUE);
+     	
+     	$query = "SELECT * FROM `local_businesses` WHERE business_id = 10599250";
+     	$results = $ppo_db->query($query);
+     	
+     	$bname = $results->row('business_name');
+     	
+     	return "$output<br/>$lib_test<br/>DB Query (business_id = 10599250): busines name = [$bname]";
          	
      }
 	
