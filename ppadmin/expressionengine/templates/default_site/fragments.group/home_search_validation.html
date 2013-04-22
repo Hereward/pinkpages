@@ -1,0 +1,35 @@
+<script type="text/javascript">
+// hello
+$(function () {
+		$("#Search1").watermark("What?");
+		$("#Search1Focus").click(
+			function () {
+				$("#Search1")[0].focus();
+			}
+		);
+});
+
+$(function () {
+	$("#Search2").watermark("Where?");
+	$("#Search2Focus").click(
+		function () {
+			$("#Search2")[0].focus();
+		}
+	);
+});
+
+$().ready(function() {
+   // $('#test').validate( {invalidHandler: $.watermark.showAll} );
+
+    $("#test").validate({
+		rules: {
+    	    Search1: "required"
+		},
+		messages: {
+			Search1: "Please enter a keyword or business name"
+		}
+	});
+	
+});
+
+</script>
