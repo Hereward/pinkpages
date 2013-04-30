@@ -1,0 +1,31 @@
+<div>
+   <h4 style="color:green;">Resolving Classification ... </h4>
+   <div style="margin:10px 0px 20px 0px; width:300px; padding:5px; border:1px solid red;">
+      <table cellpadding="2">
+        <tr>
+           <td align="right"><strong>Keyword: </strong></td><td><?=$keyword?></td>
+        </tr>
+        <tr>
+           <td align="right"><strong>Area: </strong></td><td><?=$area?></td>
+        </tr>
+      </table> 
+   </div>
+   
+   <div style="margin-top:30px;">
+     <h4>Primary Keyword &gt; Classification Match (exact)</h4>
+     <?=$r_table?>
+   </div>
+   
+   <div style="margin-top:30px;">
+     <h4>Classification Matches (partial)</h4>
+     <?=$c_table?>
+   </div>
+  
+   
+   <div style="margin-top:30px;">
+     <h4>Keyword Matches (partial)</h4>
+     <?=$k_table?>
+   </div>
+
+</div>
+
