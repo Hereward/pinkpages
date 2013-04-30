@@ -4021,6 +4021,8 @@ class ListingFacade extends MainFacade {
 
 	public function resolveClassification($keyword)
 	{
+		
+		//dev_log::write("resolveClassification: [$keyword]");
 		$classifications = array();
 		//First search in classification table
 		$sql = "SELECT

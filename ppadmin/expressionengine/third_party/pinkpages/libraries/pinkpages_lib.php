@@ -1,7 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Pinkpages_lib
+class Pinkpages_lib 
 {
 	
 	
@@ -15,7 +15,7 @@ class Pinkpages_lib
 		$this->EE =& get_instance();
 		
 		//set a global object
-		$this->EE->pinkpages = $this;
+		//$this->EE->pinkpages = $this;
 	}
 	
 	public function library_test() {
