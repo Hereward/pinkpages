@@ -12,85 +12,87 @@ class keyword_search_model extends Base_model {
 	 */
 	public function __construct()
 	{
-		//$this->EE =& get_instance();
-
-		//die('whizzzzz');
-		
 		$this->orig = $this->my_var;
-		
 		parent::__construct();
-		//set a global object
-		//$this->EE->pinkpages = $this;
+	}
+	
+	
+	public function c_match($keyword) {
+		$first_word_pattern =  "^[[:<:]]{$this->ppo_db->escape_str($keyword)}[[:>:]].*$";
+		$query = "SELECT
+					localclassification_id, localclassification_name
+				FROM 
+					local_classification 
+				WHERE 
+					localclassification_name REGEXP '".$first_word_pattern."'";
+		
+		$results = $this->ppo_db->query($query);
+		
+		if ($results->num_rows()) {
+			return $results;
+		} else {
+			return FALSE;
+		}
+	}
+	
+    public function r_match($keyword) {
+		$query = "
+		SELECT 
+		   id,local_classification.localclassification_id,keyword,localclassification_name 
+		FROM 
+		   keyword_resolve,local_classification 
+		WHERE 
+		   keyword_resolve.keyword = ".$this->ppo_db->escape($keyword)." 
+		AND 
+		   local_classification.localclassification_id = keyword_resolve.localclassification_id";
+		
+		$results = $this->ppo_db->query($query);
+		
+		if ($results->num_rows()) {
+			return $results;
+		} else {
+			return FALSE;
+		}
+	}
+	
+	
+    public function k_match($keyword) {
+		$first_word_pattern =  "^[[:<:]]{$this->ppo_db->escape_str($keyword)}[[:>:]].*$";
+		$query = "SELECT
+					id, keywords.localclassification_id, keywords.keyword, local_classification.localclassification_name
+				FROM
+					keywords,local_classification
+				WHERE
+					keywords.keyword REGEXP '".$first_word_pattern."' 
+				AND 
+				    keywords.localclassification_id = local_classification.localclassification_id" ;
+		
+		$results = $this->ppo_db->query($query);
+		
+		if ($results->num_rows()) {
+			return $results;
+		} else {
+			return FALSE;
+		}
 	}
 
 	
 	
 	public function resolve_classification($keyword='')
 	{
-		$ppo_db = $this->EE->load->database('ppo', TRUE);
-		
 		$keyword = $this->handle_input($keyword);
-
 		$classifications = array();
+		$functions = array('c_match', 'r_match', 'k_match');
 		
-
-		$query_01 = "SELECT
-					localclassification_id, localclassification_name
-				FROM 
-					local_classification 
-				WHERE 
-					localclassification_name REGEXP '[[:<:]]".$ppo_db->escape_str($keyword)."'";
-		
-		
-		$results_01 = $ppo_db->query($query_01);
-        //$my_array = $results_01->result_array();
-        //var_dump($my_array);
-		if ($results_01->num_rows()) {
-			//$classifications =  array_merge($classifications, $results_01->result_array());
-			$classifications['c_match'][] = array('ID','CLASSIFICATION');
-			$classifications['c_match'] = array_merge($classifications['c_match'], $results_01->result_array());
+		foreach ($functions as $f) {
+		   $classifications[$f] = FALSE;
+		   $results = $this->$f($keyword);
+		   
+		   if ($results) {
+			$classifications[$f][] = array('ID','CLASSIFICATION','KEYWORD','CLASS_NAME');
+			$classifications[$f] = array_merge($classifications[$f], $results->result_array());
+		   }
 		}
-
-		$query_02 = "SELECT
-					id, keywords.localclassification_id, keywords.keyword, local_classification.localclassification_name
-				FROM
-					keywords,local_classification
-				WHERE
-					keywords.keyword REGEXP '[[:<:]]".$ppo_db->escape_str($keyword)."' AND keywords.localclassification_id = local_classification.localclassification_id" ;
-		
-		//die($query_02);
-		
-		$results_02 = $ppo_db->query($query_02);
-		$num_rows = $results_02->num_rows();
-		$my_array = $results_02->result_array();
-		//var_dump($my_array);
-		//die();
-
-		if ($results_02->num_rows()) {
-			//$classifications = array_merge($classifications, $results_02->result_array());
-			$classifications['k_match'][] = array('K-ID','C-ID', 'K-VALUE', 'C-VALUE',);
-			$classifications['k_match'] = array_merge($classifications['k_match'], $results_02->result_array());
-		}
-		
-		$query_03 = "SELECT id,local_classification.localclassification_id,keyword,localclassification_name from keyword_resolve,local_classification WHERE keyword_resolve.keyword = 
-		".$ppo_db->escape($keyword)." AND local_classification.localclassification_id = keyword_resolve.localclassification_id";
-		
-		//die($query_03);
-        $results_03 = $ppo_db->query($query_03);
-        $num_rows = $results_03->num_rows();
-        //die("$num_rows $query_03");
-        if ($num_rows) {
-        	$my_array = $results_03->result_array();
-        	//var_dump($my_array);
-        	//die();
-        	$classifications['r_match'][] = array('K-ID','C-ID', 'K-VALUE', 'C-VALUE');
-        	$classifications['r_match'] = array_merge($classifications['r_match'], $results_03->result_array());
-        }
-        
-		//var_dump($classifications);
-		//die();
-		
-		// $classifications = array_unique($classifications);
 		
 		return $classifications;
 

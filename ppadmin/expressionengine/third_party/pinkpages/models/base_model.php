@@ -10,7 +10,7 @@ class Base_model extends CI_Model {
 	public function __construct()
 	{
 		$this->EE =& get_instance();
-
+        $this->ppo_db = $this->EE->load->database('ppo', TRUE);
 		//set a global object
 		//$this->EE->pinkpages = $this;
 	}
