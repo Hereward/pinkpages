@@ -18,7 +18,7 @@ class keyword_search_model extends Base_model {
 	
 	
 	public function c_match($keyword) {
-		$first_word_pattern =  "^[[:<:]]{$this->ppo_db->escape_str($keyword)}[[:>:]].*$";
+		$first_word_pattern =  "^[[:<:]]{$this->ppo_db->escape_str($keyword)}.*$";
 		$query = "SELECT
 					localclassification_id, localclassification_name
 				FROM 
@@ -57,7 +57,7 @@ class keyword_search_model extends Base_model {
 	
 	
     public function k_match($keyword) {
-		$first_word_pattern =  "^[[:<:]]{$this->ppo_db->escape_str($keyword)}[[:>:]].*$";
+		$first_word_pattern =  "^[[:<:]]{$this->ppo_db->escape_str($keyword)}.*$";
 		$query = "SELECT
 					id, keywords.localclassification_id, keywords.keyword, local_classification.localclassification_name
 				FROM
