@@ -15,29 +15,29 @@ class keyword_search_model extends Base_model {
 		$this->orig = $this->my_var;
 		parent::__construct();
 	}
-	
-	
-	public function c_match($keyword) {
-		//$first_word_pattern =  "^[[:<:]]{$this->ppo_db->escape_str($keyword)}.*$";
-		
-		$w = $this->ppo_db->escape_str($keyword);
-		$first_word_pattern =  "^({$w}|{$w}[[.space.]]+.*)$";
-		
-		$query = "SELECT
+
+
+    public function c_match($keyword) {
+        //$first_word_pattern =  "^[[:<:]]{$this->ppo_db->escape_str($keyword)}.*$";
+
+        $w = $this->ppo_db->escape_str($keyword);
+        $first_word_pattern =  "^({$w}|{$w}[[.space.]]+.*)$";
+
+        $query = "SELECT
 					localclassification_id, localclassification_name
-				FROM 
-					local_classification 
-				WHERE 
+				FROM
+					local_classification
+				WHERE
 					localclassification_name REGEXP '".$first_word_pattern."'";
-		
-		$results = $this->ppo_db->query($query);
-		
-		if ($results->num_rows()) {
-			return $results;
-		} else {
-			return FALSE;
-		}
-	}
+
+        $results = $this->ppo_db->query($query);
+
+        if ($results->num_rows()) {
+            return $results;
+        } else {
+            return FALSE;
+        }
+    }
 	
     public function r_match($keyword) {
 		$query = "
@@ -83,27 +83,54 @@ class keyword_search_model extends Base_model {
 		}
 	}
 
-	
-	
-	public function resolve_classification($keyword='')
-	{
-		$keyword = $this->handle_input($keyword);
-		$classifications = array();
-		$functions = array('c_match', 'r_match', 'k_match');
-		
-		foreach ($functions as $f) {
-		   $classifications[$f] = FALSE;
-		   $results = $this->$f($keyword);
-		   
-		   if ($results) {
-			$classifications[$f][] = array('ID','CLASSIFICATION','KEYWORD','CLASS_NAME');
-			$classifications[$f] = array_merge($classifications[$f], $results->result_array());
-		   }
-		}
-		
-		return $classifications;
 
-	}
+
+    public function resolve_classification($keyword='')
+    {
+        $keyword = $this->handle_input($keyword);
+
+        $word_array = explode(' ',$keyword);
+        $short_key = $word_array[0];
+
+        $w_list = array('full'=>$keyword);
+
+        if (count($word_array)>1) {
+            $w_list['short'] = $short_key;
+        }
+
+
+        $output = array();
+
+        foreach ($w_list as $label=>$key) {
+            $classifications = array();
+            $functions = array('c_match', 'r_match', 'k_match');
+
+            foreach ($functions as $f) {
+                $classifications[$f] = FALSE;
+                $results = $this->$f($key);
+
+                if ($results) {
+                    $classifications[$f][] = array('ID','CLASS','KEYWORD','C_NAME');
+                    $classifications[$f] = array_merge($classifications[$f], $results->result_array());
+                }
+            }
+/*
+            if ($label == 'short') {
+                var_dump($classifications);
+                die();
+            }
+*/
+            $output[$label] = $classifications;
+        }
+
+        //var_dump($output);
+        //die();
+
+        return $output;
+
+    }
+
+
 	
 	public function model_test_2() {
 		return $this->my_var;
