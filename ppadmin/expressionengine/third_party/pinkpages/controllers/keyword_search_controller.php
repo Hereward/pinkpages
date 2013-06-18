@@ -10,81 +10,78 @@ class keyword_search_controller extends Base_Controller {
     }
 
     public function index() {
-        $vars = array();
         $this->EE->load->library('table');
+        $tbl_tmpl = array ( 'table_open'  => '<table border="1" cellpadding="5" cellspacing="1" class="mytable">' );
+        $this->EE->table->set_template($tbl_tmpl);
+        $vars = array();
+
         $parameter = $this->EE->TMPL->fetch_param('type');
         $this->EE->load->model('keyword_search_model');
-        //var_dump($_GET);
-        //die();
-        $keyword = $_POST['Search1'];
-        $location = $_POST['Search2'];
 
+        $keyword = $this->EE->keyword_search_model->sanitize($_POST['Search1']);
+        //$keyword = $_POST['Search1'];
+        $location = $_POST['Search2'];
+        $keyword = urldecode($keyword);
         $word_array = explode(' ',$keyword);
         $short_key = $word_array[0];
+        $related_classifications = '';
+        $related_classifications_tbl = '';
+
+        $c_id = '';
+        $related_class_ids = '';
+        //$c_label = '';
+
+        $classies = $this->EE->keyword_search_model->retrieve_classifications($keyword);
+
+        $resolved_classy = $this->EE->keyword_search_model->resolve_classification($classies);
 
 
 
-        $classies = $this->EE->keyword_search_model->resolve_classification($keyword);
+        if ($resolved_classy) {
+            $c_id = $resolved_classy['localclassification_id'];
+
+            $vars['c_label'] = $resolved_classy['localclassification_name'];
+            $related_classifications = $this->EE->keyword_search_model->related_classifications($c_id);
+            if (count($related_classifications)) {
+                $related_classifications_tbl = $this->EE->table->generate($related_classifications);
+            }
+        }
+
+
+
+        //die("RESOLVED CLASSY = [$resolved_classy]");
 
         $t_count = count($classies);
 
-        //die("COUNT = ".count($classies));
-        //var_dump($classies['r_match']);
-        //die();
 
-        $tmpl = array ( 'table_open'  => '<table border="1" cellpadding="5" cellspacing="1" class="mytable">' );
-        $this->EE->table->set_template($tmpl);
-        //var_dump($classies['r_match']);
-        //die();
 
         $res_01 = array();
         $functions = array('c_match', 'r_match', 'k_match');
-        //var_dump($classies['full']);
-        //die();
+
+
+
         foreach ($functions as $function) {
             $res_01[$function] = ($classies['full'][$function])?$this->EE->table->generate($classies['full'][$function]):'<span style = "color:red">Zero Matches</span>';
             $vars[$function] = $res_01[$function];
         }
 
-        /*
-		$c_table = ($classies['c_match'])?$this->EE->table->generate($classies['c_match']):'<span style = "color:red">Zero Matches</span>';
-		$k_table = ($classies['k_match'])?$this->EE->table->generate($classies['k_match']):'<span style = "color:red">Zero Matches</span>';
-		$r_table = ($classies['r_match'])?$this->EE->table->generate($classies['r_match']):'<span style = "color:red">Zero Matches</span>';
-        */
-
         if ($t_count > 1) {
-
             $res_01 = array();
             $functions = array('c_match', 'r_match', 'k_match');
             foreach ($functions as $function) {
                 $res_01[$function] = ($classies['short'][$function])?$this->EE->table->generate($classies['short'][$function]):'<span style = "color:red">Zero Matches</span>';
                 $vars[$function.'_short'] = $res_01[$function];
             }
-
         }
 
-        //die($r_table);
-
-        //die($c_table);
-
-        //$vars = array('c_table'=>$c_table, 'k_table'=>$k_table, 'r_table'=>$r_table);
         $vars['keyword'] = $keyword;
         $vars['short_key'] = $short_key;
         $vars['area'] = $location;
         $vars['t_count'] = $t_count;
+        $vars['related_classifications'] = $related_classifications_tbl;
+        $vars['c_id'] = $c_id;
         return $this->EE->load->view('resolve_classification', $vars, TRUE);
         //return "RESOLVING CLASSIFICATION... Keyword = [{$_GET['Search1']}] Area = [{$_GET['Search2']}]";
-
-        /*
-        $output = "A. This is a test function of the PP 2 module - YAY IT WORKS!";
-        $lib_test = $this->EE->pinkpages_lib->library_test();
-        $mod_test = $this->EE->pinkpages_model->model_test();
-        $my_var = $this->EE->pinkpages_model->my_var;
-        $orig = $this->EE->pinkpages_model->orig;
-
-        return "$output<br/>$lib_test<br/>$mod_test<br/>my_var = $my_var<br/>orig = $orig<br/><br/>";
-
-        */
 
     }
 

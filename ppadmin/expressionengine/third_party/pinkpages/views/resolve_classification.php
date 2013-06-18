@@ -1,4 +1,32 @@
+<div style="margin:10px 0px 20px 0px; padding:5px; border:1px solid green;">
+    <table cellpadding="2">
 
+        <tr>
+            <td align="right"><h4>Resolved Classifcation: </h4></td>
+            <td>
+                <?
+                if ($c_id) {
+                    echo "$c_id | $c_label";
+                } else {
+                    echo "<span style='color:red'>FAILED!</span>";
+                }
+                ?>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div style="margin:20px 0;">
+    <h4>Related Classifications</h4>
+
+    <?
+    if ($related_classifications) {
+        echo $related_classifications;
+    } else {
+        echo "<div style='color:red'>NONE FOUND!</div>";
+    }
+    ?>
+</div>
 
 <? if ($t_count>1) { ?>
 
@@ -17,6 +45,7 @@
                 <tr>
                     <td align="right"><strong>Area: </strong></td><td><?=$area?></td>
                 </tr>
+
             </table>
         </div>
 
@@ -42,7 +71,7 @@
 <? } ?>
 
 <div style="width:450px; overflow:auto;">
-    <h4 style="color:green;">Resolving Classification ... </h4>
+    <h4 style="color:green;">Resolution Data</h4>
     <div style="margin:10px 0px 20px 0px; padding:5px; border:1px solid red;">
         <table cellpadding="2">
             <tr>

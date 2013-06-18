@@ -15,7 +15,19 @@ class Base_model extends CI_Model {
 		//$this->EE->pinkpages = $this;
 	}
 
-	
+	public function sanitize($input) {
+       $value = preg_replace("/[^A-Za-z0-9& ]/", '', $input);
+       $value = preg_replace('!\s+!', ' ', $value);
+       $value = trim($value);
+       //$value = filter_var($value, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+       //$value = filter_var($value, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+       //die("[$value]");
+
+       $value = urlencode($value);
+       // die("[$value]");
+       return $value;
+    }
+
 	public function handle_input($input) {
 
 		if(empty($input)) return "";
@@ -25,7 +37,7 @@ class Base_model extends CI_Model {
 		$value = stripslashes( html_entity_decode( $value ) );
 		return trim($value);
 	}
-	
+
 
 }
 // End Class
