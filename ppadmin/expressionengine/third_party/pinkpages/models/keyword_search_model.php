@@ -16,6 +16,16 @@ class keyword_search_model extends Base_model {
         parent::__construct();
     }
 
+    public function get_url($args=array()){
+
+        $state = $this->urlify($args['state']);
+        $classification = $this->urlify($args['classification']);
+        $region = $this->urlify($args['region']);
+        $id = $this->urlify($args['id']);
+        //$keyword
+        return $this->base_url."web/search/keyword/$state/$region/$classification/$id";
+    }
+
 
     public function c_match($keyword) {
         //$first_word_pattern =  "^[[:<:]]{$this->ppo_db->escape_str($keyword)}.*$";

@@ -3,27 +3,44 @@
 class keyword_search_controller extends Base_Controller {
 
     protected $EE;
+    public $resolved;
 
     public function __construct($args='') {
         //die('boo');
         parent::__construct($args);
     }
 
+    public function index2() {
+
+    }
     public function index() {
+        //var_dump($_SESSION);
+        $this->resolved = $this->EE->TMPL->fetch_param('resolved');
+        $this->EE->load->model('keyword_search_model');
         $this->EE->load->library('table');
         $tbl_tmpl = array ( 'table_open'  => '<table border="1" cellpadding="5" cellspacing="1" class="mytable">' );
         $this->EE->table->set_template($tbl_tmpl);
-        $vars = array();
 
-        $parameter = $this->EE->TMPL->fetch_param('type');
-        $this->EE->load->model('keyword_search_model');
+        if ($this->resolved) {
+            $vars = $this->classification_search();
+            return $this->EE->load->view('resolve_classification', $vars, TRUE);
+
+        }
+
+        //die("TYPE = [$type]");
+        $url = '';
+
+        //$parameter = $this->EE->TMPL->fetch_param('type');
+
 
         $keyword = $this->EE->keyword_search_model->sanitize($_POST['Search1']);
+
+        $_SESSION['keyword'] = $keyword;
+
         //$keyword = $_POST['Search1'];
-        $location = $_POST['Search2'];
-        $keyword = urldecode($keyword);
-        $word_array = explode(' ',$keyword);
-        $short_key = $word_array[0];
+        $location = ''; //$_POST['Search2'];
+        //$keyword = urldecode($keyword);
+
         $related_classifications = '';
         $related_classifications_tbl = '';
 
@@ -33,14 +50,26 @@ class keyword_search_controller extends Base_Controller {
 
         $classies = $this->EE->keyword_search_model->retrieve_classifications($keyword);
 
+        $_SESSION['related_classifications_from_keyword'] = $classies;
+
         $resolved_classy = $this->EE->keyword_search_model->resolve_classification($classies);
 
+        $_SESSION['resolved_classification'] = $resolved_classy;
 
+        $c_id = $resolved_classy['localclassification_id'];
+        $related_classifications = $this->EE->keyword_search_model->related_classifications($c_id);
+        $_SESSION['related_classifications'] = $related_classifications;
 
+        $vars = $this->prepare_display_vars($classies,$resolved_classy,$keyword,$related_classifications);
+/*
         if ($resolved_classy) {
             $c_id = $resolved_classy['localclassification_id'];
+            $c_label = $resolved_classy['localclassification_name'];
+            $url_params['classification'] = $c_label;
+            $vars['c_label'] = $c_label;
 
-            $vars['c_label'] = $resolved_classy['localclassification_name'];
+
+            $url = $this->EE->keyword_search_model->get_url($url_params);
             $related_classifications = $this->EE->keyword_search_model->related_classifications($c_id);
             if (count($related_classifications)) {
                 $related_classifications_tbl = $this->EE->table->generate($related_classifications);
@@ -80,13 +109,88 @@ class keyword_search_controller extends Base_Controller {
         $vars['t_count'] = $t_count;
         $vars['related_classifications'] = $related_classifications_tbl;
         $vars['c_id'] = $c_id;
+        $vars['url'] = $url;
+*/
+
+
         return $this->EE->load->view('resolve_classification', $vars, TRUE);
         //return "RESOLVING CLASSIFICATION... Keyword = [{$_GET['Search1']}] Area = [{$_GET['Search2']}]";
+    }
 
+
+    function prepare_display_vars($classies,$resolved_classy,$keyword,$related_classifications) {
+
+        //die("Hairdressers - Men's ".urlencode("Hairdressers - Men's"));
+
+        $vars = array();
+        $vars['resolved_state'] = ($this->resolved)?"RESOLVED":"NOT RESOLVED";
+        $url_params = array();
+        $url_params['state'] = 'nsw';
+        $url_params['region'] = 'rose bay-2029';
+
+        $word_array = explode(' ',$keyword);
+        $short_key = $word_array[0];
+        if ($resolved_classy) {
+            $c_id = $resolved_classy['localclassification_id'];
+            $c_label = $resolved_classy['localclassification_name'];
+            $url_params['classification'] = $c_label;
+            $url_params['id'] = $c_id;
+            $vars['c_label'] = $c_label;
+
+            $url = $this->EE->keyword_search_model->get_url($url_params);
+
+            /*
+            //$this->keyword_search_model->get_variable_from_session('related_classifications');
+            $related_classifications = ($this->keyword_search_model->session_key_exists($key))?
+                $this->keyword_search_model->get_variable_from_session('related_classifications'):
+                $this->EE->keyword_search_model->related_classifications($c_id);
+            */
+
+            if (count($related_classifications)) {
+                $related_classifications_tbl = $this->EE->table->generate($related_classifications);
+            }
+        }
+
+        //die("RESOLVED CLASSY = [$resolved_classy]");
+
+        $t_count = count($classies);
+        $res_01 = array();
+        $functions = array('c_match', 'r_match', 'k_match');
+
+        foreach ($functions as $function) {
+            $res_01[$function] = ($classies['full'][$function])?$this->EE->table->generate($classies['full'][$function]):'<span style = "color:red">Zero Matches</span>';
+            $vars[$function] = $res_01[$function];
+        }
+
+        if ($t_count > 1) {
+            $res_01 = array();
+            $functions = array('c_match', 'r_match', 'k_match');
+            foreach ($functions as $function) {
+                $res_01[$function] = ($classies['short'][$function])?$this->EE->table->generate($classies['short'][$function]):'<span style = "color:red">Zero Matches</span>';
+                $vars[$function.'_short'] = $res_01[$function];
+            }
+        }
+
+        $vars['keyword'] = $keyword;
+        $vars['short_key'] = $short_key;
+        //$vars['area'] = $location;
+        $vars['t_count'] = $t_count;
+        $vars['related_classifications'] = $related_classifications_tbl;
+        $vars['c_id'] = $c_id;
+        $vars['url'] = $url;
+
+        return $vars;
     }
 
     public function classification_search() {
+       $vars = array();
+        //die('classification_search !!!');
+        $keys = array('keyword','related_classifications_from_keyword','resolved_classification','related_classifications');
+        if ($this->EE->keyword_search_model->session_keys_exist($keys)) {
+            $vars = $this->prepare_display_vars($_SESSION['related_classifications_from_keyword'],$_SESSION['resolved_classification'],$_SESSION['keyword'],$_SESSION['related_classifications']);
+        }
 
+        return $vars;
     }
 
     /*

@@ -12,6 +12,7 @@ abstract class Base_Controller {
 	 */
 	public function __construct()
 	{
+
 		//die('weeeeeee');
 		$this->EE =& get_instance();
 		$this->EE->load->add_package_path(PATH_THIRD.'/pinkpages');

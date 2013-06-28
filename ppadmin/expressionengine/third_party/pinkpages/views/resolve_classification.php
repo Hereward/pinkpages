@@ -1,4 +1,5 @@
 <div style="margin:10px 0px 20px 0px; padding:5px; border:1px solid green;">
+
     <table cellpadding="2">
 
         <tr>
@@ -9,6 +10,51 @@
                     echo "$c_id | $c_label";
                 } else {
                     echo "<span style='color:red'>FAILED!</span>";
+                }
+                ?>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<div style="margin:10px 0px 20px 0px; padding:5px; border:1px solid green;">
+    <table cellpadding="2">
+
+        <tr>
+            <td align="right"><strong>Resolved URL:</strong></td>
+            <td>
+                <?
+                if ($url) {
+                    echo "<a href=\"$url\">$url</a>";
+                } else {
+                    echo "<span style='color:red'>FAILED!</span>";
+                }
+                ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right"><strong>Supplied keyword(s):</strong></td>
+            <td>
+                <?
+                if ($keyword) {
+                    echo "$keyword";
+                } else {
+                    echo "<span style='color:red'>EMPTY!</span>";
+                }
+                ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right"><strong>Status:</strong></td>
+            <td>
+                <?
+                if ($resolved_state) {
+                    echo "$resolved_state";
+                } else {
+                    echo "<span style='color:red'>EMPTY!</span>";
                 }
                 ?>
             </td>
@@ -43,7 +89,7 @@
                     <td align="right"><strong>Keyword (truncated): </strong></td><td><?=$short_key?></td>
                 </tr>
                 <tr>
-                    <td align="right"><strong>Area: </strong></td><td><?=$area?></td>
+                    <td align="right"><strong>Area: </strong></td><td></td>
                 </tr>
 
             </table>
@@ -78,7 +124,7 @@
                 <td align="right"><strong>Keyword: </strong></td><td><?=$keyword?></td>
             </tr>
             <tr>
-                <td align="right"><strong>Area: </strong></td><td><?=$area?></td>
+                <td align="right"><strong>Area: </strong></td><td></td>
             </tr>
         </table>
     </div>
