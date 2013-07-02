@@ -72,10 +72,46 @@ class Base_model extends CI_Model {
             if (array_key_exists($key,$_SESSION)) {
                 return TRUE;
             } else {
-                die("SESSION KEY MISSING: $key");
+                log_message('info',"SESSION KEY MISSING: $key");
+                //die("SESSION KEY MISSING: $key");
                 return FALSE;
             }
         }
+    }
+
+    function get_resolved_classification_from_id($id) {
+
+        $query = "SELECT localclassification_id,localclassification_name from local_classification WHERE localclassification_id='$id'";
+
+
+        //dev_log::write("relatedClassLinks query = ".$query);
+        // $res = $this->myDB->query($query);
+
+        $res = $this->ppo_db->query($query)->result_array();
+
+        $ret_array = $res[0];
+
+        $ret_array['keyword'] = '';
+
+        //var_dump($ret_array);
+        //die();
+        return $ret_array;
+
+        /*
+         array(4) {
+            ["id"]=>
+  string(5) "12070"
+  ["localclassification_id"]=>
+  string(4) "1898"
+  ["keyword"]=>
+  string(4) "HAIR"
+  ["localclassification_name"]=>
+  string(12) "HAIRDRESSERS"
+}
+         */
+
+
+
     }
 
 

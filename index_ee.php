@@ -178,7 +178,7 @@ session_start();
 	}
 	else
 	{
-		error_reporting(0);	
+		error_reporting(0);
 	}
 
 /*
